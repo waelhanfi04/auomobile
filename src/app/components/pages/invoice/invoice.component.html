@@ -1,0 +1,139 @@
+<div class="mobile-menu-second">
+	<app-header4></app-header4>
+<!-- Sub header -->
+  <div class="sub-header-sec p-relative">
+    <img src="assets/images/banner/bannerh7.jpg" class="img-fluid" alt="Sub header">
+    <div class="sub-header-overlay"></div>
+    <div class="sub-header-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="sub-header-text-wrapper text-center">
+              <h1 class="text-custom-white">Payment Receipt</h1>
+              <ul class="breadcrumbs">
+                <li><a routerLink="/" class="text-custom-white">Home</a>
+                </li>
+                <li><a routerLink="/invoice" class="text-custom-white">Pages</a>
+                </li>
+                <li><span class="text-custom-white">Payment Receipt</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Sub header -->
+  <!-- invoice-sec -->
+  <section class="section-padding invoice-sec bg-light-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <div class="payment-receipt-wrapper bg-white" id='printarea'>
+            <div class="payment-receipt-content">
+              <div class="payment-receipt-logo">
+                <a routerLink="/">
+                  <img src="assets/images/140x32logo.png" class="img-fluid" alt="logo">
+                </a>
+              </div>
+              <h3 class="text-light-black text-center">Thank you for your order!</h3>
+              <div class="payment-instructions">
+                <p>Please make your payment directly to our bank account and use your ORDER ID (#499) as a Reference. Our bank account information is given below.</p>
+                <h5 class="text-light-black">Account details:</h5>
+                <ul>
+                  <li class="text-dark-white">Account Name: <span class="text-light-black">Direo Inc.</span>
+                  </li>
+                  <li class="text-dark-white">Account Number: <span class="text-light-black">000-123-4567890</span>
+                  </li>
+                  <li class="text-dark-white">Bank Name: <span class="text-light-black">State Bank, Neverland</span>
+                  </li>
+                </ul>
+                <p>Please remember that your order may be canceled if you do not make your payment within next 72 hours.</p>
+              </div>
+              <div class="payment-summery row">
+                <div class="col-12">
+                  <h5 class="text-light-black text-center">Here is your order summery:</h5>
+                </div>
+                <div class="col-lg-6">
+                  <div class="table-responsive invoice-table">
+                    <table class="table table-bordered">
+                      <tbody>
+                        <tr>
+                          <td>ORDER #</td>
+                          <td>499</td>
+                        </tr>
+                        <tr>
+                          <td>Total Amount</td>
+                          <td>$ 45.00</td>
+                        </tr>
+                        <tr>
+                          <td>Date</td>
+                          <td>March 9, 2020 12:17 pm</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="table-responsive invoice-table">
+                    <table class="table table-bordered">
+                      <tbody>
+                        <tr>
+                          <td>Payment Method</td>
+                          <td>Bank Transfer</td>
+                        </tr>
+                        <tr>
+                          <td>Payment Status</td>
+                          <td>Created</td>
+                        </tr>
+                        <tr>
+                          <td>Transaction ID</td>
+                          <td>#ABCD0123</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="checkout-table">
+                <h5 class="text-light-black text-center">Ordered Item(s)</h5>
+                <div class="table-responsive invoice-table">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Details</th>
+                        <th><strong>Price</strong>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <h6 class="mb-2">Basic Plan</h6>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, labore.</p>
+                        </td>
+                        <td>$45.00</td>
+                      </tr>
+                      <tr>
+                        <td class="text-right"><strong>Total amount</strong>
+                        </td>
+                        <td>  <strong>$45.00</strong>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="page-bottom"> <a routerLink="/invoice" class="btn-second orange-btn">View your listings</a>
+                <button type="button" class="btn-second orange-btn">Print</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- invoice-sec -->
+	<app-footer4></app-footer4>
+</div>

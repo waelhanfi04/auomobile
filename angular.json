@@ -1,0 +1,154 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "rims2": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/rims2",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/font-awesome.css",
+              "src/assets/css/font/flaticon.css",
+              "src/assets/css/jquery-ui.css",
+              "src/assets/css/slick.css",
+              "src/assets/css/slick-theme.css",
+              "src/assets/css/animate.css",
+              "src/assets/css/nice-select.css",
+              "src/assets/css/jarallex.css",
+              "src/assets/css/mapbox-gl.min.css",
+              "src/assets/css/style.css",
+              "src/assets/css/responsive.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+
+              "src/assets/js/jquery-3.4.1.min.js",
+               "src/assets/js/popper.min.js",
+               "src/assets/js/bootstrap.min.js",
+               "src/assets/js/jarallax.min.js",
+               "src/assets/js/jarallax-video.min.js",
+               "src/assets/js/slick.min.js",
+               "src/assets/js/jquery-ui.js",
+               "src/assets/js/isotope.pkgd.js",
+               "src/assets/js/jquery.nice-select.min.js",
+               "src/assets/js/jquery-steps.js",
+               "src/assets/js/bootstrap-tagsinput.min.js",
+               "src/assets/js/mapbox-gl.min.js",
+               "src/assets/js/mapdata.js",
+               "src/assets/js/wow.js",
+               "src/assets/js/custom.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "rims2:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "rims2:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "rims2:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "rims2:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "rims2:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "rims2"
+}
