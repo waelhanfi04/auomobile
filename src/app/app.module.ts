@@ -53,7 +53,10 @@ import { BlogDetailLeftComponent } from './components/pages/blog-detail-left/blo
 import { BlogDetailRightComponent } from './components/pages/blog-detail-right/blog-detail-right.component';
 import { PricingComponent } from './components/pages/pricing/pricing.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {AuthGuardService} from './services/AuthGuardService.service'
+import { AuthentificationService } from './services/authentification/authentification.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -110,9 +113,12 @@ import { ContactComponent } from './components/pages/contact/contact.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [AuthGuardService,AuthentificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
