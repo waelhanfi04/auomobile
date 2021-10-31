@@ -8,9 +8,20 @@ import { AuthentificationService } from '../../../services/authentification/auth
   styleUrls: ['./register-pro.component.css']
 })
 export class RegisterProComponent implements OnInit {
-  registerForm: FormGroup
+  registerForm: FormGroup;
+  step1:boolean=true;
+  step2:boolean=false
   constructor(private authService: AuthentificationService) {
     this.registerForm = new FormGroup({
+      SIRET:new FormControl(''),
+      companyName:new FormControl(''),
+      companyCategory:new FormControl(''),
+      companyAddress:new FormControl(''),
+      companyCode:new FormControl(''),
+      companyPhone:new FormControl(''),
+      gender:new FormControl(''),
+      firstName:new FormControl(''),
+      lastName:new FormControl(''),
       email: new FormControl("", [Validators.required, Validators.email]),
       password: new FormControl("", [Validators.required,Validators.minLength(8)]),
       confirmPassword: new FormControl("", [Validators.required]),
@@ -31,7 +42,11 @@ export class RegisterProComponent implements OnInit {
       //     });
     }
   }
-
+  nextStep(){
+    this.step1=false;
+  this.step2=true;
+ 
+  }
 }
 
 export function MutchPasswordValidator(): ValidatorFn {

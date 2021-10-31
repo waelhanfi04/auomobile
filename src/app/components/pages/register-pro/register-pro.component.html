@@ -1,6 +1,6 @@
 <div class="mobile-menu-second">
-<app-header2></app-header2>	
-<!-- Sub header -->
+  <app-header2></app-header2>
+  <!-- Sub header -->
   <div class="sub-header-sec p-relative">
     <img src="assets/images/banner/bannerh7.jpg" class="img-fluid" alt="Sub header">
     <div class="sub-header-overlay"></div>
@@ -34,22 +34,82 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h6 class="modal-title text-left no-margin"><i class="fas fa-unlock-alt mr-2"></i> <span>Sign Up</span></h6>
+                  <h6 class="modal-title text-left no-margin"><i class="fas fa-unlock-alt mr-2"></i> <span>Sign
+                      Up</span></h6>
                 </div>
                 <!-- Sign up form -->
                 <div class="modal-body">
                   <form [formGroup]="registerForm" (ngSubmit)="register()">
-                    <div class="form-group">
-                      <input type="email" name="email" formControlName="email" class="form-control form-control-custom" placeholder="Email">
+  
+                    <div *ngIf="step1">
+                      <div class="form-group">
+                        <input type="text" name="SIRET" formControlName="SIRET" class="form-control form-control-custom"
+                          placeholder="SIRET">
+                      </div>
+                      
+                      <div class="form-group">
+                        <input type="text" name="companyName" formControlName="companyName" class="form-control form-control-custom"
+                          placeholder="Company Name">
+                      </div>
+
+                      <div class="form-group">
+                        <input type="text" name="companyCategory" formControlName="companyCategory" class="form-control form-control-custom"
+                          placeholder="companyCategory">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" name="companyAddress" formControlName="companyAddress" class="form-control form-control-custom"
+                          placeholder="Address">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" name="companyCode" formControlName="companyCode" class="form-control form-control-custom"
+                          placeholder="city ​​or ZIP code">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" name="companyPhone" formControlName="companyPhone" class="form-control form-control-custom"
+                          placeholder="Phone">
+                      </div>
+                
+
+
+                      <div class="form-group">
+                        <button type="submit" class="btn-second orange-btn full-width"
+                          (click)="nextStep()">NEXT</button>
+                      </div>
                     </div>
-                    <div class="form-group">
-                      <input type="password"  autocomplete="on" name="password" formControlName="password" class="form-control form-control-custom" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                      <input type="password"  autocomplete="on" name="confirmPassword" formControlName="confirmPassword" class="form-control form-control-custom" placeholder="Retype Password">
-                    </div>
-                    <div class="form-group">
-                      <button type="submit" class="btn-second orange-btn full-width">Sign Up</button>
+              
+
+
+                    <div *ngIf="step2">
+                      <div class="form-group">
+                        <input type="text" name="gender" formControlName="gender"
+                          class="form-control form-control-custom" placeholder="gender">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" name="firstName" formControlName="firstName"
+                          class="form-control form-control-custom" placeholder="First name">
+                      </div>
+
+                      <div class="form-group">
+                        <input type="text" name="lastName" formControlName="lastName"
+                          class="form-control form-control-custom" placeholder="Last name">
+                      </div>
+
+                      <div class="form-group">
+                        <input type="email" name="email" formControlName="email"
+                          class="form-control form-control-custom" placeholder="Email">
+                      </div>
+                      <div class="form-group">
+                        <input type="password" autocomplete="on" name="password" formControlName="password"
+                          class="form-control form-control-custom" placeholder="Password">
+                      </div>
+                      <div class="form-group">
+                        <input type="password" autocomplete="on" name="confirmPassword"
+                          formControlName="confirmPassword" class="form-control form-control-custom"
+                          placeholder="Retype Password">
+                      </div>
+                      <div class="form-group">
+                        <button type="submit" class="btn-second orange-btn full-width">Sign Up</button>
+                      </div>
                     </div>
                   </form>
                   <div class="form-excerpts">
@@ -60,11 +120,11 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="social-login">  <span>Or Signup with</span>
+                  <!-- <div class="social-login">  <span>Or Signup with</span>
                     <div class="social-btn">  <a routerLink="/register" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
                       <a routerLink="/register" class="google"><i class="fab fa-google-plus-g"></i> Google</a>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 <!-- Sign up form -->
               </div>
@@ -75,5 +135,5 @@
     </div>
   </section>
   <!-- login -->
-	<app-footer2></app-footer2>
+  <app-footer2></app-footer2>
 </div>

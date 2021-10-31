@@ -38,13 +38,17 @@
                 </div>
                 <!-- Sign up form -->
                 <div class="modal-body">
-                  <label>Créer un compte pour…</label>
+                  <label>Create account for ...</label>
                   <form>
                     <div class="form-group">
-                      Moi
+                      <input type="radio" id="for-me" routerLink="/register">
+                      <label for="for-me">Me</label>
+                     
                     </div>
                     <div class="form-group">
-                      Mon entreprise
+                      <input type="radio" id="for-company"  routerLink="/register/pro">
+                      <label for="for-company">My company</label>
+          
                     </div>
               
                   </form>
@@ -56,11 +60,11 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="social-login">  <span>Or Signup with</span>
+                  <!-- <div class="social-login">  <span>Or Signup with</span>
                     <div class="social-btn">  <a routerLink="/account/creation" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
                       <a routerLink="/account/creation" class="google"><i class="fab fa-google-plus-g"></i> Google</a>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 <!-- Sign up form -->
               </div>
