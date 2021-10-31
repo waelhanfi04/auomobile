@@ -2,20 +2,20 @@
 <app-header2></app-header2>	
 <!-- Sub header -->
   <div class="sub-header-sec p-relative">
-    <img src="assets/images/banner/bannerh8.jpg" class="img-fluid" alt="Sub header">
+    <img src="assets/images/banner/bannerh7.jpg" class="img-fluid" alt="Sub header">
     <div class="sub-header-overlay"></div>
     <div class="sub-header-wrapper">
       <div class="container">
         <div class="row">
           <div class="col-xl-12">
             <div class="sub-header-text-wrapper text-center">
-              <h1 class="text-custom-white">Login</h1>
+              <h1 class="text-custom-white">Register Pro</h1>
               <ul class="breadcrumbs">
                 <li><a routerLink="/" class="text-custom-white">Home</a>
                 </li>
-                <li><a routerLink="/login" class="text-custom-white">Pages</a>
+                <li><a routerLink="/register/pro" class="text-custom-white">Pages</a>
                 </li>
-                <li><span class="text-custom-white">Login</span>
+                <li><span class="text-custom-white">Register</span>
                 </li>
               </ul>
             </div>
@@ -34,41 +34,39 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h6 class="modal-title text-left no-margin"><i class="fas fa-unlock-alt mr-2"></i><span>Sign In</span></h6>
+                  <h6 class="modal-title text-left no-margin"><i class="fas fa-unlock-alt mr-2"></i> <span>Sign Up</span></h6>
                 </div>
-                <!-- Sign in form -->
+                <!-- Sign up form -->
                 <div class="modal-body">
-                  <form [formGroup]="loginForm" (ngSubmit)="login()">
+                  <form [formGroup]="registerForm" (ngSubmit)="register()">
                     <div class="form-group">
-                      <input type="email" name="email" formControlName="email" class="form-control form-control-custom"  placeholder="Username or Email">
+                      <input type="email" name="email" formControlName="email" class="form-control form-control-custom" placeholder="Email">
                     </div>
                     <div class="form-group">
-                      <input type="password"  autocomplete="on" name="password" formControlName="password" class="form-control form-control-custom"  placeholder="Password">
+                      <input type="password"  autocomplete="on" name="password" formControlName="password" class="form-control form-control-custom" placeholder="Password">
                     </div>
                     <div class="form-group">
-                      <label class="custom-checkbox">
-                        <input type="checkbox" name="#">Keep me signed in <span class="checkmark"></span>
-                      </label>
+                      <input type="password"  autocomplete="on" name="confirmPassword" formControlName="confirmPassword" class="form-control form-control-custom" placeholder="Retype Password">
                     </div>
                     <div class="form-group">
-                      <button type="submit" class="btn-second orange-btn full-width">Sign In</button>
+                      <button type="submit" class="btn-second orange-btn full-width">Sign Up</button>
                     </div>
                   </form>
                   <div class="form-excerpts">
                     <ul>
-                      <li>Not a member? <a routerLink="/account/creation">Sign Up</a>
+                      <li>Already a member? <a routerLink="/login">Sign In</a>
                       </li>
-                      <li><a routerLink="/login">Recover Password</a>
+                      <li><a routerLink="/register">Recover Password</a>
                       </li>
                     </ul>
                   </div>
-                  <div class="social-login">  <span>Or connect with</span>
-                    <div class="social-btn">  <a routerLink="/login" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
-                      <a routerLink="/login" class="google"><i class="fab fa-google-plus-g"></i> Google</a>
+                  <div class="social-login">  <span>Or Signup with</span>
+                    <div class="social-btn">  <a routerLink="/register" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                      <a routerLink="/register" class="google"><i class="fab fa-google-plus-g"></i> Google</a>
                     </div>
                   </div>
                 </div>
-                <!-- Sign in form -->
+                <!-- Sign up form -->
               </div>
             </div>
           </div>

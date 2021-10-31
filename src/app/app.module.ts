@@ -57,6 +57,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {AuthGuardService} from './services/AuthGuardService.service'
 import { AuthentificationService } from './services/authentification/authentification.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterProComponent } from './components/pages/register-pro/register-pro.component';
+import {CreateAccountComponent } from './components/pages/create-account/create-account.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -109,7 +112,9 @@ import { HttpClientModule } from '@angular/common/http';
     BlogDetailLeftComponent,
     BlogDetailRightComponent,
     PricingComponent,
-    ContactComponent
+    ContactComponent,
+    RegisterProComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,

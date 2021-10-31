@@ -37,7 +37,8 @@ import { BlogDetailLeftComponent } from './components/pages/blog-detail-left/blo
 import { BlogDetailRightComponent } from './components/pages/blog-detail-right/blog-detail-right.component';
 import { PricingComponent } from './components/pages/pricing/pricing.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
-
+import { RegisterProComponent } from './components/pages/register-pro/register-pro.component'
+import {CreateAccountComponent } from './components/pages/create-account/create-account.component'
 const routes: Routes = [
 
 {path: '', component: Homepage2Component},
@@ -61,6 +62,8 @@ const routes: Routes = [
 {path: 'car-page', component: CarpageComponent},
 {path: 'user', component: UserComponent},
 {path: 'register', component: RegisterComponent},
+{path: 'register/pro', component: RegisterProComponent},
+{path: 'account/creation', component: CreateAccountComponent},
 {path: 'login', component: LoginComponent},
 {path: 'invoice', component: InvoiceComponent},
 {path: 'coming-soon', component: ComingSoonComponent},
