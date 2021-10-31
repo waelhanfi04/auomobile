@@ -168,7 +168,7 @@ cite {
     margin: 15px 0 10px;
 }
 .section-header span.line-grey {
-    background: #dd3333;
+    background: #ff6e14;
     width: 50px;
     height: 2px;
 }
@@ -190,8 +190,8 @@ cite {
     border-radius: 5px 5px 0px 0px;
 }
 span.tag {
-    background: #dd3333;
-    border-color: #dd3333;
+    background: #ff6e14;
+    border-color: #ff6e14;
     display: inline-block;
     font-weight: 400;
     color: #ffffff;
@@ -247,7 +247,7 @@ nav.custom-pagination .pagination li.page-item a {
 }
 nav.custom-pagination .pagination > li.active > a,
 nav.custom-pagination .pagination > li > a:hover {
-    background-color: #dd3333;
+    background-color: #ff6e14;
     color: #fff;
 }
 nav.custom-pagination .pagination li.page-item:first-child a,
@@ -328,13 +328,13 @@ p {
     font-family: 'Rubik', sans-serif;
 }
 a {
-    color: #dd3333;
+    color: #ff6e14;
     text-decoration: none;
     transition: 0.5s;
 }
 a:focus,
 a:hover {
-    color: #dd3333;
+    color: #ff6e14;
     text-decoration: none;
     transition: 0.5s;
 }
@@ -505,13 +505,13 @@ button:focus {
 }
 .black-btn:hover,
 .black-btn:focus {
-    background: #dd3333;
-    border-color: #dd3333;
+    background: #ff6e14;
+    border-color: #ff6e14;
     color: #fff;
 }
 .orange-btn {
-    background: #dd3333;
-    border-color: #dd3333;
+    background: #ff6e14;
+    border-color: #ff6e14;
 }
 .orange-btn:hover,
 .orange-btn:focus {
@@ -564,7 +564,7 @@ button:focus {
 #login .modal-body .form-group input.form-control:focus,
 #register .modal-body .form-group input.form-control:focus,
 .form-control-custom:focus {
-    border: 1px solid #dd3333;
+    border: 1px solid #ff6e14;
 }
 body.modal-open {
   padding-right: 0 !important;
@@ -610,13 +610,13 @@ label.custom-checkbox .checkmark {
 
 label.custom-checkbox:hover input ~ .checkmark {
     background-color: #fff;
-    border: 1px solid #dd3333;
+    border: 1px solid #ff6e14;
 }
 /* When the checkbox is checked, add a blue background */
 
 label.custom-checkbox input:checked ~ .checkmark {
     background-color: #fff;
-    border: 1px solid #dd3333;
+    border: 1px solid #ff6e14;
 }
 /* Create the checkmark/indicator (hidden when not checked) */
 
@@ -637,7 +637,7 @@ label.custom-checkbox .checkmark:after {
     top: 1px;
     width: 5px;
     height: 9px;
-    border: solid #dd3333;
+    border: solid #ff6e14;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
 }
@@ -754,7 +754,7 @@ label.custom-checkbox .checkmark:after {
 /*map*/
 
 .cluster div {
-    background: #dd3333;
+    background: #ff6e14;
     border-radius: 100%;
     height: 50px;
     line-height: 38px;
@@ -797,7 +797,7 @@ label.custom-checkbox .checkmark:after {
 }
 .map-popup-category,
 .infoBox-close {
-    background: #dd3333;
+    background: #ff6e14;
 }
 .infoBox-close {
     position: absolute;
@@ -881,7 +881,7 @@ label.custom-checkbox .checkmark:after {
 .map-popup .car-grid-layout-location span i,
 .map-popup .car-grid-layout-details span i {
     font-size: 20px;
-    color: #dd3333;
+    color: #ff6e14;
 }
 .infoBox-close>.fa-times {
     font-size: 18px;
@@ -938,7 +938,7 @@ label.custom-checkbox .checkmark:after {
 .rim-listing-popup-body p i,
 .rim-listing-popup-body .location-popup-meta span i{
     font-size: 20px;
-    color: #dd3333;
+    color: #ff6e14;
 }
 .rim-listing-popup-body .location-popup-meta{
     display: flex;
@@ -1043,7 +1043,7 @@ label.custom-checkbox .checkmark:after {
     background-color: #f4f4f4;
 }
 .bg-orange {
-    background-color: #dd3333;
+    background-color: #ff6e14;
 }
 .bg-light-black {
     background-color: #020202;
@@ -1063,7 +1063,7 @@ label.custom-checkbox .checkmark:after {
     color: #020202;
 }
 .text-orange {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .text-custom-white {
     color: #ffffff;
@@ -1134,10 +1134,10 @@ label.custom-checkbox .checkmark:after {
     display: block;
 }
 .top-bar .top-contact ul li ul.dropdown-menu li a:hover li {
-    border-bottom: 1px solid #dd3333;
+    border-bottom: 1px solid #ff6e14;
 }
 .top-bar .top-contact ul li ul.dropdown-menu li a:hover {
-    background-color: #dd3333;
+    background-color: #ff6e14;
     color: #fff;
 }
 /*banner-adv*/
@@ -1268,7 +1268,7 @@ label.custom-checkbox .checkmark:after {
 }
 #menu-style-1 .searchbox .input-group .input-group-prepend ul li:not(.init):hover,
 #menu-style-1 .searchbox .input-group .input-group-prepend ul li.selected:not(.init) {
-    background: #dd3333;
+    background: #ff6e14;
     color: #fff;
     cursor: pointer;
 }
@@ -1292,7 +1292,7 @@ label.custom-checkbox .checkmark:after {
     font-weight: 600;
 }
 #menu-style-1 .cart-sec ul li a:hover i {
-    color: #dd3333;
+    color: #ff6e14;
     transition: 0.5s;
 }
 #menu-style-1 .cart-sec ul li a i {
@@ -1322,7 +1322,7 @@ label.custom-checkbox .checkmark:after {
     padding: 0;
 }
 .top-contact ul li button {
-    background: #dd3333;
+    background: #ff6e14;
     border: none;
     font-size: 22px;
     cursor: pointer;
@@ -1356,7 +1356,7 @@ label.custom-checkbox .checkmark:after {
 #menu-style-2 .category-sec-head span.black-sepreta {
     display: block;
     width: 100%;
-    background: #dd3333;
+    background: #ff6e14;
     height: 5px;
     position: absolute;
     top: -5px;
@@ -1368,7 +1368,7 @@ label.custom-checkbox .checkmark:after {
     left: -5px;
     border: solid;
     border-width: 0px 5px 5px 0;
-    border-color: #ffffff #dd3333 #ffffff rgb(255, 255, 255);
+    border-color: #ffffff #ff6e14 #ffffff rgb(255, 255, 255);
     transform: rotate(90deg);
 }
 #menu-style-2 .category-sec-head span.black-sepreta:before {
@@ -1378,7 +1378,7 @@ label.custom-checkbox .checkmark:after {
     right: -5px;
     border: solid;
     border-width: 0px 5px 5px 0;
-    border-color: #ffffff #dd3333 #ffffff rgb(255, 255, 255);
+    border-color: #ffffff #ff6e14 #ffffff rgb(255, 255, 255);
     transform: rotate(-180deg);
 }
 #menu-style-2 .category-sec-head button.category-button i {
@@ -1451,7 +1451,7 @@ label.custom-checkbox .checkmark:after {
     right: 0px;
 }
 #menu-style-2 .category-sec-head .categoryheadaccordion .card .card-header:hover {
-    background-color: #dd3333;
+    background-color: #ff6e14;
 }
 #menu-style-2 .category-sec-head .categoryheadaccordion .card .card-header:hover button {
     background: transparent;
@@ -1481,7 +1481,7 @@ label.custom-checkbox .checkmark:after {
     text-align: center;
 }
 #menu-style-2 .category-sec-head .categoryheadaccordion .card .card-body ul li:hover {
-    background-color: #dd3333;
+    background-color: #ff6e14;
     color: #fff;
 }
 #menu-style-2 .category-sec-head .categoryheadaccordion .card .card-body ul li:hover a {
@@ -1492,7 +1492,7 @@ label.custom-checkbox .checkmark:after {
     text-transform: uppercase;
 }
 #menu-style-2 nav ul li.menu-item.active>a {
-    color: #dd3333;
+    color: #ff6e14;
 }
 #menu-style-2 nav ul li.menu-item>a {
     padding: 18px 35px 19px 0;
@@ -1500,7 +1500,7 @@ label.custom-checkbox .checkmark:after {
 }
 #menu-style-2 nav ul li.menu-item>a:hover,
 #menu-style-2 nav ul li.menu-item>a:focus {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .dropdown-menu .dropdownbtn a:after{
     transform: rotate(-90deg);
@@ -1551,11 +1551,11 @@ label.custom-checkbox .checkmark:after {
 #menu-style-2 nav ul li.menu-item ul.dropdown-menu li.active,
 #menu-style-2 nav ul li.menu-item ul.dropdown-menu li:hover {
     background: #fff;
-    border-color: #dd3333;
+    border-color: #ff6e14;
 }
 #menu-style-2 nav ul li.menu-item ul.dropdown-menu li.active>a,
 #menu-style-2 nav ul li.menu-item ul.dropdown-menu li:hover>a {
-    color: #dd3333;
+    color: #ff6e14;
 }
 #menu-style-2 nav ul li.menu-item ul.dropdown-menu li:hover>a{
     padding-left: 15px;
@@ -1618,13 +1618,13 @@ label.custom-checkbox .checkmark:after {
     display: block;
 }
 #menu-style-3 .navigation ul li.menu-item.active>a {
-    color: #dd3333;
+    color: #ff6e14;
 }
 #menu-style-3 .navigation ul li.menu-item a {
     font-size: 16px;
 }
 #menu-style-3 .navigation ul li.menu-item>a:hover {
-    color: #dd3333;
+    color: #ff6e14;
 }
 #menu-style-3 .side-nav ul li.dropdownbtn ul.dropdown-menu,
 #menu-style-3 .navigation ul li.dropdownbtn ul.dropdown-menu {
@@ -1666,8 +1666,8 @@ label.custom-checkbox .checkmark:after {
 #menu-style-3 .side-nav ul li.dropdownbtn ul.dropdown-menu li>a:hover,
 #menu-style-3 .navigation ul li.dropdownbtn ul.dropdown-menu li>a:hover {
     background-color: #fff;
-    color: #dd3333;
-    border-color: #dd3333;
+    color: #ff6e14;
+    border-color: #ff6e14;
 }
 #menu-style-3 .side-nav ul li.dropdownbtn ul.dropdown-menu li>a:hover,
 #menu-style-3 .navigation ul li.dropdownbtn ul.dropdown-menu li>a:hover{
@@ -1712,8 +1712,8 @@ label.custom-checkbox .checkmark:after {
 }
 #menu-style-3 .side-nav ul li.add-car-btn:focus,
 #menu-style-3 .side-nav ul li.add-car-btn:hover {
-    border-color: #dd3333;
-    background: #dd3333;
+    border-color: #ff6e14;
+    background: #ff6e14;
     transition: 1s;
 }
 #menu-style-3 .side-nav ul li.add-car-btn:focus a,
@@ -1729,7 +1729,7 @@ label.custom-checkbox .checkmark:after {
     font-weight: 700;
     display: block;
     cursor: pointer;
-    color: #dd3333;
+    color: #ff6e14;
     padding: 1rem 1.25rem;
     background: #fff;
     border-radius: 0%;
@@ -1811,7 +1811,7 @@ label.custom-checkbox .checkmark:after {
 }
 .dropdown-menu li a span:before{
     content: '';
-    background-color: #dd3333;
+    background-color: #ff6e14;
     height: 1px;
     width: 0px;
     display: inline-block;
@@ -1876,7 +1876,7 @@ label.custom-checkbox .checkmark:after {
     position: absolute;
     left: 0;
     bottom: 0;
-    border-bottom: 1px solid #dd3333;
+    border-bottom: 1px solid #ff6e14;
     width: 42px;
 }
 .parent-megamenu .megamenu .menu-style>ul{
@@ -1893,7 +1893,7 @@ label.custom-checkbox .checkmark:after {
     margin-bottom: 0;
 }
 .parent-megamenu .megamenu .menu-style>ul>li:hover{
-    border-bottom: 1px solid #dd3333;
+    border-bottom: 1px solid #ff6e14;
 }
 .parent-megamenu .megamenu .menu-style>ul>li a {
     position: relative;
@@ -1905,14 +1905,14 @@ label.custom-checkbox .checkmark:after {
 }
 .parent-megamenu .megamenu .menu-style>ul>li.active>a,
 .parent-megamenu .megamenu .menu-style>ul>li a.active{
-    color: #dd3333;
+    color: #ff6e14;
 }
 .parent-megamenu .megamenu .menu-style>ul>li a span{
     float: left;
 }
 .parent-megamenu .megamenu .menu-style>ul>li a span:before{
     content: '';
-    background-color: #dd3333;
+    background-color: #ff6e14;
     height: 1px;
     width: 0px;
     display: inline-block;
@@ -1928,7 +1928,7 @@ label.custom-checkbox .checkmark:after {
 .parent-megamenu .megamenu .menu-style>ul>li:hover a{
     padding-left: 10px;
     transition: 0.5s;
-    color: #dd3333;
+    color: #ff6e14;
 }
 .parent-megamenu .megamenu .menu-icon-box .menu-box-inner {
     display: flex;
@@ -2126,7 +2126,7 @@ label.custom-checkbox .checkmark:after {
 .mobile-nav .sidenav li ul.dropdown-menu li:hover a {
     padding-left: 15px;
     transition: 1s;
-    color: #dd3333;
+    color: #ff6e14;
 }
 .mobile-nav .sidenav > .side-nav-wrapper > ul > li a span{
     top: 0%;
@@ -2147,7 +2147,7 @@ label.custom-checkbox .checkmark:after {
 }
 .mobile-nav .sidenav li.open a,
 .mobile-nav .sidenav li:hover a {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .mobile-nav .sidenav span {
     position: absolute;
@@ -2526,7 +2526,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     color: #fff;
 }
 header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children .sub-menu li > a.imgmenu:hover .img-menu-caption {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .mobile-menu-second.open-menu header#menu-style-4 .desk-menu .menu-container {
     right: 0;
@@ -2576,9 +2576,9 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     border-bottom: 1px solid #eee;
 }
 #menu-style-3 .mobile-nav .mobile-nav-icons ul li.dropdown .dropdown-menu li a:hover {
-    background-color: #dd3333;
+    background-color: #ff6e14;
     color: #fff;
-    border-color: #dd3333;
+    border-color: #ff6e14;
 }
 #menu-style-3 .mobile-nav .mobile-nav-icons ul li.dropdown:hover .dropdown-menu {
     opacity: 1;
@@ -2633,15 +2633,15 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 #menu-style-4.bg-white nav ul li.menu-item.active>a,
 #menu-style-4.bg-white nav ul li.menu-item>a:hover,
 #menu-style-4.bg-white nav ul li.menu-item>a:active {
-    color: #dd3333;
+    color: #ff6e14;
 }
 #menu-style-4.bg-white nav .add-car-btn{
     border-color: #191919;
     color: #191919;
 }
 #menu-style-4.bg-white nav .add-car-btn:hover{
-    background-color: #dd3333;
-    border-color: #dd3333;
+    background-color: #ff6e14;
+    border-color: #ff6e14;
     color: #fff;
 }
 #menu-style-4 nav ul li.menu-item.dropdown .megamenu {
@@ -2688,9 +2688,9 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 #menu-style-4 nav ul li.menu-item.dropdown .megamenu .mega-menu-item ul li.submenu-item:hover a,
 #menu-style-4 nav ul li.menu-item.dropdown .megamenu .mega-menu-item ul li.submenu-item.active {
-    border-bottom: 2px solid #dd3333;
+    border-bottom: 2px solid #ff6e14;
     transition: none;
-    color: #dd3333;
+    color: #ff6e14;
 }
 #menu-style-4 nav ul li.menu-item.dropdown .megamenu .mega-menu-item ul li.submenu-item a {
     display: flex;
@@ -2764,8 +2764,8 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 #menu-style-4 nav ul li.menu-item.dropdown .megamenu .mega-menu-item ul li.submenu-item .sub-sub-megamenu ul li.menu-item:hover,
 #menu-style-4 nav ul li.menu-item.dropdown .megamenu .mega-menu-item ul li.submenu-item .sub-sub-megamenu ul li.menu-item.active a {
-    border-bottom: 2px solid #dd3333;
-    color: #dd3333;
+    border-bottom: 2px solid #ff6e14;
+    color: #ff6e14;
     transition: none;
 }
 #menu-style-4 nav ul li.menu-item.dropdown .megamenu .mega-menu-item ul li.submenu-item .sub-sub-megamenu ul li.menu-item .sub-sub-submenu {
@@ -2804,8 +2804,8 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 #menu-style-4 nav ul li.menu-item.dropdown .megamenu .mega-menu-item ul li.submenu-item .sub-sub-megamenu ul li.menu-item .sub-sub-submenu ul li.sub-menu-item.active a,
 #menu-style-4 nav ul li.menu-item.dropdown .megamenu .mega-menu-item ul li.submenu-item .sub-sub-megamenu ul li.menu-item .sub-sub-submenu ul li.sub-menu-item:hover {
-    border-bottom: 2px solid #dd3333;
-    color: #dd3333;
+    border-bottom: 2px solid #ff6e14;
+    color: #ff6e14;
     transition: none;
 }
 #menu-style-4 nav ul li.menu-item.dropdown .megamenu .mega-menu-item ul li.submenu-item .sub-sub-megamenu ul li.menu-item:hover .sub-sub-submenu {
@@ -3075,7 +3075,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     font-size: 14px;
 }
 .car-grid-layout-box .car-grid-layout-inner .car-grid-layout-location span i {
-    color: #dd3333;
+    color: #ff6e14;
 }
 /*car-browse-make-type*/
 
@@ -3115,7 +3115,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .about-us-sec .about-img-sec:before {
     content: '';
-    background: #dd3333;
+    background: #ff6e14;
     display: block;
     height: 100%;
     z-index: -1;
@@ -3146,7 +3146,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     font-size: 14px;
 }
 .about-us-sec .about-content-wrapper ul li:before {
-    color: #dd3333;
+    color: #ff6e14;
     display: inline-block;
     content: '\f058';
     font-family: 'Font Awesome 5 Free';
@@ -3159,7 +3159,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .about-counter-sec .row {
     align-items: flex-end;
-    background: #dd3333;
+    background: #ff6e14;
 }
 .about-counter-sec .row > div {
     padding: 0;
@@ -3415,7 +3415,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     padding: 30px;
     transition: 1s;
     overflow: hidden;
-    background: #02020200040;
+    background: #020200;
 }
 .car-categories-sec .category-slider .car-categories:hover img {
     transition: 1s;
@@ -3424,7 +3424,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 .car-categories-sec .category-slider .car-categories:hover .category-caption {
     bottom: 0;
     transition: 1s;
-    background: #02020200040;
+    background: #020200;
 }
 .car-categories-sec .category-slider .car-categories .category-caption h4 {
     display: flex;
@@ -3447,7 +3447,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     border-radius: 50%;
 }
 .car-categories-sec .category-slider .car-categories .category-caption h4:hover {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .car-categories-sec .category-slider ul.slick-dots {
     bottom: -45px;
@@ -3468,7 +3468,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .car-categories-sec .category-slider ul.slick-dots li:hover,
 .car-categories-sec .category-slider ul.slick-dots li.slick-active {
-    background: #dd3333;
+    background: #ff6e14;
     transition: 0.5s;
 }
 .car-categories-sec .category-slider ul.slick-dots li button {
@@ -3494,7 +3494,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     bottom: -50px;
     padding: 30px;
     overflow: hidden;
-    background: #02020200040;
+    background: #020200;
 }
 .news-sec-img .news-caption p {
     white-space: nowrap;
@@ -3508,10 +3508,10 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 .news-sec-img:hover .news-caption {
     bottom: 0;
     transition: 1s;
-    background: #02020200040;
+    background: #020200;
 }
 .news-sec-img .news-caption h4:hover {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .news-sec-img img {
     width: 100%;
@@ -3626,7 +3626,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     display: block
 }
 .banner-text-wrapper-index-3 .search-bar-index-3 .input-group ul.filter-option li a:hover {
-    background-color: #dd3333;
+    background-color: #ff6e14;
     color: #fff;
 }
 .banner-tabs {
@@ -3650,7 +3650,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     box-shadow: 0 5px 13px rgba(0, 0, 0, .42);
     position: relative;
     transition: all 0.3s ease;
-    background: #dd3333;
+    background: #ff6e14;
     color: #fff;
     border-radius: 0px;
     padding: 25px 25px;
@@ -3678,7 +3678,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     color: #020202;
 }
 .vehicles-slider-sec .vehicles-slider-for .vehicles-slider-item a:hover {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .vehicles-slider-sec .vehicles-slider-for .vehicles-slider-item a img:hover {
     border: 1px solid #eee;
@@ -3699,7 +3699,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .vehicles-slider-sec .vehicles-slider-nav .vehicles-slider-nav-item:hover,
 .vehicles-slider-sec .vehicles-slider-nav .vehicles-slider-nav-item.slick-current {
-    background: #dd3333;
+    background: #ff6e14;
 }
 .vehicles-slider-sec .vehicles-slider-for button.slick-next,
 .vehicles-slider-sec .vehicles-slider-for button.slick-prev {
@@ -3738,7 +3738,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 .vehicles-slider-prevtab:hover,
 .vehicles-slider-nexttab:hover {
     transition: 1s;
-    color: #dd3333;
+    color: #ff6e14;
 }
 .vehicles-slider-sec .right-section-car-box {
     box-shadow: none;
@@ -3848,13 +3848,13 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .model-spec-sec .model-spec-slider-item:hover .model-spec-bottom-sec {
     background-color: #fff;
-    border-bottom: 4px solid #dd3333;
+    border-bottom: 4px solid #ff6e14;
     box-shadow: 0 0 10px #c8cacb;
     transition: 0.5s;
 }
 .model-spec-sec .model-spec-slider-item.slick-current .model-spec-bottom-sec {
     background-color: #fff;
-    border-bottom: 4px solid #dd3333;
+    border-bottom: 4px solid #ff6e14;
     box-shadow: 0 0 10px #c8cacb;
 }
 .model-spec-sec .model-spec-slider-item:hover .model-spec-top-sec h4,
@@ -3867,7 +3867,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     color: #020202;
 }
 .model-spec-sec .model-spec-slider-item.slick-current .model-spec-top-sec h4 {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .model-spec-slider-nexttab,
 .model-spec-slider-prevtab {
@@ -3895,7 +3895,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 .model-spec-slider-prevtab:hover,
 .model-spec-slider-nexttab:hover {
     transition: 1s;
-    color: #dd3333;
+    color: #ff6e14;
 }
 .model-spec-slider ul.slick-dots {
     bottom: -45px;
@@ -3916,7 +3916,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .model-spec-slider ul.slick-dots li:hover,
 .model-spec-slider ul.slick-dots li.slick-active {
-    background: #dd3333;
+    background: #ff6e14;
     transition: 0.5s;
 }
 .model-spec-slider ul.slick-dots li button {
@@ -3986,7 +3986,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     transition-delay: 0s, 0s;
 }
 .video_wrapper:hover .video-inner i {
-    color: #dd3333;
+    color: #ff6e14;
     transition: 0.5s;
 }
 .videoPoster:hover {
@@ -4064,7 +4064,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     cursor: pointer;
 }
 .testimonial-slider ul.slick-dots li.slick-active {
-    background: #dd3333;
+    background: #ff6e14;
 }
 .testimonial-slider ul.slick-dots li button {
     display: none;
@@ -4089,7 +4089,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     line-height: 40px;
     background-color: #fff;
     box-shadow: 0 2px 14px 0px rgba(0, 0, 0, 0.1);
-    color: #dd3333;
+    color: #ff6e14;
     transition: all ease .35s;
 }
 .testimonial-slider button.slick-prev:before {
@@ -4099,7 +4099,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     content: "\f107"
 }
 .testimonial-slider button:hover:before {
-    background: #dd3333;
+    background: #ff6e14;
     color: #fff;
 }
 /*==================
@@ -4149,7 +4149,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     margin-left: -1em;
     width: 1em;
     vertical-align: middle;
-    color: #dd3333;
+    color: #ff6e14;
     top: -2px;
     position: relative;
 }
@@ -4342,7 +4342,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     margin-bottom: 0;
 }
 .fix-banner .fix-banner-wrapper .fix-banner-text-wrapper .search-box .input-group .input-group-prepend ul li:not(.init):hover {
-    background: #dd3333;
+    background: #ff6e14;
     color: #fff;
 }
 .fix-banner .fix-banner-wrapper .fix-banner-text-wrapper .search-box .input-group .input-group-prepend ul li:not(.init).animatedcat {
@@ -4387,7 +4387,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     border: 5px solid rgba(255, 255, 255, 0.1);
 }
 .fix-banner .fix-banner-wrapper .fix-banner-text-wrapper .icon-item.slick-current .icon:before {
-    background-color: #dd3333;
+    background-color: #ff6e14;
 }
 .fix-banner .fix-banner-wrapper .fix-banner-text-wrapper .icon-item .cat-name {
     font-size: 16px;
@@ -4411,7 +4411,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 .our-vehicles-inner-page .card .card-header .accordion-tabs span,
 .our-vehicles-inner-page .card .card-header .accordion-tabs:hover i,
 .our-vehicles-inner-page .card .card-header .accordion-tabs:hover span {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .our-vehicles-inner-page .card .card-header .accordion-tabs.collapsed i,
 .our-vehicles-inner-page .card .card-header .accordion-tabs.collapsed span {
@@ -4446,7 +4446,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     top: 8px;
 }
 .our-vehicles-inner-page .card .card-header .accordion-tabs.active i:after {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .our-vehicles-inner-page .card .card-body {
     padding: 30px;
@@ -4462,7 +4462,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     cursor: pointer;
 }
 .our-vehicles-inner-page .card .card-body .content-box h5 span.closebtn:hover {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .our-vehicles-inner-page .card .card-body .content-box ul {
     display: flex;
@@ -4525,7 +4525,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .our-vehicles-inner-page .card .card-body .content-box ul li.active span,
 .our-vehicles-mobile .card .card-body .card .card-body .filters li.active span {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .our-vehicles-inner-page .card .card-body .content-box .price-filter {
     width: 65%;
@@ -4537,7 +4537,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     width: 100%;
 }
 .our-vehicles-inner-page .card .card-body .content-box .price-filter .ui-slider .ui-slider-range {
-    background-color: #dd3333;
+    background-color: #ff6e14;
     height: 4px;
     border: none;
 }
@@ -4550,14 +4550,14 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     top: -7px;
     background-color: #fff;
     box-shadow: 0 0 8px 0 rgba(66, 66, 66, 0.17);
-    border: 2px solid #dd3333;
+    border: 2px solid #ff6e14;
     width: 18px;
     height: 18px;
     border-radius: 50%;
     cursor: pointer;
 }
 .our-vehicles-inner-page .card .card-body .content-box .price-filter .ui-slider-horizontal .ui-slider-handle:active {
-    border: 8px solid #dd33337d;
+    border: 8px solid #ff6e147d;
     top: -16px;
     padding: 10px;
 }
@@ -4648,7 +4648,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     content: "\f00c";
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    color: #dd3333;
+    color: #ff6e14;
     position: relative;
     top: 3px;
     left: 10px;
@@ -4733,7 +4733,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     border: none;
 }
 .our-vehicles-mobile .card .card-body .card .card-body .price-filter .ui-slider .ui-slider-range {
-    background-color: #dd3333;
+    background-color: #ff6e14;
     height: 4px;
     border: none;
 }
@@ -4746,7 +4746,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     top: -7px;
     background-color: #fff;
     box-shadow: 0 0 8px 0 rgba(66, 66, 66, 0.17);
-    border: 2px solid #dd3333;
+    border: 2px solid #ff6e14;
     width: 18px;
     height: 18px;
     border-radius: 50%;
@@ -4892,7 +4892,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .vehicle-tab-sec .nav-pills .nav-link:hover span.car-name {
     filter: grayscale(0);
-    color: #dd3333;
+    color: #ff6e14;
 }
 .vehicle-tab-sec .nav-pills .nav-item:hover span.car-image img {
     position: relative;
@@ -4950,8 +4950,8 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     font-weight: 400;
 }
 .car-design-tab-sec .tab-box .nav-tabs .nav-item .nav-link.active{
-    color: #dd3333;
-    border-color: #dd3333;
+    color: #ff6e14;
+    border-color: #ff6e14;
 }
 .car-design-tab-sec .tab-box .tab-content>.tab-pane>a{
     margin-top: 15px;
@@ -4981,10 +4981,10 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     color: #fff;
     font-size: 20px;
     line-height: 30px;
-    background-color: #dd3333;
+    background-color: #ff6e14;
 }
 .car-design-details-sec .car-pointers .car-detail-point:after{
-    background: #dd33337a;
+    background: #ff6e147a;
     content: '';
     width: 100%;
     height: 100%;
@@ -5066,7 +5066,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     cursor: pointer;
 }
 .main-slider-6 ul.slick-dots li.slick-active {
-    background: #dd3333;
+    background: #ff6e14;
 }
 .main-slider-6 ul.slick-dots li button {
     display: none;
@@ -5102,7 +5102,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     line-height: 50px;
     background-color: #fff;
     box-shadow: 0 2px 14px 0px rgba(0, 0, 0, 0.1);
-    color: #dd3333;
+    color: #ff6e14;
     transition: all ease .35s;
 }
 .blog-page-slider button.slick-prev,
@@ -5123,7 +5123,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .blog-page-slider button:hover:before,
 .main-slider-6 button:hover:before {
-    background: #dd3333;
+    background: #ff6e14;
     color: #fff;
 }
 .main-slider-6 .slide-item .content-wrapper {
@@ -5141,7 +5141,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .main-slider-6 .slide-item .content-wrapper .content-box:hover a h1,
 .main-slider-6 .slide-item .content-wrapper .content-box:hover a h4 {
-    color: #dd3333;
+    color: #ff6e14;
     transition: 0.5s;
 }
 .main-slider-6 .slide-item .content-wrapper .content-box a h1:before {
@@ -5151,7 +5151,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     margin-left: -1em;
     width: 1em;
     vertical-align: middle;
-    color: #dd3333;
+    color: #ff6e14;
 }
 /*Car Models*/
 
@@ -5176,7 +5176,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     cursor: pointer;
 }
 .car-slider-index-6 ul.slick-dots li.slick-active {
-    background: #dd3333;
+    background: #ff6e14;
 }
 .car-slider-index-6 ul.slick-dots li button {
     display: none;
@@ -5201,7 +5201,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     line-height: 40px;
     background-color: #fff;
     box-shadow: 0 2px 14px 0px rgba(0, 0, 0, 0.1);
-    color: #dd3333;
+    color: #ff6e14;
     transition: all ease .35s;
 }
 .car-slider-index-6 button.slick-prev {
@@ -5217,12 +5217,12 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     content: "\f107"
 }
 .car-slider-index-6 button:hover:before {
-    background: #dd3333;
+    background: #ff6e14;
     color: #fff;
 }
 .discover-sec a:hover .text-box h6,
 .shopping-sec .img-box:hover .text-box h4 {
-    color: #dd3333;
+    color: #ff6e14;
     transition: 0.5s;
 }
 .in-media-sec.carvelley-live .in-media-box {
@@ -5247,7 +5247,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     margin-left: -1em;
     width: 1em;
     vertical-align: middle;
-    color: #dd3333;
+    color: #ff6e14;
     top: -2px;
     position: relative;
     font-weight: 900;
@@ -5260,7 +5260,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     left: 0;
     width: 100%;
     height: 3px;
-    background-color: #dd3333;
+    background-color: #ff6e14;
     opacity: 0;
     transition: opacity .24s;
     z-index: 100;
@@ -5287,7 +5287,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     cursor: pointer;
 }
 .discover-slider ul.slick-dots li.slick-active {
-    background: #dd3333;
+    background: #ff6e14;
 }
 .discover-slider ul.slick-dots li button {
     display: none;
@@ -5334,7 +5334,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     margin: 1px 0;
 }
 .page-map .location-button .input-group .location-box button:hover {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .page-map .location-button .input-group .input-group-append {
     margin-left: 5px;
@@ -5439,8 +5439,8 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 .sub-header-sec .sub-header-text-wrapper ul.tags-links li.cat-tags {} .sub-header-sec .sub-header-text-wrapper ul.tags-links li.cat-tags a {
     padding: 2px 5px;
     transition: all 0.20s ease-in-out;
-    background-color: #dd3333;
-    border-top: solid 1px #dd3333;
+    background-color: #ff6e14;
+    border-top: solid 1px #ff6e14;
     color: #fff;
 }
 .sub-header-sec .sub-header-text-wrapper ul.tags-links li a i {
@@ -5621,7 +5621,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .add-listing-sec #add-listing-tab .step-steps > li.active > a > .number,
 .add-listing-sec #add-listing-tab .step-steps > li.done > a > .number {
-    background-color: #dd3333;
+    background-color: #ff6e14;
 }
 .add-listing-sec #add-listing-tab .step-steps > li.active > a > .number:before,
 .add-listing-sec #add-listing-tab .step-steps > li.done > a > .number:before {
@@ -5653,7 +5653,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .add-listing-sec #add-listing-tab .step-steps > li.active > a > .step-name,
 .add-listing-sec #add-listing-tab .step-steps > li.done > a > .step-name {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .add-listing-sec #add-listing-tab .step-steps > li > a > .step-name {
     font-weight: 600;
@@ -5673,7 +5673,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     width: 0;
 }
 .add-listing-sec #add-listing-tab .step-steps > li.done:before {
-    background-color: #dd3333;
+    background-color: #ff6e14;
 }
 .add-listing-sec #add-listing-tab.step-app > .step-content > .step-tab-panel.active {
     display: block;
@@ -5782,7 +5782,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .add-listing-sec #add-listing-tab form.drag-drop:hover,
 .add-listing-sec #add-listing-tab form.drag-drop:focus {
-    border-color: #dd3333;
+    border-color: #ff6e14;
 }
 .add-listing-sec #add-listing-tab form.drag-drop .add-gallery-text i {
     display: block;
@@ -5812,7 +5812,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 .add-listing-sec #add-listing-tab form.drag-drop:hover .add-gallery-text span.drag-label,
 .add-listing-sec #add-listing-tab form.drag-drop:focus .add-gallery-text i,
 .add-listing-sec #add-listing-tab form.drag-drop:focus .add-gallery-text span.drag-label {
-    color: #dd3333;
+    color: #ff6e14;
 }
 /*==================
 6. Listing pages
@@ -5900,10 +5900,10 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     margin: 0.85em 0;
 }
 .listing-with-map .side-search-bar .widget-search-filter .widget-content .form-group .ui-slider-horizontal .ui-slider-range-min {
-    background: #dd3333;
+    background: #ff6e14;
 }
 .listing-with-map .side-search-bar .widget-search-filter .widget-content .form-group .ui-slider-horizontal .ui-slider-handle {
-    background: #dd3333;
+    background: #ff6e14;
     font-weight: normal;
     color: #454545;
     border-radius: 1.2em;
@@ -5989,7 +5989,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .result-show-by-cat .filter-and-sorting .arrow-btn button.arrows {
     padding: 3px 10px;
-    background: #dd3333;
+    background: #ff6e14;
     color: #fff;
 }
 .result-show-by-cat .filter-and-sorting .arrow-btn button.arrows:hover {
@@ -6009,11 +6009,11 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .vertical-scroll::-webkit-scrollbar {
     height: 5px;
-    background-color: #dd3333;
+    background-color: #ff6e14;
 }
 .vertical-scroll::-webkit-scrollbar-thumb {
-    background-color: #dd3333;
-    border: 1px solid #dd3333;
+    background-color: #ff6e14;
+    border: 1px solid #ff6e14;
 }
 .listing-with-map .right-search-filter-box .car-model-sec .car-model {
     margin-bottom: 30px;
@@ -6031,11 +6031,11 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .listing-with-map-2 .right-search-filter-box .ovrflow-slider-2::-webkit-scrollbar {
     width: 5px;
-    background-color: #dd3333;
+    background-color: #ff6e14;
 }
 .listing-with-map-2 .right-search-filter-box .ovrflow-slider-2::-webkit-scrollbar-thumb {
-    background-color: #dd3333;
-    border: 1px solid #dd3333;
+    background-color: #ff6e14;
+    border: 1px solid #ff6e14;
 }
 .listing-with-map-2.style-2-map-2 .right-search-filter-box .result-show-by-cat .title {
     margin: 0 0 auto 0;
@@ -6084,7 +6084,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     transition: all 0.25s ease 0s;
 }
 .listing-with-map-2.style-2-map-2 .filter-by-grid-list .filter-tab-area .nav-tabs > li > a.active {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .listing-with-map-2.style-2-map-2 .filter-by-grid-list .filter-tab-area .nav-tabs > li > a > .fa {
     margin-right: 0;
@@ -6205,7 +6205,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     transition: all 0.25s ease 0s;
 }
 .listing-with-map-3 .search-filter-options .filter-by-grid-list .filter-tab-area .nav-tabs > li > a.active {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .listing-with-map-3 .search-filter-options .filter-by-grid-list .filter-tab-area .nav-tabs > li > a > .fa {
     margin-right: 0;
@@ -6413,7 +6413,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     text-transform: uppercase;
 }
 .car-model-layout-list .car-overlay-info .car-type.luxury {
-    background-color: #dd3333;
+    background-color: #ff6e14;
 }
 .car-model-layout-list .car-overlay-info .car-description-bottom {
     -webkit-box-align: center;
@@ -6678,7 +6678,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .price-package .pricing-tab ul li a:hover,
 .price-package .pricing-tab ul li a.active {
-    background-color: #dd3333;
+    background-color: #ff6e14;
     color: #fff;
     border: none;
 }
@@ -6728,7 +6728,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     border-radius: 45px;
 }
 .price-package .pricing-box.active .pricing-header .package-type {
-    background-color: #dd3333;
+    background-color: #ff6e14;
 }
 .price-package .pricing-box.active .pricing-header .package-price {
     background-color: #020202;
@@ -6852,7 +6852,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     max-width: 100px;
 }
 .our_articles .side-bar .sidebar-widget .widget-content .side-post .thumb-img span.count {
-    background-color: #dd3333;
+    background-color: #ff6e14;
     border-radius: 0% 50% 50% 50%;
     color: #fff;
     font-size: 16px;
@@ -6890,8 +6890,8 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     color: #020202;
 }
 .our_articles .side-bar .sidebar-widget .widget-content .tag-cloud>a:hover{
-    background-color: #dd3333;
-    border-color: #dd3333;
+    background-color: #ff6e14;
+    border-color: #ff6e14;
     color: #fff;
 }
 .our_articles .side-bar .sidebar-widget .widget-content .instagram-img {
@@ -6958,7 +6958,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     padding: 18px;
     width: 60px;
     text-align: center;
-    background-color: #dd3333;
+    background-color: #ff6e14;
     display: block;
 }
 .our_articles .post .post-date {
@@ -7021,7 +7021,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     padding: 18px 0;
     width: 80px;
     text-align: center;
-    background-color: #dd3333;
+    background-color: #ff6e14;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -7115,7 +7115,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     border-radius: 5px;
     line-height: 31px;
     font-size: 16px;
-    background: #dd3333
+    background: #ff6e14
 }
 .our_articles.blog-details .social-tags ul li.fb a {
     background-color: #3B5999;
@@ -7167,7 +7167,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     width: calc(100% - 130px);
 }
 .our_articles.blog-details .comments .comment-time {
-    color: #dd3333;
+    color: #ff6e14;
     font-size: 14px;
     display: block;
     font-weight: 500;
@@ -7376,7 +7376,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .user-page-sec .user-about .user-left-wrapper .user-details .user-details-top .title span {
     margin: 0 0 0 5px;
-    background: #dd3333;
+    background: #ff6e14;
     font-size: 10px;
     border-radius: 50%;
     text-align: center;
@@ -7555,12 +7555,12 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     border-color: inherit;
 }
 .user-page-sec .main-image-sec .car-btns span:hover {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .user-page-sec .main-image-sec .car-btns span:hover button {
-    background: #dd3333;
+    background: #ff6e14;
     color: #fff;
-    border-color: #dd3333;
+    border-color: #ff6e14;
     transition: 0.5s;
 }
 .user-page-sec .main-image-sec .car-btns a {
@@ -7634,7 +7634,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     font-size: 20px;
 }
 .user-page-sec .main-image-sec .main-image .main-image-caption .add-fav-sec button:hover i {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .user-page-sec.home-4 .tab-sec .side-slide-prevtab i,
 .user-page-sec.home-4 .tab-sec .side-slide-nexttab i {
@@ -7644,9 +7644,9 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .user-page-sec.home-4 .tab-sec .side-slide-nexttab:hover,
 .user-page-sec.home-4 .tab-sec .side-slide-prevtab:hover {
-    background: #dd3333;
+    background: #ff6e14;
     color: #fff;
-    border-color: #dd3333;
+    border-color: #ff6e14;
 }
 /*==================
 13. About
@@ -7669,7 +7669,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     transform: rotateY(360deg);
 }
 .how-it-works .content-wrapper:hover h5 a {
-    color: #dd3333;
+    color: #ff6e14;
 }
 /*Our Team*/
 
@@ -7718,7 +7718,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     padding: 15px 0;
 }
 .our-team-sec .team-wrapper .social-media ul li:hover a {
-    background: #dd3333;
+    background: #ff6e14;
     color: #fff;
 }
 .our-team-sec .team-wrapper:hover .social-media ul {
@@ -7726,7 +7726,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     transition: 0.5s;
 }
 .our-team-sec .team-wrapper:hover {
-    background: #dd3333;
+    background: #ff6e14;
     transition: 0.5s;
 }
 /*==================
@@ -7846,7 +7846,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     border-radius: 0px;
 }
 .coming-soon .content-wrapper .social-media-icons ul li:hover a {
-    background: #dd3333;
+    background: #ff6e14;
 }
 /*==================
 16. Car Details
@@ -7912,7 +7912,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 .car-details .slider-contant-wrapper .slider-contant .price-btn span {
     display: inline-block;
     font-weight: 400;
-    color: #dd3333;
+    color: #ff6e14;
     text-align: center;
     vertical-align: middle;
     user-select: none;
@@ -7996,7 +7996,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     color: #020202;
 }
 .car-details .car-details-tab .tab-content .car-details-box table tbody td i {
-    color: #dd3333;
+    color: #ff6e14;
 }
 .car-details .image-slider-sec .car-detail-slider-for,
 .car-details .image-slider-sec .car-detail-slider-nav {
@@ -8052,7 +8052,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    color: #dd3333;
+    color: #ff6e14;
     font-size: 12px;
     margin-right: 15px;
     border: 1px solid #eee;
@@ -8083,7 +8083,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     padding: 15px 0;
 }
 .car-details .side-search-bar .widget-search-filter .widget-content .social-media ul li:hover a {
-    background: #dd3333;
+    background: #ff6e14;
     color: #fff;
 }
 .car-details .side-search-bar .widget-search-filter .widget-content .author-sec .author-img {
@@ -8218,7 +8218,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     line-height: 40px;
     background-color: #fff;
     box-shadow: 0 2px 14px 0px rgba(0, 0, 0, 0.1);
-    color: #dd3333;
+    color: #ff6e14;
     transition: all ease .35s;
 }
 .img-slider-reviews button.slick-prev {
@@ -8234,7 +8234,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     content: "\f107"
 }
 .img-slider-reviews button:hover:before {
-    background: #dd3333;
+    background: #ff6e14;
     color: #fff;
 }
 .img-slider-reviews {
@@ -8314,7 +8314,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .comment-form-second form .form-group .choose-img label.input-file {
     position: absolute;
-    background: #dd3333;
+    background: #ff6e14;
     padding: 5px 30px;
     color: #fff;
     cursor: pointer;
@@ -8401,7 +8401,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     width: 250px;
     height: 100%;
     z-index: -1;
-    background-color: #dd3333;
+    background-color: #ff6e14;
 }
 .contact-page .contact-side-sec .contact-img-wrapper .video-btn-sec {
     position: absolute;
@@ -8483,12 +8483,12 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     height: 60px;
     font-size: 25px;
     margin-bottom: 5px;
-    color: #dd3333;
-    background-color: #dd333369;
+    color: #ff6e14;
+    background-color: #ff6e1469;
     border-radius: 50%;
 }
 .faqs .faqs-tab ul li a.active span {
-    background-color: #dd3333;
+    background-color: #ff6e14;
     color: #fff;
 }
 .faqs .faqs-tab ul li a.active {
@@ -8561,7 +8561,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     content: '';
     width: 20px;
     height: 2px;
-    background: #dd3333;
+    background: #ff6e14;
     display: block;
     position: absolute;
     top: 40px;
@@ -8588,8 +8588,8 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     top: 5px;
 }
 #footer-style-1 .copyright .social-icons ul li:hover {
-    background: #dd3333;
-    border: 1px solid #dd3333;
+    background: #ff6e14;
+    border: 1px solid #ff6e14;
 }
 #footer-style-1 .copyright .social-icons ul li:hover a {
     color: #fff;
@@ -8631,7 +8631,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     padding: 15px;
 }
 #footer-style-2 .inner-box:hover {
-    background: #dd3333;
+    background: #ff6e14;
     transition: 0.5s;
 }
 #footer-style-2 .inner-box a .img-sec {

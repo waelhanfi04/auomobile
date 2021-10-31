@@ -40,14 +40,14 @@ import { ContactComponent } from './components/pages/contact/contact.component';
 
 const routes: Routes = [
 
-{path: '', component: Homepage1Component},
-{path: 'homepage2', component: Homepage2Component},
-{path: 'homepage3', component: Homepage3Component},
-{path: 'homepage4', component: Homepage4Component},
-{path: 'homepage5', component: Homepage5Component},
-{path: 'homepage6', component: Homepage6Component},
-{path: 'homepage7', component: Homepage7Component},
-{path: 'media', component: MediaComponent},
+{path: '', component: Homepage2Component},
+// {path: 'homepage1', component: Homepage1Component},
+// {path: 'homepage3', component: Homepage3Component},
+// {path: 'homepage4', component: Homepage4Component},
+// {path: 'homepage5', component: Homepage5Component},
+// {path: 'homepage6', component: Homepage6Component},
+// {path: 'homepage7', component: Homepage7Component},
+// {path: 'media', component: MediaComponent},
 {path: 'listing', component: ListingComponent},
 {path: 'listing1', component: Listing1Component},
 {path: 'listing2', component: Listing2Component},
