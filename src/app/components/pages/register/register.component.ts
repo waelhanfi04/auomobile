@@ -11,6 +11,7 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup
   constructor(private authService: AuthentificationService) {
     this.registerForm = new FormGroup({
+      username:new FormControl("",Validators.required),
       email: new FormControl("", [Validators.required, Validators.email]),
       password: new FormControl("", [Validators.required,Validators.minLength(8)]),
       confirmPassword: new FormControl("", [Validators.required]),
@@ -21,14 +22,14 @@ export class RegisterComponent implements OnInit {
   }
   register(){
     if (this.registerForm.valid) {
-      // this.authService.register(this.loginForm.controls.email?.value, this.loginForm.controls.password?.value,this.loginForm.controls.confirmPassword?.value)
-      //   .subscribe(
-      //     (data) => {
-      //       console.log(data)
+      this.authService.register(this.registerForm.controls.username?.value,this.registerForm.controls.email?.value, this.registerForm.controls.password?.value)
+        .subscribe(
+          (data) => {
+            console.log(data)
 
-      //     }, (error: any) => {
+          }, (error: any) => {
 
-      //     });
+          });
     }
   }
 

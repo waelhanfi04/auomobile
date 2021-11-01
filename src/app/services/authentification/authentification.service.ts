@@ -9,33 +9,65 @@ export class AuthentificationService {
 
   constructor(private http: HttpClient) { }
 
-  /*login(email: string, password: string) {
+login(email: string, password: string) {
     const headers = new HttpHeaders({
       "Content-Type": "application/json",
-      Authorization: "Bearer " + localStorage.getItem("access_token"),
     });
     return this.http.post(
-      serverUrl + "/login",
+      serverUrl + "signin",
       {
         email: email,
         password: password,
       },
-      { headers }
+      {  }
     );
   }
-  register(email: string, password: string, confirmPassword: string) {
+  register( username: string,email: string, password: string) {
     const headers = new HttpHeaders({
       "Content-Type": "application/json",
-      Authorization: "Bearer " + localStorage.getItem("access_token"),
+      //Authorization: "Bearer " + localStorage.getItem("access_token"),
     });
     return this.http.post(
-      serverUrl + "/signup" + localStorage.getItem("local"),
+      serverUrl + "signup",
       {
         email: email,
         password: password,
-        confirmPassword: confirmPassword
+        username: username,
+        type:"part"
       },
-      { headers }
+      {  }
     );
-  }*/
+  }
+
+  registerPro( email: string, password: string,SIRET: string,
+    companyName: string,
+    companyCategory: string,
+    companyAddress: string,
+    companyZipCode: string,
+    companyPhone: string,
+    gender: string,
+    firstName: string,
+    lastName: string) {
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json",
+    });
+    return this.http.post(
+      serverUrl + "signup",
+      {
+        email: email,
+        password: password,
+        SIRET:SIRET,
+        companyName: companyName,
+        companyCategory:companyCategory,
+        companyAddress:companyAddress,
+        companyZipCode:companyZipCode,
+        companyPhone:companyPhone,
+        gender:gender,
+        firstName:firstName,
+        lastName:lastName,
+        type:'pro'
+      },
+      {  }
+    );
+  }
 }

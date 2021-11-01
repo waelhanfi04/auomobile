@@ -53,15 +53,19 @@
                       </div>
 
                       <div class="form-group">
-                        <input type="text" name="companyCategory" formControlName="companyCategory" class="form-control form-control-custom"
-                          placeholder="companyCategory">
+                        <select class="input-select"  formControlName="companyCategory">
+                          <option value="" class="option">Choose</option>
+                          <option *ngFor="let cat of categoriesList" class="option" [value]="cat.category">{{cat.category}}</option>
+                        </select>
+                        <!-- <input type="text" name="companyCategory" formControlName="companyCategory" class="form-control form-control-custom"
+                          placeholder="companyCategory"> -->
                       </div>
                       <div class="form-group">
                         <input type="text" name="companyAddress" formControlName="companyAddress" class="form-control form-control-custom"
                           placeholder="Address">
                       </div>
                       <div class="form-group">
-                        <input type="text" name="companyCode" formControlName="companyCode" class="form-control form-control-custom"
+                        <input type="text" name="companyZipCode" formControlName="companyZipCode" class="form-control form-control-custom"
                           placeholder="city ​​or ZIP code">
                       </div>
                       <div class="form-group">

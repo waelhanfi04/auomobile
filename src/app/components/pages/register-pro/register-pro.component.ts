@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { AuthentificationService } from '../../../services/authentification/authentification.service'
-
+import { arrayCategories } from 'src/app/shared/config';
 @Component({
   selector: 'app-register-pro',
   templateUrl: './register-pro.component.html',
@@ -11,13 +11,14 @@ export class RegisterProComponent implements OnInit {
   registerForm: FormGroup;
   step1:boolean=true;
   step2:boolean=false
+  categoriesList=arrayCategories;
   constructor(private authService: AuthentificationService) {
     this.registerForm = new FormGroup({
       SIRET:new FormControl(''),
       companyName:new FormControl(''),
       companyCategory:new FormControl(''),
       companyAddress:new FormControl(''),
-      companyCode:new FormControl(''),
+      companyZipCode:new FormControl(''),
       companyPhone:new FormControl(''),
       gender:new FormControl(''),
       firstName:new FormControl(''),
@@ -29,17 +30,35 @@ export class RegisterProComponent implements OnInit {
     )}
 
   ngOnInit(): void {
+    this.registerForm.valueChanges.subscribe((val:any)=>{
+      console.log('vaaaaal',val)
+    })
   }
   register(){
     if (this.registerForm.valid) {
-      // this.authService.register(this.loginForm.controls.email?.value, this.loginForm.controls.password?.value,this.loginForm.controls.confirmPassword?.value)
-      //   .subscribe(
-      //     (data) => {
-      //       console.log(data)
+      this.authService.registerPro(this.registerForm.controls.email?.value,
+         this.registerForm.controls.password?.value,
+         this.registerForm.controls.SIRET?.value,
+         this.registerForm.controls.companyName?.value,
+         this.registerForm.controls.companyCategory?.value,
+         this.registerForm.controls.companyAddress?.value,
+         this.registerForm.controls.companyZipCode?.value,
+         this.registerForm.controls.companyPhone?.value,
+         this.registerForm.controls.gender?.value,
+         this.registerForm.controls.firstName?.value,
+         this.registerForm.controls.lastName?.value,
+         
+         )
+        .subscribe(
+          (data) => {
+            console.log(data)
+            /*message: "User was registered successfully!"
+             "message": "Failed! Email is already in use!"
+            */
 
-      //     }, (error: any) => {
+          }, (error: any) => {
 
-      //     });
+          });
     }
   }
   nextStep(){
