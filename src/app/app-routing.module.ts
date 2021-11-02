@@ -1,13 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { Homepage1Component } from './components/pages/homepage1/homepage1.component';
 import { Homepage2Component } from './components/pages/homepage2/homepage2.component';
-import { Homepage3Component } from './components/pages/homepage3/homepage3.component';
-import { Homepage4Component } from './components/pages/homepage4/homepage4.component';
-import { Homepage5Component } from './components/pages/homepage5/homepage5.component';
-import { Homepage6Component } from './components/pages/homepage6/homepage6.component';
-import { Homepage7Component } from './components/pages/homepage7/homepage7.component';
 import { MediaComponent } from './components/pages/media/media.component';
 import { ListingComponent } from './components/pages/listing/listing.component';
 import { Listing1Component } from './components/pages/listing1/listing1.component';
@@ -42,12 +35,6 @@ import {CreateAccountComponent } from './components/pages/create-account/create-
 const routes: Routes = [
 
 {path: '', component: Homepage2Component},
-// {path: 'homepage1', component: Homepage1Component},
-// {path: 'homepage3', component: Homepage3Component},
-// {path: 'homepage4', component: Homepage4Component},
-// {path: 'homepage5', component: Homepage5Component},
-// {path: 'homepage6', component: Homepage6Component},
-// {path: 'homepage7', component: Homepage7Component},
 // {path: 'media', component: MediaComponent},
 {path: 'listing', component: ListingComponent},
 {path: 'listing1', component: Listing1Component},
