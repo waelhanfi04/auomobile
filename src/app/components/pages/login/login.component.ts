@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthentificationService } from '../../../services/authentification/authentification.service'
 @Component({
   selector: 'app-login',
@@ -9,45 +10,45 @@ import { AuthentificationService } from '../../../services/authentification/auth
 export class LoginComponent implements OnInit {
   loginForm: FormGroup
   errorMsg='';
-  constructor(private authService: AuthentificationService) {
+  isSubmitting: boolean = false;
+  constructor(private authService: AuthentificationService,private router:Router) {
     this.loginForm = new FormGroup({
       email: new FormControl("", [Validators.required, Validators.email]),
-      password: new FormControl("", [Validators.required,Validators.minLength(8),]),
+      password: new FormControl("", [Validators.required]),
     })
   }
 
   ngOnInit(): void {
   }
   login() {
+    this.isSubmitting=true
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.controls.email?.value, this.loginForm.controls.password?.value)
         .subscribe(
           (data:any) => {
+            this.isSubmitting= false;
             console.log(data)
-            if(data.message){
-              this.errorMsg= data.message;
-            }else{
-              localStorage.saveItem('accessToken', data.accessToken);
+            this.errorMsg= ''
+            //if(data.accessToken){
+
+              localStorage.saveItem('accessToken', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAyOTEwODM2LWNlMDktNDE1My1hZDE0LWJmMDM3N2ZjZTYyOSIsImlhdCI6MTYzNTg4ODc2MCwiZXhwIjoxNjM1OTc1MTYwfQ.gHRuHjsJUXfoQbiE6VeNzDgF8smwMwZ1OJz3bK43sC8");
               localStorage.saveItem('isAuthenticated', 'true');
-            }
-            /*
-            accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAyOTEwODM2LWNlMDktNDE1My1hZDE0LWJmMDM3N2ZjZTYyOSIsImlhdCI6MTYzNTgwMDc2OSwiZXhwIjoxNjM1ODg3MTY5fQ.F_Sji_C7Z2XuUImcHyQoz_NAtZk2NdHnmOjMMjI_zDM"
-email: "mm@gmail.com"
-id: "02910836-ce09-4153-ad14-bf0377fce629"
-            */
+              this.router.navigate([''])
+           // }
 
 /*
-
-   "message": "User Not found." if emal 8alt
-
-    email shih w pass ghalet
+   "message": "User Not found." if wrong emal 
+    wrong pwd
     "accessToken": null,
     "message": "Invalid Password!"
-
-
 */
           
           }, (error: any) => {
+            if(error.message ==='User Not found.'){
+              this.errorMsg= 'Invalid email!';
+            }else if(error.message==='Invalid Password!'){
+              this.errorMsg='Invalid Password!'
+            }
 
           });
     }

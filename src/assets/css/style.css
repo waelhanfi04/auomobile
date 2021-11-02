@@ -8735,3 +8735,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     color: #db4437;
     font-size: 13px;
 }
+.success-msg{
+    color: rgb(7, 102, 7);
+    font-size: 13px;
+}

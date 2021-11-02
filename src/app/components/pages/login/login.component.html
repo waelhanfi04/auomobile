@@ -38,20 +38,20 @@
                 </div>
                 <!-- Sign in form -->
                 <div class="modal-body">
-                  <form [formGroup]="loginForm" (ngSubmit)="login()">
+                  <form [formGroup]="loginForm" >
                     <div *ngIf="this.errorMsg!==''">
                       <label class="error-msg" >{{errorMsg}}</label>
                     </div>
                     <div class="form-group">
                       <input type="email" name="email" formControlName="email" class="form-control form-control-custom"  placeholder="Username or Email">
                    <label class="error-msg" *ngIf="loginForm.controls.email.errors?.email && !loginForm.controls.email.errors?.required ">Field Email Address must have a valid form</label>
-                   <label class="error-msg" *ngIf="loginForm.controls.email.errors?.required && loginForm.controls.email.touched">Field required</label>
+                   <label class="error-msg" *ngIf="loginForm.controls.email.errors?.required && this.isSubmitting">Field required</label>
 
                   </div>
 
                     <div class="form-group">
                       <input type="password"  autocomplete="on" name="password" formControlName="password" class="form-control form-control-custom"  placeholder="Password">
-                      <label class="error-msg" *ngIf="loginForm.controls.password.errors?.required && loginForm.controls.password.touched">Field required</label>
+                      <label class="error-msg" *ngIf="loginForm.controls.password.errors?.required && this.isSubmitting">Field required</label>
 
                     </div>
                     <!-- <div class="form-group">
@@ -60,7 +60,7 @@
                       </label>
                     </div> -->
                     <div class="form-group">
-                      <button type="submit" class="btn-second orange-btn full-width" [disabled]="loginForm.invalid">Sign In</button>
+                      <button type="submit" class="btn-second orange-btn full-width" (click)="login()">Sign In</button>
                     </div>
                   </form>
                   <div class="form-excerpts">

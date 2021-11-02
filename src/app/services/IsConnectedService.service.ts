@@ -4,7 +4,7 @@ import { CanActivate, Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuardService implements CanActivate {
+export class IsConnectedService implements CanActivate {
   constructor(private router:Router) {}
 
   canActivate(): boolean {
@@ -12,7 +12,7 @@ export class AuthGuardService implements CanActivate {
       return true;
     }
     else{
-      this.router.navigate(['login']);
+      this.router.navigate(['']);
       return false;
     }
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthentificationService } from '../../../services/authentification/authentification.service'
 
 @Component({
@@ -8,8 +9,11 @@ import { AuthentificationService } from '../../../services/authentification/auth
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  registerForm: FormGroup
-  constructor(private authService: AuthentificationService) {
+  registerForm: FormGroup;
+  errorMsg='';
+  successMsg='';
+  isSubmitting: boolean = false;
+  constructor(private authService: AuthentificationService,private router:Router) {
     this.registerForm = new FormGroup({
       username:new FormControl("",Validators.required),
       email: new FormControl("", [Validators.required, Validators.email]),
@@ -21,11 +25,21 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
   register(){
+    this.isSubmitting = true;
     if (this.registerForm.valid) {
       this.authService.register(this.registerForm.controls.username?.value,this.registerForm.controls.email?.value, this.registerForm.controls.password?.value)
         .subscribe(
-          (data) => {
-            console.log(data)
+          (data:any) => {
+            this.isSubmitting = false;
+            console.log(data);
+            if(data.message==='User was registered successfully!'){
+              this.successMsg='User was registered successfully!'
+              this.errorMsg=''
+              this.router.navigate(['login'])
+            }else{
+              this.errorMsg=data.message;
+              this.successMsg='';
+            }
 
           }, (error: any) => {
 

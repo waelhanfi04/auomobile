@@ -41,7 +41,7 @@ import { BlogDetailRightComponent } from './components/pages/blog-detail-right/b
 import { PricingComponent } from './components/pages/pricing/pricing.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {AuthGuardService} from './services/AuthGuardService.service'
+import {IsConnectedService} from './services/IsConnectedService.service'
 import { AuthentificationService } from './services/authentification/authentification.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterProComponent } from './components/pages/register-pro/register-pro.component';
@@ -97,7 +97,7 @@ import {CreateAccountComponent } from './components/pages/create-account/create-
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [AuthGuardService,AuthentificationService],
+  providers: [IsConnectedService,AuthentificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

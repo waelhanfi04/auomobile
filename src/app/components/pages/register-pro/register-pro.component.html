@@ -39,17 +39,25 @@
                 </div>
                 <!-- Sign up form -->
                 <div class="modal-body">
-                  <form [formGroup]="registerForm" (ngSubmit)="register()">
+                  <div *ngIf="this.errorMsg!=='' ||this.successMsg!=='' ">
+                    <label class="error-msg"*ngIf="this.errorMsg!==''" >{{errorMsg}}</label>
+                    <label class="success-msg" *ngIf="this.successMsg!==''">{{successMsg}}</label>
+                  </div>
+                  <form [formGroup]="registerForm">
   
                     <div *ngIf="step1">
                       <div class="form-group">
                         <input type="text" name="SIRET" formControlName="SIRET" class="form-control form-control-custom"
                           placeholder="SIRET">
+                          <label class="error-msg" *ngIf="registerForm.controls.SIRET.errors?.required && this.isSubmitting ">Field required</label>   
+
                       </div>
                       
                       <div class="form-group">
                         <input type="text" name="companyName" formControlName="companyName" class="form-control form-control-custom"
                           placeholder="Company Name">
+                          <label class="error-msg" *ngIf="registerForm.controls.companyName.errors?.required && this.isSubmitting ">Field required</label>   
+
                       </div>
 
                       <div class="form-group">
@@ -57,20 +65,28 @@
                           <option value="" class="option">Choose</option>
                           <option *ngFor="let cat of categoriesList" class="option" [value]="cat.category">{{cat.category}}</option>
                         </select>
+                        <label class="error-msg" *ngIf="registerForm.controls.companyCategory.errors?.required && this.isSubmitting ">Field required</label>   
+
                         <!-- <input type="text" name="companyCategory" formControlName="companyCategory" class="form-control form-control-custom"
                           placeholder="companyCategory"> -->
                       </div>
                       <div class="form-group">
                         <input type="text" name="companyAddress" formControlName="companyAddress" class="form-control form-control-custom"
                           placeholder="Address">
+                          <label class="error-msg" *ngIf="registerForm.controls.companyAddress.errors?.required && this.isSubmitting ">Field required</label>   
+
                       </div>
                       <div class="form-group">
                         <input type="text" name="companyZipCode" formControlName="companyZipCode" class="form-control form-control-custom"
                           placeholder="city ​​or ZIP code">
+                          <label class="error-msg" *ngIf="registerForm.controls.companyZipCode.errors?.required && this.isSubmitting ">Field required</label>   
+
                       </div>
                       <div class="form-group">
                         <input type="text" name="companyPhone" formControlName="companyPhone" class="form-control form-control-custom"
                           placeholder="Phone">
+                          <label class="error-msg" *ngIf="registerForm.controls.companyPhone.errors?.required && this.isSubmitting ">Field required</label>   
+
                       </div>
                 
 
@@ -80,39 +96,66 @@
                           (click)="nextStep()">NEXT</button>
                       </div>
                     </div>
-              
+                  </form>
 
-
+                  <form [formGroup]="registerForm2">
                     <div *ngIf="step2">
                       <div class="form-group">
-                        <input type="text" name="gender" formControlName="gender"
-                          class="form-control form-control-custom" placeholder="gender">
+                        <label class="type-label pe-2">Gender</label>
+                        </div>
+                      <div class="form-group d-flex justify-content-center gap-2">
+                      <label  class="label-radio d-flex">
+                        <input type="radio" value="Monsieur"  formControlName="gender">
+                          <span>Monsieur</span>
+                      </label>
+                      <label class="label-radio d-flex">
+                        <input type="radio" value="Madame"  formControlName="gender">
+                          <span>Madame</span>
+                      </label>
+
+
+                        <!-- <input type="text" name="gender" formControlName="gender"
+                          class="form-control form-control-custom" placeholder="gender"> -->
+                          <label class="error-msg" *ngIf="registerForm2.controls.gender.errors?.required && this.isSubmitting ">Field required</label>   
+
                       </div>
                       <div class="form-group">
                         <input type="text" name="firstName" formControlName="firstName"
                           class="form-control form-control-custom" placeholder="First name">
+                          <label class="error-msg" *ngIf="registerForm2.controls.firstName.errors?.required && this.isSubmitting ">Field required</label>   
+
                       </div>
 
                       <div class="form-group">
                         <input type="text" name="lastName" formControlName="lastName"
                           class="form-control form-control-custom" placeholder="Last name">
+                          <label class="error-msg" *ngIf="registerForm2.controls.lastName.errors?.required && this.isSubmitting ">Field required</label>   
+
                       </div>
 
                       <div class="form-group">
                         <input type="email" name="email" formControlName="email"
                           class="form-control form-control-custom" placeholder="Email">
+                          <label class="error-msg" *ngIf="registerForm2.controls.email.errors?.email && !registerForm2.controls.email.errors?.required ">Field Email Address must have a valid form</label>
+                          <label class="error-msg" *ngIf="registerForm2.controls.email.errors?.required && this.isSubmitting ">Field required</label>   
+                       
                       </div>
                       <div class="form-group">
                         <input type="password" autocomplete="on" name="password" formControlName="password"
                           class="form-control form-control-custom" placeholder="Password">
+                          <label class="error-msg" *ngIf="registerForm2.controls.password.errors?.required && this.isSubmitting ">Field required</label>   
+                          <label class="error-msg" *ngIf="registerForm2.controls.password.errors?.pattern && registerForm2.controls.password.touched">Your password must contain at least 8 chars </label>   
+    
                       </div>
                       <div class="form-group">
                         <input type="password" autocomplete="on" name="confirmPassword"
                           formControlName="confirmPassword" class="form-control form-control-custom"
                           placeholder="Retype Password">
+                          <label class="error-msg" *ngIf="registerForm2.controls.confirmPassword.errors?.required && this.isSubmitting ">Field required</label>   
+                          <label class="error-msg" *ngIf="registerForm2.errors?.mustMatch &&  !registerForm2.controls.confirmPassword.errors?.required">Fields must mutch</label>   
                       </div>
                       <div class="form-group">
-                        <button type="submit" class="btn-second orange-btn full-width">Sign Up</button>
+                        <button type="submit" class="btn-second orange-btn full-width"  (click)="register()">Sign Up</button>
                       </div>
                     </div>
                   </form>

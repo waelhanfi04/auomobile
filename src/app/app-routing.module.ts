@@ -32,9 +32,30 @@ import { PricingComponent } from './components/pages/pricing/pricing.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { RegisterProComponent } from './components/pages/register-pro/register-pro.component'
 import {CreateAccountComponent } from './components/pages/create-account/create-account.component'
+import { IsConnectedService } from './services/IsConnectedService.service';
 const routes: Routes = [
 
 {path: '', component: Homepage2Component},
+{path: 'add-listing', 
+component: AddListingComponent,
+//canActivate:[IsConnectedService]
+},
+{path: 'register',
+ component: RegisterComponent,
+ canActivate:[IsConnectedService]
+},
+{path: 'register/pro',
+ component: RegisterProComponent,
+canActivate:[IsConnectedService]
+},
+{path: 'account/creation', 
+component: CreateAccountComponent,
+canActivate:[IsConnectedService]
+},
+{path: 'login', 
+component: LoginComponent,
+canActivate:[IsConnectedService]
+},
 // {path: 'media', component: MediaComponent},
 {path: 'listing', component: ListingComponent},
 {path: 'listing1', component: Listing1Component},
@@ -43,15 +64,10 @@ const routes: Routes = [
 {path: 'listing4', component: Listing4Component},
 {path: 'listing1-style2', component: Listing1Style2Component},
 {path: 'listing2-style2', component: Listing2Style2Component},
-{path: 'add-listing', component: AddListingComponent},
 {path: 'aboutus', component: AboutusComponent},
 {path: 'car-detail', component: CarDetailsComponent},
 {path: 'car-page', component: CarpageComponent},
 {path: 'user', component: UserComponent},
-{path: 'register', component: RegisterComponent},
-{path: 'register/pro', component: RegisterProComponent},
-{path: 'account/creation', component: CreateAccountComponent},
-{path: 'login', component: LoginComponent},
 {path: 'invoice', component: InvoiceComponent},
 {path: 'coming-soon', component: ComingSoonComponent},
 {path: 'blog-grid', component: BlogGridComponent},
