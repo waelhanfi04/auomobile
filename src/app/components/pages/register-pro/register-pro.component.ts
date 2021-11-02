@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 export class RegisterProComponent implements OnInit {
   registerForm: FormGroup;
   registerForm2: FormGroup;
-  step1:boolean=false;
-  step2:boolean=true
+  step1:boolean=true;
+  step2:boolean=false
   categoriesList=arrayCategories;
   errorMsg='';
   successMsg='';

@@ -146,7 +146,7 @@
                     </li>
                   </ul>
                 </li>
-                <li class="add-car-btn"> <a routerLink="/add-listing" class="text-custom-white">+ Add Listing</a>
+                <li class="add-car-btn"  *ngIf='showAddListing'> <a routerLink="/add-listing" class="text-custom-white">+ Add Listing</a>
                 </li>
               </ul>
             </div>
@@ -218,7 +218,7 @@
                   <h3 class="mb-0">Home</h3>
                 </a>
               </li>
-              <li>
+              <li *ngIf='showAddListing'>
                 <a routerLink="/add-listing">
                   <h3 class="mb-0">Add Listing</h3>
                 </a>
