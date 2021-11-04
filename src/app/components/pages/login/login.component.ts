@@ -27,14 +27,20 @@ export class LoginComponent implements OnInit {
         .subscribe(
           (data:any) => {
             this.isSubmitting= false;
-            console.log(data)
+            console.log(data,'data.message',data.message)
             this.errorMsg= ''
-            //if(data.accessToken){
+           if(data.accessToken!=='' || data.accessToken !==null){
 
-              localStorage.saveItem('accessToken', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAyOTEwODM2LWNlMDktNDE1My1hZDE0LWJmMDM3N2ZjZTYyOSIsImlhdCI6MTYzNTg4ODc2MCwiZXhwIjoxNjM1OTc1MTYwfQ.gHRuHjsJUXfoQbiE6VeNzDgF8smwMwZ1OJz3bK43sC8");
-              localStorage.saveItem('isAuthenticated', 'true');
+              localStorage.setItem('accessToken', data.accessToken);
+              localStorage.setItem('isAuthenticated', 'true');
               this.router.navigate([''])
-           // }
+         }else  if(data.message ==='User Not found.'){
+            this.errorMsg= 'Invalid email!';
+          }else if(data.message==='Invalid Password!'){
+            this.errorMsg='Invalid Password!'
+          }
+
+         
 
 /*
    "message": "User Not found." if wrong emal 
@@ -44,12 +50,7 @@ export class LoginComponent implements OnInit {
 */
           
           }, (error: any) => {
-            if(error.message ==='User Not found.'){
-              this.errorMsg= 'Invalid email!';
-            }else if(error.message==='Invalid Password!'){
-              this.errorMsg='Invalid Password!'
-            }
-
+           
           });
     }
   }

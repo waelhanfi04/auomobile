@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
             if(data.message==='User was registered successfully!'){
               this.successMsg='User was registered successfully!'
               this.errorMsg=''
-              this.router.navigate(['login'])
+             // this.router.navigate(['login'])
             }else{
               this.errorMsg=data.message;
               this.successMsg='';
