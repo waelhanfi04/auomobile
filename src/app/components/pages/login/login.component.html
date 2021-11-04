@@ -1,5 +1,5 @@
 <div class="mobile-menu-second">
-<app-header4></app-header4>	
+<app-header2></app-header2>	
 <!-- Sub header -->
   <div class="sub-header-sec p-relative">
     <img src="assets/images/banner/bannerh8.jpg" class="img-fluid" alt="Sub header">
@@ -38,35 +38,44 @@
                 </div>
                 <!-- Sign in form -->
                 <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <input type="text" class="form-control form-control-custom" name="#" placeholder="Username or Email">
+                  <form [formGroup]="loginForm" >
+                    <div *ngIf="this.errorMsg!==''">
+                      <label class="error-msg" >{{errorMsg}}</label>
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-custom" name="#" placeholder="Password">
-                    </div>
+                      <input type="email" name="email" formControlName="email" class="form-control form-control-custom"  placeholder="Username or Email">
+                   <label class="error-msg" *ngIf="loginForm.controls.email.errors?.email && !loginForm.controls.email.errors?.required ">Field Email Address must have a valid form</label>
+                   <label class="error-msg" *ngIf="loginForm.controls.email.errors?.required && this.isSubmitting">Field required</label>
+
+                  </div>
+
                     <div class="form-group">
+                      <input type="password"  autocomplete="on" name="password" formControlName="password" class="form-control form-control-custom"  placeholder="Password">
+                      <label class="error-msg" *ngIf="loginForm.controls.password.errors?.required && this.isSubmitting">Field required</label>
+
+                    </div>
+                    <!-- <div class="form-group">
                       <label class="custom-checkbox">
                         <input type="checkbox" name="#">Keep me signed in <span class="checkmark"></span>
                       </label>
-                    </div>
+                    </div> -->
                     <div class="form-group">
-                      <button type="submit" class="btn-second orange-btn full-width">Sign In</button>
+                      <button type="submit" class="btn-second orange-btn full-width" (click)="login()">Sign In</button>
                     </div>
                   </form>
                   <div class="form-excerpts">
                     <ul>
-                      <li>Not a member? <a routerLink="/register">Sign Up</a>
+                      <li>Not a member? <a routerLink="/account/creation">Sign Up</a>
                       </li>
                       <li><a routerLink="/login">Recover Password</a>
                       </li>
                     </ul>
                   </div>
-                  <div class="social-login">  <span>Or connect with</span>
+                  <!-- <div class="social-login">  <span>Or connect with</span>
                     <div class="social-btn">  <a routerLink="/login" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
                       <a routerLink="/login" class="google"><i class="fab fa-google-plus-g"></i> Google</a>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 <!-- Sign in form -->
               </div>
@@ -77,5 +86,5 @@
     </div>
   </section>
   <!-- login -->
-	<app-footer4></app-footer4>
+	<app-footer2></app-footer2>
 </div>

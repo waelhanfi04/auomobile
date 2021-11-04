@@ -1,5 +1,5 @@
 <div class="mobile-menu-second">
-<app-header4></app-header4>	
+<app-header2></app-header2>	
 <!-- Sub header -->
   <div class="sub-header-sec p-relative">
     <img src="assets/images/banner/bannerh7.jpg" class="img-fluid" alt="Sub header">
@@ -38,15 +38,33 @@
                 </div>
                 <!-- Sign up form -->
                 <div class="modal-body">
-                  <form>
+                  <div *ngIf="this.errorMsg!=='' ||this.successMsg!=='' ">
+                    <label class="error-msg"*ngIf="this.errorMsg!==''" >{{errorMsg}}</label>
+                    <label class="success-msg" *ngIf="this.successMsg!==''">{{successMsg}}</label>
+                  </div>
+                  <form [formGroup]="registerForm" (ngSubmit)="register()">
+                  
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-custom" name="#" placeholder="Email">
+                      <input type="text" name="username" formControlName="username" class="form-control form-control-custom" placeholder="username">
+                   <label class="error-msg" *ngIf="registerForm.controls.username.errors?.required && isSubmitting" >Field required</label>
+
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-custom" name="#" placeholder="Password">
+                      <input type="email" name="email" formControlName="email" class="form-control form-control-custom" placeholder="Email">
+                      <label class="error-msg" *ngIf="registerForm.controls.email.errors?.email && !registerForm.controls.email.errors?.required ">Field Email Address must have a valid form</label>
+                      <label class="error-msg" *ngIf="registerForm.controls.email.errors?.required && this.isSubmitting ">Field required</label>   
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-custom" name="#" placeholder="Retype Password">
+                      <input type="password"  autocomplete="on" name="password" formControlName="password" class="form-control form-control-custom" placeholder="Password">
+                      <label class="error-msg" *ngIf="registerForm.controls.password.errors?.required && this.isSubmitting ">Field required</label>   
+                      <label class="error-msg" *ngIf="registerForm.controls.password.errors?.pattern && registerForm.controls.password.touched">Your password must contain at least 8 chars </label>   
+
+                    </div>
+                    <div class="form-group">
+                      <input type="password"  autocomplete="on" name="confirmPassword" formControlName="confirmPassword" class="form-control form-control-custom" placeholder="Retype Password">
+                      <label class="error-msg" *ngIf="registerForm.controls.confirmPassword.errors?.required && this.isSubmitting ">Field required</label>   
+                      <label class="error-msg" *ngIf="registerForm.errors?.mustMatch &&  !registerForm.controls.confirmPassword.errors?.required">Fields must mutch</label>   
+
                     </div>
                     <div class="form-group">
                       <button type="submit" class="btn-second orange-btn full-width">Sign Up</button>
@@ -60,11 +78,11 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="social-login">  <span>Or Signup with</span>
+                  <!-- <div class="social-login">  <span>Or Signup with</span>
                     <div class="social-btn">  <a routerLink="/register" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
                       <a routerLink="/register" class="google"><i class="fab fa-google-plus-g"></i> Google</a>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 <!-- Sign up form -->
               </div>
@@ -75,5 +93,5 @@
     </div>
   </section>
   <!-- login -->
-	<app-footer4></app-footer4>
+	<app-footer2></app-footer2>
 </div>

@@ -1,13 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { Homepage1Component } from './components/pages/homepage1/homepage1.component';
 import { Homepage2Component } from './components/pages/homepage2/homepage2.component';
-import { Homepage3Component } from './components/pages/homepage3/homepage3.component';
-import { Homepage4Component } from './components/pages/homepage4/homepage4.component';
-import { Homepage5Component } from './components/pages/homepage5/homepage5.component';
-import { Homepage6Component } from './components/pages/homepage6/homepage6.component';
-import { Homepage7Component } from './components/pages/homepage7/homepage7.component';
 import { MediaComponent } from './components/pages/media/media.component';
 import { ListingComponent } from './components/pages/listing/listing.component';
 import { Listing1Component } from './components/pages/listing1/listing1.component';
@@ -37,17 +30,33 @@ import { BlogDetailLeftComponent } from './components/pages/blog-detail-left/blo
 import { BlogDetailRightComponent } from './components/pages/blog-detail-right/blog-detail-right.component';
 import { PricingComponent } from './components/pages/pricing/pricing.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
-
+import { RegisterProComponent } from './components/pages/register-pro/register-pro.component'
+import {CreateAccountComponent } from './components/pages/create-account/create-account.component'
+import { IsConnectedService } from './services/IsConnectedService.service';
 const routes: Routes = [
 
-{path: '', component: Homepage1Component},
-{path: 'homepage2', component: Homepage2Component},
-{path: 'homepage3', component: Homepage3Component},
-{path: 'homepage4', component: Homepage4Component},
-{path: 'homepage5', component: Homepage5Component},
-{path: 'homepage6', component: Homepage6Component},
-{path: 'homepage7', component: Homepage7Component},
-{path: 'media', component: MediaComponent},
+{path: '', component: Homepage2Component},
+{path: 'add-listing', 
+component: AddListingComponent,
+//canActivate:[IsConnectedService]
+},
+{path: 'register',
+ component: RegisterComponent,
+ canActivate:[IsConnectedService]
+},
+{path: 'register/pro',
+ component: RegisterProComponent,
+canActivate:[IsConnectedService]
+},
+{path: 'account/creation', 
+component: CreateAccountComponent,
+canActivate:[IsConnectedService]
+},
+{path: 'login', 
+component: LoginComponent,
+canActivate:[IsConnectedService]
+},
+// {path: 'media', component: MediaComponent},
 {path: 'listing', component: ListingComponent},
 {path: 'listing1', component: Listing1Component},
 {path: 'listing2', component: Listing2Component},
@@ -55,13 +64,10 @@ const routes: Routes = [
 {path: 'listing4', component: Listing4Component},
 {path: 'listing1-style2', component: Listing1Style2Component},
 {path: 'listing2-style2', component: Listing2Style2Component},
-{path: 'add-listing', component: AddListingComponent},
 {path: 'aboutus', component: AboutusComponent},
 {path: 'car-detail', component: CarDetailsComponent},
 {path: 'car-page', component: CarpageComponent},
 {path: 'user', component: UserComponent},
-{path: 'register', component: RegisterComponent},
-{path: 'login', component: LoginComponent},
 {path: 'invoice', component: InvoiceComponent},
 {path: 'coming-soon', component: ComingSoonComponent},
 {path: 'blog-grid', component: BlogGridComponent},
