@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header2',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Header2Component implements OnInit {
 showAddListing:boolean=false
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
     if(localStorage.getItem('isAuthenticated')==='true'){
@@ -17,5 +18,9 @@ showAddListing:boolean=false
       this.showAddListing=false
     }
   }
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['login'])
 
+  }
 }

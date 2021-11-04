@@ -144,6 +144,8 @@
                     </li>
                     <li><a routerLink="/login" class="text-light-black">Login</a>
                     </li>
+                    <li (click)="logout()"><a  class="text-light-black">Logout</a>
+                    </li>
                   </ul>
                 </li>
                 <li class="add-car-btn"  *ngIf='showAddListing'> <a routerLink="/add-listing" class="text-custom-white">+ Add Listing</a>
