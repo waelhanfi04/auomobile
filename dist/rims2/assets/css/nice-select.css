@@ -62,7 +62,9 @@
           transform: scale(1) translateY(0);
     width: 100%;
     min-height: 50px;
-    max-height: 200px;
+    /* max-height: 110px; */
+    border: 1px solid #eee;
+  max-height: 200px; 
     overflow-y: auto;}
   .nice-select.disabled {
     border-color: #ededed;
@@ -95,7 +97,7 @@
     border-radius: 0px;
     box-shadow: none;
     box-sizing: border-box;
-    margin-top: 4px;
+    margin-top: 2px;
     opacity: 0;
     overflow: hidden;
     padding: 0;
@@ -129,7 +131,7 @@
     transition: all 0.2s;
     border-bottom: 1px solid #eee; }
     .nice-select .option:hover, .nice-select .option.focus{
-          background-color: #ff6e14;
+          background-color: #ff6e14 !important;
     color: #fff;
     font-weight: 500; }
 
