@@ -12,7 +12,7 @@ export class RegisterProComponent implements OnInit {
   registerForm: FormGroup;
   registerForm2: FormGroup;
   step1:boolean=true;
-  step2:boolean=false
+  step2:boolean=false;
   categoriesList=arrayCategories;
   errorMsg='';
   successMsg='';
@@ -83,6 +83,15 @@ export class RegisterProComponent implements OnInit {
   this.step2=true;
   this.isSubmitting=false;
 }
+ 
+  }
+
+  PreviousStep(){
+  //  this.isSubmitting=true;
+  this.step1=true;
+  this.step2=false;
+  // this.isSubmitting=false;
+
  
   }
 }

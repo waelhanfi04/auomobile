@@ -140,11 +140,11 @@
                   <a href="javascript:void(0)" class="text-custom-white dropdown-toggle"><i class="fas fa-user"></i>
                     Account</a>
                   <ul class="dropdown-menu">
-                    <li><a routerLink="/account/creation" class="text-light-black">Register</a>
+                    <li *ngIf='!showAddListing'><a routerLink="/account/creation" class="text-light-black">Register</a>
                     </li>
-                    <li><a routerLink="/login" class="text-light-black">Login</a>
+                    <li *ngIf='!showAddListing'><a routerLink="/login" class="text-light-black">Login</a>
                     </li>
-                    <li (click)="logout()"><a  class="text-light-black">Logout</a>
+                    <li *ngIf='showAddListing' (click)="logout()"><a  class="text-light-black">Logout</a>
                     </li>
                   </ul>
                 </li>

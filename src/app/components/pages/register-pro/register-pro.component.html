@@ -89,12 +89,12 @@
 
                       </div>
                 
+                     
 
-
-                      <div class="form-group">
+                      <!-- <div class="form-group">
                         <button type="submit" class="btn-second orange-btn full-width"
                           (click)="nextStep()">NEXT</button>
-                      </div>
+                      </div> -->
                     </div>
                   </form>
 
@@ -103,19 +103,24 @@
                       <div class="form-group">
                         <label class="type-label pe-2">Gender</label>
                         </div>
-                      <div class="form-group d-flex justify-content-center gap-2">
-                      <label  class="label-radio d-flex">
+                      <div class=" d-flex justify-content-center gap-2">
+
+                        <div class="form-group">
+                          <label class="custom-checkbox">
+                            <input type="radio" value="Monsieur"  formControlName="gender"> <span class="checkmark"></span>Monsieur</label>
+                        </div>
+                        <div class="form-group">
+                          <label class="custom-checkbox">
+                            <input type="radio" value="Madame"  formControlName="gender"> <span class="checkmark"></span>Madame</label>
+                        </div>
+                      <!-- <label  class="label-radio d-flex">
                         <input type="radio" value="Monsieur"  formControlName="gender">
                           <span>Monsieur</span>
                       </label>
                       <label class="label-radio d-flex">
                         <input type="radio" value="Madame"  formControlName="gender">
                           <span>Madame</span>
-                      </label>
-
-
-                        <!-- <input type="text" name="gender" formControlName="gender"
-                          class="form-control form-control-custom" placeholder="gender"> -->
+                      </label> -->
                           <label class="error-msg" *ngIf="registerForm2.controls.gender.errors?.required && this.isSubmitting ">Field required</label>   
 
                       </div>
@@ -154,11 +159,16 @@
                           <label class="error-msg" *ngIf="registerForm2.controls.confirmPassword.errors?.required && this.isSubmitting ">Field required</label>   
                           <label class="error-msg" *ngIf="registerForm2.errors?.mustMatch &&  !registerForm2.controls.confirmPassword.errors?.required">Fields must mutch</label>   
                       </div>
-                      <div class="form-group">
+                      <!-- <div class="form-group">
                         <button type="submit" class="btn-second orange-btn full-width"  (click)="register()">Sign Up</button>
-                      </div>
+                      </div> -->
                     </div>
                   </form>
+                  <div class="d-flex justify-content-between mb-2">
+                    <button (click)="PreviousStep()" *ngIf="step2" class="btn-second orange-btn">Previous</button>
+                    <button  (click)="nextStep()" *ngIf="step1"  class="btn-second orange-btn">Next</button>
+                    <button  (click)="register()" *ngIf="step2"  class="btn-second orange-btn">Sign Up</button>
+                  </div>
                   <div class="form-excerpts">
                     <ul>
                       <li>Already a member? <a routerLink="/login">Sign In</a>
