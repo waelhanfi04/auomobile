@@ -35,7 +35,7 @@
             <ul class="step-steps">
               <li class="active">
                 <a href="#step1"> <span class="number"></span>
-                  <span class="step-name">OVERALL INFORMATION</span>
+                  <span class="step-name">Informations générales</span>
                 </a>
               </li>
               <li>
@@ -63,7 +63,7 @@
               <div class="step-tab-panel" id="step1">
                 <div class="tab-from-content">
                   <div class="title-icon">
-                    <h5 class="title rubik fw-600"><i class="flaticon-comment"></i> Overall Information</h5>
+                    <h5 class="title rubik fw-600"><i class="flaticon-comment"></i> Informations générales</h5>
                   </div>
                   <form>
                     <div class="row">
@@ -173,16 +173,12 @@
                         <div class="form-group p-relative">
                           <select class="form-control form-control-custom">
                             <option value="">Choisir..</option>
-                            <option value="Luxury">Luxury Car</option>
-                            <option value="Sports">Sports Car</option>
-                            <option value="Vintage">Vintage Car</option>
-                            <option value="Excutive">Excutive Car</option>
-                            <option value="Economy">Economy Car</option>
+                            <option *ngFor="let c of categoriesList" [value]="c.category">{{c.category}} Car</option>
                           </select>
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
-                        <label>Brand</label>
+                        <label>Marque</label>
                         <div class="form-group p-relative">
                           <select class="form-control form-control-custom">
                             <option value="">Choisir..</option>
@@ -290,14 +286,14 @@
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
-                        <label>nombre de places</label>
+                        <label>Nombre de places</label>
                         <div class="form-group">
                           <input type="text" name="seatingCapacity" class="form-control form-control-custom">
                         </div>
                       </div>
 
                       <div class="col-lg-3 col-md-4 col-sm-4">
-                        <label>nombre de portes</label>
+                        <label>Nombre de portes</label>
                         <div class="form-group">
                           <input type="text" name="numberDoors" class="form-control form-control-custom">
                         </div>
@@ -409,82 +405,13 @@
                       <div class="col-lg-12">
                         <label>Equipements extérieurs</label>
                         <div class="form-group  p-relative">
-                          <ul class="boxes" id="boxes-7">
-                            <li>
-                              <label class="custom-checkbox" for="input-107-257">
-                                <input type="checkbox" id="input-107-257" name="attributes[107][]" value="257">
-                                <span class="checkmark"></span>Antibrouillards</label>
+                          <ul class="boxes" id="inside-equip">
+                            <li *ngFor="let ex of outsideEquipmentList;let index=index">
+                              <label class="custom-checkbox black-text " for="ex{{index}}">
+                                <input type="checkbox" id="ex{{index}}" [value]="ex.equipement">
+                                <span class="checkmark"></span>{{ex.equipement}}</label>
                             </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-107-277">
-                                <input type="checkbox" id="input-107-277" name="attributes[107][]" value="277">
-                                <span class="checkmark"></span>Détecteur de luminosité</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-107-276">
-                                <input type="checkbox" id="input-107-276" name="attributes[107][]" value="276">
-                                <span class="checkmark"></span>Détecteur de pluie</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-107-278">
-                                <input type="checkbox" id="input-107-278" name="attributes[107][]" value="278">
-                                <span class="checkmark"></span>Fermeture centralisée</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-107-387">
-                                <input type="checkbox" id="input-107-387" name="attributes[107][]" value="387">
-                                <span class="checkmark"></span>Feux à LED</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-107-252">
-                                <input type="checkbox" id="input-107-252" name="attributes[107][]" value="252">
-                                <span class="checkmark"></span>Jantes en alliage</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-107-279">
-                                <input type="checkbox" id="input-107-279" name="attributes[107][]" value="279">
-                                <span class="checkmark"></span>Lave Phares</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-107-249">
-                                <input type="checkbox" id="input-107-249" name="attributes[107][]" value="249">
-                                <span class="checkmark"></span>Peinture métallisée</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-107-254">
-                                <input type="checkbox" id="input-107-254" name="attributes[107][]" value="254">
-                                <span class="checkmark"></span>Phares au xénon</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-107-255">
-                                <input type="checkbox" id="input-107-255" name="attributes[107][]" value="255">
-                                <span class="checkmark"></span>Radar de recul</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-107-284">
-                                <input type="checkbox" id="input-107-284" name="attributes[107][]" value="284">
-                                <span class="checkmark"></span>Rétroviseurs électriques</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-107-285">
-                                <input type="checkbox" id="input-107-285" name="attributes[107][]" value="285">
-                                <span class="checkmark"></span>Rétroviseurs rabattables</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-107-253">
-                                <input type="checkbox" id="input-107-253" name="attributes[107][]" value="253">
-                                <span class="checkmark"></span>Toit ouvrant</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-107-438">
-                                <input type="checkbox" id="input-107-438" name="attributes[107][]" value="438">
-                                <span class="checkmark"></span>Toit panoramique</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-107-256">
-                                <input type="checkbox" id="input-107-256" name="attributes[107][]" value="256">
-                                <span class="checkmark"></span>Vitres teintées</label>
-                            </li>
+                           
                           </ul>
                         </div>
                       </div>
@@ -492,146 +419,11 @@
                       <div class="col-lg-12">
                         <label>Equipements intérieurs</label>
                         <div class="form-group">
-                          <ul class="boxes" id="boxes-8">
-                            <li>
-                              <label class="custom-checkbox" for="input-109-265">
-                                <input type="checkbox" id="input-109-265" name="attributes[109][]" value="265">
-                                <span class="checkmark"></span>Accoudoir avant</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-271">
-                                <input type="checkbox" id="input-109-271" name="attributes[109][]" value="271">
-                                <span class="checkmark"></span>Accoudoir arrière</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-386">
-                                <input type="checkbox" id="input-109-386" name="attributes[109][]" value="386">
-                                <span class="checkmark"></span> Autoradio</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-385">
-                                <input type="checkbox" id="input-109-385" name="attributes[109][]" value="385">
-                                <span class="checkmark"></span>Autoradio CD</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-259">
-                                <input type="checkbox" id="input-109-259" name="attributes[109][]" value="259">
-                                <span class="checkmark"></span> Autoradio CD/Mp3</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-272">
-                                <input type="checkbox" id="input-109-272" name="attributes[109][]" value="272">
-                                <span class="checkmark"></span>Bluetooth</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-273">
-                                <input type="checkbox" id="input-109-273" name="attributes[109][]" value="273">
-                                <span class="checkmark"></span> Boîte à gants réfrigérée</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-274">
-                                <input type="checkbox" id="input-109-274" name="attributes[109][]" value="274">
-                                <span class="checkmark"></span> Bouton Start &amp; Stop</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-275">
-                                <input type="checkbox" id="input-109-275" name="attributes[109][]" value="275">
-                                <span class="checkmark"></span> Caméra de recul</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-439">
-                                <input type="checkbox" id="input-109-439" name="attributes[109][]" value="439">
-                                <span class="checkmark"></span>Chargeur CD</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-258">
-                                <input type="checkbox" id="input-109-258" name="attributes[109][]" value="258">
-                                <span class="checkmark"></span>Climatisation</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-437">
-                                <input type="checkbox" id="input-109-437" name="attributes[109][]" value="437">
-                                <span class="checkmark"></span>Climatronic</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-264">
-                                <input type="checkbox" id="input-109-264" name="attributes[109][]" value="264">
-                                <span class="checkmark"></span>Connectivité Aux, usb, iPod</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-263">
-                                <input type="checkbox" id="input-109-263" name="attributes[109][]" value="263">
-                                <span class="checkmark"></span>Direction assistée</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-261">
-                                <input type="checkbox" id="input-109-261" name="attributes[109][]" value="261">
-                                <span class="checkmark"></span>GPS</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-266">
-                                <input type="checkbox" id="input-109-266" name="attributes[109][]" value="266">
-                                <span class="checkmark"></span>Ordinateur de bord</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-280">
-                                <input type="checkbox" id="input-109-280" name="attributes[109][]" value="280">
-                                <span class="checkmark"></span> Palettes au volant</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-282">
-                                <input type="checkbox" id="input-109-282" name="attributes[109][]" value="282">
-                                <span class="checkmark"></span> Régulateur de vitesse</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-286">
-                                <input type="checkbox" id="input-109-286" name="attributes[109][]" value="286">
-                                <span class="checkmark"></span>Sellerie en cuir</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-287">
-                                <input type="checkbox" id="input-109-287" name="attributes[109][]" value="287">
-                                <span class="checkmark"></span>Sièges réglables en hauteur</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-288">
-                                <input type="checkbox" id="input-109-288" name="attributes[109][]" value="288">
-                                <span class="checkmark"></span> Sièges électriques</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-440">
-                                <input type="checkbox" id="input-109-440" name="attributes[109][]" value="440">
-                                <span class="checkmark"></span>Sièges chauffants</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-289">
-                                <input type="checkbox" id="input-109-289" name="attributes[109][]" value="289">
-                                <span class="checkmark"></span>Vitres électriques</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-290">
-                                <input type="checkbox" id="input-109-290" name="attributes[109][]" value="290">
-                                <span class="checkmark"></span> Vitres teintées</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-262">
-                                <input type="checkbox" id="input-109-262" name="attributes[109][]" value="262">
-                                <span class="checkmark"></span>Volant/levier de vitesse en cuir</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-291">
-                                <input type="checkbox" id="input-109-291" name="attributes[109][]" value="291">
-                                <span class="checkmark"></span>Volant multi-fonctions</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-293">
-                                <input type="checkbox" id="input-109-293" name="attributes[109][]" value="293">
-                                <span class="checkmark"></span>3 appuis têtes arrières</label>
-                            </li>
-                            <li>
-                              <label class="custom-checkbox" for="input-109-292">
-                                <input type="checkbox" id="input-109-292" name="attributes[109][]" value="292">
-                                <span class="checkmark"></span>Volant réglable hauteur/profondeur</label>
+                          <ul class="boxes" id="outside-equip">
+                            <li *ngFor="let i of insideEquipmentList;let index=index">
+                              <label class="custom-checkbox black-text" for="int{{index}}">
+                                <input type="checkbox" id="int{{index}}" [value]="i.equipement">
+                                <span class="checkmark"></span>{{i.equipement}}</label>
                             </li>
                           </ul>
                         </div>
@@ -639,53 +431,15 @@
 
 
                       <div class="col-lg-12">
-                        <label class="custom-checkbox">Equipements de sécurité</label>
+                        <label>Equipements de sécurité</label>
                         <div class="form-group">
-                          <ul class="boxes" id="boxes-9">
-                            <li>
-                              <input type="checkbox" id="input-106-245" name="attributes[106][]" value="245">
-                              <label for="input-106-245">ABS</label>
+                          <ul class="boxes" id="security-equip">
+                            <li *ngFor="let s of securityEquipmentList;let index=index">
+                              <label class="custom-checkbox black-text" for="security{{index}}">
+                                <input type="checkbox" id="security{{index}}" [value]="s.equipement">
+                                <span class="checkmark"></span>{{s.equipement}}</label>
                             </li>
-                            <li>
-                              <input type="checkbox" id="input-106-246" name="attributes[106][]" value="246">
-                              <label for="input-106-246">Airbags frontaux</label>
-                            </li>
-                            <li>
-                              <input type="checkbox" id="input-106-248" name="attributes[106][]" value="248">
-                              <label for="input-106-248">Airbags latéraux </label>
-                            </li>
-                            <li>
-                              <input type="checkbox" id="input-106-247" name="attributes[106][]" value="247">
-                              <label for="input-106-247">Airbags rideaux</label>
-                            </li>
-                            <li>
-                              <input type="checkbox" id="input-106-250" name="attributes[106][]" value="250">
-                              <label for="input-106-250">Alarme anti-intrusion</label>
-                            </li>
-                            <li>
-                              <input type="checkbox" id="input-106-251" name="attributes[106][]" value="251">
-                              <label for="input-106-251">Anti-démarrage électronique</label>
-                            </li>
-                            <li>
-                              <input type="checkbox" id="input-106-267" name="attributes[106][]" value="267">
-                              <label for="input-106-267">Anti-patinage</label>
-                            </li>
-                            <li>
-                              <input type="checkbox" id="input-106-268" name="attributes[106][]" value="268">
-                              <label for="input-106-268">Contrôle de pression des pneus</label>
-                            </li>
-                            <li>
-                              <input type="checkbox" id="input-106-269" name="attributes[106][]" value="269">
-                              <label for="input-106-269">Fixations ISOFIX</label>
-                            </li>
-                            <li>
-                              <input type="checkbox" id="input-106-270" name="attributes[106][]" value="270">
-                              <label for="input-106-270">Pneumatiques runflat</label>
-                            </li>
-                            <li>
-                              <input type="checkbox" id="input-106-281" name="attributes[106][]" value="281">
-                              <label for="input-106-281">Radiateur tropicalisé</label>
-                            </li>
+                          
                           </ul>
 
                         </div>

@@ -60,8 +60,8 @@ const arrayInsideEquipment = [{ equipement: 'Accoudoir avant' },
 { equipement: 'appuis têtes arrières' },
 { equipement: 'Volant réglable hauteur/profondeur' }]
 
-const arrayCategoryCar=[{category:'Luxury Car'},{category:'Sports Car'},
-{category:'Vintage Car'},{category:'Excutive Car'},{category:'Economy Car'},]
+const arrayCategoryCar=[{category:'Luxury'},{category:'Sports'},
+{category:'Vintage'},{category:'Excutive'},{category:'Economy'},]
 
 const headers = new HttpHeaders({
   "Content-Type": "application/json",

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { arrayInsideEquipment,arrayOutsideEquipment,arraysecurityEquipment,arrayCategoryCar, arrayCategories  } from 'src/app/shared/config';
 @Component({
   selector: 'app-add-listing',
   templateUrl: './add-listing.component.html',
@@ -18,6 +18,10 @@ export class AddListingComponent implements OnInit {
   isSubmitting: boolean = false;
   years: any = []
   powerFiscalArray:any=[]
+  insideEquipmentList=arrayInsideEquipment; 
+  outsideEquipmentList=arrayOutsideEquipment;
+  securityEquipmentList=arraysecurityEquipment;
+  categoriesList=arrayCategoryCar;
   constructor(private router: Router) {
     this.addCarForm = new FormGroup({
       title: new FormControl(''),
