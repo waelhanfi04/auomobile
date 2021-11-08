@@ -12,7 +12,7 @@ label{
 @media(min-width:768px){
     #outside-equip li,
     #inside-equip li,
-    #security-equip {
+    #security-equip li {
         display: inline-block !important;
         width: 33% !important;
     }
