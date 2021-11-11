@@ -17,3 +17,59 @@ label{
         width: 33% !important;
     }
 }
+
+select option {
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 40px;
+    list-style: none;
+    min-height: 40px;
+    outline: none;
+    padding-left: 18px;
+    padding-right: 29px;
+    text-align: left;
+    transition: all 0.2s;
+    border-bottom: 1px solid #eee;
+}
+
+
+select option:checked,
+select option:hover {
+    background: #ff6e14 !important; 
+    color: white !important;
+}
+select:focus > option:checked { 
+    background: #ff6e14 !important; 
+    color: white !important;
+}
+select.open  {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1) translateY(0);
+    width: 100%;
+    min-height: 50px;
+    /* max-height: 110
+px
+; */
+    border: 1px solid #eee;
+    max-height: 200px;
+    overflow-y: auto;
+}
+ select .list {
+    background-color: #fff;
+    border-radius: 0px;
+    box-shadow: none;
+    box-sizing: border-box;
+    margin-top: 4px;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    transform-origin: 50% 0;
+    transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    z-index: 9;
+}

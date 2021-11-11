@@ -60,29 +60,30 @@
               </li>
             </ul>
             <div class="step-content">
-              <div class="step-tab-panel" id="step1">
+              <form [formGroup]="addCarForm">
+               <div class="step-tab-panel" id="step1">
                 <div class="tab-from-content">
                   <div class="title-icon">
                     <h5 class="title rubik fw-600"><i class="flaticon-comment"></i> Informations générales</h5>
                   </div>
-                  <form>
+                
                     <div class="row">
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Titre</label>
                         <div class="form-group">
-                          <input type="text" name="title" class="form-control form-control-custom">
+                          <input type="text" name="title" formControlName="title" class="form-control form-control-custom">
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Téléphone</label>
                         <div class="form-group">
-                          <input type="text" name="phone" class="form-control form-control-custom">
+                          <input type="text" name="phone" formControlName="phone" class="form-control form-control-custom">
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Gouvernorat</label>
                         <div class="form-group p-relativ">
-                          <select class="form-control form-control-custom">
+                          <select class="form-control form-control-custom" formControlName="city">
                             <option value=""></option>
                             <option value="Ariana">Ariana</option>
                             <option value="Béja">Béja</option>
@@ -114,13 +115,13 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Adresse</label>
                         <div class="form-group">
-                          <input type="text" name="address" class="form-control form-control-custom">
+                          <input type="text" name="address" formControlName="address" class="form-control form-control-custom">
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Mois</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom">
+                          <select class="form-control form-control-custom" formControlName="month">
                             <option value=""></option>
                             <option value="12">12</option>
                             <option value="11">11</option>
@@ -140,28 +141,28 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Année</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom">
+                          <select class="form-control form-control-custom" formControlName="year">
                             <option value=""></option>
-                            <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+                            <option *ngFor="let y of years" [value]="y">{{ y }}</option>
                           </select>
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
-                        <label>Garantie</label>
+                        <label>Guarantie</label>
                         <div class="form-group">
-                          <input type="text" name="Garantie" class="form-control form-control-custom">
+                          <input type="text" name="Guarantie" formControlName="guarantee" class="form-control form-control-custom">
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Prix</label>
                         <div class="form-group">
-                          <input type="text" name="price" class="form-control form-control-custom">
+                          <input type="text" name="price" formControlName="price" class="form-control form-control-custom">
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Disponibilité</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom">
+                          <select class="form-control form-control-custom" formControlName="availablity">
                             <option value=""></option>
                             <option value="Immediatement">Immediatement</option>
                             <option value="Sur-commande">Sur commande</option>
@@ -171,7 +172,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Catégorie</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom">
+                          <select class="form-control form-control-custom" formControlName="category">
                             <option value=""></option>
                             <option *ngFor="let c of categoriesList" [value]="c.category">{{c.category}} Car</option>
                           </select>
@@ -180,106 +181,16 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Marque</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom">
+                          <select class="form-control form-control-custom" formControlName="brand">
                             <option value=""></option>
-                            <option value="acura">Acura</option>
-                            <option value="aixam">Aixam</option>
-                            <option value="alfa-romeo">Alfa Romeo</option>
-                            <option value="alpina">Alpina</option>
-                            <option value="aston-martin">Aston Martin</option>
-                            <option value="audi">Audi</option>
-                            <option value="baic-yx">BAIC YX</option>
-                            <option value="bentley">Bentley</option>
-                            <option value="bmw">BMW</option>
-                            <option value="bugatti">Bugatti</option>
-                            <option value="buick">Buick</option>
-                            <option value="byd">BYD</option>
-                            <option value="cadillac">Cadillac</option>
-                            <option value="changan">Changan</option>
-                            <option value="chery">Chery</option>
-                            <option value="chevrolet">Chevrolet</option>
-                            <option value="chrysler">Chrysler</option>
-                            <option value="citroen">Citroën</option>
-                            <option value="dacia">Dacia</option>
-                            <option value="daewoo">Daewoo</option>
-                            <option value="daihatsu">Daihatsu</option>
-                            <option value="dfsk">DFSK</option>
-                            <option value="dodge">Dodge</option>
-                            <option value="dongfeng">Dongfeng</option>
-                            <option value="ds">DS</option>
-                            <option value="faw">Faw</option>
-                            <option value="ferrari">Ferrari</option>
-                            <option value="fiat">Fiat</option>
-                            <option value="foday">Foday</option>
-                            <option value="ford">Ford</option>
-                            <option value="foton">Foton</option>
-                            <option value="geely">Geely</option>
-                            <option value="genesis">Genesis</option>
-                            <option value="gmc">GMC</option>
-                            <option value="great-wall">Great Wall</option>
-                            <option value="haval">Haval</option>
-                            <option value="honda">Honda</option>
-                            <option value="huanghai">Huanghai</option>
-                            <option value="hummer">Hummer</option>
-                            <option value="hyundai">Hyundai</option>
-                            <option value="infiniti">Infiniti</option>
-                            <option value="isuzu">Isuzu</option>
-                            <option value="iveco">Iveco</option>
-                            <option value="jaguar">Jaguar</option>
-                            <option value="jeep">Jeep</option>
-                            <option value="kawazaki">Kawazaki</option>
-                            <option value="kia">KIA</option>
-                            <option value="lada">Lada</option>
-                            <option value="lamborghini">Lamborghini</option>
-                            <option value="lancia">Lancia</option>
-                            <option value="land-rover">Land Rover</option>
-                            <option value="lexus">Lexus</option>
-                            <option value="lincoln">Lincoln</option>
-                            <option value="lotus">Lotus</option>
-                            <option value="mahindra">Mahindra</option>
-                            <option value="maserati">Maserati</option>
-                            <option value="maybach">Maybach</option>
-                            <option value="mazda">Mazda</option>
-                            <option value="mercedes-benz">Mercedes-Benz</option>
-                            <option value="mg">MG</option>
-                            <option value="mini">Mini</option>
-                            <option value="mitsubishi">Mitsubishi</option>
-                            <option value="morgan">Morgan</option>
-                            <option value="nissan">Nissan</option>
-                            <option value="oldsmobile">Oldsmobile</option>
-                            <option value="opel">Opel</option>
-                            <option value="peugeot">Peugeot</option>
-                            <option value="piaggio">Piaggio</option>
-                            <option value="pontiac">Pontiac</option>
-                            <option value="porsche">Porsche</option>
-                            <option value="renault">Renault</option>
-                            <option value="rolls-royce">Rolls Royce</option>
-                            <option value="rover">Rover</option>
-                            <option value="saab">Saab</option>
-                            <option value="seat">Seat</option>
-                            <option value="simca">Simca</option>
-                            <option value="skoda">Skoda</option>
-                            <option value="smart">Smart</option>
-                            <option value="soueast">Soueast</option>
-                            <option value="ssangyong">Ssangyong</option>
-                            <option value="subaru">Subaru</option>
-                            <option value="suzuki">Suzuki</option>
-                            <option value="talbot">Talbot</option>
-                            <option value="tata">Tata</option>
-                            <option value="toyota">Toyota</option>
-                            <option value="trabant">Trabant</option>
-                            <option value="triumph">Triumph</option>
-                            <option value="tvr">TVR</option>
-                            <option value="volkswagen">Volkswagen</option>
-                            <option value="volvo">Volvo</option>
-                            <option value="wallyscar">Wallyscar</option>
+                            <option *ngFor="let b of arrayBrand" [value]="b.brand">{{b.brand}}</option>
                           </select>
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Modèle</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom">
+                          <select class="form-control form-control-custom" formControlName="model">
                             <option value=""></option>
                             <option value=""></option>
                           </select>
@@ -288,33 +199,33 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Nombre de places</label>
                         <div class="form-group">
-                          <input type="text" name="seatingCapacity" class="form-control form-control-custom">
+                          <input type="text" name="seatingCapacity" formControlName="seatingCapacity" class="form-control form-control-custom">
                         </div>
                       </div>
 
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Nombre de portes</label>
                         <div class="form-group">
-                          <input type="text" name="numberDoors" class="form-control form-control-custom">
+                          <input type="text" name="numberDoors"formControlName="numberDoors" class="form-control form-control-custom">
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Kilométrage</label>
                         <div class="form-group">
-                          <input type="text" name="mileage" class="form-control form-control-custom">
+                          <input type="text" name="mileage"formControlName="mileage" class="form-control form-control-custom">
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Motorization</label>
                         <div class="form-group">
-                          <input type="text" name="motorization" class="form-control form-control-custom">
+                          <input type="text" name="motorization" formControlName="motorization" class="form-control form-control-custom">
                         </div>
                       </div>
 
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Puissance fiscale</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom">
+                          <select class="form-control form-control-custom" formControlName="powerFiscal">
                             <option value=""></option>
                             <option *ngFor="let power of powerFiscalArray" [value]="power">{{ power }}</option>
                             <option value="more-48">Plus de 48</option>
@@ -325,7 +236,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Energie</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom">
+                          <select class="form-control form-control-custom" formControlName="energy">
                             <option value=""></option>
                             <option value="essence">Essence</option>
                             <option value="diesel">Diesel</option>
@@ -336,7 +247,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>transmission</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom">
+                          <select class="form-control form-control-custom" formControlName="transmission">
                             <option value=""></option>
                             <option value="traction">Traction</option>
                             <option value="propulsion">Propulsion</option>
@@ -348,7 +259,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Boîte</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom">
+                          <select class="form-control form-control-custom" formControlName="gearbox">
                             <option value=""></option>
                             <option value="manuelle">Manuelle</option>
                             <option value="automatique">Automatique</option>
@@ -359,7 +270,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Carrosserie</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom">
+                          <select class="form-control form-control-custom" formControlName="carrosserie">
                             <option value=""></option>
                             <option value="Citadine">Citadine</option>
                             <option value="Compacte">Compacte</option>
@@ -376,8 +287,8 @@
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Couleur</label>
-                        <div class="form-group p-relative">
-                          <select class="form-control form-control-custom">
+                        <div class="form-group p-relative" >
+                          <select class="form-control form-control-custom" formControlName="color">
                             <option value=""></option>
                             <option value="Noir">Noir</option>
                             <option value="Gris argent">Gris argent</option>
@@ -399,7 +310,7 @@
                       <div class="col-lg-12">
                         <label>Description</label>
                         <div class="form-group">
-                          <textarea class="form-control form-control-custom" rows="5"></textarea>
+                          <textarea class="form-control form-control-custom" formControlName="description" rows="5"></textarea>
                         </div>
                       </div>
                       <div class="col-lg-12">
@@ -446,7 +357,7 @@
                       </div>
 
                     </div>
-                  </form>
+                 
                 </div>
               </div>
               <div class="step-tab-panel" id="step2">
@@ -455,7 +366,7 @@
                     <h5 class="title rubik fw-600"><i class="flaticon-frame"></i> Gallery & Video</h5>
                   </div>
                   <div class="p-relative drag-drop-sec">
-                    <form class="drag-drop">
+                   
                       <div class="row">
                         <div class="col-12">
                           <div class="form-group">
@@ -466,7 +377,7 @@
                           </div>
                         </div>
                       </div>
-                    </form>
+               
                   </div>
                 </div>
               </div>
@@ -475,7 +386,7 @@
                   <div class="title-icon">
                     <h5 class="title rubik fw-600"><i class="flaticon-location-pin"></i> Location</h5>
                   </div>
-                  <form>
+                 
                     <div class="row">
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <div class="form-group">
@@ -515,7 +426,7 @@
                         </div>
                       </div>
                     </div>
-                  </form>
+                  
                 </div>
               </div>
               <div class="step-tab-panel" id="step4">
@@ -523,7 +434,7 @@
                   <div class="title-icon">
                     <h5 class="title rubik fw-600"><i class="flaticon-price-tag"></i> Amenities</h5>
                   </div>
-                  <form>
+                 
                     <div class="row">
                       <div class="col-lg-3">
                         <div class="form-group">
@@ -568,7 +479,7 @@
                         </div>
                       </div>
                     </div>
-                  </form>
+                  
                 </div>
               </div>
               <div class="step-tab-panel" id="step5">
@@ -576,7 +487,7 @@
                   <div class="title-icon">
                     <h5 class="title rubik fw-600"><i class="flaticon-check-square"></i> Confirmation</h5>
                   </div>
-                  <form>
+                 
                     <div class="row">
                       <div class="col-lg-12">
                         <div class="form-group">
@@ -595,9 +506,10 @@
                         </div>
                       </div>
                     </div>
-                  </form>
+                 
                 </div>
               </div>
+              </form>
             </div>
             <div class="step-footer step-tab-pager">
               <button data-direction="prev" class="btn-second orange-btn">Previous</button>

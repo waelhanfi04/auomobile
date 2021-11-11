@@ -774,9 +774,9 @@ Version:1.0.1
 		});
 	});
 	// nice selct
-	$(document).ready(function () {
-		$('select.form-control, select.custom-select, .menu-style-3-search').niceSelect();
-	});
+	// $(document).ready(function () {
+	// 	$('select.form-control, select.custom-select, .menu-style-3-search').niceSelect();
+	// });
 	// range sliders
 	$(function () {
 		$("#slider-range").slider({

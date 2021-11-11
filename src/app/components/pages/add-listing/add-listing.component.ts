@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { arrayInsideEquipment,arrayOutsideEquipment,arraysecurityEquipment,arrayCategoryCar, arrayCategories  } from 'src/app/shared/config';
+import { arrayInsideEquipment,arrayOutsideEquipment,arraysecurityEquipment,arrayCategoryCar, arrayCategories, arrayBrand  } from 'src/app/shared/config';
 @Component({
   selector: 'app-add-listing',
   templateUrl: './add-listing.component.html',
@@ -22,12 +22,12 @@ export class AddListingComponent implements OnInit {
   outsideEquipmentList=arrayOutsideEquipment;
   securityEquipmentList=arraysecurityEquipment;
   categoriesList=arrayCategoryCar;
+  arrayBrand=arrayBrand;
   constructor(private router: Router) {
     this.addCarForm = new FormGroup({
       title: new FormControl(''),
       availablity: new FormControl(''),
       phone: new FormControl(''),
-      country: new FormControl(''),
       city: new FormControl(''),
       brand: new FormControl(''),
       model: new FormControl(''),
