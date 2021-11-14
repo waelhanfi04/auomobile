@@ -1704,16 +1704,20 @@ label.custom-checkbox .checkmark:after {
 .add-car-btn {
     border: 2px solid #fff;
     border-radius: 0px;
-    padding: 5px 35px;
+    padding: 10px 40px;
+    /* padding: 5px 35px; */
     margin-right: 25px;
+    background:  #ff6e14;
 }
 .add-car-btn a {
     padding: 0;
 }
 .add-car-btn:focus,
 .add-car-btn:hover {
-    border-color: #ff6e14;
-    background: #ff6e14;
+    /* border-color: #ff6e14;
+    background: #ff6e14; */
+    border-color:#c0562a;
+    background: #c0562a;
     transition: 1s;
 }
 .add-car-btn:focus a,
