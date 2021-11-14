@@ -1596,10 +1596,10 @@ label.custom-checkbox .checkmark:after {
 }
 #menu-style-3 .dekstop-nav .menu-style-3 .logo{
         display: flex;
-    justify-content: center;
-    position: absolute;
+    justify-content: flex-start;
+    /* position: absolute;
     left: 0;
-    right: 0;
+    right: 0; */
     z-index: -1;
 }
 #menu-style-3 .navigation ul li {

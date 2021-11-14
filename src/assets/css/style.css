@@ -329,13 +329,13 @@ p {
 }
 a {
     color: #ff6e14;
-    text-decoration: none;
+    text-decoration: none !important;
     transition: 0.5s;
 }
 a:focus,
 a:hover {
     color: #ff6e14;
-    text-decoration: none;
+    text-decoration: none !important;
     transition: 0.5s;
 }
 dl,
@@ -1596,10 +1596,10 @@ label.custom-checkbox .checkmark:after {
 }
 #menu-style-3 .dekstop-nav .menu-style-3 .logo{
         display: flex;
-    justify-content: center;
-    position: absolute;
+    justify-content: flex-start;
+    /* position: absolute;
     left: 0;
-    right: 0;
+    right: 0; */
     z-index: -1;
 }
 #menu-style-3 .navigation ul li {
@@ -1701,23 +1701,23 @@ label.custom-checkbox .checkmark:after {
     margin-right: 10px;
     font-size: 14px;
 }
-#menu-style-3 .side-nav ul li.add-car-btn {
+.add-car-btn {
     border: 2px solid #fff;
     border-radius: 0px;
     padding: 5px 35px;
     margin-right: 25px;
 }
-#menu-style-3 .side-nav ul li.add-car-btn a {
+.add-car-btn a {
     padding: 0;
 }
-#menu-style-3 .side-nav ul li.add-car-btn:focus,
-#menu-style-3 .side-nav ul li.add-car-btn:hover {
+.add-car-btn:focus,
+.add-car-btn:hover {
     border-color: #ff6e14;
     background: #ff6e14;
     transition: 1s;
 }
-#menu-style-3 .side-nav ul li.add-car-btn:focus a,
-#menu-style-3 .side-nav ul li.add-car-btn:hover a {
+.add-car-btn:focus a,
+.add-car-btn:hover a {
     color: #fff;
 }
 .menu-style-3 .search-box .close {
