@@ -46,7 +46,7 @@ import { AuthentificationService } from './services/authentification/authentific
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterProComponent } from './components/pages/register-pro/register-pro.component';
 import {CreateAccountComponent } from './components/pages/create-account/create-account.component'
-
+import {CarService} from './services/car/car.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -97,7 +97,7 @@ import {CreateAccountComponent } from './components/pages/create-account/create-
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [IsConnectedService,AuthentificationService],
+  providers: [IsConnectedService,AuthentificationService,CarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
