@@ -128,6 +128,13 @@ export class AddListingComponent implements OnInit {
       });
     }
   }
+  delete(index:any){
+    const checkArray: FormArray = this.addCarForm.get('pictures') as FormArray;
+    checkArray.removeAt(index);
+    this.kits=this.addCarForm.get('pictures')?.value
+    console.log('looog',this.addCarForm.get('pictures')?.value)
+    // this.kits.filter((data:any)=>{data})
+  }
 addCar(){
   console.log('this.addCarForm?.value',this.addCarForm?.value)
 this.carService.addCar(this.addCarForm?.value).subscribe((response:any)=>{

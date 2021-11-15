@@ -668,238 +668,30 @@
           </aside>
           <div class="col-xl-9 col-lg-8">
             <div class="title-head">
-              <h5>Cars <small class="text-dark-white fw-400 rubik">Showing 12 results</small></h5>
+              <h5>Cars <small class="text-dark-white fw-400 rubik">Showing {{carsList.length} results</small></h5>
             </div>
             <div class="right-section-car-box">
               <div class="row">
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
+                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6" *ngFor="let car of carsList">
                   <div class="car-grid-layout-box">
                     <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Acura TLX </a></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
+                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">{{car.brand}} {{car.model}} </a></h5>
+                      <h6 class="text-light-black text-uppercase mb-2">{{car.title}}</h6>
                       <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
-                      <span class="text-orange price-text">$25,000</span>
+                      <span class="text-orange price-text">${{car.price}}</span>
                       <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar7.jpg" class="img-fluid full-width" alt="Car img">
+                        <img src="{{car.pictureVoitures[0].picture}}"  (error)="onImgError($event)" class="img-fluid full-width max-height-img" alt="Car img">
                       </div>
                       <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
+                        <span class="text-dark-white p-relative"><i class="icon-car"></i> {{car.year}} Model</span>
                       </div>
-                      <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
+                      <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i>{{car.city}}</span>
+                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i>{{car.gearbox}}</span>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">BMW 4 Series </a></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
-                      <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar8.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Manual</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Audi A4 </a></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
-                      <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar7.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Infiniti Q50 </a></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
-                      <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar2.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Manual</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Mercedes-Benz </a></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
-                      <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar7.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Lexus ES </a></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
-                      <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar4.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Manual</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Tesla Model 3 </a></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
-                      <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar3.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Audi TT Rs v2 </a></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
-                      <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar2.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Manual</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Audi TT Rs v2 </a></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
-                      <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar1.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Audi TT Rs v2 </a></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
-                      <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar8.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Manual</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Audi TT Rs v2 </a></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
-                      <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar7.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Audi TT Rs v2 </a></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
-                      <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar6.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
