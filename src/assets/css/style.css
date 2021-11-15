@@ -1580,7 +1580,8 @@ label.custom-checkbox .checkmark:after {
     transition: 0.5s ease-out;
 }
 #menu-style-3.fixed {
-    background: #020202;
+    /* background: #020202; */
+    background: white;
     z-index: 9999;
     transition: 0.5s ease-in;
     top: 0;
