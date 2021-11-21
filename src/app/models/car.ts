@@ -4,7 +4,6 @@ export class User {
   title:string
   availablity:string
   phone:string
-  country:string
   city:string
   brand:string
   model:string
@@ -35,7 +34,6 @@ export class User {
     this.title=data?.title
     this.availablity=data?.availablity
     this.phone=data?.phone
-    this.country=data?.country
     this.city=data?.city
     this.brand=data?.brand
     this.model=data?.model

@@ -21,22 +21,22 @@
         <div class="col-md-12">
           <div class="slider-contant">
             <div class="content-box">
-              <h1 class="text-custom-white">BMW 535 v6</h1>
-              <p class="text-custom-white"><i class="fas fa-map-marker-alt"></i> 198 West 21th Street, Suite 721 NewYork, NY 10010</p>
-              <div class="social-share">  <span>Share: </span>
+              <h1 class="text-custom-white">{{car.title}}</h1>
+              <p class="text-custom-white"><i class="fas fa-map-marker-alt"></i>{{car.city}}</p>
+              <!-- <div class="social-share">  <span>Share: </span>
                 <div class="user-social-links"> <a routerLink="/car-detail" class="facebook"><i class="fab fa-facebook-square"></i></a>
                   <a routerLink="/car-detail" class="twitter"><i class="fab fa-twitter"></i></a>
                   <a routerLink="/car-detail" class="pintrest"><i class="fab fa-pinterest-square"></i></a>
                 </div>
-              </div>
+              </div> -->
             </div>
-            <div class="price-btn"> <span>$ 50,000</span>
+            <div class="price-btn"> <span>$ {{car.price || '0'}}</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="user-page-details-sec">
+    <!-- <div class="user-page-details-sec">
       <div class="container-fluid">
         <div class="row">
           <div class="offset-lg-1 col-lg-10">
@@ -90,7 +90,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="space-85"></div>
   </div>
   <!-- User Details -->
@@ -99,30 +99,32 @@
     <div class="container">
       <div class="row no-use-row">
         <div class="col-lg-8">
-          <div class="page-title">
+          <!-- <div class="page-title">
             <h3 class="text-light-black">Ghibli Versions</h3> 
             <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.A masterful combination of style, power, sporty handling and comfort.</p>
-          </div>
+          </div> -->
           <div class="car-details-tab">
             <ul class="nav nav-tabs">
-              <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#vehicle-overview">Vehicle Overview</a>
+              <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#informations">Informations</a>
               </li>
-              <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#tech-spec">Technical Specification</a>
+              <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#tech-spec">Spécifications Techniques</a>
               </li>
-              <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#accessories">Accessories</a>
+              <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#accessories">Accessoires</a>
               </li>
-              <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#performance">Performance</a>
+              <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#contact">Contact</a>
               </li>
             </ul>
             <div class="tab-content">
-              <div class="tab-pane fade" id="vehicle-overview">
+              <div class="tab-pane fade" id="informations">
                 <div class="car-details-box">
                   <div class="text-wrapper">
-                    <h4 class="text-light-black">What is Lorem Ipsum?</h4>
-                    <p class="text-dark-grey">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
-                    <p class="text-dark-grey">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    <h5 class="text-light-black">Déscription</h5>
+                    <p class="text-dark-grey">s{{car.Description}}</p>
+                    <h5 class="text-light-black">Disponibilité</h5>
+                    <p class="text-dark-grey">{{car.availablity}}</p>
+                    <h5 class="text-light-black" *ngIf="car.guarantee">Guarantie</h5>
+                    <p class="text-dark-grey" *ngIf="car.guarantee">{{car.guarantee}}</p>
                   </div>
-            
                 </div>
               </div>
               <div class="tab-pane active" id="tech-spec">
@@ -131,66 +133,74 @@
                     <table class="table table-bordered">
                       <thead>
                         <tr>
-                          <th colspan="2">BASIC INFO</th>
+                          <th colspan="2">INFORMATIONS DE BASE</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>Model Year</td>
-                          <td>2010</td>
+                          <td>Catégorie</td>
+                          <td>{{car.category}}</td>
                         </tr>
                         <tr>
-                          <td>No. of Owners</td>
-                          <td>4</td>
+                          <td>Marque</td>
+                          <td>{{car.brand}}</td>
                         </tr>
                         <tr>
-                          <td>KMs Driven</td>
-                          <td>30,000</td>
+                          <td>Modèle</td>
+                          <td>{{car.model}}</td>
                         </tr>
                         <tr>
-                          <td>Fuel Type</td>
-                          <td>Diesel</td>
+                          <td>Mois / Année</td>
+                          <td>{{car.month}} {{car.year}}</td>
+                        </tr>
+                        <tr>
+                          <td>Kilométrage</td>
+                          <td>{{car.mileage}}</td>
+                        </tr>
+                        <tr>
+                          <td>Energie</td>
+                          <td>{{car.energy}}</td>
+                        </tr>
+                        <tr>
+                          <td>Couleur</td>
+                          <td>{{car.color}}</td>
                         </tr>
                       </tbody>
                     </table>
                     <table class="table table-bordered">
                       <thead>
                         <tr>
-                          <th colspan="2">Technical Specification</th>
+                          <th colspan="2">Spécifications Techniques</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>Engine Type</td>
-                          <td>TDCI Diesel Engine</td>
+                          <td>Motorization</td>
+                          <td>{{car.motorization}}</td>
                         </tr>
                         <tr>
-                          <td>Engine Description</td>
-                          <td>1.5KW</td>
+                          <td>Puissance fiscale</td>
+                          <td>{{car.powerFiscal}}</td>
                         </tr>
                         <tr>
-                          <td>No. of Cylinders</td>
-                          <td>4</td>
+                          <td>Transmission</td>
+                          <td>{{car.transmission}}</td>
                         </tr>
                         <tr>
-                          <td>Mileage-City</td>
-                          <td>22.4kmpl</td>
+                          <td>Boîte</td>
+                          <td>{{car.gearbox}}</td>
                         </tr>
                         <tr>
-                          <td>Mileage-Highway</td>
-                          <td>25.83kmpl</td>
+                          <td>Carrosserie</td>
+                          <td>{{car.carrosserie}}</td>
                         </tr>
                         <tr>
-                          <td>Fuel Tank Capacity</td>
-                          <td>40 (Liters)</td>
+                          <td>Nombre de portes</td>
+                          <td>{{car.numberDoors}}</td>
                         </tr>
                         <tr>
-                          <td>Seating Capacity</td>
-                          <td>5</td>
-                        </tr>
-                        <tr>
-                          <td>Transmission Type</td>
-                          <td>Manual</td>
+                          <td>Nombre de places</td>
+                          <td>{{car.seatingCapacity}}</td>
                         </tr>
                       </tbody>
                     </table>
@@ -200,98 +210,61 @@
               <div class="tab-pane fade" id="accessories">
                 <div class="car-details-box">
                   <div class="table-responsive">
-                    <table>
+                    <table class="table table-bordered" *ngIf="outsideEquipmentList !==[]">
                       <thead>
                         <tr>
-                          <th colspan="2">Accessories</th>
+                          <th colspan="2">Equipements extérieurs</th>
+                        </tr>
+                      </thead>
+                    <tbody>
+                      <tr  *ngFor="let s of outsideEquipmentList ;let index=index">
+                        <td class="w-75">{{s.equipment}}</td>
+                        <td><i class="fas fa-check" aria-hidden="true"></i></td>
+                      </tr>
+                    </tbody>
+                    </table>
+
+                    <table class="table table-bordered" *ngIf="insideEquipmentList !== []">
+                      <thead>
+                        <tr>
+                          <th colspan="2">Equipements intérieurs</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>Air Conditioner</td>
-                          <td><i class="fas fa-check" aria-hidden="true"></i>
-                          </td>
+                        <tr  *ngFor="let s of insideEquipmentList ;let index=index">
+                          <td class="w-75">{{s.equipment}}</td>
+                          <td><i class="fas fa-check" aria-hidden="true"></i> </td>
                         </tr>
+                      </tbody>
+                    </table>
+                    <table class="table table-bordered"*ngIf="securityEquipmentList !==[]">
+                      <thead>
                         <tr>
-                          <td>AntiLock Braking System</td>
-                          <td><i class="fas fa-check" aria-hidden="true"></i>
-                          </td>
+                          <th colspan="2">Equipements de sécurité</th>
                         </tr>
-                        <tr>
-                          <td>Power Steering</td>
-                          <td><i class="fas fa-check" aria-hidden="true"></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Power Windows</td>
-                          <td><i class="fas fa-check" aria-hidden="true"></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>CD Player</td>
-                          <td><i class="fas fa-times" aria-hidden="true"></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Leather Seats</td>
-                          <td><i class="fas fa-check" aria-hidden="true"></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Central Locking</td>
-                          <td><i class="fas fa-check" aria-hidden="true"></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Power Door Locks</td>
-                          <td><i class="fas fa-check" aria-hidden="true"></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Brake Assist</td>
-                          <td><i class="fas fa-check" aria-hidden="true"></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Driver Airbag</td>
-                          <td><i class="fas fa-check" aria-hidden="true"></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Passenger Airbag</td>
-                          <td><i class="fas fa-check" aria-hidden="true"></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Crash Sensor</td>
-                          <td><i class="fas fa-check" aria-hidden="true"></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Engine Check Warning</td>
-                          <td><i class="fas fa-check" aria-hidden="true"></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Automatic Headlamps</td>
-                          <td><i class="fas fa-check" aria-hidden="true"></i>
-                          </td>
+                      </thead>
+                      <tbody>
+                        <tr  *ngFor="let s of securityEquipmentList;let index=index">
+                          <td class="w-75">{{s.equipment}}</td>
+                          <td><i class="fas fa-check" aria-hidden="true"></i> </td>
+                          <!-- <td><i class="fas fa-times" aria-hidden="true"></i></td> -->
                         </tr>
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
-              <div class="tab-pane fade" id="performance">
+              <div class="tab-pane fade" id="contact">
                 <div class="car-details-box">
                   <div class="text-wrapper">
-                    <h4 class="text-light-black">What is Lorem Ipsum?</h4>
-                    <p class="text-dark-grey">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
-                    <p class="text-dark-grey">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                  </div>
-                  <div class="text-wrapper">
-                    <h4 class="text-light-black">What is Lorem Ipsum?</h4>
-                    <p class="text-dark-grey">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
+                    <h4 class="text-light-black">Nom et prénom</h4>
+                    <p class="text-dark-grey">foulen ben flen</p>
+                    <h4 class="text-light-black">Téléphone</h4>
+                    <p class="text-dark-grey">{{car.phone}}</p>
+                    <h4 class="text-light-black">Gouvernorat</h4>
+                    <p class="text-dark-grey">{{car.city}}</p>
+                    <h4 class="text-light-black">Adresse</h4>
+                    <p class="text-dark-grey">{{car.address}}</p>
                   </div>
                 </div>
               </div>
@@ -339,11 +312,11 @@
               </div>
             </div>
           </div>
-          <div class="contant-wrapper">
+          <!-- <div class="contant-wrapper">
             <h4 class="text-light-black">What is Lorem Ipsum?</h4>
             <p class="text-dark-grey">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
             <p class="text-dark-grey">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-          </div>
+          </div> -->
           <!-- <div class="contant-wrapper">
             <h4 class="text-light-black">What is Lorem Ipsum?</h4>
             <p class="text-dark-grey">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>

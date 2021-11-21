@@ -9,6 +9,7 @@ import { CarService } from 'src/app/services/car/car.service';
 })
 export class Homepage2Component implements OnInit {
 carsList:any
+carListLength:number=0
   constructor(private carService:CarService) { }
 
   ngOnInit(): void {
@@ -17,14 +18,17 @@ carsList:any
   getCars(){
     this.carService.getAllCars().subscribe((data:any)=>{
       console.log('car',data)
-      if(data!==null || data!==undefined)this.carsList=data.voitures
+      if(data!==null || data!==undefined)
+      {
+        this.carsList=data.voitures;
+        this.carListLength=this.carsList.length;
+      }
     })
-    // this.carService.getAllCars().pipe(
-    //   map((data:any)=> data.voitrues)
-    //   .subscribe()
-    // )
   }
   onImgError(event: any) {
-    event.target.src = '../../../assets/images/new-icons/default-car.jpg';
+    event.target.src = '../../../../assets/images/new-icons/default-car.jpg';
+  }
+  addToFavorites(){
+    
   }
 }

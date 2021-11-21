@@ -1,3 +1,17 @@
 .max-height-img{
-    max-height: 200px;
+    max-height: 197px;
+    max-width: 350px;
+    height: 197px;
+}
+.gray-fa-heart{
+color:#a5a5a5
+}
+.gray-fa-heart:hover{
+    color:#ff6e14
+    }
+.orange-fa-heart{
+    color: #ff6e14;
+}
+.orange-fa-heart:hover{
+    color: #c0562a;
 }

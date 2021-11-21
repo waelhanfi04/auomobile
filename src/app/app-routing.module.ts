@@ -56,6 +56,9 @@ canActivate:[IsConnectedService]
 component: LoginComponent,
 canActivate:[IsConnectedService]
 },
+{path: 'car-detail/:id', 
+component: CarDetailsComponent
+},
 // {path: 'media', component: MediaComponent},
 {path: 'listing', component: ListingComponent},
 {path: 'listing1', component: Listing1Component},
@@ -65,7 +68,6 @@ canActivate:[IsConnectedService]
 {path: 'listing1-style2', component: Listing1Style2Component},
 {path: 'listing2-style2', component: Listing2Style2Component},
 {path: 'aboutus', component: AboutusComponent},
-{path: 'car-detail', component: CarDetailsComponent},
 {path: 'car-page', component: CarpageComponent},
 {path: 'user', component: UserComponent},
 {path: 'invoice', component: InvoiceComponent},
