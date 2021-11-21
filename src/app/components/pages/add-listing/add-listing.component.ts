@@ -139,6 +139,7 @@ addCar(){
   console.log('this.addCarForm?.value',this.addCarForm?.value)
 this.carService.addCar(this.addCarForm?.value).subscribe((response:any)=>{
   console.log('response',response)
+  this.router.navigate([''])
 })
 }
 onFileChange(e: any) {

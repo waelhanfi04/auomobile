@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { CarService } from 'src/app/services/car/car.service';
+import { arrayCategoryCar } from 'src/app/shared/config';
 
 @Component({
   selector: 'app-homepage2',
@@ -10,6 +11,8 @@ import { CarService } from 'src/app/services/car/car.service';
 export class Homepage2Component implements OnInit {
 carsList:any
 carListLength:number=0
+categoriesList=arrayCategoryCar
+
   constructor(private carService:CarService) { }
 
   ngOnInit(): void {

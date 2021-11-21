@@ -15,6 +15,7 @@ export class CarDetailsComponent implements OnInit {
   insideEquipmentList: any = []
   outsideEquipmentList: any = []
   securityEquipmentList: any = []
+  picturesList:any=[]
   constructor(
     private route: ActivatedRoute,
     private carService: CarService
@@ -34,9 +35,10 @@ export class CarDetailsComponent implements OnInit {
     this.carService.getOneCar(id).subscribe((data: any) => {
       console.log('dataaaaaaa', data)
       this.car = data.voiture;
-      this.insideEquipmentList = data.voiture.insideEquipmentVoitures
-      this.outsideEquipmentList = data.voiture.outsideEquipmentVoitures
-      this.securityEquipmentList = data.voiture.securityEquipmentVoitures
+      this.insideEquipmentList = data.voiture.insideEquipmentVoitures;
+      this.outsideEquipmentList = data.voiture.outsideEquipmentVoitures;
+      this.securityEquipmentList = data.voiture.securityEquipmentVoitures;
+      this.picturesList=data.voiture.pictureVoitures;
     })
   }
 }
