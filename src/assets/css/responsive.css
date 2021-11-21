@@ -670,10 +670,12 @@ Version:1.0.1
     }
     #menu-style-3 {
         padding: 0;
+        background: white;
     }
     .menu-style-3 .search-box.search-elem .input-group,
     #menu-style-3 .mobile-nav {
         display: block;
+        background: white;
     }
     .menu-style-3 .search-box.search-elem .inner label {
         font-size: 35px;

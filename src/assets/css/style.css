@@ -2547,6 +2547,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 #menu-style-3 .mobile-nav .mobile-nav-icons ul li a {
     font-size: 18px;
+    color: #ff6e14;
 }
 #menu-style-3 .mobile-nav .mobile-nav-icons ul li.dropdown {
     position: static;
