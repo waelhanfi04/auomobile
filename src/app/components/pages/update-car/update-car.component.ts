@@ -165,9 +165,10 @@ base64ToFile(data: any, filename: any) {
 getCarDetails(id:any){
   this.carService.getOneCar(id).subscribe((data:any)=>{
     if(data){
-      this.carDetails= new Car(data.voirture)
+      this.carDetails= new Car(data.voiture)
+      console.log('car',data,'gg',this.carDetails)
     }
-    console.log('car',data)
+   
   })
 }
 }
