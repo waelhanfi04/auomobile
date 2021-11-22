@@ -106,6 +106,14 @@
             <h3 class="text-light-black">Ghibli Versions</h3> 
             <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.A masterful combination of style, power, sporty handling and comfort.</p>
           </div> -->
+          <div class="d-flex gap-3">
+            <div class="add-car-btn">
+              <a [routerLink]="['voitures/modifier',car.id]" class="text-custom-white">Modifier</a>
+           </div>
+           <div class="add-car-btn" (click)="deleteCar()">
+            <a  class="text-custom-white">Supprimer</a>
+         </div>
+          </div>
           <div class="car-details-tab">
             <ul class="nav nav-tabs">
               <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#informations">Informations</a>

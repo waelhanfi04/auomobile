@@ -13,7 +13,7 @@
                 </a>
                </div>
                 <div class="add-car-btn"  *ngIf='showAddListing'>
-                   <a routerLink="/add-listing" class="text-custom-white">+ Add Listing</a>
+                   <a routerLink="/creer-une-annonce" class="text-custom-white">+ Add Listing</a>
                 </div>
            
               
@@ -70,7 +70,7 @@
                                       <h6 class="cat-name"><a href="javascript:void(0)" class="text-light-black">Addon</a></h6>
                                     </div>
                                     <ul>
-                                      <li><a routerLink="/add-listing" class="text-dark-grey">Add Listing</a>
+                                      <li><a routerLink="/creer-une-annonce" class="text-dark-grey">Add Listing</a>
                                       </li>
                                       <li><a routerLink="/aboutus" class="text-dark-grey">About Us</a>
                                       </li>
@@ -153,7 +153,11 @@
                       <a class="text-light-black" routerLink="/blog-grid">
                         Blog
                       </a>
-      
+                    </li>
+                    <li>
+                      <a class="text-light-black">
+                        Favoris
+                      </a>
                     </li>
                 <li class="menu-item dropdownbtn">
                   <a href="javascript:void(0)" class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
@@ -167,7 +171,7 @@
                     </li>
                   </ul>
                 </li>
-               <!-- <li class="add-car-btn"  *ngIf='showAddListing'> <a routerLink="/add-listing" class="text-custom-white">+ Add Listing</a>
+               <!-- <li class="add-car-btn"  *ngIf='showAddListing'> <a routerLink="/creer-une-annonce" class="text-custom-white">+ Add Listing</a>
                 </li>  -->
               </ul>
             </div>
@@ -246,7 +250,7 @@
                 </a>
               </li>
               <li *ngIf='showAddListing'>
-                <a routerLink="/add-listing">
+                <a routerLink="/creer-une-annonce">
                   <h6 class="mb-0">Add Listing</h6>
                 </a>
 
@@ -255,7 +259,11 @@
                 <a routerLink="/blog-grid">
                   <h6 class="mb-0">Blog</h6>
                 </a>
-
+              </li>
+              <li>
+                <a >
+                  <h6 class="mb-0">Favoris</h6>
+                </a>
               </li>
               
               <!-- <li>
@@ -282,7 +290,7 @@
                       </li>
                       <li><a routerLink="/listing2-style2">Listing 2 Style 2</a>
                       </li> -->
-                  <!-- <li><a routerLink="/add-listing">Add Listing</a>
+                  <!-- <li><a routerLink="/creer-une-annonce">Add Listing</a>
                       </li> -->
                   <!-- <li><a routerLink="/aboutus">About Us</a>
                       </li>

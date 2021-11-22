@@ -47,6 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterProComponent } from './components/pages/register-pro/register-pro.component';
 import {CreateAccountComponent } from './components/pages/create-account/create-account.component'
 import {CarService} from './services/car/car.service'
+import {UpdateCarComponent} from './components/pages/update-car/update-car.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,7 +90,8 @@ import {CarService} from './services/car/car.service'
     PricingComponent,
     ContactComponent,
     RegisterProComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    UpdateCarComponent
   ],
   imports: [
     BrowserModule,

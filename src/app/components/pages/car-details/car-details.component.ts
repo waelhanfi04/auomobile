@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CarService } from 'src/app/services/car/car.service';
@@ -16,16 +16,18 @@ export class CarDetailsComponent implements OnInit {
   outsideEquipmentList: any = []
   securityEquipmentList: any = []
   picturesList:any=[]
+  idCar:any
   constructor(
     private route: ActivatedRoute,
-    private carService: CarService
+    private carService: CarService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
     this.route.params
       .pipe(
         map((params: any) => {
-          console.log(params['id']);
+          this.idCar=params['id'];
           return params['id'];
         })
       )
@@ -39,6 +41,12 @@ export class CarDetailsComponent implements OnInit {
       this.outsideEquipmentList = data.voiture.outsideEquipmentVoitures;
       this.securityEquipmentList = data.voiture.securityEquipmentVoitures;
       this.picturesList=data.voiture.pictureVoitures;
+    })
+  }
+  deleteCar(){
+    this.carService.deleteCar(this.idCar).subscribe((data:any)=>{
+      if(data.message === "voiture was deleted successfully!")
+      this.router.navigate([''])
     })
   }
 }

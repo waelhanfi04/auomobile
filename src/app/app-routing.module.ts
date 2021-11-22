@@ -33,10 +33,11 @@ import { ContactComponent } from './components/pages/contact/contact.component';
 import { RegisterProComponent } from './components/pages/register-pro/register-pro.component'
 import {CreateAccountComponent } from './components/pages/create-account/create-account.component'
 import { IsConnectedService } from './services/IsConnectedService.service';
+import {UpdateCarComponent} from './components/pages/update-car/update-car.component';
 const routes: Routes = [
 
 {path: '', component: Homepage2Component},
-{path: 'add-listing', 
+{path: 'creer-une-annonce', 
 component: AddListingComponent,
 //canActivate:[IsConnectedService]
 },
@@ -58,6 +59,9 @@ canActivate:[IsConnectedService]
 },
 {path: 'car-detail/:id', 
 component: CarDetailsComponent
+},{
+path:'voitures/modifier/:id',
+component:UpdateCarComponent
 },
 // {path: 'media', component: MediaComponent},
 {path: 'listing', component: ListingComponent},

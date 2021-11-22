@@ -10,13 +10,13 @@
         <div class="row">
           <div class="col-xl-12">
             <div class="sub-header-text-wrapper text-center">
-              <h1 class="text-custom-white">List Your Vehicle</h1>
+              <h1 class="text-custom-white">Modifier votre annonce </h1>
               <ul class="breadcrumbs">
                 <li><a routerLink="/" class="text-custom-white">Home</a>
                 </li>
                 <li><a routerLink="/creer-une-annonce" class="text-custom-white">Pages</a>
                 </li>
-                <li><span class="text-custom-white">Adding Listing</span>
+                <li><span class="text-custom-white">Modifier annonce </span>
                 </li>
               </ul>
             </div>
@@ -70,13 +70,13 @@
                   <div class="title-icon">
                     <h5 class="title rubik fw-600"><i class="flaticon-comment"></i>Informations générales</h5>
                   </div>
-                  <form [formGroup]="addCarForm">
+                  <form [formGroup]="updateCarForm">
                     <div class="row">
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Titre</label>
                         <div class="form-group">
                           <input type="text" name="title" formControlName="title"
-                            class="form-control form-control-custom">
+                            class="form-control form-control-custom" [(ngModel)]="carDetails.title">
                         </div>
                       </div>
 
@@ -113,14 +113,14 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Kilométrage</label>
                         <div class="form-group">
-                          <input type="text" name="mileage" formControlName="mileage"
+                          <input type="text" name="mileage"  [(ngModel)]="carDetails.mileage" formControlName="mileage"
                             class="form-control form-control-custom">
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Motorization</label>
                         <div class="form-group">
-                          <input type="text" name="motorization" formControlName="motorization"
+                          <input type="text" name="motorization"  [(ngModel)]="carDetails.motorization" formControlName="motorization"
                             class="form-control form-control-custom">
                         </div>
                       </div>
@@ -138,7 +138,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Prix</label>
                         <div class="form-group">
-                          <input type="text" name="price" formControlName="price"
+                          <input type="text" name="price"  [(ngModel)]="carDetails.price" formControlName="price"
                             class="form-control form-control-custom">
                         </div>
                       </div>
@@ -206,14 +206,14 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Guarantie</label>
                         <div class="form-group">
-                          <input type="text" name="Guarantie" formControlName="guarantee"
+                          <input type="text" name="Guarantie"  [(ngModel)]="carDetails.guarantee" formControlName="guarantee"
                             class="form-control form-control-custom">
                         </div>
                       </div>
                       <div class="col-lg-12">
                         <label>Description</label>
                         <div class="form-group">
-                          <textarea class="form-control form-control-custom" formControlName="description"
+                          <textarea class="form-control form-control-custom"  [(ngModel)]="carDetails.description" formControlName="description"
                             rows="5"></textarea>
                         </div>
                       </div>
@@ -228,7 +228,7 @@
                   <div class="title-icon">
                     <h5 class="title rubik fw-600"><i class="flaticon-check-square"></i>Spécifications techniques</h5>
                   </div>
-                  <form [formGroup]="addCarForm">
+                  <form [formGroup]="updateCarForm">
                     <div class="row">
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Boîte</label>
@@ -284,7 +284,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Nombre de places</label>
                         <div class="form-group">
-                          <input type="text" name="seatingCapacity" formControlName="seatingCapacity"
+                          <input type="text" name="seatingCapacity"  [(ngModel)]="carDetails.seatingCapacity" formControlName="seatingCapacity"
                             class="form-control form-control-custom">
                         </div>
                       </div>
@@ -292,7 +292,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Nombre de portes</label>
                         <div class="form-group">
-                          <input type="text" name="numberDoors" formControlName="numberDoors"
+                          <input type="text" name="numberDoors" [(ngModel)]="carDetails.numberDoors"  formControlName="numberDoors"
                             class="form-control form-control-custom">
                         </div>
                       </div>
@@ -305,7 +305,7 @@
                   <div class="title-icon">
                     <h5 class="title rubik fw-600"><i class="flaticon-price-tag"></i>Accessoires</h5>
                   </div>
-                  <form [formGroup]="addCarForm">
+                  <form [formGroup]="updateCarForm">
                     <div class="row">
                       <div class="col-lg-12">
                         <label>Equipements extérieurs</label>
@@ -361,12 +361,12 @@
                   <div class="title-icon">
                     <h5 class="title rubik fw-600"><i class="flaticon-location-pin"></i> Location</h5>
                   </div>
-                  <form [formGroup]="addCarForm">
+                  <form [formGroup]="updateCarForm">
                     <div class="row">
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Téléphone</label>
                         <div class="form-group">
-                          <input type="text" name="phone" formControlName="phone"
+                          <input type="text" name="phone" formControlName="phone" [(ngModel)]="carDetails.phone"
                             class="form-control form-control-custom">
                         </div>
                       </div>
@@ -405,7 +405,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Adresse</label>
                         <div class="form-group">
-                          <input type="text" name="address" formControlName="address"
+                          <input type="text" name="address" formControlName="address" [(ngModel)]="carDetails.address"
                             class="form-control form-control-custom">
                         </div>
                       </div>
@@ -419,7 +419,7 @@
                     <h5 class="title rubik fw-600"><i class="flaticon-frame"></i>Galerie</h5>
                   </div>
                  
-                    <form [formGroup]="addCarForm">
+                    <form [formGroup]="updateCarForm">
                       <div class="row">
                         <div class="col-lg-12">
                           <div class="form-group div-input-file">
@@ -462,7 +462,7 @@
             <div class="step-footer step-tab-pager">
               <button data-direction="prev" class="btn-second orange-btn">Previous</button>
               <button data-direction="next" class="btn-second orange-btn">Next</button>
-              <button data-direction="finish" class="btn-second orange-btn" (click)="addCar()">Preview & Save</button>
+              <button data-direction="finish" class="btn-second orange-btn" (click)="updateCar()">Preview & Save</button>
             </div>
           </div>
         </div>
