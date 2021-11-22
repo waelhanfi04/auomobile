@@ -210,10 +210,14 @@
       <div>
         <div id="mobile-mySidenav" class="sidenav">
           <div class="side-nav-wrapper">
-            <span class="float-left ">Rims</span>
-            <span class="float-right">
+            <!-- <span class="float-right">
               <a href="javascript:void(0)" class="closebtn" id="mobile-close-nav">X</a>
-            </span>
+            </span> -->
+             <div class="logo align-item-center">
+              <span class=" float-right">
+                <a href="javascript:void(0)" class="closebtn close-sidenav" id="mobile-close-nav">X</a>
+              </span>
+            </div>
             <ul>
               <li class="custom-dropdown-nav">
                 <!-- <a routerLink="/" class="text-custom-white">
@@ -238,18 +242,18 @@
               </li>
               <li>
                 <a routerLink="/" class="text-custom-white">
-                  <h3 class="mb-0">Home</h3>
+                  <h6 class="mb-0">Home</h6>
                 </a>
               </li>
               <li *ngIf='showAddListing'>
                 <a routerLink="/add-listing">
-                  <h3 class="mb-0">Add Listing</h3>
+                  <h6 class="mb-0">Add Listing</h6>
                 </a>
 
               </li>
               <li>
                 <a routerLink="/blog-grid">
-                  <h3 class="mb-0">Blog</h3>
+                  <h6 class="mb-0">Blog</h6>
                 </a>
 
               </li>

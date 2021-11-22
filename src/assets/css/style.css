@@ -2041,7 +2041,8 @@ label.custom-checkbox .checkmark:after {
     z-index: 999;
     top: 0;
     right: 0;
-    background-color: #020202;
+    /* background-color: #020202; */
+    background: white;
     overflow: hidden;
     transition: 0.5s;
     padding-top: 0px;
@@ -2143,7 +2144,7 @@ label.custom-checkbox .checkmark:after {
 .mobile-nav .sidenav a {
     padding: 0px 8px 0px 0px;
     text-decoration: none;
-    color: #ffffff;
+    color:black;
     display: block;
     transition: 0.3s;
     margin-bottom: 10px;
@@ -2156,9 +2157,9 @@ label.custom-checkbox .checkmark:after {
 }
 .mobile-nav .sidenav span {
     position: absolute;
-    top: 5%;
+    top: 0%;
     font-size: 36px;
-    margin-left: 50px;
+    margin-left: 50px
 }
 .mobile-nav .sidenav span.float-left {
     left: 0;

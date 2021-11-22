@@ -364,11 +364,13 @@ Version:1.0.1
     #menu-style-4 nav ul li.menu-item:first-child,
     #menu-style-3 {
         padding: 0;
+        background: white;
     }
     header#menu-style-4 .desk-menu .menu-container .menu-header-container ul,
     #menu-style-3 .mobile-nav {
         display: block;
         padding: 15px 0;
+        background: white;
     }
     header#menu-style-4 .hamburger-menu,
     header#menu-style-4 .desk-menu {

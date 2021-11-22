@@ -100,7 +100,7 @@ Version:1.0.1
 	});
 	// Mobile Nav
 	$("#mobile-open-nav").click(function () {
-		$("#mobile-mySidenav").css("width", "100%");
+		$("#mobile-mySidenav").css("width", "80%");
 	});
 	$("#mobile-close-nav").click(function () {
 		$("#mobile-mySidenav").css("width", "0%");
