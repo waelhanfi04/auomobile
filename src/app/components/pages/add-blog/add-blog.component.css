@@ -1,0 +1,16 @@
+
+.editor {
+    border: 2px solid #d6d6e8;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  ::ng-deep.NgxEditor__MenuBar {
+    border-bottom: 1px solid #d6d6e8;
+    flex-wrap: wrap;
+  }
+  
+  ::ng-deep.NgxEditor {
+    border: none !important;
+  }
+  

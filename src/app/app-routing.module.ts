@@ -34,6 +34,7 @@ import { RegisterProComponent } from './components/pages/register-pro/register-p
 import {CreateAccountComponent } from './components/pages/create-account/create-account.component'
 import { IsConnectedService } from './services/IsConnectedService.service';
 import {UpdateCarComponent} from './components/pages/update-car/update-car.component';
+import { AddBlogComponent } from './components/pages/add-blog/add-blog.component';
 const routes: Routes = [
 
 {path: '', component: Homepage2Component},
@@ -63,6 +64,16 @@ component: CarDetailsComponent
 path:'voitures/modifier/:id',
 component:UpdateCarComponent
 },
+
+{path: 'blog', 
+component: BlogGridComponent},
+{
+  path: 'details-blog',
+   component: BlogStandardComponent},
+   {
+    path: 'ajouter-blog',
+    component:  AddBlogComponent
+   },
 // {path: 'media', component: MediaComponent},
 {path: 'listing', component: ListingComponent},
 {path: 'listing1', component: Listing1Component},
@@ -76,10 +87,8 @@ component:UpdateCarComponent
 {path: 'user', component: UserComponent},
 {path: 'invoice', component: InvoiceComponent},
 {path: 'coming-soon', component: ComingSoonComponent},
-{path: 'blog-grid', component: BlogGridComponent},
 {path: 'blog-left', component: BlogLeftComponent},
 {path: 'blog-right', component: BlogRightComponent},
-{path: 'blog-standard', component: BlogStandardComponent},
 {path: 'blog-gallery', component: BlogGalleryComponent},
 {path: 'blog-video', component: BlogVideoComponent},
 {path: 'blog-quote', component: BlogQuoteComponent},

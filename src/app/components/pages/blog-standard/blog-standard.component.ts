@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog-standard',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogStandardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sanitizer: DomSanitizer,) { }
 
   ngOnInit(): void {
   }
-
+  // get sanitizedDescription() {
+  //   return this.sanitizer.bypassSecurityTrustHtml(this.campaign.description);
+  // }
 }

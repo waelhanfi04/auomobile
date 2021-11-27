@@ -48,6 +48,8 @@ import { RegisterProComponent } from './components/pages/register-pro/register-p
 import {CreateAccountComponent } from './components/pages/create-account/create-account.component'
 import {CarService} from './services/car/car.service'
 import {UpdateCarComponent} from './components/pages/update-car/update-car.component';
+import { AddBlogComponent } from './components/pages/add-blog/add-blog.component';
+import { NgxEditorModule } from 'ngx-editor';
 
 @NgModule({
   declarations: [
@@ -91,7 +93,8 @@ import {UpdateCarComponent} from './components/pages/update-car/update-car.compo
     ContactComponent,
     RegisterProComponent,
     CreateAccountComponent,
-    UpdateCarComponent
+    UpdateCarComponent,
+    AddBlogComponent
   ],
   imports: [
     BrowserModule,
