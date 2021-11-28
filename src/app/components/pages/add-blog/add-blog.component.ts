@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Editor } from 'ngx-editor';
+//import { Editor } from 'ngx-editor';
 @Component({
   selector: 'app-add-blog',
   templateUrl: './add-blog.component.html',
@@ -8,7 +8,7 @@ import { Editor } from 'ngx-editor';
 })
 export class AddBlogComponent implements OnInit {
   addBlogForm: FormGroup
-  editor = new Editor();
+ // editor = new Editor();
   constructor() { 
     this.addBlogForm = new FormGroup({
       title: new FormControl("", [Validators.required]),
