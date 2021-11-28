@@ -8,7 +8,7 @@ import { Footer2Component } from './components/layouts/footer2/footer2.component
 import { CarDetailSidebarComponent } from './components/layouts/car-detail-sidebar/car-detail-sidebar.component';
 import { UserSidebarComponent } from './components/layouts/user-sidebar/user-sidebar.component';
 import { ListingSidebarComponent } from './components/layouts/listing-sidebar/listing-sidebar.component';
-import { BlogSidebar1Component } from './components/layouts/blog-sidebar1/blog-sidebar1.component';
+import { AdvertisingSidebarComponent } from './components/layouts/advertising-sidebar/advertising-sidebar.component';
 import { BlogSidebar2Component } from './components/layouts/blog-sidebar2/blog-sidebar2.component';
 import { Homepage2Component } from './components/pages/homepage2/homepage2.component';
 import { MediaComponent } from './components/pages/media/media.component';
@@ -30,9 +30,8 @@ import { InvoiceComponent } from './components/pages/invoice/invoice.component';
 import { Error404Component } from './components/pages/error404/error404.component';
 import { ComingSoonComponent } from './components/pages/coming-soon/coming-soon.component';
 import { BlogGridComponent } from './components/pages/blog-grid/blog-grid.component';
-import { BlogLeftComponent } from './components/pages/blog-left/blog-left.component';
+import { BlogListComponent } from './components/pages/blog-list/blog-list.component';
 import { BlogRightComponent } from './components/pages/blog-right/blog-right.component';
-import { BlogStandardComponent } from './components/pages/blog-standard/blog-standard.component';
 import { BlogGalleryComponent } from './components/pages/blog-gallery/blog-gallery.component';
 import { BlogVideoComponent } from './components/pages/blog-video/blog-video.component';
 import { BlogQuoteComponent } from './components/pages/blog-quote/blog-quote.component';
@@ -49,7 +48,10 @@ import {CreateAccountComponent } from './components/pages/create-account/create-
 import {CarService} from './services/car/car.service'
 import {UpdateCarComponent} from './components/pages/update-car/update-car.component';
 import { AddBlogComponent } from './components/pages/add-blog/add-blog.component';
+import { BlogDetailsComponent } from './components/pages/blog-details/blog-details.component';
+
 //import { NgxEditorModule } from 'ngx-editor';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,6 @@ import { AddBlogComponent } from './components/pages/add-blog/add-blog.component
     CarDetailSidebarComponent,
     UserSidebarComponent,
     ListingSidebarComponent,
-    BlogSidebar1Component,
     BlogSidebar2Component,
     Homepage2Component,
     MediaComponent,
@@ -81,9 +82,7 @@ import { AddBlogComponent } from './components/pages/add-blog/add-blog.component
     Error404Component,
     ComingSoonComponent,
     BlogGridComponent,
-    BlogLeftComponent,
     BlogRightComponent,
-    BlogStandardComponent,
     BlogGalleryComponent,
     BlogVideoComponent,
     BlogQuoteComponent,
@@ -94,7 +93,11 @@ import { AddBlogComponent } from './components/pages/add-blog/add-blog.component
     RegisterProComponent,
     CreateAccountComponent,
     UpdateCarComponent,
-    AddBlogComponent
+    AddBlogComponent,
+    BlogDetailsComponent,
+    BlogListComponent,
+    AdvertisingSidebarComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -102,6 +105,7 @@ import { AddBlogComponent } from './components/pages/add-blog/add-blog.component
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [IsConnectedService,AuthentificationService,CarService],
   bootstrap: [AppComponent]

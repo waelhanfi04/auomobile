@@ -15,7 +15,7 @@ export class BlogService {
     }
       addBlog(title: string, description: string) {
       return this.http.post(serverUrl + "blog",{
-        title: title,
+        titre: title,
          description:description
       }, {  });
     }

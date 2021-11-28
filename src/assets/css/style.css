@@ -1706,9 +1706,12 @@ label.custom-checkbox .checkmark:after {
     border: 2px solid #fff;
     border-radius: 0px;
     padding: 10px 40px;
+    text-align: center;
+    color: white;
     /* padding: 5px 35px; */
     margin-right: 25px;
     background:  #ff6e14;
+    cursor: pointer;
 }
 .add-car-btn a {
     padding: 0;

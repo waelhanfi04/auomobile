@@ -20,9 +20,8 @@ import { InvoiceComponent } from './components/pages/invoice/invoice.component';
 import { Error404Component } from './components/pages/error404/error404.component';
 import { ComingSoonComponent } from './components/pages/coming-soon/coming-soon.component';
 import { BlogGridComponent } from './components/pages/blog-grid/blog-grid.component';
-import { BlogLeftComponent } from './components/pages/blog-left/blog-left.component';
+import { BlogListComponent } from './components/pages/blog-list/blog-list.component';
 import { BlogRightComponent } from './components/pages/blog-right/blog-right.component';
-import { BlogStandardComponent } from './components/pages/blog-standard/blog-standard.component';
 import { BlogGalleryComponent } from './components/pages/blog-gallery/blog-gallery.component';
 import { BlogVideoComponent } from './components/pages/blog-video/blog-video.component';
 import { BlogQuoteComponent } from './components/pages/blog-quote/blog-quote.component';
@@ -31,72 +30,82 @@ import { BlogDetailRightComponent } from './components/pages/blog-detail-right/b
 import { PricingComponent } from './components/pages/pricing/pricing.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { RegisterProComponent } from './components/pages/register-pro/register-pro.component'
-import {CreateAccountComponent } from './components/pages/create-account/create-account.component'
+import { CreateAccountComponent } from './components/pages/create-account/create-account.component'
 import { IsConnectedService } from './services/IsConnectedService.service';
-import {UpdateCarComponent} from './components/pages/update-car/update-car.component';
+import { UpdateCarComponent } from './components/pages/update-car/update-car.component';
+import { BlogDetailsComponent } from './components/pages/blog-details/blog-details.component';
 import { AddBlogComponent } from './components/pages/add-blog/add-blog.component';
 const routes: Routes = [
 
-{path: '', component: Homepage2Component},
-{path: 'creer-une-annonce', 
-component: AddListingComponent,
-//canActivate:[IsConnectedService]
-},
-{path: 'register',
- component: RegisterComponent,
- canActivate:[IsConnectedService]
-},
-{path: 'register/pro',
- component: RegisterProComponent,
-canActivate:[IsConnectedService]
-},
-{path: 'account/creation', 
-component: CreateAccountComponent,
-canActivate:[IsConnectedService]
-},
-{path: 'login', 
-component: LoginComponent,
-canActivate:[IsConnectedService]
-},
-{path: 'car-detail/:id', 
-component: CarDetailsComponent
-},{
-path:'voitures/modifier/:id',
-component:UpdateCarComponent
-},
+  { path: '', component: Homepage2Component },
+  {
+    path: 'creer-une-annonce',
+    component: AddListingComponent,
+    //canActivate:[IsConnectedService]
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    canActivate: [IsConnectedService]
+  },
+  {
+    path: 'register/pro',
+    component: RegisterProComponent,
+    canActivate: [IsConnectedService]
+  },
+  {
+    path: 'account/creation',
+    component: CreateAccountComponent,
+    canActivate: [IsConnectedService]
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [IsConnectedService]
+  },
+  {
+    path: 'car-detail/:id',
+    component: CarDetailsComponent
+  }, {
+    path: 'voitures/modifier/:id',
+    component: UpdateCarComponent
+  },
 
-{path: 'blog', 
-component: BlogGridComponent},
-{
-  path: 'details-blog',
-   component: BlogStandardComponent},
-   {
+  {
+    path: 'blogs',
+    component: BlogListComponent
+  },
+  {
+    path: 'blog/:id',
+    component: BlogDetailsComponent
+  },
+  {
     path: 'ajouter-blog',
-    component:  AddBlogComponent
-   },
-// {path: 'media', component: MediaComponent},
-{path: 'listing', component: ListingComponent},
-{path: 'listing1', component: Listing1Component},
-{path: 'listing2', component: Listing2Component},
-{path: 'listing3', component: Listing3Component},
-{path: 'listing4', component: Listing4Component},
-{path: 'listing1-style2', component: Listing1Style2Component},
-{path: 'listing2-style2', component: Listing2Style2Component},
-{path: 'aboutus', component: AboutusComponent},
-{path: 'car-page', component: CarpageComponent},
-{path: 'user', component: UserComponent},
-{path: 'invoice', component: InvoiceComponent},
-{path: 'coming-soon', component: ComingSoonComponent},
-{path: 'blog-left', component: BlogLeftComponent},
-{path: 'blog-right', component: BlogRightComponent},
-{path: 'blog-gallery', component: BlogGalleryComponent},
-{path: 'blog-video', component: BlogVideoComponent},
-{path: 'blog-quote', component: BlogQuoteComponent},
-{path: 'blog-detail-left', component: BlogDetailLeftComponent},
-{path: 'blog-detail-right', component: BlogDetailRightComponent},
-{path: 'pricing', component: PricingComponent},
-{path: 'contact', component: ContactComponent},
-{path: '**', component: Error404Component}
+    component: AddBlogComponent
+  },
+  // {path: 'media', component: MediaComponent},
+  { path: 'listing', component: ListingComponent },
+  { path: 'listing1', component: Listing1Component },
+  { path: 'listing2', component: Listing2Component },
+  { path: 'listing3', component: Listing3Component },
+  { path: 'listing4', component: Listing4Component },
+  { path: 'listing1-style2', component: Listing1Style2Component },
+  { path: 'listing2-style2', component: Listing2Style2Component },
+  { path: 'aboutus', component: AboutusComponent },
+  { path: 'car-page', component: CarpageComponent },
+  { path: 'user', component: UserComponent },
+  { path: 'invoice', component: InvoiceComponent },
+  { path: 'coming-soon', component: ComingSoonComponent },
+  //{path: 'blog-left', component: BlogListComponent},
+  { path: 'blog-right', component: BlogRightComponent },
+  { path: 'blog-gallery', component: BlogGalleryComponent },
+  { path: 'blog-video', component: BlogVideoComponent },
+  { path: 'blog-quote', component: BlogQuoteComponent },
+  { path: 'blog-detail-left', component: BlogDetailLeftComponent },
+  { path: 'blog-detail-right', component: BlogDetailRightComponent },
+  { path: 'pricing', component: PricingComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: '**', component: Error404Component }
 
 ];
 

@@ -320,13 +320,13 @@
           <aside class="col-xl-3 col-lg-4">
             <div class="side-search-bar h-auto mb-4">
               <div class="title-icon">
-                <h5 class="title"><i class="flaticon-search"></i> Search Listing</h5>
+                <h5 class="title"><i class="flaticon-search"></i>Rechercher dans l'annonce</h5>
               </div>
               <div class="widget-search-filter">
                 <div class="widget-content">
                   <form>
                     <div class="form-group">
-                      <input type="text" name="#" class="form-control form-control-custom" placeholder="What are you looking for?">
+                      <input type="text" name="search" [(ngModel)]="searchData" class="form-control form-control-custom" placeholder="Que cherchez-vous?">
                     </div>
                     <div class="form-group">
                       <select class="form-control form-control-custom">
@@ -364,20 +364,20 @@
                         <option value="Zaghouan">Zaghouan</option>
                       </select>
                     </div>
-                    <div class="form-group location-box p-relative">
+                    <!-- <div class="form-group location-box p-relative">
                       <input type="text" class="form-control form-control-custom" placeholder="Location">
-                    </div>
-                    <div class="form-group">
+                    </div> -->
+                    <!-- <div class="form-group">
                       <div class="search-distance-value">Radius: <input type="text" class="range-slider-value distance-value" readonly></div>
                       <div id="search_distance"></div>
-                    </div>
+                    </div> -->
                     <div class="form-group">
-                      <div class="search-search-price">Price: $ 1 -
+                      <div class="search-search-price">Prix: $ 1 -
                         <input type="text" class="range-slider-value price-value" readonly>
                       </div>
                       <div id="search_price"></div>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                       <strong>Filter By Features</strong>
                       <div class="tags-form-group">
                         <div class="form-group">
@@ -409,36 +409,39 @@
                           <input type="checkbox" name="#">	<span class="checkmark"></span> Hot Spots</label>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
                     <div class="form-submit text-center">
-                      <button type="submit" class="btn-second orange-btn">APPLY FILTER</button>
+                      <button type="submit" class="btn-second orange-btn">Filtrer</button>
                     </div>
                   </form>
                 </div>
               </div>
             </div>
             <div class="side-search-bar h-auto mb-4">
-              <div class="title-icon">
+              <aside class="col-lg-12">
+                <app-advertising-sidebar></app-advertising-sidebar>
+              </aside>
+              <!-- <div class="title-icon">
                 <h5 class="title"><i class="flaticon-checklist"></i> Advertisement</h5>
               </div>
               <div class="widget-search-filter mb-0">
                 <div class="widget-content">
-                  <div class="advertisement">
+                <div class="advertisement">
                     <a routerLink="/homepage2" target="_blank">
                     <img src="assets/images/ad.jpg" class="img-fluid full-width" alt="advertisement">
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </aside>
           <div class="col-xl-9 col-lg-8">
             <div class="title-head">
-              <h5>Cars <small class="text-dark-white fw-400 rubik">Affichage de {{carListLength}} résultats</small></h5>
+              <h5>Voitures <small class="text-dark-white fw-400 rubik">Affichage de {{carListLength}} résultats</small></h5>
             </div>
             <div class="right-section-car-box">
               <div class="row">
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6" *ngFor="let car of carsList">
+                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6" *ngFor="let car of carsList | filter : searchData">
                   <div class="car-grid-layout-box">
                     <div class="car-grid-layout-inner text-center">
                       <h5 class="car-name"><a  [routerLink]="['car-detail',car.id]"  class="text-light-black">{{car.brand}} {{car.model}}</a>

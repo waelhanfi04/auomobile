@@ -12,7 +12,7 @@ export class Homepage2Component implements OnInit {
 carsList:any
 carListLength:number=0
 categoriesList=arrayCategoryCar
-
+searchData: string =''
   constructor(private carService:CarService) { }
 
   ngOnInit(): void {
