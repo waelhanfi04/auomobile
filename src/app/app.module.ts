@@ -52,6 +52,7 @@ import { BlogDetailsComponent } from './components/pages/blog-details/blog-detai
 
 //import { NgxEditorModule } from 'ngx-editor';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { UpdateBlogComponent } from './components/pages/update-blog/update-blog.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     BlogDetailsComponent,
     BlogListComponent,
     AdvertisingSidebarComponent,
+    UpdateBlogComponent,
 
   ],
   imports: [

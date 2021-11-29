@@ -76,14 +76,14 @@
                         <label>Titre</label>
                         <div class="form-group">
                           <input type="text" name="title" formControlName="title"
-                            class="form-control form-control-custom" [(ngModel)]="carDetails.title">
+                            class="form-control form-control-custom" [(ngModel)]="this.carDetails.title">
                         </div>
                       </div>
 
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Mois</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom" [(ngModel)]="carDetails.month" formControlName="month">
+                          <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.month" formControlName="month">
                             <option value=""></option>
                             <option value="12">12</option>
                             <option value="11">11</option>
@@ -103,7 +103,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Année</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom"  [(ngModel)]="carDetails.year" formControlName="year">
+                          <select class="form-control form-control-custom"  [(ngModel)]="this.carDetails.year" formControlName="year">
                             <option value=""></option>
                             <option *ngFor="let y of years" [value]="y">{{ y }}</option>
                           </select>
@@ -113,21 +113,21 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Kilométrage</label>
                         <div class="form-group">
-                          <input type="text" name="mileage"  [(ngModel)]="carDetails.mileage" formControlName="mileage"
+                          <input type="text" name="mileage"  [(ngModel)]="this.carDetails.mileage" formControlName="mileage"
                             class="form-control form-control-custom">
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Motorization</label>
                         <div class="form-group">
-                          <input type="text" name="motorization"  [(ngModel)]="carDetails.motorization" formControlName="motorization"
+                          <input type="text" name="motorization"  [(ngModel)]="this.carDetails.motorization" formControlName="motorization"
                             class="form-control form-control-custom">
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Energie</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom"  [(ngModel)]="carDetails.energy" formControlName="energy">
+                          <select class="form-control form-control-custom"  [(ngModel)]="this.carDetails.energy" formControlName="energy">
                             <option value=""></option>
                             <option value="essence">Essence</option>
                             <option value="diesel">Diesel</option>
@@ -138,7 +138,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Prix</label>
                         <div class="form-group">
-                          <input type="text" name="price"  [(ngModel)]="carDetails.price" formControlName="price"
+                          <input type="text" name="price"  [(ngModel)]="this.carDetails.price" formControlName="price"
                             class="form-control form-control-custom">
                         </div>
                       </div>
@@ -146,7 +146,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Catégorie</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom" [(ngModel)]="carDetails.category" formControlName="category">
+                          <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.category" formControlName="category">
                             <option value=""></option>
                             <option *ngFor="let c of categoriesList" [value]="c.category">{{c.category}} Car</option>
                           </select>
@@ -155,7 +155,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Marque</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom"  [(ngModel)]="carDetails.brand" formControlName="brand">
+                          <select class="form-control form-control-custom"  [(ngModel)]="this.carDetails.brand" formControlName="brand">
                             <option value=""></option>
                             <option *ngFor="let b of arrayBrand" [value]="b.brand">{{b.brand}}</option>
                           </select>
@@ -164,7 +164,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Modèle</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom" [(ngModel)]="carDetails.model" formControlName="model">
+                          <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.model" formControlName="model">
                             <option value=""></option>
                             <option *ngFor="let m of arrayModel" [value]="m">{{m}}</option>
                           </select>
@@ -174,7 +174,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Couleur</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom" [(ngModel)]="carDetails.color" formControlName="color">
+                          <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.color" formControlName="color">
                             <option value=""></option>
                             <option value="Noir">Noir</option>
                             <option value="Gris argent">Gris argent</option>
@@ -196,7 +196,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Disponibilité</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom" [(ngModel)]="carDetails.availablity" formControlName="availablity">
+                          <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.availablity" formControlName="availablity">
                             <option value=""></option>
                             <option value="Immediatement">Immediatement</option>
                             <option value="Sur-commande">Sur commande</option>
@@ -206,14 +206,14 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Guarantie</label>
                         <div class="form-group">
-                          <input type="text" name="Guarantie"  [(ngModel)]="carDetails.guarantee" formControlName="guarantee"
+                          <input type="text" name="Guarantie"  [(ngModel)]="this.carDetails.guarantee" formControlName="guarantee"
                             class="form-control form-control-custom">
                         </div>
                       </div>
                       <div class="col-lg-12">
                         <label>Description</label>
                         <div class="form-group">
-                          <textarea class="form-control form-control-custom"  [(ngModel)]="carDetails.description" formControlName="description"
+                          <textarea class="form-control form-control-custom"  [(ngModel)]="this.carDetails.description" formControlName="description"
                             rows="5"></textarea>
                         </div>
                       </div>
@@ -233,7 +233,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Boîte</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom" [(ngModel)]="carDetails.gearbox" formControlName="gearbox">
+                          <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.gearbox" formControlName="gearbox">
                             <option value=""></option>
                             <option value="manuelle">Manuelle</option>
                             <option value="automatique">Automatique</option>
@@ -243,7 +243,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Puissance fiscale</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom" [(ngModel)]="carDetails.powerFiscal" formControlName="powerFiscal">
+                          <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.powerFiscal" formControlName="powerFiscal">
                             <option value=""></option>
                             <option *ngFor="let power of powerFiscalArray" [value]="power">{{ power }}</option>
                             <option value="more-48">Plus de 48</option>
@@ -254,7 +254,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Carrosserie</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom"[(ngModel)]="carDetails.carrosserie" formControlName="carrosserie">
+                          <select class="form-control form-control-custom"[(ngModel)]="this.carDetails.carrosserie" formControlName="carrosserie">
                             <option value=""></option>
                             <option value="Citadine">Citadine</option>
                             <option value="Compacte">Compacte</option>
@@ -272,7 +272,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>transmission</label>
                         <div class="form-group p-relative">
-                          <select class="form-control form-control-custom" [(ngModel)]="carDetails.transmission" formControlName="transmission">
+                          <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.transmission" formControlName="transmission">
                             <option value=""></option>
                             <option value="traction">Traction</option>
                             <option value="propulsion">Propulsion</option>
@@ -284,7 +284,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Nombre de places</label>
                         <div class="form-group">
-                          <input type="text" name="seatingCapacity"  [(ngModel)]="carDetails.seatingCapacity" formControlName="seatingCapacity"
+                          <input type="text" name="seatingCapacity"  [(ngModel)]="this.carDetails.seatingCapacity" formControlName="seatingCapacity"
                             class="form-control form-control-custom">
                         </div>
                       </div>
@@ -292,7 +292,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Nombre de portes</label>
                         <div class="form-group">
-                          <input type="text" name="numberDoors" [(ngModel)]="carDetails.numberDoors"  formControlName="numberDoors"
+                          <input type="text" name="numberDoors" [(ngModel)]="this.carDetails.numberDoors"  formControlName="numberDoors"
                             class="form-control form-control-custom">
                         </div>
                       </div>
@@ -314,7 +314,7 @@
                             <li *ngFor="let ex of outsideEquipmentList;let index=index">
                               <label class="custom-checkbox black-text " for="ex{{index}}">
                                 <input type="checkbox" id="ex{{index}}" [value]="ex.equipement"
-                                  (change)="onCheckboxChange($event,'outsideEquipment')" [(ngModel)]="carDetails.outsideEquipmentVoiture">
+                                  (change)="onCheckboxChange($event,'outsideEquipment')">
                                 <span class="checkmark"></span>{{ex.equipement}}</label>
                             </li>
 
@@ -329,7 +329,7 @@
                             <li *ngFor="let i of insideEquipmentList;let index=index">
                               <label class="custom-checkbox black-text" for="int{{index}}">
                                 <input type="checkbox" id="int{{index}}" [value]="i.equipement"
-                                  (change)="onCheckboxChange($event,'insideEquipment')" [(ngModel)]="carDetails.insideEquipmentVoiture">
+                                  (change)="onCheckboxChange($event,'insideEquipment')" >
                                 <span class="checkmark"></span>{{i.equipement}}</label>
                             </li>
                           </ul>
@@ -344,7 +344,7 @@
                             <li *ngFor="let s of securityEquipmentList;let index=index">
                               <label class="custom-checkbox black-text" for="security{{index}}">
                                 <input type="checkbox" id="security{{index}}" [value]="s.equipement"
-                                  (change)="onCheckboxChange($event,'securityEquipment')" [(ngModel)]="carDetails.securityEquipmentVoiture">
+                                  (change)="onCheckboxChange($event,'securityEquipment')">
                                 <span class="checkmark"></span>{{s.equipement}}</label>
                             </li>
 
@@ -366,14 +366,14 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Téléphone</label>
                         <div class="form-group">
-                          <input type="text" name="phone" formControlName="phone" [(ngModel)]="carDetails.phone"
+                          <input type="text" name="phone" formControlName="phone" [(ngModel)]="this.carDetails.phone"
                             class="form-control form-control-custom">
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Gouvernorat</label>
                         <div class="form-group p-relativ">
-                          <select class="form-control form-control-custom" [(ngModel)]="carDetails.city" formControlName="city">
+                          <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.city" formControlName="city">
                             <option value=""></option>
                             <option value="Ariana">Ariana</option>
                             <option value="Béja">Béja</option>
@@ -405,7 +405,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Adresse</label>
                         <div class="form-group">
-                          <input type="text" name="address" formControlName="address" [(ngModel)]="carDetails.address"
+                          <input type="text" name="address" formControlName="address" [(ngModel)]="this.carDetails.address"
                             class="form-control form-control-custom">
                         </div>
                       </div>

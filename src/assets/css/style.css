@@ -6962,14 +6962,19 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 .our_articles .post .post-type > a {
     border-radius: 50%;
     color: #fff;
-    font-size: 20px;
+    /* font-size: 20px;
     height: 60px;
-    line-height: normal;
     padding: 18px;
-    width: 60px;
+    width: 60px; */
+    line-height: normal;
     text-align: center;
     background-color: #ff6e14;
     display: block;
+    font-size: 17px;
+    height: 40px;
+    padding: 9px 13px;
+    width: 40px;
+    cursor: pointer;
 }
 .our_articles .post .post-date {
     right: 0px;

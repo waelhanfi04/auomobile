@@ -33,7 +33,7 @@
         </aside>
         <div class="col-lg-8">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 mb-3">
               <div class="add-car-btn" [routerLink]="['/ajouter-blog']">
                 <a  class="text-custom-white">+ Ajouter un blog</a>
              </div>
@@ -46,7 +46,7 @@
                 <div class="blog-wrap p-relative">
                   <div class="blog-img no-margin p-relative">
                     <a [routerLink]="['/blog',blog.id]">
-                      <img src="assets/images/blog/blog-11.jpg" class="img-fluid full-width" alt="Blog img">
+                      <img src="assets/images/concrete-wall-3.png" class="img-fluid full-width" alt="Blog img">
                     </a>
                     <div class="read-more-wrap">  <a [routerLink]="['/blog',blog.id]" class="read-more">
                       LIRE CET ARTICLE
@@ -54,7 +54,7 @@
                     </div>
                   </div>
                   <div class="post-type">
-                    <a routerLink="/blog-left">  <i class="flaticon-film"></i>
+                    <a [routerLink]="['/blogs/modifier',blog.id]">  <i class="fas fa-pen"></i>
                     </a>
                   </div>
                   <div class="blog-meta">

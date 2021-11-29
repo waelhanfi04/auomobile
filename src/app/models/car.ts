@@ -44,7 +44,7 @@ export class Car {
     this.month=data?.month
     this.year=data?.year
     this.category=data?.category
-    this.pictures=data?.pictures
+    this.pictures=data?.pictures || data?.pictureVoitures
     this.address=data?.address
     this.motorization=data?.motorization
     this.mileage=data?.mileage
@@ -55,8 +55,8 @@ export class Car {
     this.description=data?.description
     this.seatingCapacity=data?.seatingCapacity
     this.numberDoors=data?.numberDoors
-    this.insideEquipment=data?.insideEquipment
-    this.outsideEquipment=data?.outsideEquipment
-    this.securityEquipment=data?.securityEquipment
+    this.insideEquipment=data?.insideEquipment || data?.insideEquipmentVoiture
+    this.outsideEquipment=data?.outsideEquipment || data?.outsideEquipmentVoiture
+    this.securityEquipment=data?.securityEquipment || data?.securityEquipmentVoiture
   }
 }

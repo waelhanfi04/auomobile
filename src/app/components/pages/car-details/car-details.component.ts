@@ -35,7 +35,7 @@ export class CarDetailsComponent implements OnInit {
   }
   getCarDetails(id: any) {
     this.carService.getOneCar(id).subscribe((data: any) => {
-      console.log('dataaaaaaa', data)
+      console.log('car from details -----> ', data)
       this.car = data.voiture;
       this.insideEquipmentList = data.voiture.insideEquipmentVoitures;
       this.outsideEquipmentList = data.voiture.outsideEquipmentVoitures;

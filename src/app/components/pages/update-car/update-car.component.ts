@@ -25,9 +25,10 @@ export class UpdateCarComponent implements OnInit {
   arrayModel:any
   kits=[]
   isAcceptedImageFileType:boolean=true
-  carDetails!:Car;
+  carDetails:any;
   constructor(private router: Router,private fb:FormBuilder,private carService:CarService,private route: ActivatedRoute) {
     this.updateCarForm = new FormGroup({
+      id:new FormControl(''),
       title: new FormControl(''),
       availablity: new FormControl(''),
       phone: new FormControl(''),
@@ -63,7 +64,6 @@ export class UpdateCarComponent implements OnInit {
     this.route.params
     .pipe(
       map((params: any) => {
-        console.log(params['id']);
         return params['id'];
       })
     )
@@ -113,11 +113,42 @@ export class UpdateCarComponent implements OnInit {
     // this.kits.filter((data:any)=>{data})
   }
   updateCar(){
-  console.log('this.updateCarForm?.value',this.updateCarForm?.value)
-// this.carService.addCar(this.updateCarForm?.value).subscribe((response:any)=>{
-//   console.log('response',response)
-//   this.router.navigate([''])
-// })
+    let body ={
+      id: this.carDetails.id,
+      availablity:this.updateCarForm.get('availablity')?.value,
+      title:this.updateCarForm.get('title')?.value,
+      phone:this.updateCarForm.get('phone')?.value,
+      country:this.updateCarForm.get('country')?.value,
+      city:this.updateCarForm.get('city')?.value,
+      brand:this.updateCarForm.get('brand')?.value,
+      model:this.updateCarForm.get('model')?.value,
+      price:this.updateCarForm.get('price')?.value,
+      color:this.updateCarForm.get('color')?.value,
+      carrosserie:this.updateCarForm.get('carrosserie')?.value,
+      guarantee:this.updateCarForm.get('guarantee')?.value,
+      month:this.updateCarForm.get('month')?.value,
+      year:this.updateCarForm.get('year')?.value,
+      category:this.updateCarForm.get('category')?.value,
+      pictures:this.updateCarForm.get('pictures')?.value,
+      address:this.updateCarForm.get('address')?.value,
+      motorization:this.updateCarForm.get('motorization')?.value,
+      mileage:this.updateCarForm.get('mileage')?.value,
+      energy:this.updateCarForm.get('energy')?.value,
+      transmission:this.updateCarForm.get('transmission')?.value,
+      powerFiscal:this.updateCarForm.get('powerFiscal')?.value,
+      gearbox:this.updateCarForm.get('gearbox')?.value,
+      description:this.updateCarForm.get('description')?.value,
+      seatingCapacity:this.updateCarForm.get('seatingCapacity')?.value,
+      numberDoors:this.updateCarForm.get('numberDoors')?.value,
+      insideEquipment:this.updateCarForm.get('insideEquipment')?.value,
+      outsideEquipment:this.updateCarForm.get('outsideEquipment')?.value,
+      securityEquipment:this.updateCarForm.get('securityEquipment')?.value
+    }
+
+this.carService.updateCar(body).subscribe((response:any)=>{
+  console.log('response',response)
+  this.router.navigate([''])
+})
 }
 onFileChange(e: any) {
    
@@ -165,8 +196,34 @@ base64ToFile(data: any, filename: any) {
 getCarDetails(id:any){
   this.carService.getOneCar(id).subscribe((data:any)=>{
     if(data){
-      this.carDetails= new Car(data.voiture)
-      console.log('car',data,'gg',this.carDetails)
+      this.carDetails= data.voiture
+      console.log('car from update car ----> ',this.carDetails)
+      console.log('element.picture--->',this.carDetails.securityEquipmentVoitures)
+      const pictureArray: FormArray = this.updateCarForm.get('pictures') as FormArray;
+      this.carDetails?.picturesVoitures.forEach((element:any) => {
+        console.log('element.picture--->',element.picture)
+        pictureArray.push(new FormControl(element.picture));
+      });
+      this.kits=this.updateCarForm.get('pictures')?.value
+
+      const insideEquipmentArray: FormArray = this.updateCarForm.get('insideEquipment') as FormArray;
+      this.carDetails?.insideEquipmentVoitures.forEach((element:any) => {
+        insideEquipmentArray.push(new FormControl(element.equipment));
+      });
+   
+      const outsideEquipmentArray: FormArray = this.updateCarForm.get('outsideEquipment') as FormArray;
+      this.carDetails?.outsideEquipmentVoitures.forEach((element:any) => {
+        outsideEquipmentArray.push(new FormControl(element.equipment));
+      });
+      const securityEquipmentArray: FormArray = this.updateCarForm.get('securityEquipment') as FormArray;
+     
+      this.carDetails?.securityEquipmentVoitures.forEach((element:any) => {
+        securityEquipmentArray.push(new FormControl(element.equipment));
+      });
+
+      console.log('--->', this.updateCarForm.get('securityEquipment')?.value)
+
+
     }
    
   })

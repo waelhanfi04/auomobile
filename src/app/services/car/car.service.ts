@@ -16,13 +16,13 @@ export class CarService {
       serverUrl + "voiture",body,{ headers:header }
     );
   }
-  updateCar(body:any,id:any){
-    const header = new HttpHeaders({
-      "Content-Type": "application/json",
-      Authorization: "Bearer " + localStorage.getItem("access_token"),
-    });
+  updateCar(body:any){
+    // const header = new HttpHeaders({
+    //   "Content-Type": "application/json",
+    //   Authorization: "Bearer " + localStorage.getItem("access_token"),
+    // });
     return this.http.put(
-      serverUrl + "voiture/"+id,{body},{ headers:header }
+      serverUrl + "updateVoiture/",body,{ }
     );
   }
   deleteCar(id:any){

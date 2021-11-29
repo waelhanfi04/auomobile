@@ -35,6 +35,8 @@ import { IsConnectedService } from './services/IsConnectedService.service';
 import { UpdateCarComponent } from './components/pages/update-car/update-car.component';
 import { BlogDetailsComponent } from './components/pages/blog-details/blog-details.component';
 import { AddBlogComponent } from './components/pages/add-blog/add-blog.component';
+import { UpdateBlogComponent } from './components/pages/update-blog/update-blog.component';
+
 const routes: Routes = [
 
   { path: '', component: Homepage2Component },
@@ -82,6 +84,10 @@ const routes: Routes = [
   {
     path: 'ajouter-blog',
     component: AddBlogComponent
+  },
+  {
+    path: 'blogs/modifier/:id',
+    component: UpdateBlogComponent
   },
   // {path: 'media', component: MediaComponent},
   { path: 'listing', component: ListingComponent },
