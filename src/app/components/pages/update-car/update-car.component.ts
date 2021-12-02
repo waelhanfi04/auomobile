@@ -147,7 +147,7 @@ export class UpdateCarComponent implements OnInit {
 
 this.carService.updateCar(body).subscribe((response:any)=>{
   console.log('response',response)
-  this.router.navigate([''])
+  //this.router.navigate([''])
 })
 }
 onFileChange(e: any) {

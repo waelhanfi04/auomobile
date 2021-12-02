@@ -10,25 +10,25 @@ export class CarService {
   addCar(body:any){
     const header = new HttpHeaders({
       "Content-Type": "application/json",
-      Authorization: "Bearer " + localStorage.getItem("access_token"),
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
     });
     return this.http.post(
       serverUrl + "voiture",body,{ headers:header }
     );
   }
   updateCar(body:any){
-    // const header = new HttpHeaders({
-    //   "Content-Type": "application/json",
-    //   Authorization: "Bearer " + localStorage.getItem("access_token"),
-    // });
-    return this.http.put(
-      serverUrl + "updateVoiture/",body,{ }
+    const header = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
+    });
+    return this.http.post(
+      serverUrl + "updateVoiture/",body,{ headers:header}
     );
   }
   deleteCar(id:any){
     const header = new HttpHeaders({
       "Content-Type": "application/json",
-      Authorization: "Bearer " + localStorage.getItem("access_token"),
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
     });
     return this.http.delete(
       serverUrl + "voiture/"+id,{ headers:header }
@@ -37,7 +37,7 @@ export class CarService {
   getAllCars(){
     const header = new HttpHeaders({
       "Content-Type": "application/json",
-      Authorization: "Bearer " + localStorage.getItem("access_token"),
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
     });
     return this.http.get(
       serverUrl + "voiture",{ headers:header }
@@ -46,7 +46,7 @@ export class CarService {
   getOneCar(id:any){
     const header = new HttpHeaders({
       "Content-Type": "application/json",
-      Authorization: "Bearer " + localStorage.getItem("access_token"),
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
     });
     return this.http.get(
       serverUrl + "voiture/"+id,{ headers:header }

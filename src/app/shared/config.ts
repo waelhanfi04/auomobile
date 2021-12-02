@@ -164,7 +164,7 @@ const arrayBrand = [
 
 const headers = new HttpHeaders({
   "Content-Type": "application/json",
-  Authorization: "Bearer " + localStorage.getItem("access_token"),
+  Authorization: "Bearer " + localStorage.getItem("accessToken"),
 });
 export { serverUrl, headers, arrayCategories, arrayInsideEquipment, arrayOutsideEquipment,
    arraysecurityEquipment, arrayCategoryCar,arrayBrand }

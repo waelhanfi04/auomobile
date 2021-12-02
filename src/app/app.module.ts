@@ -49,10 +49,11 @@ import {CarService} from './services/car/car.service'
 import {UpdateCarComponent} from './components/pages/update-car/update-car.component';
 import { AddBlogComponent } from './components/pages/add-blog/add-blog.component';
 import { BlogDetailsComponent } from './components/pages/blog-details/blog-details.component';
-
 //import { NgxEditorModule } from 'ngx-editor';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { UpdateBlogComponent } from './components/pages/update-blog/update-blog.component';
+import { CustomFormsModule } from 'ng2-validation';
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -107,7 +108,10 @@ import { UpdateBlogComponent } from './components/pages/update-blog/update-blog.
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+ //   NgxEditorModule,
+    CustomFormsModule,
+   // NgbModule
   ],
   providers: [IsConnectedService,AuthentificationService,CarService],
   bootstrap: [AppComponent]
