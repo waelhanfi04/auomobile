@@ -15,6 +15,7 @@ export class UpdateBlogComponent implements OnInit {
   updateBlogForm: FormGroup
  // editor = new Editor();
  blogDetails:any
+ successMsg:string =''
   constructor(private BlogService:BlogService,private sanitizer: DomSanitizer,private route: ActivatedRoute) { 
     this.updateBlogForm = new FormGroup({
       title: new FormControl("", [Validators.required]),
@@ -46,6 +47,10 @@ this.BlogService.updateBlog(this.blogDetails.id,this.updateBlogForm.controls.tit
   if(response.message=== "Blog was added successfully!"){
     console.log('suuuuc')
   }
+  //this.successMsg='Blog a été supprimé avec succès!';
+  // setTimeout(() => {
+  //   this.router.navigate(['/blogs'])
+  // }, 1000);
 
 })
 }

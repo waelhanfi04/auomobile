@@ -13,6 +13,7 @@ carsList:any
 carListLength:number=0
 categoriesList=arrayCategoryCar
 searchData: string =''
+userId=localStorage.getItem('idUser') as string;
   constructor(private carService:CarService) { }
 
   ngOnInit(): void {

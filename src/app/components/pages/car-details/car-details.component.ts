@@ -16,7 +16,8 @@ export class CarDetailsComponent implements OnInit {
   outsideEquipmentList: any = []
   securityEquipmentList: any = []
   picturesList:any=[]
-  idCar:any
+  idCar:any;
+  isOwner: boolean = false;
   constructor(
     private route: ActivatedRoute,
     private carService: CarService,
@@ -41,6 +42,11 @@ export class CarDetailsComponent implements OnInit {
       this.outsideEquipmentList = data.voiture.outsideEquipmentVoitures;
       this.securityEquipmentList = data.voiture.securityEquipmentVoitures;
       this.picturesList=data.voiture.pictureVoitures;
+      if(this.car.userId === localStorage.getItem('idUser')){
+        this.isOwner=true;
+      }else{
+        this.isOwner=false;
+      }
     })
   }
   deleteCar(){

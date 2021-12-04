@@ -2,20 +2,20 @@
 <app-header2></app-header2>	
 <!-- Sub header -->
   <div class="sub-header-sec p-relative">
-    <img src="assets/images/banner/bannerh7.jpg" class="img-fluid" alt="Sub header">
+    <app-banner-header></app-banner-header>
     <div class="sub-header-overlay"></div>
     <div class="sub-header-wrapper">
       <div class="container">
         <div class="row">
           <div class="col-xl-12">
             <div class="sub-header-text-wrapper text-center">
-              <h1 class="text-custom-white">Register</h1>
+              <h1 class="text-custom-white">Inscription</h1>
               <ul class="breadcrumbs">
                 <li><a routerLink="/" class="text-custom-white">Accueil</a>
                 </li>
-                <li><a routerLink="/register" class="text-custom-white">Pages</a>
+                <li><a routerLink="/account/creation" class="text-custom-white">Pages</a>
                 </li>
-                <li><span class="text-custom-white">Register</span>
+                <li><span class="text-custom-white">Inscription</span>
                 </li>
               </ul>
             </div>
@@ -34,47 +34,47 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h6 class="modal-title text-left no-margin"><i class="fas fa-unlock-alt mr-2"></i> <span>Sign Up</span></h6>
+                  <h6 class="modal-title text-left no-margin"><i class="fas fa-unlock-alt mr-2"></i> <span>Inscription</span></h6>
                 </div>
                 <!-- Sign up form -->
                 <div class="modal-body">
-                  <div *ngIf="this.errorMsg!=='' ||this.successMsg!=='' ">
+                  <div class="d-flex justify-content-center" *ngIf="this.errorMsg!=='' ||this.successMsg!=='' ">
                     <label class="error-msg"*ngIf="this.errorMsg!==''" >{{errorMsg}}</label>
                     <label class="success-msg" *ngIf="this.successMsg!==''">{{successMsg}}</label>
                   </div>
                   <form [formGroup]="registerForm" (ngSubmit)="register()">
                   
                     <div class="form-group">
-                      <input type="text" name="username" formControlName="username" class="form-control form-control-custom" placeholder="username">
-                   <label class="error-msg" *ngIf="registerForm.controls.username.errors?.required && isSubmitting" >Field required</label>
+                      <input type="text" name="username" formControlName="username" class="form-control form-control-custom" placeholder="Nom d'utilisateur">
+                   <label class="error-msg" *ngIf="registerForm.controls.username.errors?.required && isSubmitting" >Champ obligatoire</label>
 
                     </div>
                     <div class="form-group">
                       <input type="email" name="email" formControlName="email" class="form-control form-control-custom" placeholder="Email">
-                      <label class="error-msg" *ngIf="registerForm.controls.email.errors?.email && !registerForm.controls.email.errors?.required ">Field Email Address must have a valid form</label>
-                      <label class="error-msg" *ngIf="registerForm.controls.email.errors?.required && this.isSubmitting ">Field required</label>   
+                      <label class="error-msg" *ngIf="registerForm.controls.email.errors?.email && !registerForm.controls.email.errors?.required ">Vérifiez l’adresse email, son format n’est pas valide</label>
+                      <label class="error-msg" *ngIf="registerForm.controls.email.errors?.required && this.isSubmitting ">Champ obligatoire</label>   
                     </div>
                     <div class="form-group">
-                      <input type="password"  autocomplete="on" name="password" formControlName="password" class="form-control form-control-custom" placeholder="Password">
-                      <label class="error-msg" *ngIf="registerForm.controls.password.errors?.required && this.isSubmitting ">Field required</label>   
-                      <label class="error-msg" *ngIf="registerForm.controls.password.errors?.pattern && registerForm.controls.password.touched">Your password must contain at least 8 chars </label>   
+                      <input type="password"  autocomplete="on" name="password" formControlName="password" class="form-control form-control-custom" placeholder="Mot de passe">
+                      <label class="error-msg" *ngIf="registerForm.controls.password.errors?.required && this.isSubmitting ">Champ obligatoire</label>   
+                      <label class="error-msg" *ngIf="registerForm.controls.password.errors?.pattern && registerForm.controls.password.touched">votre mot de passe doit contenir au moins 8 caractères</label>   
 
                     </div>
                     <div class="form-group">
-                      <input type="password"  autocomplete="on" name="confirmPassword" formControlName="confirmPassword" class="form-control form-control-custom" placeholder="Retype Password">
-                      <label class="error-msg" *ngIf="registerForm.controls.confirmPassword.errors?.required && this.isSubmitting ">Field required</label>   
-                      <label class="error-msg" *ngIf="registerForm.errors?.mustMatch &&  !registerForm.controls.confirmPassword.errors?.required">Fields must mutch</label>   
+                      <input type="password"  autocomplete="on" name="confirmPassword" formControlName="confirmPassword" class="form-control form-control-custom" placeholder="Retaper le mot de passe">
+                      <label class="error-msg" *ngIf="registerForm.controls.confirmPassword.errors?.required && this.isSubmitting ">Champ obligatoire</label>   
+                      <label class="error-msg" *ngIf="registerForm.errors?.mustMatch &&  !registerForm.controls.confirmPassword.errors?.required">Les champs doivent correspondre</label>   
 
                     </div>
                     <div class="form-group">
-                      <button type="submit" class="btn-second orange-btn full-width">Sign Up</button>
+                      <button type="submit" class="btn-second orange-btn full-width">Créer mon compte</button>
                     </div>
                   </form>
                   <div class="form-excerpts">
                     <ul>
-                      <li>Already a member? <a routerLink="/login">Sign In</a>
+                      <li>Déjà membre? <a routerLink="/login">Se Connecter</a>
                       </li>
-                      <li><a routerLink="/register">Recover Password</a>
+                      <li><a class="forgot-pwd">Mot de passe oublié</a>
                       </li>
                     </ul>
                   </div>

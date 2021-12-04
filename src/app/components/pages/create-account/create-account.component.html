@@ -2,20 +2,20 @@
 <app-header2></app-header2>	
 <!-- Sub header -->
   <div class="sub-header-sec p-relative">
-    <img src="assets/images/banner/bannerh7.jpg" class="img-fluid" alt="Sub header">
+    <app-banner-header></app-banner-header>
     <div class="sub-header-overlay"></div>
     <div class="sub-header-wrapper">
       <div class="container">
         <div class="row">
           <div class="col-xl-12">
             <div class="sub-header-text-wrapper text-center">
-              <h1 class="text-custom-white">Create Account</h1>
+              <h1 class="text-custom-white">Créer un compte</h1>
               <ul class="breadcrumbs">
                 <li><a routerLink="/" class="text-custom-white">Accueil</a>
                 </li>
-                <li><a routerLink="/account/creation" class="text-custom-white">Pages</a>
-                </li>
-                <li><span class="text-custom-white">Register</span>
+                <!-- <li><a routerLink="/account/creation" class="text-custom-white">Pages</a>
+                </li> -->
+                <li><span class="text-custom-white">Inscription</span>
                 </li>
               </ul>
             </div>
@@ -34,20 +34,20 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h6 class="modal-title text-left no-margin"><i class="fas fa-unlock-alt mr-2"></i> <span>Sign Up</span></h6>
+                  <h6 class="modal-title text-left no-margin"><i class="fas fa-unlock-alt mr-2"></i> <span>Créer un compte</span></h6>
                 </div>
                 <!-- Sign up form -->
                 <div class="modal-body">
-                  <label>Create account for ...</label>
-                  <form>
+                  <label>Créer un compte pour…</label>
+                  <form> 
                     <div class="form-group">
-                      <label class="custom-checkbox" routerLink="/register">
-                        <input type="checkbox"> <span class="checkmark"></span>Me</label>
+                      <label class="custom-checkbox">
+                        <input type="checkbox" (change)="onCheckboxChange($event,'normal')"> <span class="checkmark"></span>Moi</label>
                     </div>
 
                     <div class="form-group">
-                      <label class="custom-checkbox" routerLink="/register/pro">
-                        <input type="checkbox"> <span class="checkmark"></span>My company</label>
+                      <label class="custom-checkbox" >
+                        <input type="checkbox" (change)="onCheckboxChange($event,'pro')"> <span class="checkmark"></span>Mon entreprise</label>
                     </div>
 
 
@@ -63,12 +63,12 @@
                     </div> -->
               
                   </form>
-                  <div class="form-excerpts">
+                  <div class="form-excerpts  mt-5">
                     <ul>
-                      <li>Already a member? <a routerLink="/login">Sign In</a>
+                      <li>Vous avez déjà un compte ? <a routerLink="/login">Se Connecter</a>
                       </li>
-                      <li><a routerLink="/account/creation">Recover Password</a>
-                      </li>
+                      <!-- <li><a >Mot de passe oublié</a>
+                      </li> -->
                     </ul>
                   </div>
                   <!-- <div class="social-login">  <span>Or Signup with</span>

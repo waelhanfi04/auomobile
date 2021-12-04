@@ -161,18 +161,29 @@
                     </li>
                 <li class="menu-item dropdownbtn">
                   <a href="javascript:void(0)" class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
-                    Account</a>
+                    Mon espace</a>
                   <ul class="dropdown-menu">
-                    <li *ngIf='!showAddListing'><a routerLink="/account/creation" class="text-light-black">Register</a>
+                    <li *ngIf='!showAddListing'><a routerLink="/account/creation" class="text-light-black">S'inscrire</a>
                     </li>
-                    <li *ngIf='!showAddListing'><a routerLink="/login" class="text-light-black">Login</a>
+                    <li *ngIf='!showAddListing'><a routerLink="/login" class="text-light-black">Se Connecter</a>
                     </li>
-                    <li *ngIf='showAddListing' (click)="logout()"><a  class="text-light-black">Logout</a>
+                    <li *ngIf='showAddListing' (click)="logout()"><a  class="text-light-black">Se Déconnecter</a>
                     </li>
                   </ul>
                 </li>
                <!-- <li class="add-car-btn"  *ngIf='showAddListing'> <a routerLink="/creer-une-annonce" class="text-custom-white">+ Ajouter une annonce</a>
                 </li>  -->
+
+                <!-- <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink2" role="button" aria-haspopup="true" aria-expanded="false" 
+                style="cursor: pointer !important;margin-top: 0px;cursor: default;margin-left: 3%;width:15%" data-toggle="dropdown">
+                <i aria-haspopup="true" aria-expanded="false" class="fa fa-angle-down angledown angeStyle" aria-hidden="true" style="cursor: pointer;margin-left: -80%;"></i>
+             </a>
+            <ul class="dropdown-menu" style="margin-left: 1%;margin-top: 4%;">
+                <a class="dropdown-item" [routerLink]="['settings']" ><li style="cursor:pointer">{{ "Profil" | translate }}</li></a>
+                <a class="dropdown-item"  [routerLink]="['settings/Legal_KYC']"><li style="cursor:pointer">{{ "legal" | translate }}</li></a>
+                <a class="dropdown-item" [routerLink]="['settings/security']" ><li style="cursor:pointer">{{ "informations_securite" | translate }}</li></a>
+                <div><a class="dropdown-item divider" (click)="signOut()"><i class="fa fa-power-off" style="margin-left: 1%;"></i>{{ "logout" | translate }}</a></div>
+              </ul> -->
               </ul>
             </div>
           </div>

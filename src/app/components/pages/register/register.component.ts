@@ -33,11 +33,14 @@ export class RegisterComponent implements OnInit {
             this.isSubmitting = false;
             console.log(data);
             if(data.message==='User was registered successfully!'){
-              this.successMsg='User was registered successfully!'
               this.errorMsg=''
+              this.successMsg='Compte créer avec succès!';
+              setTimeout(() => {
+                this.router.navigate(['/login'])
+              }, 1000);
              // this.router.navigate(['login'])
-            }else{
-              this.errorMsg=data.message;
+            }else if(data.message=== "Failed! Email is already in use!"){
+              this.errorMsg='Cet Email existe déjà';
               this.successMsg='';
             }
 

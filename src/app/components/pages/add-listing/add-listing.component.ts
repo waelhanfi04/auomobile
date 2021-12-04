@@ -139,7 +139,10 @@ addCar(){
   console.log('this.addCarForm?.value',this.addCarForm?.value)
 this.carService.addCar(this.addCarForm?.value).subscribe((response:any)=>{
   console.log('response',response)
-  this.router.navigate([''])
+this.successMsg='Votre annonce a été ajouté avec succès!';
+  //   setTimeout(() => {
+  //     this.router.navigate(['/'])
+  //   }, 1000);
 })
 }
 onFileChange(e: any) {

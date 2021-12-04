@@ -6965,15 +6965,19 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     /* font-size: 20px;
     height: 60px;
     padding: 18px;
+     display: block;
+ padding: 9px 10px; 
     width: 60px; */
     line-height: normal;
     text-align: center;
     background-color: #ff6e14;
-    display: block;
-    font-size: 17px;
-    height: 40px;
-    padding: 9px 13px;
-    width: 40px;
+    display: flex;
+    font-size: 13px;
+    align-items: center;
+    justify-content: center;
+    height: 33px;
+
+    width: 33px;
     cursor: pointer;
 }
 .our_articles .post .post-date {

@@ -106,13 +106,18 @@
             <h3 class="text-light-black">Ghibli Versions</h3> 
             <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.A masterful combination of style, power, sporty handling and comfort.</p>
           </div> -->
-          <div class="d-flex gap-3">
+          <div class="d-flex gap-3" *ngIf="isOwner">
             <div class="add-car-btn">
               <a [routerLink]="['/voitures/modifier',car.id]" class="text-custom-white">Modifier</a>
            </div>
            <div class="add-car-btn" (click)="deleteCar()">
             <a  class="text-custom-white">Supprimer</a>
-         </div>
+          </div>
+          </div>
+          <div class="d-flex gap-3" *ngIf="!isOwner">
+            <div class="add-car-btn">
+              <a  class="text-custom-white">Ajouter à mes Favoris</a>
+           </div>
           </div>
           <div class="car-details-tab">
             <ul class="nav nav-tabs">
@@ -269,7 +274,7 @@
                 <div class="car-details-box">
                   <div class="text-wrapper">
                     <h5 class="text-light-black">Nom et prénom</h5>
-                    <p class="text-dark-grey">foulen ben flen</p>
+                    <p class="text-dark-grey">{{car.user.username}}</p>
                     <h5 class="text-light-black">Téléphone</h5>
                     <p class="text-dark-grey">{{car.phone}}</p>
                     <h5 class="text-light-black">Gouvernorat</h5>

@@ -34,22 +34,13 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('accessToken', data.accessToken);
               localStorage.setItem('isAuthenticated', 'true');
               localStorage.setItem('type', data.type);
-              //localStorage.setItem('idUser', data.id);
-              this.router.navigate([''])
+             localStorage.setItem('idUser', data.id);
+           this.router.navigate([''])
          }else  if(data.message ==='User Not found.'){
-            this.errorMsg= 'Invalid email!';
+            this.errorMsg= 'Email incorrect!';
           }else if(data.message==='Invalid Password!'){
-            this.errorMsg='Invalid Password!'
+            this.errorMsg='Mot de passe incorrect!'
           }
-
-         
-
-/*
-   "message": "User Not found." if wrong emal 
-    wrong pwd
-    "accessToken": null,
-    "message": "Invalid Password!"
-*/
           
           }, (error: any) => {
            

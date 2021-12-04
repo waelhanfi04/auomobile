@@ -60,11 +60,13 @@ export class RegisterProComponent implements OnInit {
           (data:any) => {
             console.log(data)
             if(data.message==='User was registered successfully!'){
-              this.successMsg='User was registered successfully!';
               this.errorMsg='';
-              this.router.navigate(['login'])
-            }else{
-              this.errorMsg=data.message;
+              this.successMsg='Compte créer avec succès!';
+              setTimeout(() => {
+                this.router.navigate(['/login'])
+              }, 1000);
+            }else if(data.message=== "Failed! Email is already in use!"){
+              this.errorMsg='Cet Email existe déjà';
               this.successMsg='';
             }
             /*message: "User was registered successfully!"

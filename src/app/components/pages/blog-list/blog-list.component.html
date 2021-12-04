@@ -2,7 +2,8 @@
 	<app-header2></app-header2>
 <!-- Sub header -->
   <div class="sub-header-sec p-relative">
-    <img src="assets/images/blog/banner/banner-1.jpg" class="img-fluid" alt="Sub header">
+    <app-banner-header></app-banner-header>
+    <!-- <img src="assets/images/blog/banner/banner-1.jpg" class="img-fluid" alt="Sub header"> -->
     <div class="sub-header-overlay"></div>
     <div class="sub-header-wrapper">
       <div class="container">
@@ -32,6 +33,11 @@
           <app-advertising-sidebar></app-advertising-sidebar>
         </aside>
         <div class="col-lg-8">
+          <div class="row"  *ngIf="this.successMsg!==''">
+            <div class="col-md-6 mb-3 d-flex justify-content-center">
+            <label class="success-msg" >{{successMsg}}</label>
+          </div>
+          </div>
           <div class="row">
             <div class="col-md-6 mb-3">
               <div class="add-car-btn" [routerLink]="['/ajouter-blog']">
@@ -55,6 +61,8 @@
                   </div>
                   <div class="post-type">
                     <a [routerLink]="['/blogs/modifier',blog.id]">  <i class="fas fa-pen"></i>
+                    </a>
+                    <a class="mt-2" (click)="deleteBlog(blog.id)">  <i class="fas fa-trash"></i>
                     </a>
                   </div>
                   <div class="blog-meta">

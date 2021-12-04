@@ -53,6 +53,7 @@ import { BlogDetailsComponent } from './components/pages/blog-details/blog-detai
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { UpdateBlogComponent } from './components/pages/update-blog/update-blog.component';
 import { CustomFormsModule } from 'ng2-validation';
+import { BannerHeaderComponent } from './components/layouts/banner-header/banner-header.component';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -100,6 +101,7 @@ import { CustomFormsModule } from 'ng2-validation';
     BlogListComponent,
     AdvertisingSidebarComponent,
     UpdateBlogComponent,
+    BannerHeaderComponent,
 
   ],
   imports: [
