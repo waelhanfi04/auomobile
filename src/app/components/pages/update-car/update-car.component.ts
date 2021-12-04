@@ -53,9 +53,9 @@ export class UpdateCarComponent implements OnInit {
       insideEquipment: this.fb.array([]),
       outsideEquipment: this.fb.array([]),
       securityEquipment: this.fb.array([]),
+      pictures: this.fb.array([]),
       seatingCapacity: new FormControl(''),
-      numberDoors: new FormControl(''),
-      pictures: this.fb.array([])
+      numberDoors: new FormControl('')
     });
 
   }
@@ -206,8 +206,7 @@ getCarDetails(id:any){
       console.log('car from update car ----> ',this.carDetails)
       console.log('element.picture--->',this.carDetails.securityEquipmentVoitures)
       const pictureArray: FormArray = this.updateCarForm.get('pictures') as FormArray;
-      this.carDetails.picturesVoitures.forEach((element:any) => {
-        console.log('element.picture--->',element.picture)
+      this.carDetails?.picturesVoitures.forEach((element:any) => {
         pictureArray.push(new FormControl(element.picture));
       });
       this.kits=this.updateCarForm.get('pictures')?.value
@@ -218,12 +217,12 @@ getCarDetails(id:any){
       });
    
       const outsideEquipmentArray: FormArray = this.updateCarForm.get('outsideEquipment') as FormArray;
-      this.carDetails.outsideEquipmentVoitures.forEach((element:any) => {
+      this.carDetails?.outsideEquipmentVoitures.forEach((element:any) => {
         outsideEquipmentArray.push(new FormControl(element.equipment));
       });
       const securityEquipmentArray: FormArray = this.updateCarForm.get('securityEquipment') as FormArray;
      
-      this.carDetails.securityEquipmentVoitures.forEach((element:any) => {
+      this.carDetails?.securityEquipmentVoitures.forEach((element:any) => {
         securityEquipmentArray.push(new FormControl(element.equipment));
       });
 

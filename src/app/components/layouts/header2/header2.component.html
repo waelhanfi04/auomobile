@@ -159,31 +159,34 @@
                         Favoris
                       </a>
                     </li>
-                <li class="menu-item dropdownbtn">
-                  <a href="javascript:void(0)" class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
+                    <!-- <li class="menu-item dropdownbtn">
+                      <a  class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
+                        Mon espace</a>
+                      <ul class="dropdown-menu ">
+                        <li  *ngIf='!showAddListing'><a routerLink="/account/creation" class="text-light-black">S'inscrire</a>
+                        </li>
+                        <li  *ngIf='!showAddListing'><a routerLink="/login" class="text-light-black">Se Connecter</a>
+                        </li>
+                        <li  *ngIf='showAddListing' (click)="logout()"><a  class="text-light-black">Se Déconnecter</a>
+                        </li>
+                      </ul>
+                    </li> -->
+               <li class="menu-item text-header">
+                  <a  id="navbarDropdownMenuLink2" role="button" aria-haspopup="true" aria-expanded="false" 
+                  data-toggle="dropdown" class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
                     Mon espace</a>
-                  <ul class="dropdown-menu">
-                    <li *ngIf='!showAddListing'><a routerLink="/account/creation" class="text-light-black">S'inscrire</a>
+                  <ul class="dropdown-menu dropdown-account">
+                    <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/account/creation" class="text-black">S'inscrire</a>
                     </li>
-                    <li *ngIf='!showAddListing'><a routerLink="/login" class="text-light-black">Se Connecter</a>
+                    <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/login" class="text-black">Se Connecter</a>
                     </li>
-                    <li *ngIf='showAddListing' (click)="logout()"><a  class="text-light-black">Se Déconnecter</a>
+                    <li class="dropdown-li" *ngIf='showAddListing' (click)="logout()"><a  class="text-black">Se Déconnecter</a>
                     </li>
                   </ul>
-                </li>
+                </li> 
                <!-- <li class="add-car-btn"  *ngIf='showAddListing'> <a routerLink="/creer-une-annonce" class="text-custom-white">+ Ajouter une annonce</a>
                 </li>  -->
 
-                <!-- <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink2" role="button" aria-haspopup="true" aria-expanded="false" 
-                style="cursor: pointer !important;margin-top: 0px;cursor: default;margin-left: 3%;width:15%" data-toggle="dropdown">
-                <i aria-haspopup="true" aria-expanded="false" class="fa fa-angle-down angledown angeStyle" aria-hidden="true" style="cursor: pointer;margin-left: -80%;"></i>
-             </a>
-            <ul class="dropdown-menu" style="margin-left: 1%;margin-top: 4%;">
-                <a class="dropdown-item" [routerLink]="['settings']" ><li style="cursor:pointer">{{ "Profil" | translate }}</li></a>
-                <a class="dropdown-item"  [routerLink]="['settings/Legal_KYC']"><li style="cursor:pointer">{{ "legal" | translate }}</li></a>
-                <a class="dropdown-item" [routerLink]="['settings/security']" ><li style="cursor:pointer">{{ "informations_securite" | translate }}</li></a>
-                <div><a class="dropdown-item divider" (click)="signOut()"><i class="fa fa-power-off" style="margin-left: 1%;"></i>{{ "logout" | translate }}</a></div>
-              </ul> -->
               </ul>
             </div>
           </div>
@@ -206,7 +209,7 @@
   
               <!-- <li class="search-btn"><a href="javascript:void(0)" class="text-custom-white"><i class="flaticon-search"></i></a>
                   </li> -->
-              <li class="dropdownbtn">
+              <!-- <li class="dropdownbtn">
                 <a href="javascript:void(0)" class="text-custom-white"><i class="fas fa-user"></i></a>
                 <ul class="dropdown-menu">
                   <li><a routerLink="/account/creation" class="text-light-black">Register</a>
@@ -214,7 +217,22 @@
                   <li><a routerLink="/login" class="text-light-black">Login</a>
                   </li>
                 </ul>
+              </li> -->
+
+              <li class="menu-item text-header">
+                <a  id="navbarDropdownMenuLink2" role="button" aria-haspopup="true" aria-expanded="false" 
+                data-toggle="dropdown" class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
+                  </a>
+                <ul class="dropdown-menu dropdown-account">
+                  <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/account/creation" class="text-black">S'inscrire</a>
+                  </li>
+                  <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/login" class="text-black">Se Connecter</a>
+                  </li>
+                  <li class="dropdown-li" *ngIf='showAddListing' (click)="logout()"><a  class="text-black">Se Déconnecter</a>
+                  </li>
+                </ul>
               </li>
+
               <li class="button" id="mobile-open-nav"><a href="javascript:void(0)" class="text-custom-white"><i
                     class="flaticon-menu"></i></a>
               </li>

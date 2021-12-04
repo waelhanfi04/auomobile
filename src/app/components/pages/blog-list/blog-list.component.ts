@@ -28,9 +28,9 @@ successMsg:string =''
     console.log('resssponse form listing blog-->',response)
     // this.blogList=response.blog
     this.successMsg='Blog a été supprimé avec succès!';
-    // setTimeout(() => {
-    //   this.router.navigate(['/blogs'])
-    // }, 1000);
+    setTimeout(() => {
+      this.router.navigate(['/blogs'])
+    }, 1000);
   })
  }
 }

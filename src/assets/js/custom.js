@@ -821,9 +821,9 @@ Version:1.0.1
 	$(function () {
 		$("#search_price").slider({
 			range: "min",
-			value: 50,
-			min: 1,
-			max: 1000,
+			value: 0,
+			min: 0,
+			max: 500000,
 			slide: function (event, ui) {
 				$(".price-value").val("$ " + ui.value);
 			}

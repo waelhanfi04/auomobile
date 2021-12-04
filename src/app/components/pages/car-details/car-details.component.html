@@ -2,9 +2,9 @@
 	<app-header2></app-header2>
 <!-- User Details -->
   <div class="user-page-sec p-relative car-details">
-    <div class="car-details-slider">
-      <div class="slider-item" *ngFor="let p of picturesList">
-        <img [src]="p.picture" class="img-fluid full-width" alt="#" (error)="onImgError($event)">
+    <div class="car-details-slider" *ngIf="picturesList">
+      <div class="slider-item"  *ngFor="let p of picturesList">
+        <img [src]="p.picture" class="img-fluid full-width" alt="#" >
       </div> 
       <!-- <div class="slider-item">
         <img src="assets/images/cardetails/cardetails-1.jpg" class="img-fluid full-width" alt="#">
@@ -19,6 +19,11 @@
         <img src="assets/images/cardetails/cardetails-4.jpg" class="img-fluid full-width" alt="#">
       </div> -->
     </div>
+    <div class="car-details-slider" *ngIf="!picturesList">
+      <div class="slider-item">
+        <img [src]="" class="img-fluid full-width" alt="#" (error)="onImgError($event)">
+      </div> 
+      </div>
     <div class="slider-contant-wrapper offset-lg-1 col-lg-4 col-md-6">
       <div class="row">
         <div class="col-md-12">
@@ -33,7 +38,7 @@
                 </div>
               </div> -->
             </div>
-            <div class="price-btn"> <span>$ {{car.price || '0'}}</span>
+            <div class="price-btn"> <span> {{car.price || '0'}} DT</span>
             </div>
           </div>
         </div>
