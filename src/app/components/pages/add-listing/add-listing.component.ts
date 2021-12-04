@@ -53,9 +53,9 @@ export class AddListingComponent implements OnInit {
       insideEquipment: this.fb.array([]),
       outsideEquipment: this.fb.array([]),
       securityEquipment: this.fb.array([]),
+      pictures: this.fb.array([]),
       seatingCapacity: new FormControl(''),
-      numberDoors: new FormControl(''),
-      pictures: this.fb.array([])
+      numberDoors: new FormControl('')
     });
 
   }
@@ -140,9 +140,9 @@ addCar(){
 this.carService.addCar(this.addCarForm?.value).subscribe((response:any)=>{
   console.log('response',response)
 this.successMsg='Votre annonce a été ajouté avec succès!';
-  //   setTimeout(() => {
-  //     this.router.navigate(['/'])
-  //   }, 1000);
+    setTimeout(() => {
+      this.router.navigate(['/'])
+    }, 1000);
 })
 }
 onFileChange(e: any) {

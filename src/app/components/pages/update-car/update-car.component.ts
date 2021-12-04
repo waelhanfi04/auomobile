@@ -147,6 +147,12 @@ export class UpdateCarComponent implements OnInit {
 
 this.carService.updateCar(body).subscribe((response:any)=>{
   console.log('response',response)
+  if(response.message === 'voiture was registered successfully!'){
+    this.successMsg='Voiture a été modifié avec succès!'
+    setTimeout(() => {
+      this.router.navigate(['/car-detail',this.carDetails.id])
+    }, 1000);
+  }
   //this.router.navigate([''])
 })
 }
@@ -200,7 +206,7 @@ getCarDetails(id:any){
       console.log('car from update car ----> ',this.carDetails)
       console.log('element.picture--->',this.carDetails.securityEquipmentVoitures)
       const pictureArray: FormArray = this.updateCarForm.get('pictures') as FormArray;
-      this.carDetails?.picturesVoitures.forEach((element:any) => {
+      this.carDetails.picturesVoitures.forEach((element:any) => {
         console.log('element.picture--->',element.picture)
         pictureArray.push(new FormControl(element.picture));
       });
@@ -212,12 +218,12 @@ getCarDetails(id:any){
       });
    
       const outsideEquipmentArray: FormArray = this.updateCarForm.get('outsideEquipment') as FormArray;
-      this.carDetails?.outsideEquipmentVoitures.forEach((element:any) => {
+      this.carDetails.outsideEquipmentVoitures.forEach((element:any) => {
         outsideEquipmentArray.push(new FormControl(element.equipment));
       });
       const securityEquipmentArray: FormArray = this.updateCarForm.get('securityEquipment') as FormArray;
      
-      this.carDetails?.securityEquipmentVoitures.forEach((element:any) => {
+      this.carDetails.securityEquipmentVoitures.forEach((element:any) => {
         securityEquipmentArray.push(new FormControl(element.equipment));
       });
 

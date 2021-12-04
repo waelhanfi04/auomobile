@@ -55,4 +55,7 @@ export class CarDetailsComponent implements OnInit {
       this.router.navigate([''])
     })
   }
+  onImgError(event: any) {
+    event.target.src = '../../../../assets/images/new-icons/default-car.jpg';
+  }
 }

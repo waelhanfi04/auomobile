@@ -309,7 +309,7 @@
                     <div class="row">
                       <div class="col-lg-12">
                         <label>Equipements extérieurs</label>
-                        <div class="form-group  p-relative">
+                        <div formArrayName="outsideEquipment" class="form-group  p-relative">
                           <ul class="boxes" id="inside-equip">
                             <li *ngFor="let ex of outsideEquipmentList;let index=index">
                               <label class="custom-checkbox black-text " for="ex{{index}}">
@@ -324,7 +324,7 @@
 
                       <div class="col-lg-12">
                         <label>Equipements intérieurs</label>
-                        <div class="form-group">
+                        <div formArrayName="insideEquipment" class="form-group">
                           <ul class="boxes" id="outside-equip">
                             <li *ngFor="let i of insideEquipmentList;let index=index">
                               <label class="custom-checkbox black-text" for="int{{index}}">
@@ -339,7 +339,7 @@
 
                       <div class="col-lg-12">
                         <label>Equipements de sécurité</label>
-                        <div class="form-group">
+                        <div formArrayName="securityEquipment"  class="form-group">
                           <ul class="boxes" id="security-equip">
                             <li *ngFor="let s of securityEquipmentList;let index=index">
                               <label class="custom-checkbox black-text" for="security{{index}}">
@@ -422,11 +422,11 @@
                     <form [formGroup]="addCarForm">
                       <div class="row">
                         <div class="col-lg-12">
-                          <div class="form-group div-input-file">
+                          <div formArrayName="pictures" class="form-group div-input-file">
                             <div class="d-flex justify-content-center text-div-input-file">
                               Cliquez ou faites glisser vos photos ici
                                </div>
-                            <input type="file" class="input-pictures" formControlName="pictures" accept="image/*" (change)="onFileChange($event)">
+                            <input type="file" class="input-pictures" accept="image/*" (change)="onFileChange($event)">
                            
                           </div>
                         </div>
@@ -459,9 +459,9 @@
               </div>
 
             </div>
-            <div class="row"  *ngIf="this.successMsg!==''">
+            <div class="row justify-content-center"  *ngIf="this.successMsg!==''">
               <div class="col-md-6 mb-3 d-flex justify-content-center">
-              <label class="success-msg" >{{successMsg}}</label>
+              <span class="success-msg" >{{successMsg}}</span>
             </div>
             </div>
             <div class="step-footer step-tab-pager">

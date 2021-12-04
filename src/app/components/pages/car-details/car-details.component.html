@@ -1,10 +1,10 @@
-<div class="mobile-menu-second">
+<div class="mobile-menu-second" *ngIf="car">
 	<app-header2></app-header2>
 <!-- User Details -->
   <div class="user-page-sec p-relative car-details">
     <div class="car-details-slider">
       <div class="slider-item" *ngFor="let p of picturesList">
-        <img [src]="p.picture" class="img-fluid full-width" alt="#">
+        <img [src]="p.picture" class="img-fluid full-width" alt="#" (error)="onImgError($event)">
       </div> 
       <!-- <div class="slider-item">
         <img src="assets/images/cardetails/cardetails-1.jpg" class="img-fluid full-width" alt="#">
@@ -289,7 +289,7 @@
           <div class="image-slider-sec">
             <div class="car-detail-slider-for">
               <div class="slider-item" *ngFor="let p of picturesList">
-                <img [src]="p.picture" class="img-fluid full-width pictures-item" alt="#">
+                <img [src]="p.picture" class="img-fluid full-width pictures-item" alt="#" (error)="onImgError($event)">
               </div> 
               <!-- <div class="slide-item">
                 <img src="assets/images/cardetails/gallery-1.jpg" class="img-fluid full-width" alt="#">

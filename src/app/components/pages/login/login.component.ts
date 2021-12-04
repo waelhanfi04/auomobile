@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('isAuthenticated', 'true');
               localStorage.setItem('type', data.type);
              localStorage.setItem('idUser', data.id);
+             localStorage.setItem('role', data.role);
            this.router.navigate([''])
          }else  if(data.message ==='User Not found.'){
             this.errorMsg= 'Email incorrect!';

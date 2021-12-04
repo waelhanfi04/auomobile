@@ -8752,9 +8752,11 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 }
 .error-msg{
     color: #db4437;
-    font-size: 13px;
+    font-size: 15px;
+    font-weight: 600;
 }
 .success-msg{
-    color: rgb(7, 102, 7);
-    font-size: 13px;
+    color: #28a745;
+    font-size: 15px;
+    font-weight: 600;
 }

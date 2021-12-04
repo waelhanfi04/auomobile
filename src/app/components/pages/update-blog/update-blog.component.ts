@@ -16,7 +16,7 @@ export class UpdateBlogComponent implements OnInit {
  // editor = new Editor();
  blogDetails:any
  successMsg:string =''
-  constructor(private BlogService:BlogService,private sanitizer: DomSanitizer,private route: ActivatedRoute) { 
+  constructor(private BlogService:BlogService,private router: Router,private sanitizer: DomSanitizer,private route: ActivatedRoute) { 
     this.updateBlogForm = new FormGroup({
       title: new FormControl("", [Validators.required]),
       description: new FormControl("", [Validators.required]),
@@ -45,7 +45,10 @@ this.BlogService.updateBlog(this.blogDetails.id,this.updateBlogForm.controls.tit
 .subscribe((response:any)=>{
   console.log('resssponse form add blog-->',response)
   if(response.message=== "Blog was added successfully!"){
-    console.log('suuuuc')
+    this.successMsg="Blog a été modifié avec succès!"
+    setTimeout(() => {
+      this.router.navigate(['/blog',this.blogDetails.id])
+    }, 1000);
   }
   //this.successMsg='Blog a été supprimé avec succès!';
   // setTimeout(() => {

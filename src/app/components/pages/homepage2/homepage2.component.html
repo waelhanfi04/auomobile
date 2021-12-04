@@ -446,7 +446,8 @@
                   <div class="car-grid-layout-box">
                     <div class="car-grid-layout-inner text-center">
                       <h5 class="car-name"><a  [routerLink]="['car-detail',car.id]"  class="text-light-black">{{car.brand}} {{car.model}}</a>
-                        <span class="gray-fa-heart float-right custom-tooltip" data-tip="Sauvgarder" [ngClass]="{'orange-fa-heart':car.useId === this.userId }"><i class="fa fa-heart"></i></span>
+                     <!-- [ngClass]="{'orange-fa-heart':car.useId === this.userId }"-->
+                        <span *ngIf="car.userId !== this.userId" class="gray-fa-heart float-right custom-tooltip" data-tip="Sauvgarder"><i class="fa fa-heart"></i></span>
                       </h5>
                       <h6 class="text-light-black text-uppercase mb-2">{{car.title}}</h6>
                       <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>

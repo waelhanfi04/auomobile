@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 //import { Editor } from 'ngx-editor';
 import { BlogService } from '../../../services/blog/blog.service'
 @Component({
@@ -10,7 +11,8 @@ import { BlogService } from '../../../services/blog/blog.service'
 export class AddBlogComponent implements OnInit {
   addBlogForm: FormGroup
  // editor = new Editor();
-  constructor(private BlogService:BlogService) { 
+ successMsg:string=''
+  constructor(private BlogService:BlogService, private router:Router) { 
     this.addBlogForm = new FormGroup({
       title: new FormControl("", [Validators.required]),
       description: new FormControl("", [Validators.required]),
@@ -24,7 +26,10 @@ this.BlogService.addBlog(this.addBlogForm.controls.title?.value,this.addBlogForm
 .subscribe((response:any)=>{
   console.log('resssponse form add blog-->',response)
   if(response.message=== "Blog was added successfully!"){
-    console.log('suuuuc')
+    this.successMsg='Blog a été ajouté avec succès!';
+        setTimeout(() => {
+      this.router.navigate(['/blogs'])
+    }, 1000);
   }
 
 })
