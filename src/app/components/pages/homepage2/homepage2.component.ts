@@ -28,10 +28,12 @@ filterForm:FormGroup
   ngOnInit(): void {
     this.getCars()
     this.filterForm.get('category')?.valueChanges.subscribe((value:any)=>{
+      this.getCars()
       console.log('vaeeel',value)
       this.carsList= this.carsList.filter((car:any)=> car.category===value)
     });
     this.filterForm.get('city')?.valueChanges.subscribe((value:any)=>{
+      this.getCars()
       console.log('vaeeel',value)
       this.carsList= this.carsList.filter((car:any)=> car.city===value)
     });
