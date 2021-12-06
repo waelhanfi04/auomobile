@@ -73,28 +73,28 @@
           <div class="col-lg-12">
             <div class="banner-tabs align-item-center">
               <ul>
-                <li>
-                  <a routerLink="/homepage2" class="align-item-center">
+                <li (click)="getCarByCategory('Luxury')">
+                  <a  class="align-item-center">
                   <img src="assets/images/luxury-car.png" alt="Car Image">	<span>Luxury Car</span>
                   </a>
                 </li>
-                <li>
-                  <a routerLink="/homepage2" class="align-item-center">
+                <li (click)="getCarByCategory('Sports')">
+                  <a  class="align-item-center">
                   <img src="assets/images/sports-car.png" alt="Car Image">	<span>Sports Car</span>
                   </a>
                 </li>
-                <li>
-                  <a routerLink="/homepage2" class="align-item-center">
+                <li (click)="getCarByCategory('Vintage')">
+                  <a  class="align-item-center">
                   <img src="assets/images/vintage-car.png" alt="Car Image">	<span>Vintage Car</span>
                   </a>
                 </li>
-                <li>
-                  <a routerLink="/homepage2" class="align-item-center">
+                <li (click)="getCarByCategory('Excutive')">
+                  <a  class="align-item-center">
                   <img src="assets/images/excutive-car.png" alt="Car Image">	<span>Excutive Car</span>
                   </a>
                 </li>
-                <li>
-                  <a routerLink="/homepage2" class="align-item-center">
+                <li (click)="getCarByCategory('Economy')">
+                  <a  class="align-item-center">
                   <img src="assets/images/economy-car.png" alt="Car Image">	<span>Economy Car</span>
                   </a>
                 </li>
@@ -122,133 +122,133 @@
         <div class="row">
           <div class="col-12 p-relative">
             <div class="vehicles-slider-for">
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Audi')">
+                <a >
                 <img src="assets/images/logos/logo1.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Audi</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10"(click)="getCarByBrand('BMW')">
+                <a >
                 <img src="assets/images/logos/logo2.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">BMW</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Cord')">
+                <a >
                 <img src="assets/images/logos/logo3.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Cord</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Dodge')">
+                <a >
                 <img src="assets/images/logos/logo4.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Dodge</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Eagle')">
+                <a >
                 <img src="assets/images/logos/logo5.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Eagle</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Ferrari')">
+                <a >
                 <img src="assets/images/logos/logo6.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Ferrari</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('GTA')">
+                <a >
                 <img src="assets/images/logos/logo7.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">GTA</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Hyundai')">
+                <a >
                 <img src="assets/images/logos/logo8.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Hyundai</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Imperial')">
+                <a >
                 <img src="assets/images/logos/logo1.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Imperial</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Jaguar')">
+                <a >
                 <img src="assets/images/logos/logo2.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Jaguar</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Kia')">
+                <a >
                 <img src="assets/images/logos/logo3.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Kia</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Lamborghini')">
+                <a >
                 <img src="assets/images/logos/logo4.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Lamborghini</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Maserati')">
+                <a >
                 <img src="assets/images/logos/logo5.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Maserati</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Mercedes-Benz')">
+                <a >
                 <img src="assets/images/logos/logo6.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Mercedes-Benz</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Nissan')">
+                <a >
                 <img src="assets/images/logos/logo1.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Nissan</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Orca')">
+                <a >
                 <img src="assets/images/logos/logo7.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Orca</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Porsche')">
+                <a >
                 <img src="assets/images/logos/logo2.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Porsche</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Quant')">
+                <a >
                 <img src="assets/images/logos/logo8.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Quant</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('RMR')">
+                <a >
                 <img src="assets/images/logos/logo1.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">RMR</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Suzuki')">
+                <a >
                 <img src="assets/images/logos/logo2.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Suzuki</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Toyota')">
+                <a >
                 <img src="assets/images/logos/logo8.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Toyota</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Ultima')">
+                <a >
                 <img src="assets/images/logos/logo5.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Ultima</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Vauxhall')">
+                <a >
                 <img src="assets/images/logos/logo5.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Vauxhall</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Wanderer')">
+                <a >
                 <img src="assets/images/logos/logo6.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Wanderer</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Yamaha')">
+                <a >
                 <img src="assets/images/logos/logo7.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Yamaha</span>
                 </a>
               </div>
-              <div class="vehicles-slider-item  text-center padding-10">
-                <a routerLink="/car-page">
+              <div class="vehicles-slider-item  text-center padding-10" (click)="getCarByBrand('Zagato')">
+                <a >
                 <img src="assets/images/logos/logo8.png" class="img-fluid full-width" alt="Image"> <span class="slider-caption">Zagato</span>
                 </a>
               </div>
@@ -640,16 +640,17 @@
           <div class="col-12">
             <div class="p-relative">
               <div class="model-spec-slider">
-                <div class="model-spec-slider-item p-relative">
+                <div class="model-spec-slider-item p-relative" *ngFor="let sponCar of sponsoredCarsList">
                   <div class="model-spec-top-sec bg-light-theme">
-                    <a routerLink="/car-detail">
-                      <h4 class="text-dark-grey">BMW 535i</h4>
-                      <p class="text-dark-grey">From <strong>$ 34,950.00</strong>
+                    <a [routerLink]="['/car-detail',sponCar.id]">
+                      <h4 class="text-dark-grey">{{sponCar.brand}}</h4>
+                      <p class="text-dark-grey">De <strong>{{sponCar.price}} DT</strong>
                       </p>
                       <p class="text-dark-grey no-margin">*Manufacturer’s Suggested Retail Price. Excludes options; taxes; title; registration; delivery, processing and handling fee; dealer charges.</p>
                     </a>
                   </div>
                   <img src="assets/images/showcar2.jpg" class="img-fluid full-width" alt="Model Image">
+                  <!-- <img [src]="sponCar.pictureVoitures[0]?.picture" (error)="onImgError($event)" class="img-fluid full-width " alt="Model Image"> -->
                   <div class="bg-white">
                     <div class="model-spec-wrapper">
                       <div class="model-spec-bottom-sec">
@@ -675,7 +676,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="model-spec-slider-item p-relative">
+                <!-- <div class="model-spec-slider-item p-relative">
                   <div class="model-spec-top-sec bg-light-theme">
                     <a routerLink="/car-detail">
                       <h4 class="text-dark-grey">Audi TT v2</h4>
@@ -779,7 +780,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
               <div class="model-spec-slider-arrows">
                 <div class="model-spec-slider-prevtab slick-arrow"> <i class="flaticon-left-chevron"></i>

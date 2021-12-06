@@ -63,7 +63,7 @@
 
 
             </ul>
-            <div class="step-content">
+            <div class="step-content" *ngIf="carDetails">
 
               <div class="step-tab-panel" id="step1">
                 <div class="tab-from-content">
@@ -313,7 +313,7 @@
                           <ul class="boxes" id="inside-equip">
                             <li *ngFor="let ex of outsideEquipmentList;let index=index">
                               <label class="custom-checkbox black-text " for="ex{{index}}">
-                                <input type="checkbox" id="ex{{index}}" [value]="ex.equipement"
+                                <input type="checkbox" id="ex{{index}}"  [checked]="ex.checked" [value]="ex.equipement"
                                   (change)="onCheckboxChange($event,'outsideEquipment')">
                                 <span class="checkmark"></span>{{ex.equipement}}</label>
                             </li>
@@ -328,7 +328,7 @@
                           <ul class="boxes" id="outside-equip">
                             <li *ngFor="let i of insideEquipmentList;let index=index">
                               <label class="custom-checkbox black-text" for="int{{index}}">
-                                <input type="checkbox" id="int{{index}}" [value]="i.equipement"
+                                <input type="checkbox" id="int{{index}}" [checked]="i.checked" [value]="i.equipement"
                                   (change)="onCheckboxChange($event,'insideEquipment')" >
                                 <span class="checkmark"></span>{{i.equipement}}</label>
                             </li>
@@ -343,7 +343,7 @@
                           <ul class="boxes" id="security-equip">
                             <li *ngFor="let s of securityEquipmentList;let index=index">
                               <label class="custom-checkbox black-text" for="security{{index}}">
-                                <input type="checkbox" id="security{{index}}" [value]="s.equipement"
+                                <input type="checkbox" id="security{{index}}" [checked]="s.checked" [value]="s.equipement"
                                   (change)="onCheckboxChange($event,'securityEquipment')">
                                 <span class="checkmark"></span>{{s.equipement}}</label>
                             </li>
@@ -431,18 +431,6 @@
                           </div>
                         </div>
                         <div class="col-lg-12" *ngIf="kits.length!==0">
-                         
-                            <!-- <div class="dropzone-previews" *ngFor="let pic of kits">
-                              <div class="dz-details">  
-                                  <div class="dz-filename">
-                                    <span >user.jpg</span>
-                                  </div>  
-                                   
-                                  
-                                 <img class="img-preview" [src]="pic">
-                            </div>
-                              </div> -->
-                           
                           
                               <div class="col p-2" *ngFor="let pic of kits;let index = index">
                                 <img class="picture-car" [src]="pic">

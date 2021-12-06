@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { CarService } from 'src/app/services/car/car.service';
 import { Car } from '../../../models/car'
-import { arrayInsideEquipment,arrayOutsideEquipment,arraysecurityEquipment,arrayCategoryCar, arrayCategories, arrayBrand  } from 'src/app/shared/config';
+import { arrayInsideEquipment, arrayOutsideEquipment, arraysecurityEquipment, arrayCategoryCar, arrayCategories, arrayBrand } from 'src/app/shared/config';
 @Component({
   selector: '.update-car.component',
   templateUrl: './update-car.component.html',
@@ -16,19 +16,19 @@ export class UpdateCarComponent implements OnInit {
   successMsg = ''
   isSubmitting: boolean = false
   years: any = []
-  powerFiscalArray:any=[]
-  insideEquipmentList=arrayInsideEquipment 
-  outsideEquipmentList=arrayOutsideEquipment
-  securityEquipmentList=arraysecurityEquipment
-  categoriesList=arrayCategoryCar
-  arrayBrand=arrayBrand
-  arrayModel:any
-  kits=[]
-  isAcceptedImageFileType:boolean=true
-  carDetails:any;
-  constructor(private router: Router,private fb:FormBuilder,private carService:CarService,private route: ActivatedRoute) {
+  powerFiscalArray: any = []
+  insideEquipmentList = arrayInsideEquipment
+  outsideEquipmentList = arrayOutsideEquipment
+  securityEquipmentList = arraysecurityEquipment
+  categoriesList = arrayCategoryCar
+  arrayBrand = arrayBrand
+  arrayModel: any
+  kits = []
+  isAcceptedImageFileType: boolean = true
+  carDetails: any;
+  constructor(private router: Router, private fb: FormBuilder, private carService: CarService, private route: ActivatedRoute) {
     this.updateCarForm = new FormGroup({
-      id:new FormControl(''),
+      id: new FormControl(''),
       title: new FormControl(''),
       availablity: new FormControl(''),
       phone: new FormControl(''),
@@ -62,12 +62,12 @@ export class UpdateCarComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params
-    .pipe(
-      map((params: any) => {
-        return params['id'];
-      })
-    )
-    .subscribe((params) => this.getCarDetails(params));
+      .pipe(
+        map((params: any) => {
+          return params['id'];
+        })
+      )
+      .subscribe((params) => this.getCarDetails(params));
     /*---add list of years from 1900 to current year-- */
     var aujd = new Date();
     const currentYear = aujd.getFullYear();
@@ -75,21 +75,64 @@ export class UpdateCarComponent implements OnInit {
       this.years.push(year);
     }
     /*---add list array of numbers form 4 to 48-- */
-    for (let i =4; i < 49; i++) {
+    for (let i = 4; i < 49; i++) {
       this.powerFiscalArray.push(i);
     }
     /*---Update list of model-- */
-    this.updateCarForm.get('brand')?.valueChanges.subscribe((value:any)=>{
-      this.arrayModel=[]
-        arrayBrand.map((b:any)=>{
-          if(b.brand===value){          
-            this.arrayModel= b.model
-          }
-        })
-      
+    this.updateCarForm.get('brand')?.valueChanges.subscribe((value: any) => {
+      this.arrayModel = []
+      arrayBrand.map((b: any) => {
+        if (b.brand === value) {
+          this.arrayModel = b.model
+        }
+      })
+
     })
   }
-  onCheckboxChange(e:any,controlName:any) {
+  getCarDetails(id: any) {
+    this.carService.getOneCar(id).subscribe((data: any) => {
+      if (data) {
+        this.carDetails = data.voiture
+        const outsideEquipmentArray: FormArray = this.updateCarForm.get('outsideEquipment') as FormArray;
+        this.carDetails.outsideEquipmentVoitures.forEach((itemEquip: any) => {
+          outsideEquipmentArray.push(new FormControl(itemEquip.equipment));
+          this.outsideEquipmentList.forEach((itemList: any) => {
+            if (itemEquip.equipment === itemList.equipement) {
+              itemList['checked'] = true;
+            }
+          });
+        });
+
+        const securityEquipmentArray: FormArray = this.updateCarForm.get('securityEquipment') as FormArray;
+        this.carDetails.securityEquipmentVoitures.forEach((itemEquip: any) => {
+          securityEquipmentArray.push(new FormControl(itemEquip.equipment));
+          this.securityEquipmentList.forEach((itemList: any) => {
+            if (itemEquip.equipment === itemList.equipement) {
+              itemList['checked'] = true;
+            }
+          });
+        });
+        const insideEquipmentArray: FormArray = this.updateCarForm.get('insideEquipment') as FormArray;
+        this.carDetails.insideEquipmentVoitures.forEach((itemEquip: any) => {
+          insideEquipmentArray.push(new FormControl(itemEquip.equipment));
+          this.insideEquipmentList.forEach((itemList: any) => {
+            if (itemEquip.equipment === itemList.equipement) {
+              itemList['checked'] = true;
+            }
+          });
+        });
+        const pictureArray: FormArray = this.updateCarForm.get('pictures') as FormArray;
+        this.carDetails.pictureVoitures.forEach((element: any) => {
+          console.log('eleeeem',element)
+          pictureArray.push(new FormControl(element.picture));
+        });
+        this.kits = this.updateCarForm.get('pictures')?.value
+        console.log('kiiiits', this.kits)
+      }
+
+    })
+  }
+  onCheckboxChange(e: any, controlName: any) {
     const checkArray: FormArray = this.updateCarForm.get(controlName) as FormArray;
 
     if (e.target.checked) {
@@ -105,63 +148,62 @@ export class UpdateCarComponent implements OnInit {
       });
     }
   }
-  delete(index:any){
+  delete(index: any) {
     const checkArray: FormArray = this.updateCarForm.get('pictures') as FormArray;
     checkArray.removeAt(index);
-    this.kits=this.updateCarForm.get('pictures')?.value
-    console.log('looog',this.updateCarForm.get('pictures')?.value)
+    this.kits = this.updateCarForm.get('pictures')?.value
     // this.kits.filter((data:any)=>{data})
   }
-  updateCar(){
-    let body ={
+  updateCar() {
+    let body = {
       id: this.carDetails.id,
-      availablity:this.updateCarForm.get('availablity')?.value,
-      title:this.updateCarForm.get('title')?.value,
-      phone:this.updateCarForm.get('phone')?.value,
-      country:this.updateCarForm.get('country')?.value,
-      city:this.updateCarForm.get('city')?.value,
-      brand:this.updateCarForm.get('brand')?.value,
-      model:this.updateCarForm.get('model')?.value,
-      price:this.updateCarForm.get('price')?.value,
-      color:this.updateCarForm.get('color')?.value,
-      carrosserie:this.updateCarForm.get('carrosserie')?.value,
-      guarantee:this.updateCarForm.get('guarantee')?.value,
-      month:this.updateCarForm.get('month')?.value,
-      year:this.updateCarForm.get('year')?.value,
-      category:this.updateCarForm.get('category')?.value,
-      pictures:this.updateCarForm.get('pictures')?.value,
-      address:this.updateCarForm.get('address')?.value,
-      motorization:this.updateCarForm.get('motorization')?.value,
-      mileage:this.updateCarForm.get('mileage')?.value,
-      energy:this.updateCarForm.get('energy')?.value,
-      transmission:this.updateCarForm.get('transmission')?.value,
-      powerFiscal:this.updateCarForm.get('powerFiscal')?.value,
-      gearbox:this.updateCarForm.get('gearbox')?.value,
-      description:this.updateCarForm.get('description')?.value,
-      seatingCapacity:this.updateCarForm.get('seatingCapacity')?.value,
-      numberDoors:this.updateCarForm.get('numberDoors')?.value,
-      insideEquipment:this.updateCarForm.get('insideEquipment')?.value,
-      outsideEquipment:this.updateCarForm.get('outsideEquipment')?.value,
-      securityEquipment:this.updateCarForm.get('securityEquipment')?.value
+      availablity: this.updateCarForm.get('availablity')?.value,
+      title: this.updateCarForm.get('title')?.value,
+      phone: this.updateCarForm.get('phone')?.value,
+      country: this.updateCarForm.get('country')?.value,
+      city: this.updateCarForm.get('city')?.value,
+      brand: this.updateCarForm.get('brand')?.value,
+      model: this.updateCarForm.get('model')?.value,
+      price: this.updateCarForm.get('price')?.value,
+      color: this.updateCarForm.get('color')?.value,
+      carrosserie: this.updateCarForm.get('carrosserie')?.value,
+      guarantee: this.updateCarForm.get('guarantee')?.value,
+      month: this.updateCarForm.get('month')?.value,
+      year: this.updateCarForm.get('year')?.value,
+      category: this.updateCarForm.get('category')?.value,
+      pictures: this.updateCarForm.get('pictures')?.value,
+      address: this.updateCarForm.get('address')?.value,
+      motorization: this.updateCarForm.get('motorization')?.value,
+      mileage: this.updateCarForm.get('mileage')?.value,
+      energy: this.updateCarForm.get('energy')?.value,
+      transmission: this.updateCarForm.get('transmission')?.value,
+      powerFiscal: this.updateCarForm.get('powerFiscal')?.value,
+      gearbox: this.updateCarForm.get('gearbox')?.value,
+      description: this.updateCarForm.get('description')?.value,
+      seatingCapacity: this.updateCarForm.get('seatingCapacity')?.value,
+      numberDoors: this.updateCarForm.get('numberDoors')?.value,
+      insideEquipment: this.updateCarForm.get('insideEquipment')?.value,
+      outsideEquipment: this.updateCarForm.get('outsideEquipment')?.value,
+      securityEquipment: this.updateCarForm.get('securityEquipment')?.value
     }
 
-this.carService.updateCar(body).subscribe((response:any)=>{
-  console.log('response',response)
-  if(response.message === 'voiture was registered successfully!'){
-    this.successMsg='Voiture a été modifié avec succès!'
-    setTimeout(() => {
-      this.router.navigate(['/car-detail',this.carDetails.id])
-    }, 1000);
+    this.carService.updateCar(body).subscribe((response: any) => {
+      console.log('response', response)
+      if (response.message === 'voiture was registered successfully!') {
+        this.successMsg = 'Voiture a été modifié avec succès!'
+        setTimeout(() => {
+          this.router.navigate(['/car-detail', this.carDetails.id])
+        }, 1000);
+      }
+      //this.router.navigate([''])
+    })
   }
-  //this.router.navigate([''])
-})
-}
-onFileChange(e: any) {
-   
+  onFileChange(e: any) {
+
     if (
       e.target.files[0].type == "image/png" ||
       e.target.files[0].type == "image/jpeg" ||
-      e.target.files[0].type == "image/jpg" 
+      e.target.files[0].type == "image/jpg"
     ) {
 
       this.isAcceptedImageFileType = true;
@@ -172,65 +214,32 @@ onFileChange(e: any) {
         r.onload = () => {
           let selectedFile = r.result;
           let selectedFilename = file.name;
-         // const FileKit = this.base64ToFile(selectedFile, selectedFilename);
-         const fileKit=r.result
-          console.log('FileKit',fileKit)
+          // const FileKit = this.base64ToFile(selectedFile, selectedFilename);
+          const fileKit = r.result
+          console.log('FileKit', fileKit)
           const picArray: FormArray = this.updateCarForm.get('pictures') as FormArray;
-            picArray.push(new FormControl(fileKit));
-            console.log('piiiiiic-->',this.updateCarForm.get('pictures')?.value)
-            this.kits=this.updateCarForm.get('pictures')?.value
+          picArray.push(new FormControl(fileKit));
+          console.log('piiiiiic-->', this.updateCarForm.get('pictures')?.value)
+          this.kits = this.updateCarForm.get('pictures')?.value
+        }
+      }
+      else {
+        this.isAcceptedImageFileType = false;
       }
     }
-     else {
-      this.isAcceptedImageFileType = false;
-    }
   }
-}
-base64ToFile(data: any, filename: any) {
-  const arr = data.split(",");
-  const mime = arr[0].match(/:(.*?);/)[1];
-  const bstr = atob(arr[1]);
-  let n = bstr.length;
-  let u8arr = new Uint8Array(n);
+  base64ToFile(data: any, filename: any) {
+    const arr = data.split(",");
+    const mime = arr[0].match(/:(.*?);/)[1];
+    const bstr = atob(arr[1]);
+    let n = bstr.length;
+    let u8arr = new Uint8Array(n);
 
-  while (n--) {
-    u8arr[n] = bstr.charCodeAt(n);
-  }
-
-  return new File([u8arr], filename, { type: mime });
-}
-getCarDetails(id:any){
-  this.carService.getOneCar(id).subscribe((data:any)=>{
-    if(data){
-      this.carDetails= data.voiture
-      console.log('car from update car ----> ',this.carDetails)
-      console.log('element.picture--->',this.carDetails.securityEquipmentVoitures)
-      const pictureArray: FormArray = this.updateCarForm.get('pictures') as FormArray;
-      this.carDetails?.picturesVoitures.forEach((element:any) => {
-        pictureArray.push(new FormControl(element.picture));
-      });
-      this.kits=this.updateCarForm.get('pictures')?.value
-
-      const insideEquipmentArray: FormArray = this.updateCarForm.get('insideEquipment') as FormArray;
-      this.carDetails?.insideEquipmentVoitures.forEach((element:any) => {
-        insideEquipmentArray.push(new FormControl(element.equipment));
-      });
-   
-      const outsideEquipmentArray: FormArray = this.updateCarForm.get('outsideEquipment') as FormArray;
-      this.carDetails?.outsideEquipmentVoitures.forEach((element:any) => {
-        outsideEquipmentArray.push(new FormControl(element.equipment));
-      });
-      const securityEquipmentArray: FormArray = this.updateCarForm.get('securityEquipment') as FormArray;
-     
-      this.carDetails?.securityEquipmentVoitures.forEach((element:any) => {
-        securityEquipmentArray.push(new FormControl(element.equipment));
-      });
-
-      console.log('--->', this.updateCarForm.get('securityEquipment')?.value)
-
-
+    while (n--) {
+      u8arr[n] = bstr.charCodeAt(n);
     }
-   
-  })
-}
+
+    return new File([u8arr], filename, { type: mime });
+  }
+ 
 }

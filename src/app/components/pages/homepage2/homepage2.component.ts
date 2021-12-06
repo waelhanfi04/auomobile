@@ -53,12 +53,15 @@ filterForm:FormGroup
         //   if(car.user.type==='pro')
         //   this.sponsoredCarsList.push(car)
         // });
-        // this.sponsoredCarsList=  data.voitures.filter((car:any)=> 
-        // car?.user?.type ==='part'
-        // )
-        // console.log('spoooon',this.sponsoredCarsList)
+        this.sponsoredCarsList=  data.voitures.filter((car:any)=> 
+        car?.user?.type ==='part'
+        )
+        console.log('spoooon',this.sponsoredCarsList)
       }
     })
+  }
+  getCarByBrand(brand:string){
+    this.carsList= this.carsList.filter((car:any)=> car.brand===brand)
   }
   onImgError(event: any) {
     event.target.src = '../../../../assets/images/new-icons/default-car.jpg';
@@ -66,4 +69,7 @@ filterForm:FormGroup
   addToFavorites(){
     
   }
+ getCarByCategory(category:string){
+  this.carsList= this.carsList.filter((car:any)=> car.category===category)
+ }
 }
