@@ -25,12 +25,12 @@ successMsg:string =''
  }
  deleteBlog(id:any){
   this.BlogService.deleteBlog(id).subscribe((response:any)=>{
-    console.log('resssponse form listing blog-->',response)
-    // this.blogList=response.blog
-    this.successMsg='Blog a été supprimé avec succès!';
+
+    if(response.message === 'blog was deleted successfully!')
+  {  this.successMsg='Blog a été supprimé avec succès!';
     setTimeout(() => {
-      this.router.navigate(['/blogs'])
-    }, 1000);
+    this.ngOnInit()
+    }, 1000);}
   })
  }
 }

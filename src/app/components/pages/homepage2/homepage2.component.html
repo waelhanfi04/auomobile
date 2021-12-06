@@ -640,7 +640,8 @@
           <div class="col-12">
             <div class="p-relative">
               <div class="model-spec-slider">
-                <div class="model-spec-slider-item p-relative" *ngFor="let sponCar of sponsoredCarsList">
+
+                <!-- <div class="model-spec-slider-item p-relative" *ngFor="let sponCar of sponsoredCarsList">
                   <div class="model-spec-top-sec bg-light-theme">
                     <a [routerLink]="['/car-detail',sponCar.id]">
                       <h4 class="text-dark-grey">{{sponCar.brand}}</h4>
@@ -649,8 +650,43 @@
                       <p class="text-dark-grey no-margin">*Manufacturer’s Suggested Retail Price. Excludes options; taxes; title; registration; delivery, processing and handling fee; dealer charges.</p>
                     </a>
                   </div>
+                   <img [src]="sponCar.pictureVoitures[0]?.picture" (error)="onImgError($event)" class="img-fluid full-width " alt="Model Image"> 
+                  <div class="bg-white">
+                    <div class="model-spec-wrapper">
+                      <div class="model-spec-bottom-sec">
+                        <ul>
+                          <li>
+                            <h5 class="text-custom-black">379 hp</h5>
+                            <p class="text-custom-black">Max. power</p>
+                          </li>
+                          <li>
+                            <h5 class="text-custom-black">4.2 s</h5>
+                            <p class="text-custom-black">0-60 mph</p>
+                          </li>
+                          <li>
+                            <h5 class="text-custom-black">180 mph</h5>
+                            <p class="text-custom-black">Top Track Speed</p>
+                          </li>
+                          <li>
+                            <h5 class="text-custom-black">6,500 rpm</h5>
+                            <p class="text-custom-black">Max. power at rpm</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+
+                <div class="model-spec-slider-item p-relative">
+                  <div class="model-spec-top-sec bg-light-theme">
+                    <a >
+                      <h4 class="text-dark-grey">Audi</h4>
+                      <p class="text-dark-grey">From <strong>500 DT</strong>
+                      </p>
+                      <p class="text-dark-grey no-margin">*Manufacturer’s Suggested Retail Price. Excludes options; taxes; title; registration; delivery, processing and handling fee; dealer charges.</p>
+                    </a>
+                  </div>
                   <img src="assets/images/showcar2.jpg" class="img-fluid full-width" alt="Model Image">
-                  <!-- <img [src]="sponCar.pictureVoitures[0]?.picture" (error)="onImgError($event)" class="img-fluid full-width " alt="Model Image"> -->
                   <div class="bg-white">
                     <div class="model-spec-wrapper">
                       <div class="model-spec-bottom-sec">
@@ -676,7 +712,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- <div class="model-spec-slider-item p-relative">
+                <div class="model-spec-slider-item p-relative">
                   <div class="model-spec-top-sec bg-light-theme">
                     <a routerLink="/car-detail">
                       <h4 class="text-dark-grey">Audi TT v2</h4>
@@ -780,7 +816,7 @@
                       </div>
                     </div>
                   </div>
-                </div> -->
+                </div> 
               </div>
               <div class="model-spec-slider-arrows">
                 <div class="model-spec-slider-prevtab slick-arrow"> <i class="flaticon-left-chevron"></i>
