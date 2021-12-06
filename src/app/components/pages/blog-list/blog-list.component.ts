@@ -30,6 +30,7 @@ successMsg:string =''
   {  this.successMsg='Blog a été supprimé avec succès!';
     setTimeout(() => {
     this.ngOnInit()
+    this.successMsg=""
     }, 1000);}
   })
  }
