@@ -36,6 +36,7 @@ import { UpdateCarComponent } from './components/pages/update-car/update-car.com
 import { BlogDetailsComponent } from './components/pages/blog-details/blog-details.component';
 import { AddBlogComponent } from './components/pages/add-blog/add-blog.component';
 import { UpdateBlogComponent } from './components/pages/update-blog/update-blog.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const routes: Routes = [
 
@@ -117,6 +118,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
