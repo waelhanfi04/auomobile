@@ -1,0 +1,71 @@
+<div class="mobile-menu-second">
+	<app-header2></app-header2>
+<!-- Sub header -->
+  <div class="sub-header-sec p-relative">
+    <app-banner-header></app-banner-header>
+    <!-- <img src="assets/images/blog/banner/banner-1.jpg" class="img-fluid" alt="Sub header"> -->
+    <div class="sub-header-overlay"></div>
+    <div class="sub-header-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="sub-header-text-wrapper text-center">
+              <h1 class="text-custom-white">MON ESPACE</h1>
+              <ul class="breadcrumbs">
+                <li><a routerLink="/" class="text-custom-white">Accueil</a>
+                </li>
+                <li><span class="text-custom-white">MON ESPACE</span>
+                </li>
+              </ul>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Sub header -->
+  <!-- Blog -->
+  <section class="section-padding our_articles">
+    <div class="container">
+      <div class="row">
+        <aside class="col-lg-4">
+          <app-advertising-sidebar></app-advertising-sidebar>
+        </aside>
+        <div class="col-lg-8">
+      
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+              <div class="add-car-btn type-button w-100" [routerLink]="['/creer-une-annonce']">
+                <i class="fas fa-clipboard-list"></i>
+                <a  class="text-custom-white">Créer une annonce</a>
+             </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+              <div class="add-car-btn type-button w-100" [routerLink]="['/mes-annonces']">
+                <i class="fas fa-clipboard-list"></i>
+                <a  class="text-custom-white">Mes annonces</a>
+             </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                <div class="add-car-btn type-button w-100" [routerLink]="['/mes-infos']">
+                  <!-- <i class="far fa-edit"></i> -->
+                  <i class="fas fa-id-card-alt"></i>
+                  <a  class="text-custom-white">Gérer mes informations</a>
+               </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                <div class="add-car-btn type-button w-100" [routerLink]="['/mot-de-passe']">
+                  <i class="fas fa-lock"></i>
+                  <a  class="text-custom-white">Modifier mon mot de passe</a>
+               </div>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Blog -->
+	<app-footer2></app-footer2>
+</div>

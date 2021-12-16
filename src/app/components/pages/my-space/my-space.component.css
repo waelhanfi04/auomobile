@@ -1,0 +1,12 @@
+.type-button{
+height: 70px;
+display: flex;
+    align-items: center;
+    padding: 10px 14px !important;
+    /* justify-content: space-between; */
+    text-align: center;
+    gap: 15px;
+}
+.fas{
+font-size: 22px;
+}

@@ -37,6 +37,9 @@ import { BlogDetailsComponent } from './components/pages/blog-details/blog-detai
 import { AddBlogComponent } from './components/pages/add-blog/add-blog.component';
 import { UpdateBlogComponent } from './components/pages/update-blog/update-blog.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { UpdateProfileComponent } from './components/pages/update-profile/update-profile.component';
+import { MySpaceComponent } from './components/pages/my-space/my-space.component';
+import { UpdatePasswordComponent } from './components/pages/update-password/update-password.component';
 
 const routes: Routes = [
 
@@ -89,6 +92,18 @@ const routes: Routes = [
   {
     path: 'blogs/modifier/:id',
     component: UpdateBlogComponent
+  },
+  {
+    path: 'mes-infos',
+    component: UpdateProfileComponent
+  },
+  {
+    path: 'mon-espace',
+    component: MySpaceComponent
+  },
+  {
+    path: 'mot-de-passe',
+    component: UpdatePasswordComponent
   },
   // {path: 'media', component: MediaComponent},
   { path: 'listing', component: ListingComponent },

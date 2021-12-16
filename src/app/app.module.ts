@@ -54,8 +54,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { UpdateBlogComponent } from './components/pages/update-blog/update-blog.component';
 import { CustomFormsModule } from 'ng2-validation';
 import { BannerHeaderComponent } from './components/layouts/banner-header/banner-header.component';
+import { MySpaceComponent } from './components/pages/my-space/my-space.component';
+import { UpdateProfileComponent } from './components/pages/update-profile/update-profile.component';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { UpdatePasswordComponent } from './components/pages/update-password/update-password.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -102,7 +104,9 @@ import { BannerHeaderComponent } from './components/layouts/banner-header/banner
     AdvertisingSidebarComponent,
     UpdateBlogComponent,
     BannerHeaderComponent,
-
+    MySpaceComponent,
+    UpdateProfileComponent,
+    UpdatePasswordComponent
   ],
   imports: [
     BrowserModule,
