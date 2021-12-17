@@ -111,7 +111,7 @@ const routes: Routes = [
     component: GererAnnonceComponent
   },
   {
-    path: 'gerer-comptes',
+    path: 'comptes',
     component: GererComptesComponent
   },
   {

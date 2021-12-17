@@ -1,0 +1,16 @@
+.fas{
+    color: #ff6e14;
+    font-size: 20px;
+    cursor: pointer;
+}
+.fas:hover{
+ color: #c0562a;
+}
+.span-fas{
+    display: flex;
+    position: absolute;
+    width: 40px;
+    gap: 6px;
+    top: 7px;
+    flex-direction: column;
+}
