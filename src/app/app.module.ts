@@ -32,8 +32,6 @@ import { ComingSoonComponent } from './components/pages/coming-soon/coming-soon.
 import { BlogGridComponent } from './components/pages/blog-grid/blog-grid.component';
 import { BlogListComponent } from './components/pages/blog-list/blog-list.component';
 import { BlogRightComponent } from './components/pages/blog-right/blog-right.component';
-import { BlogGalleryComponent } from './components/pages/blog-gallery/blog-gallery.component';
-import { BlogVideoComponent } from './components/pages/blog-video/blog-video.component';
 import { BlogQuoteComponent } from './components/pages/blog-quote/blog-quote.component';
 import { BlogDetailLeftComponent } from './components/pages/blog-detail-left/blog-detail-left.component';
 import { BlogDetailRightComponent } from './components/pages/blog-detail-right/blog-detail-right.component';
@@ -54,10 +52,13 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { UpdateBlogComponent } from './components/pages/update-blog/update-blog.component';
 import { CustomFormsModule } from 'ng2-validation';
 import { BannerHeaderComponent } from './components/layouts/banner-header/banner-header.component';
-import { MySpaceComponent } from './components/pages/my-space/my-space.component';
-import { UpdateProfileComponent } from './components/pages/update-profile/update-profile.component';
+import { MySpaceComponent } from './components/userSpace/my-space/my-space.component';
+import { UpdateProfileComponent } from './components/userSpace/update-profile/update-profile.component';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { UpdatePasswordComponent } from './components/pages/update-password/update-password.component'
+import { UpdatePasswordComponent } from './components/userSpace/update-password/update-password.component';
+import { MesAnnonceComponent } from './components/userSpace/mes-annonce/mes-annonce.component';
+import { GererAnnonceComponent } from './components/backOffice/gerer-annonce/gerer-annonce.component';
+import { GererComptesComponent } from './components/backOffice/gerer-comptes/gerer-comptes.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,8 +89,6 @@ import { UpdatePasswordComponent } from './components/pages/update-password/upda
     ComingSoonComponent,
     BlogGridComponent,
     BlogRightComponent,
-    BlogGalleryComponent,
-    BlogVideoComponent,
     BlogQuoteComponent,
     BlogDetailLeftComponent,
     BlogDetailRightComponent,
@@ -106,7 +105,10 @@ import { UpdatePasswordComponent } from './components/pages/update-password/upda
     BannerHeaderComponent,
     MySpaceComponent,
     UpdateProfileComponent,
-    UpdatePasswordComponent
+    UpdatePasswordComponent,
+    MesAnnonceComponent,
+    GererAnnonceComponent,
+    GererComptesComponent
   ],
   imports: [
     BrowserModule,

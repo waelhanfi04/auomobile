@@ -22,8 +22,6 @@ import { ComingSoonComponent } from './components/pages/coming-soon/coming-soon.
 import { BlogGridComponent } from './components/pages/blog-grid/blog-grid.component';
 import { BlogListComponent } from './components/pages/blog-list/blog-list.component';
 import { BlogRightComponent } from './components/pages/blog-right/blog-right.component';
-import { BlogGalleryComponent } from './components/pages/blog-gallery/blog-gallery.component';
-import { BlogVideoComponent } from './components/pages/blog-video/blog-video.component';
 import { BlogQuoteComponent } from './components/pages/blog-quote/blog-quote.component';
 import { BlogDetailLeftComponent } from './components/pages/blog-detail-left/blog-detail-left.component';
 import { BlogDetailRightComponent } from './components/pages/blog-detail-right/blog-detail-right.component';
@@ -37,9 +35,12 @@ import { BlogDetailsComponent } from './components/pages/blog-details/blog-detai
 import { AddBlogComponent } from './components/pages/add-blog/add-blog.component';
 import { UpdateBlogComponent } from './components/pages/update-blog/update-blog.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { UpdateProfileComponent } from './components/pages/update-profile/update-profile.component';
-import { MySpaceComponent } from './components/pages/my-space/my-space.component';
-import { UpdatePasswordComponent } from './components/pages/update-password/update-password.component';
+import { UpdateProfileComponent } from './components/userSpace/update-profile/update-profile.component';
+import { MySpaceComponent } from './components/userSpace/my-space/my-space.component';
+import { UpdatePasswordComponent } from './components/userSpace/update-password/update-password.component';
+import { MesAnnonceComponent } from './components/userSpace/mes-annonce/mes-annonce.component';
+import { GererAnnonceComponent } from './components/backOffice/gerer-annonce/gerer-annonce.component';
+import { GererComptesComponent } from './components/backOffice/gerer-comptes/gerer-comptes.component';
 
 const routes: Routes = [
 
@@ -102,6 +103,18 @@ const routes: Routes = [
     component: MySpaceComponent
   },
   {
+    path: 'mes-annonces',
+    component: MesAnnonceComponent
+  },
+  {
+    path: 'gerer-annonces',
+    component: GererAnnonceComponent
+  },
+  {
+    path: 'gerer-comptes',
+    component: GererComptesComponent
+  },
+  {
     path: 'mot-de-passe',
     component: UpdatePasswordComponent
   },
@@ -120,8 +133,6 @@ const routes: Routes = [
   { path: 'coming-soon', component: ComingSoonComponent },
   //{path: 'blog-left', component: BlogListComponent},
   { path: 'blog-right', component: BlogRightComponent },
-  { path: 'blog-gallery', component: BlogGalleryComponent },
-  { path: 'blog-video', component: BlogVideoComponent },
   { path: 'blog-quote', component: BlogQuoteComponent },
   { path: 'blog-detail-left', component: BlogDetailLeftComponent },
   { path: 'blog-detail-right', component: BlogDetailRightComponent },
