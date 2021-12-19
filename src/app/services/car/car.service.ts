@@ -53,4 +53,23 @@ export class CarService {
     );
   }
 
+ validateCar(id:any,validate:any){
+    const header = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
+    });
+    return this.http.post(
+      serverUrl + "voiture/"+id,{},{ headers:header }
+    );
+  }
+
+  getUserCars(id:any){
+    const header = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
+    });
+    return this.http.get(
+      serverUrl + "mesAnnonces/"+id,{ headers:header }
+    );
+  }
 }

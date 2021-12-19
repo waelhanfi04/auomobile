@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 //const serverUrl = "http://102.219.178.102:3031/";
-const serverUrl = "http://sayara.tn.230.138.228:3032/";
+const serverUrl = "http://sayara.tn:3032/";
 const arrayCategories = [{ category: 'VEHICLES' }, { category: 'IMMOBILIER' },
 { category: 'MULTIMEDIA' }, { category: 'MAISON' }, { category: 'LOISIRS' },
 { category: 'SERVICES' }, { category: 'MATERIEL PROFESSIONNEL' }, { category: 'EMPLOI' }
