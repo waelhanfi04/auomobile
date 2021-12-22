@@ -7,13 +7,22 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 export class ProfileService {
 
   constructor(private http: HttpClient) { }
+  getAllUsers(){
+    const header = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
+    });
+    return this.http.get(
+      serverUrl + "allUsers",{ headers:header }
+    );
+  }
   userDetails(){
     const header = new HttpHeaders({
       "Content-Type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("accessToken"),
     });
     return this.http.get(
-      serverUrl + "user",{ headers:header }
+      serverUrl + "getUserDetails",{ headers:header }
     );
   }
   updateProfile(body:any){
@@ -22,10 +31,10 @@ export class ProfileService {
       Authorization: "Bearer " + localStorage.getItem("accessToken"),
     });
     return this.http.post(
-      serverUrl + "updateProfile",body,{ headers:header}
+      serverUrl + "updateInfo",body,{ headers:header}
     );
   }
-  updatePassword(oldPassword:any,newPassword:any){
+  updatePassword(oldPassword:any,password:any){
     const header = new HttpHeaders({
       "Content-Type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("accessToken"),
@@ -33,8 +42,18 @@ export class ProfileService {
     return this.http.post(
       serverUrl + "updatePassword",{
         oldPassword:oldPassword,
-        newPassword:newPassword
+        NewPassword:password
       },{ headers:header}
     );
   }
+  blockUser(id:any){
+    const header = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
+    });
+    return this.http.get(
+      serverUrl + "blockUser/"+id,{ headers:header}
+    );
+  }
+
 }

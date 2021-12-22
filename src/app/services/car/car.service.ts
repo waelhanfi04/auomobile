@@ -53,23 +53,26 @@ export class CarService {
     );
   }
 
- validateCar(id:any,validate:any){
+ validateCar(id:any,status:any){
     const header = new HttpHeaders({
       "Content-Type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("accessToken"),
     });
     return this.http.post(
-      serverUrl + "voiture/"+id,{},{ headers:header }
+      serverUrl + "carStatus",{
+        id:id,
+        status:status
+      },{ headers:header }
     );
   }
 
-  getUserCars(id:any){
+  getUserCars(){
     const header = new HttpHeaders({
       "Content-Type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("accessToken"),
     });
     return this.http.get(
-      serverUrl + "mesAnnonces/"+id,{ headers:header }
+      serverUrl + "getUserCars",{ headers:header }
     );
   }
 }

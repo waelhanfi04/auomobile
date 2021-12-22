@@ -41,14 +41,14 @@ import { UpdatePasswordComponent } from './components/userSpace/update-password/
 import { MesAnnonceComponent } from './components/userSpace/mes-annonce/mes-annonce.component';
 import { GererAnnonceComponent } from './components/backOffice/gerer-annonce/gerer-annonce.component';
 import { GererComptesComponent } from './components/backOffice/gerer-comptes/gerer-comptes.component';
-
+import {AuthGuardService} from './services/authGard.service'
 const routes: Routes = [
 
   { path: '', component: Homepage2Component },
   {
     path: 'creer-une-annonce',
     component: AddListingComponent,
-    //canActivate:[IsConnectedService]
+    canActivate:[AuthGuardService]
   },
   {
     path: 'register',
@@ -75,7 +75,8 @@ const routes: Routes = [
     component: CarDetailsComponent
   }, {
     path: 'voitures/modifier/:id',
-    component: UpdateCarComponent
+    component: UpdateCarComponent,
+    canActivate:[AuthGuardService]
   },
 
   {
@@ -88,35 +89,43 @@ const routes: Routes = [
   },
   {
     path: 'ajouter-blog',
-    component: AddBlogComponent
+    component: AddBlogComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path: 'blogs/modifier/:id',
-    component: UpdateBlogComponent
+    component: UpdateBlogComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path: 'mes-infos',
-    component: UpdateProfileComponent
+    component: UpdateProfileComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path: 'mon-espace',
-    component: MySpaceComponent
+    component: MySpaceComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path: 'mes-annonces',
-    component: MesAnnonceComponent
+    component: MesAnnonceComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path: 'gerer-annonces',
-    component: GererAnnonceComponent
+    component: GererAnnonceComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path: 'comptes',
-    component: GererComptesComponent
+    component: GererComptesComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path: 'mot-de-passe',
-    component: UpdatePasswordComponent
+    component: UpdatePasswordComponent,
+    canActivate:[AuthGuardService]
   },
   // {path: 'media', component: MediaComponent},
   { path: 'listing', component: ListingComponent },

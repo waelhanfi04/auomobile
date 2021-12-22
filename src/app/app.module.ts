@@ -59,7 +59,8 @@ import { UpdatePasswordComponent } from './components/userSpace/update-password/
 import { MesAnnonceComponent } from './components/userSpace/mes-annonce/mes-annonce.component';
 import { GererAnnonceComponent } from './components/backOffice/gerer-annonce/gerer-annonce.component';
 import { GererComptesComponent } from './components/backOffice/gerer-comptes/gerer-comptes.component';
-import { ProfileService }  from './services/profile/profile.service'
+import { ProfileService }  from './services/profile/profile.service';
+import {AuthGuardService } from './services/authGard.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -122,7 +123,7 @@ import { ProfileService }  from './services/profile/profile.service'
     CustomFormsModule,
    // NgbModule
   ],
-  providers: [IsConnectedService,AuthentificationService,CarService,ProfileService],
+  providers: [IsConnectedService,AuthentificationService,CarService,ProfileService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

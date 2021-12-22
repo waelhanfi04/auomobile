@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ProfileService } from 'src/app/services/profile/profile.service';
 
 @Component({
   selector: 'app-update-password',
@@ -10,9 +11,10 @@ import { Router } from '@angular/router';
 export class UpdatePasswordComponent implements OnInit {
   updatePasswordForm: FormGroup
   successMsg='';
+  errorMsg=''
   isSubmitting: boolean = false;
   wrongOldPassword='';
-  constructor(private router:Router) {
+  constructor(private router:Router,private ProfileService:ProfileService) {
     this.updatePasswordForm = new FormGroup({
       oldPassword: new FormControl("", [Validators.required]),
       password: new FormControl("", [Validators.required,Validators.minLength(8)]),
@@ -21,8 +23,29 @@ export class UpdatePasswordComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-updatePassword(){
-
+  updatePassword() {
+    this.isSubmitting=true
+    if(this.updatePasswordForm.valid)
+    {this.ProfileService.updatePassword(this.updatePasswordForm.get('oldPassword')?.value, this.updatePasswordForm.get('password')?.value)
+    .subscribe((response:any)=>{
+      console.log('dataa updates pass -->')
+      this.isSubmitting=false
+      console.log('updateee pass',response)
+      if(response.message=== "Invalid Password!")
+      {
+        this.errorMsg="Ancien mot de passe est incorrect"
+      }else if(response.message=== "password was updated successfully!"){
+        this.errorMsg=''
+        this.successMsg='Votre mot de passe a été mis à jour avec succès!'
+        setTimeout(() => {
+          localStorage.clear();
+          this.router.navigate(['/login'])
+        }, 2000);
+      }
+    })
+    // updatePassword(oldPassword:any,newPassword:any){
+    //
+  }
 }
 }
 
