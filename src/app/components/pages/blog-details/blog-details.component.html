@@ -68,7 +68,12 @@
                       <p class="text-dark-grey">
                         {{blogDetails.description}}
                       </p>
-                    </div>
+                      </div>
+                      <div class="blog-caption">
+                        {{pageId}}
+                        {{url}}
+                        <disqus [identifier]="pageId" [url]="url" [title]="pageId"></disqus>
+                      </div>
                   </div>
 
                   <!-- <div class="col-12 pb-2">

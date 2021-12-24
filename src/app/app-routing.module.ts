@@ -42,6 +42,8 @@ import { MesAnnonceComponent } from './components/userSpace/mes-annonce/mes-anno
 import { GererAnnonceComponent } from './components/backOffice/gerer-annonce/gerer-annonce.component';
 import { GererComptesComponent } from './components/backOffice/gerer-comptes/gerer-comptes.component';
 import {AuthGuardService} from './services/authGard.service'
+import { AncienCarsComponent } from './components/pages/ancien-cars/ancien-cars.component';
+import { NewCarsComponent } from './components/pages/new-cars/new-cars.component';
 const routes: Routes = [
 
   { path: '', component: Homepage2Component },
@@ -137,6 +139,8 @@ const routes: Routes = [
   { path: 'listing2-style2', component: Listing2Style2Component },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'car-page', component: CarpageComponent },
+  { path: 'ancien-car', component: AncienCarsComponent },
+  { path: 'new-car', component: NewCarsComponent },
   { path: 'user', component: UserComponent },
   { path: 'invoice', component: InvoiceComponent },
   { path: 'coming-soon', component: ComingSoonComponent },
@@ -154,7 +158,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   exports: [RouterModule]
 })

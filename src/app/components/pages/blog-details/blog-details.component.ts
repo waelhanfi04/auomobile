@@ -9,7 +9,10 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./blog-details.component.css']
 })
 export class BlogDetailsComponent implements OnInit {
-  blogDetails:any
+  blogDetails:any;
+  pageId:any;
+  url:any;
+  catId:any;
   constructor(private BlogService:BlogService,private sanitizer: DomSanitizer,private route: ActivatedRoute) { 
   
   }
@@ -19,6 +22,12 @@ export class BlogDetailsComponent implements OnInit {
     .pipe(
       map((params: any) => {
         console.log(params['id']);
+        this.pageId=params['id'];
+        this.url=this.pageId;
+        this.catId=params['id'];
+
+
+        
         return params['id'];
       })
     )

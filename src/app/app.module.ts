@@ -61,6 +61,10 @@ import { GererAnnonceComponent } from './components/backOffice/gerer-annonce/ger
 import { GererComptesComponent } from './components/backOffice/gerer-comptes/gerer-comptes.component';
 import { ProfileService }  from './services/profile/profile.service';
 import {AuthGuardService } from './services/authGard.service'
+import { DisqusModule } from 'ngx-disqus';
+import { CommonModule } from '@angular/common';
+import { AncienCarsComponent } from './components/pages/ancien-cars/ancien-cars.component';
+import { NewCarsComponent } from './components/pages/new-cars/new-cars.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -110,10 +114,14 @@ import {AuthGuardService } from './services/authGard.service'
     UpdatePasswordComponent,
     MesAnnonceComponent,
     GererAnnonceComponent,
-    GererComptesComponent
+    GererComptesComponent,
+    AncienCarsComponent,
+    NewCarsComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    DisqusModule.forRoot('sayara-1'),
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
