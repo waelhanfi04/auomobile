@@ -10,11 +10,15 @@ import { BlogService } from '../../../services/blog/blog.service'
 export class BlogListComponent implements OnInit {
 blogList:any;
 successMsg:string =''
+userRole:any;
+
    constructor(private BlogService:BlogService,private router:Router) { 
    
    }
  
    ngOnInit(): void {
+    this.userRole= localStorage.getItem('role');
+
      this.getBlogList()
    }
  getBlogList(){

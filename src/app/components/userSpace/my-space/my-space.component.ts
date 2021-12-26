@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-space.component.css']
 })
 export class MySpaceComponent implements OnInit {
-
+  userRole:any
   constructor() { }
 
   ngOnInit(): void {
+    this.userRole= localStorage.getItem('role');
   }
 
 }

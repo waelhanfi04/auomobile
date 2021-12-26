@@ -42,8 +42,11 @@ filterForm:FormGroup
     this.carService.getAllCars().subscribe((data:any)=>{
       console.log('cars from home--> ',data)
       if(data!==null || data!==undefined)
-      {
-        this.carsList=data.voitures;
+      { 
+
+        this.carsList=data.voitures.filter((car:any)=>{
+          car.status ==='accepted'
+        });
         this.carListLength=this.carsList.length;
         // data.voitures.forEach((car:any) => {
         //   if(car.user.type==='pro')

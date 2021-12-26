@@ -55,7 +55,8 @@ export class UpdateCarComponent implements OnInit {
       securityEquipment: this.fb.array([]),
       pictures: this.fb.array([]),
       seatingCapacity: new FormControl(''),
-      numberDoors: new FormControl('')
+      numberDoors: new FormControl(''),
+      type: new FormControl('')
     });
 
   }

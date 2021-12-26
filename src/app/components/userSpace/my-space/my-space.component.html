@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col-xl-12">
             <div class="sub-header-text-wrapper text-center">
-              <h1 class="text-custom-white">MON ESPACE</h1>
+              <h1 class="text-custom-white">Mon espace</h1>
               <ul class="breadcrumbs">
                 <li><a routerLink="/" class="text-custom-white">Accueil</a>
                 </li>
@@ -54,14 +54,14 @@
                   <a  class="text-custom-white">Gérer mes informations</a>
                </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-3"  *ngIf="this.userRole!=='user'">
               <div class="add-car-btn type-button w-100" [routerLink]="['/comptes']">
                 <!-- <i class="far fa-edit"></i> -->
                 <i class="fas fa-id-card-alt"></i>
                 <a  class="text-custom-white">Gérer les comptes</a>
              </div>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+          <div class="col-lg-6 col-md-6 col-sm-12 mb-3"  *ngIf="this.userRole!=='user'">
             <div class="add-car-btn type-button w-100" [routerLink]="['/gerer-annonces']">
               <!-- <i class="far fa-edit"></i> -->
               <i class="fas fa-id-card-alt"></i>

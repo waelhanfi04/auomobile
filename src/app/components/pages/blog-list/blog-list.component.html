@@ -38,7 +38,7 @@
             <span class="success-msg" >{{successMsg}}</span>
           </div>
           </div>
-          <div class="row">
+          <div class="row" *ngIf="this.userRole!=='user'">
             <div class="col-md-6 mb-3">
               <div class="add-car-btn" [routerLink]="['/ajouter-blog']">
                 <a  class="text-custom-white">+ Ajouter un blog</a>
@@ -59,7 +59,7 @@
                     </a>
                     </div>
                   </div>
-                  <div class="post-type">
+                  <div class="post-type"  *ngIf="this.userRole!=='user'">
                     <a [routerLink]="['/blogs/modifier',blog.id]">  <i class="fas fa-pen"></i>
                     </a>
                     <a class="mt-2" (click)="deleteBlog(blog.id)">  <i class="fas fa-trash"></i>

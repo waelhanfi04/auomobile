@@ -55,7 +55,8 @@ export class AddListingComponent implements OnInit {
       securityEquipment: this.fb.array([]),
       pictures: this.fb.array([]),
       seatingCapacity: new FormControl(''),
-      numberDoors: new FormControl('')
+      numberDoors: new FormControl(''),
+      type: new FormControl('')
     });
 
   }
@@ -88,6 +89,7 @@ export class AddListingComponent implements OnInit {
   insideEquipment
   outsideEquipment
   securityEquipment
+  type
   */
   ngOnInit(): void {
     this.getCars()

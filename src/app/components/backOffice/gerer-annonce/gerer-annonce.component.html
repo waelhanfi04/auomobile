@@ -29,8 +29,13 @@
   
   <section class="section-padding our_articles">
     <div class="container">
+      <div class="row justify-content-center"  *ngIf="this.successMsg!==''">
+        <div class="col-md-6 mb-3 d-flex justify-content-center">
+        <span class="success-msg" >{{successMsg}}</span>
+      </div>
+      </div>
       <div class="row">
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-2">
+        <!-- <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-2">
             <div class="car-grid-layout-box">
               <div class="car-grid-layout-inner text-center">
                 <h5 class="car-name"><a  [routerLink]="['car-detail','123']"  class="text-light-black">ttt</a>
@@ -43,7 +48,58 @@
                 <div class="car-grid-layout-img">
                     <img src="assets/images/trendingmodels/trending6.jpg" class="img-fluid full-width" alt="Image">
 
+                </div>
+                <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i>150000 Km</span>
+                  <span class="text-dark-white p-relative"><i class="icon-car"></i> ttt Model</span>
+                </div>
+                <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i>yyy</span>
+                  <span class="text-dark-white"><i class="fas fa-cog mr-2"></i>vvv</span>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-2" *ngFor="let car of carsList">
+            <div class="car-grid-layout-box">
+              <div class="car-grid-layout-inner text-center">
+                <h5 class="car-name"><a  [routerLink]="['car-detail',car.id]"  class="text-light-black">{{car.brand}} {{car.model}}</a>
+             
+                  <span  class=" float-right custom-tooltip span-fas" data-tip="Sauvgarder">
+                    <i (click)="deleteCar(car.id)" class="fas fa-trash" *ngIf="car.status!=='pending'"></i> 
+                    <i (click)="validationCar(car.id,'reject')" *ngIf="car.status==='pending'" class="fa fa-ban" aria-hidden="true"></i>
+
+                    <i (click)="validationCar(car.id,'accepted')" *ngIf="car.status==='pending'" class="fas fa-check-circle"></i>
+                  </span>
+                </h5>
+                <h6 class="text-light-black text-uppercase mb-2">{{car.title}}</h6>
+                <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
+                <span class="text-orange price-text">{{car.price || '0'}} DT</span>
+                <div class="car-grid-layout-img">
+                    <img src="assets/images/trendingmodels/trending6.jpg" class="img-fluid full-width" alt="Image">
+
                   <!-- <img [src]="car.pictureVoitures[0]?.picture" (error)="onImgError($event)" class="img-fluid full-width max-height-img" alt="Car img"> -->
+                </div>
+                <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i>{{car.mileage || '0'}} Km</span>
+                  <span class="text-dark-white p-relative"><i class="icon-car"></i> {{car.year || '0'}}  Model</span>
+                </div>
+                <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i>{{car.city}}</span>
+                  <span class="text-dark-white"><i class="fas fa-cog mr-2"></i>{{car.gearbox}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-2">
+            <div class="car-grid-layout-box">
+              <div class="car-grid-layout-inner text-center">
+                <h5 class="car-name"><a  [routerLink]="['car-detail','123']"  class="text-light-black">ttt</a>
+             
+                  <span  class=" float-right custom-tooltip span-fas" data-tip="Sauvgarder"><i class="fas fa-trash"></i> <i class="fas fa-check-circle"></i></span>
+                </h5>
+                <h6 class="text-light-black text-uppercase mb-2">tttt</h6>
+                <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
+                <span class="text-orange price-text">50000 DT</span>
+                <div class="car-grid-layout-img">
+                    <img src="assets/images/trendingmodels/trending6.jpg" class="img-fluid full-width" alt="Image">
+
                 </div>
                 <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i>150000 Km</span>
                   <span class="text-dark-white p-relative"><i class="icon-car"></i> ttt Model</span>
@@ -67,7 +123,6 @@
                 <div class="car-grid-layout-img">
                     <img src="assets/images/trendingmodels/trending6.jpg" class="img-fluid full-width" alt="Image">
 
-                  <!-- <img [src]="car.pictureVoitures[0]?.picture" (error)="onImgError($event)" class="img-fluid full-width max-height-img" alt="Car img"> -->
                 </div>
                 <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i>150000 Km</span>
                   <span class="text-dark-white p-relative"><i class="icon-car"></i> ttt Model</span>
@@ -91,7 +146,6 @@
                 <div class="car-grid-layout-img">
                     <img src="assets/images/trendingmodels/trending6.jpg" class="img-fluid full-width" alt="Image">
 
-                  <!-- <img [src]="car.pictureVoitures[0]?.picture" (error)="onImgError($event)" class="img-fluid full-width max-height-img" alt="Car img"> -->
                 </div>
                 <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i>150000 Km</span>
                   <span class="text-dark-white p-relative"><i class="icon-car"></i> ttt Model</span>
@@ -101,55 +155,7 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-2">
-            <div class="car-grid-layout-box">
-              <div class="car-grid-layout-inner text-center">
-                <h5 class="car-name"><a  [routerLink]="['car-detail','123']"  class="text-light-black">ttt</a>
-             
-                  <span  class=" float-right custom-tooltip span-fas" data-tip="Sauvgarder"><i class="fas fa-trash"></i> <i class="fas fa-check-circle"></i></span>
-                </h5>
-                <h6 class="text-light-black text-uppercase mb-2">tttt</h6>
-                <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
-                <span class="text-orange price-text">50000 DT</span>
-                <div class="car-grid-layout-img">
-                    <img src="assets/images/trendingmodels/trending6.jpg" class="img-fluid full-width" alt="Image">
-
-                  <!-- <img [src]="car.pictureVoitures[0]?.picture" (error)="onImgError($event)" class="img-fluid full-width max-height-img" alt="Car img"> -->
-                </div>
-                <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i>150000 Km</span>
-                  <span class="text-dark-white p-relative"><i class="icon-car"></i> ttt Model</span>
-                </div>
-                <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i>yyy</span>
-                  <span class="text-dark-white"><i class="fas fa-cog mr-2"></i>vvv</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-2">
-            <div class="car-grid-layout-box">
-              <div class="car-grid-layout-inner text-center">
-                <h5 class="car-name"><a  [routerLink]="['car-detail','123']"  class="text-light-black">ttt</a>
-             
-                  <span  class=" float-right custom-tooltip span-fas" data-tip="Sauvgarder"><i class="fas fa-trash"></i> <i class="fas fa-check-circle"></i></span>
-                </h5>
-                <h6 class="text-light-black text-uppercase mb-2">tttt</h6>
-                <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
-                <span class="text-orange price-text">50000 DT</span>
-                <div class="car-grid-layout-img">
-                    <img src="assets/images/trendingmodels/trending6.jpg" class="img-fluid full-width" alt="Image">
-
-                  <!-- <img [src]="car.pictureVoitures[0]?.picture" (error)="onImgError($event)" class="img-fluid full-width max-height-img" alt="Car img"> -->
-                </div>
-                <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i>150000 Km</span>
-                  <span class="text-dark-white p-relative"><i class="icon-car"></i> ttt Model</span>
-                </div>
-                <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i>yyy</span>
-                  <span class="text-dark-white"><i class="fas fa-cog mr-2"></i>vvv</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          </div> -->
       </div>
     </div>
   </section>

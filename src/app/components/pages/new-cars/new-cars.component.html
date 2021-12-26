@@ -1,14 +1,33 @@
 <div class="mobile-menu-second">
     <app-header2></app-header2>
     <!-- Sub header -->
+    <div class="sub-header-sec p-relative">
+        <app-banner-header></app-banner-header>
+        <!-- <img src="assets/images/blog/banner/banner-1.jpg" class="img-fluid" alt="Sub header"> -->
+        <div class="sub-header-overlay"></div>
+        <div class="sub-header-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="sub-header-text-wrapper text-center">
+                            <h1 class="text-custom-white">Les voitures neuves</h1>
+                            <ul class="breadcrumbs">
+                                <li><a routerLink="/" class="text-custom-white">Accueil</a>
+                                </li>
+                                <li><span class="text-custom-white">Prix de neuf</span>
+                                </li>
+                            </ul>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Sub header -->
     <!-- Blog -->
     <section class="section-padding our_articles">
         <div class="container">
-
-
-
 
 
             <div class="content-wrapper">
@@ -16,178 +35,252 @@
                     <div id="w0" class="occasions-results">
 
                         <div class="articles">
-                            <span data-key="43357">
-                        <div class="versions-item">
-                            <a href="/fr/neuf/alfa-romeo/giulia/2.0-turbo-bva-super">
+                            <span  *ngFor="let car of carsList">
+                                <div class="versions-item">
+                                    <a [routerLink]="['car-detail',car.id]">
+
+
+                                        <picture>
                         
-                                            <span class="tag stock-limite">Stock limité</span>
+                                            <img (error)="onImgError($event)" [src]="car.pictureVoitures[0]?.picture">
+                                        </picture>
+                                        <h2>{{car.brand}} {{car.model}}</h2>
 
-                            <picture>
-                                <source type="image/webp" srcset="https://catalogue.automobile.tn/max/2019/03/43357.webp?t=1607527018">
-                                <source type="image/jpeg" srcset="https://catalogue.automobile.tn/max/2019/03/43357.jpg?t=1607527018"><img src="https://catalogue.automobile.tn/max/2019/03/43357.jpg?t=1607527018" alt="Alfa Romeo Giulia"></picture>
-                            <h2>Alfa Romeo Giulia</h2>
-
-                            <div class="price">
-                                A partir de <span>198 000 <span class="suffix">DT</span></span>
-                            </div>
+                                        <div class="price">
+                                            A partir de <span>{{car.price || '0'}} <span class="suffix">DT</span></span>
+                                        </div>
 
 
-                            <div class="tag-text stock-limite"><s>220.000 DT</s></div>
-                            </a>
+                                    </a>
+                                </div>
+                            </span>
+                            <!-- <span data-key="43357">
+                                <div class="versions-item">
+                                    <a href="/fr/neuf/alfa-romeo/giulia/2.0-turbo-bva-super">
+
+                                        <span class="tag stock-limite">Stock limité</span>
+
+                                        <picture>
+                                            <source type="image/webp"
+                                                srcset="https://catalogue.automobile.tn/max/2019/03/43357.webp?t=1607527018">
+                                            <source type="image/jpeg"
+                                                srcset="https://catalogue.automobile.tn/max/2019/03/43357.jpg?t=1607527018">
+                                            <img src="https://catalogue.automobile.tn/max/2019/03/43357.jpg?t=1607527018"
+                                                alt="Alfa Romeo Giulia">
+                                        </picture>
+                                        <h2>Alfa Romeo Giulia</h2>
+
+                                        <div class="price">
+                                            A partir de <span>198 000 <span class="suffix">DT</span></span>
+                                        </div>
+
+
+                                        <div class="tag-text stock-limite"><s>220.000 DT</s></div>
+                                    </a>
+                                </div>
+                            </span>
+                            <span data-key="34086">
+                                <div class="versions-item">
+                                    <a href="/fr/neuf/alfa-romeo/stelvio/2.0-turbo-q4-bva">
+
+
+                                        <picture>
+                                            <source type="image/webp"
+                                                srcset="https://catalogue.automobile.tn/max/2013/01/34086.webp?t=1612796250">
+                                            <source type="image/jpeg"
+                                                srcset="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250">
+                                            <img src="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250"
+                                                alt="Alfa Romeo Stelvio">
+                                        </picture>
+                                        <h2>Alfa Romeo Stelvio</h2>
+
+                                        <div class="price">
+                                            A partir de <span>265 000 <span class="suffix">DT</span></span>
+                                        </div>
+
+
+                                    </a>
+                                </div>
+                            </span>
+                            <span data-key="43357">
+                                <div class="versions-item">
+                                    <a href="/fr/neuf/alfa-romeo/giulia/2.0-turbo-bva-super">
+
+                                        <span class="tag stock-limite">Stock limité</span>
+
+                                        <picture>
+                                            <source type="image/webp"
+                                                srcset="https://catalogue.automobile.tn/max/2019/03/43357.webp?t=1607527018">
+                                            <source type="image/jpeg"
+                                                srcset="https://catalogue.automobile.tn/max/2019/03/43357.jpg?t=1607527018">
+                                            <img src="https://catalogue.automobile.tn/max/2019/03/43357.jpg?t=1607527018"
+                                                alt="Alfa Romeo Giulia">
+                                        </picture>
+                                        <h2>Alfa Romeo Giulia</h2>
+
+                                        <div class="price">
+                                            A partir de <span>198 000 <span class="suffix">DT</span></span>
+                                        </div>
+
+
+                                        <div class="tag-text stock-limite"><s>220.000 DT</s></div>
+                                    </a>
+                                </div>
+                            </span>
+                            <span data-key="34086">
+                                <div class="versions-item">
+                                    <a href="/fr/neuf/alfa-romeo/stelvio/2.0-turbo-q4-bva">
+
+
+                                        <picture>
+                                            <source type="image/webp"
+                                                srcset="https://catalogue.automobile.tn/max/2013/01/34086.webp?t=1612796250">
+                                            <source type="image/jpeg"
+                                                srcset="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250">
+                                            <img src="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250"
+                                                alt="Alfa Romeo Stelvio">
+                                        </picture>
+                                        <h2>Alfa Romeo Stelvio</h2>
+
+                                        <div class="price">
+                                            A partir de <span>265 000 <span class="suffix">DT</span></span>
+                                        </div>
+
+
+                                    </a>
+                                </div>
+                            </span>
+                            <span data-key="43357">
+                                <div class="versions-item">
+                                    <a href="/fr/neuf/alfa-romeo/giulia/2.0-turbo-bva-super">
+
+                                        <span class="tag stock-limite">Stock limité</span>
+
+                                        <picture>
+                                            <source type="image/webp"
+                                                srcset="https://catalogue.automobile.tn/max/2019/03/43357.webp?t=1607527018">
+                                            <source type="image/jpeg"
+                                                srcset="https://catalogue.automobile.tn/max/2019/03/43357.jpg?t=1607527018">
+                                            <img src="https://catalogue.automobile.tn/max/2019/03/43357.jpg?t=1607527018"
+                                                alt="Alfa Romeo Giulia">
+                                        </picture>
+                                        <h2>Alfa Romeo Giulia</h2>
+
+                                        <div class="price">
+                                            A partir de <span>198 000 <span class="suffix">DT</span></span>
+                                        </div>
+
+
+                                        <div class="tag-text stock-limite"><s>220.000 DT</s></div>
+                                    </a>
+                                </div>
+                            </span>
+                            <span data-key="34086">
+                                <div class="versions-item">
+                                    <a href="/fr/neuf/alfa-romeo/stelvio/2.0-turbo-q4-bva">
+
+
+                                        <picture>
+                                            <source type="image/webp"
+                                                srcset="https://catalogue.automobile.tn/max/2013/01/34086.webp?t=1612796250">
+                                            <source type="image/jpeg"
+                                                srcset="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250">
+                                            <img src="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250"
+                                                alt="Alfa Romeo Stelvio">
+                                        </picture>
+                                        <h2>Alfa Romeo Stelvio</h2>
+
+                                        <div class="price">
+                                            A partir de <span>265 000 <span class="suffix">DT</span></span>
+                                        </div>
+
+
+                                    </a>
+                                </div>
+                            </span>
+                            <span data-key="34086">
+                                <div class="versions-item">
+                                    <a href="/fr/neuf/alfa-romeo/stelvio/2.0-turbo-q4-bva">
+
+
+                                        <picture>
+                                            <source type="image/webp"
+                                                srcset="https://catalogue.automobile.tn/max/2013/01/34086.webp?t=1612796250">
+                                            <source type="image/jpeg"
+                                                srcset="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250">
+                                            <img src="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250"
+                                                alt="Alfa Romeo Stelvio">
+                                        </picture>
+                                        <h2>Alfa Romeo Stelvio</h2>
+
+                                        <div class="price">
+                                            A partir de <span>265 000 <span class="suffix">DT</span></span>
+                                        </div>
+
+
+                                    </a>
+                                </div>
+                            </span>
+                            <span data-key="43357">
+                                <div class="versions-item">
+                                    <a href="/fr/neuf/alfa-romeo/giulia/2.0-turbo-bva-super">
+
+                                        <span class="tag stock-limite">Stock limité</span>
+
+                                        <picture>
+                                            <source type="image/webp"
+                                                srcset="https://catalogue.automobile.tn/max/2019/03/43357.webp?t=1607527018">
+                                            <source type="image/jpeg"
+                                                srcset="https://catalogue.automobile.tn/max/2019/03/43357.jpg?t=1607527018">
+                                            <img src="https://catalogue.automobile.tn/max/2019/03/43357.jpg?t=1607527018"
+                                                alt="Alfa Romeo Giulia">
+                                        </picture>
+                                        <h2>Alfa Romeo Giulia</h2>
+
+                                        <div class="price">
+                                            A partir de <span>198 000 <span class="suffix">DT</span></span>
+                                        </div>
+
+
+                                        <div class="tag-text stock-limite"><s>220.000 DT</s></div>
+                                    </a>
+                                </div>
+                            </span>
+                            <span data-key="34086">
+                                <div class="versions-item">
+                                    <a href="/fr/neuf/alfa-romeo/stelvio/2.0-turbo-q4-bva">
+
+
+                                        <picture>
+                                            <source type="image/webp"
+                                                srcset="https://catalogue.automobile.tn/max/2013/01/34086.webp?t=1612796250">
+                                            <source type="image/jpeg"
+                                                srcset="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250">
+                                            <img src="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250"
+                                                alt="Alfa Romeo Stelvio">
+                                        </picture>
+                                        <h2>Alfa Romeo Stelvio</h2>
+
+                                        <div class="price">
+                                            A partir de <span>265 000 <span class="suffix">DT</span></span>
+                                        </div>
+
+
+                                    </a>
+                                </div>
+                            </span> -->
                         </div>
-                        </span>
-                        <span data-key="34086">
-                            <div class="versions-item">
-                                <a href="/fr/neuf/alfa-romeo/stelvio/2.0-turbo-q4-bva">
-                            
-                                    
-                                    <picture><source type="image/webp" srcset="https://catalogue.automobile.tn/max/2013/01/34086.webp?t=1612796250"><source type="image/jpeg" srcset="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250"><img src="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250" alt="Alfa Romeo Stelvio"></picture>
-                                                <h2>Alfa Romeo Stelvio</h2>
-                                    
-                                    <div class="price">
-                                                        A partir de <span>265 000 <span class="suffix">DT</span></span>
+                        <div class="pages"></div>
+                        <div class="vs"></div>
                     </div>
-
-
-                    </a>
-                </div>
-                </span>
-                <span data-key="43357">
-                                                <div class="versions-item">
-                                                    <a href="/fr/neuf/alfa-romeo/giulia/2.0-turbo-bva-super">
-                                                
-                                                                    <span class="tag stock-limite">Stock limité</span>
-
-                <picture>
-                    <source type="image/webp" srcset="https://catalogue.automobile.tn/max/2019/03/43357.webp?t=1607527018">
-                    <source type="image/jpeg" srcset="https://catalogue.automobile.tn/max/2019/03/43357.jpg?t=1607527018"><img src="https://catalogue.automobile.tn/max/2019/03/43357.jpg?t=1607527018" alt="Alfa Romeo Giulia"></picture>
-                <h2>Alfa Romeo Giulia</h2>
-
-                <div class="price">
-                    A partir de <span>198 000 <span class="suffix">DT</span></span>
                 </div>
 
 
-                <div class="tag-text stock-limite"><s>220.000 DT</s></div>
-                </a>
+
             </div>
-            </span>
-            <span data-key="34086">
-                                            <div class="versions-item">
-                                                <a href="/fr/neuf/alfa-romeo/stelvio/2.0-turbo-q4-bva">
-                                            
-                                                    
-                                                    <picture><source type="image/webp" srcset="https://catalogue.automobile.tn/max/2013/01/34086.webp?t=1612796250"><source type="image/jpeg" srcset="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250"><img src="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250" alt="Alfa Romeo Stelvio"></picture>
-                                                                <h2>Alfa Romeo Stelvio</h2>
-                                                    
-                                                    <div class="price">
-                                                                        A partir de <span>265 000 <span class="suffix">DT</span></span>
+
         </div>
-
-
-        </a>
-</div>
-</span>
-<span data-key="43357">
-                                                                                    <div class="versions-item">
-                                                                                        <a href="/fr/neuf/alfa-romeo/giulia/2.0-turbo-bva-super">
-                                                                                    
-                                                                                                        <span class="tag stock-limite">Stock limité</span>
-
-<picture>
-    <source type="image/webp" srcset="https://catalogue.automobile.tn/max/2019/03/43357.webp?t=1607527018">
-    <source type="image/jpeg" srcset="https://catalogue.automobile.tn/max/2019/03/43357.jpg?t=1607527018"><img src="https://catalogue.automobile.tn/max/2019/03/43357.jpg?t=1607527018" alt="Alfa Romeo Giulia"></picture>
-<h2>Alfa Romeo Giulia</h2>
-
-<div class="price">
-    A partir de <span>198 000 <span class="suffix">DT</span></span>
-</div>
-
-
-<div class="tag-text stock-limite"><s>220.000 DT</s></div>
-</a>
-</div>
-</span>
-<span data-key="34086">
-                                                                                    <div class="versions-item">
-                                                                                        <a href="/fr/neuf/alfa-romeo/stelvio/2.0-turbo-q4-bva">
-                                                                                    
-                                                                                            
-                                                                                            <picture><source type="image/webp" srcset="https://catalogue.automobile.tn/max/2013/01/34086.webp?t=1612796250"><source type="image/jpeg" srcset="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250"><img src="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250" alt="Alfa Romeo Stelvio"></picture>
-                                                                                                        <h2>Alfa Romeo Stelvio</h2>
-                                                                                            
-                                                                                            <div class="price">
-                                                                                                                A partir de <span>265 000 <span class="suffix">DT</span></span>
-</div>
-
-
-</a>
-</div>
-</span>
-<span data-key="34086">
-                                                            <div class="versions-item">
-                                                                <a href="/fr/neuf/alfa-romeo/stelvio/2.0-turbo-q4-bva">
-                                                            
-                                                                    
-                                                                    <picture><source type="image/webp" srcset="https://catalogue.automobile.tn/max/2013/01/34086.webp?t=1612796250"><source type="image/jpeg" srcset="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250"><img src="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250" alt="Alfa Romeo Stelvio"></picture>
-                                                                                <h2>Alfa Romeo Stelvio</h2>
-                                                                    
-                                                                    <div class="price">
-                                                                                        A partir de <span>265 000 <span class="suffix">DT</span></span>
-</div>
-
-
-</a>
-</div>
-</span>
-<span data-key="43357">
-                                                                                        <div class="versions-item">
-                                                                                            <a href="/fr/neuf/alfa-romeo/giulia/2.0-turbo-bva-super">
-                                                                                        
-                                                                                                            <span class="tag stock-limite">Stock limité</span>
-
-<picture>
-    <source type="image/webp" srcset="https://catalogue.automobile.tn/max/2019/03/43357.webp?t=1607527018">
-    <source type="image/jpeg" srcset="https://catalogue.automobile.tn/max/2019/03/43357.jpg?t=1607527018"><img src="https://catalogue.automobile.tn/max/2019/03/43357.jpg?t=1607527018" alt="Alfa Romeo Giulia"></picture>
-<h2>Alfa Romeo Giulia</h2>
-
-<div class="price">
-    A partir de <span>198 000 <span class="suffix">DT</span></span>
-</div>
-
-
-<div class="tag-text stock-limite"><s>220.000 DT</s></div>
-</a>
-</div>
-</span>
-<span data-key="34086">
-                                                                                        <div class="versions-item">
-                                                                                            <a href="/fr/neuf/alfa-romeo/stelvio/2.0-turbo-q4-bva">
-                                                                                        
-                                                                                                
-                                                                                                <picture><source type="image/webp" srcset="https://catalogue.automobile.tn/max/2013/01/34086.webp?t=1612796250"><source type="image/jpeg" srcset="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250"><img src="https://catalogue.automobile.tn/max/2013/01/34086.jpg?t=1612796250" alt="Alfa Romeo Stelvio"></picture>
-                                                                                                            <h2>Alfa Romeo Stelvio</h2>
-                                                                                                
-                                                                                                <div class="price">
-                                                                                                                    A partir de <span>265 000 <span class="suffix">DT</span></span>
-</div>
-
-
-</a>
-</div>
-</span>
-</div>
-<div class="pages"></div>
-<div class="vs"></div>
-</div>
-</div>
-
-
-
-</div>
-
-</div>
-</section>
-<!-- Blog -->
-<app-footer2></app-footer2>
+    </section>
+    <!-- Blog -->
+    <app-footer2></app-footer2>
 </div>
