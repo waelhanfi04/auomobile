@@ -453,7 +453,9 @@
                         <span *ngIf="car.userId !== this.userId" class="gray-fa-heart float-right custom-tooltip" data-tip="Sauvgarder"><i class="fa fa-heart"></i></span>
                       </h5>
                       <h6 class="text-light-black text-uppercase mb-2">{{car.title}}</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
+                      <p class="text-dark-grey">{{car.description}}</p>
+
+                      <!-- <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> -->
                       <span class="text-orange price-text">{{car.price || '0'}} DT</span>
                       <div class="car-grid-layout-img">
                         <img [src]="car.pictureVoitures[0]?.picture" (error)="onImgError($event)" class="img-fluid full-width max-height-img" alt="Car img">

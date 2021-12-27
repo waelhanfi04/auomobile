@@ -45,6 +45,13 @@
               <!-- article 1 -->
               <article class="post">
                 <div class="blog-wrap p-relative">
+                  <div class="blog-img no-margin p-relative">
+                    <a >
+                      <img [src]="blogDetails.photo" class="img-fluid full-width" alt="Blog img">
+
+                      <!-- <img src="assets/images/blog/blogdetails-1.jpg" class="img-fluid full-width" alt="Blog img"> -->
+                    </a>
+                    </div>
                   <!-- <div class="blog-img no-margin p-relative">
                     <a >
                       <img src="assets/images/blog/blogdetails-1.jpg" class="img-fluid full-width" alt="Blog img">
@@ -70,8 +77,7 @@
                       </p>
                       </div>
                       <div class="blog-caption">
-                        {{pageId}}
-                        {{url}}
+                        
                         <disqus [identifier]="pageId" [url]="url" [title]="pageId"></disqus>
                       </div>
                   </div>

@@ -53,4 +53,7 @@ export class GererAnnonceComponent implements OnInit {
       }, 1000);
     })
   }
+  onImgError(event: any) {
+    event.target.src = '../../../../assets/images/new-icons/default-car.jpg';
+  }
 }

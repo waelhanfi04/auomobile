@@ -38,4 +38,8 @@ userRole:any;
     }, 1000);}
   })
  }
+ onImgError(event: any) {
+  event.target.src = '../../../../assets/images/concrete-wall-3.png';
+  
+}
 }

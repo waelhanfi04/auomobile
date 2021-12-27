@@ -38,6 +38,7 @@
             <span class="success-msg" >{{successMsg}}</span>
           </div>
           </div>
+    
           <div class="row" *ngIf="this.userRole!=='user'">
             <div class="col-md-6 mb-3">
               <div class="add-car-btn" [routerLink]="['/ajouter-blog']">
@@ -52,7 +53,9 @@
                 <div class="blog-wrap p-relative">
                   <div class="blog-img no-margin p-relative">
                     <a [routerLink]="['/blog',blog.id]">
-                      <img src="assets/images/concrete-wall-3.png" class="img-fluid full-width" alt="Blog img">
+                      <img [src]="blog.photo"  (error)="onImgError($event)" class="img-fluid full-width" alt="Blog img">
+
+                      <!-- <img src="assets/images/concrete-wall-3.png" class="img-fluid full-width" alt="Blog img"> -->
                     </a>
                     <div class="read-more-wrap">  <a [routerLink]="['/blog',blog.id]" class="read-more">
                       LIRE CET ARTICLE

@@ -13,20 +13,22 @@ export class BlogService {
   getOneBlog(id: any) {
     return this.http.get(serverUrl + "blog/" + id, {});
   }
-  addBlog(title: string, description: string) {
+  addBlog(title: string, description: string,photo:any) {
     return this.http.post(serverUrl + "blog", {
       titre: title,
-      description: description
+      description: description,
+      photo:photo
     }, {});
   }
   deleteBlog(id: any) {
     return this.http.delete(serverUrl + "blog/" + id, {});
   }
-  updateBlog(id: any, title: string, description: string) {
+  updateBlog(id: any, title: string, description: string,photo:any) {
     return this.http.put(serverUrl + "updateBlog", {
       id:id,
       titre: title,
-      description: description
+      description: description,
+      photo:photo
     }, {});
   }
   // app.get("/blog", controller.allBlog);
