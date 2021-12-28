@@ -63,7 +63,7 @@
               <div class="car-grid-layout-inner text-center">
                 <h5 class="car-name"><a  [routerLink]="['/car-detail',car.id]"  class="text-light-black">{{car.brand}} {{car.model}}</a>
              
-                  <span  class=" float-right custom-tooltip span-fas" data-tip="Sauvgarder">
+                  <span  class=" float-right custom-tooltip span-fas">
                     <i (click)="deleteCar(car.id)" class="fas fa-trash" *ngIf="car.status!=='pending'"></i> 
                     <i (click)="validationCar(car.id,'reject')" *ngIf="car.status==='pending'" class="fa fa-ban" aria-hidden="true"></i>
 

@@ -16912,8 +16912,6 @@ body.compacted-header .content-wrapper {
     height: 100%;
     gap: 1em;
 overflow: hidden;
-
-
 }
 .btn-left{
     position: absolute;
@@ -16936,4 +16934,7 @@ overflow: hidden;
 .div-cars{
     margin-top: 6rem;
     padding: 15px;
+}
+.no-data-span{
+    font-size: 20px;
 }

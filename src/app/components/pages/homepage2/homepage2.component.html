@@ -60,7 +60,9 @@
               <!-- mobile search -->
               <div class="space-20"></div>
               <div class="space-20"></div>
-              <!-- <p class="text-custom-white small-content">Juste en regardant autour de vous ? Laissez-nous vous suggérer quelque chose de chaud et qui se passe !</p> -->
+              <!-- <p class="text-custom-white small-content">
+                Juste en regardant autour de vous ? Laissez-nous vous suggérer quelque chose de chaud et qui se passe !
+              </p> -->
             </div>
           </div>
         </div>
@@ -338,6 +340,7 @@
                 
                     <div class="form-group">
                       <select class="form-control form-control-custom" formControlName="city">
+                        <option value=''>Choisir..</option>
                         <option value="">Gouvernorat</option>
                         <option value="Ariana">Ariana</option>
                         <option value="Béja">Béja</option>
@@ -642,7 +645,22 @@
           <div class="col-12">
             <div class="p-relative">
               <div class="model-spec-slider">
-
+                <div class="articles">
+                  <span *ngFor="let car of sponsoredCarsList">
+                      <div class="versions-item">
+                          <a [routerLink]="['/car-detail',car.id]">
+                              <picture>
+                                  <img (error)="onImgError($event)" [src]="car.pictureVoitures[0]?.picture">
+                              </picture>
+                              <h2>{{car.brand}} {{car.model}}</h2>
+                
+                              <div class="price">
+                                  A partir de <span>{{car.price || '0'}} <span class="suffix">DT</span></span>
+                              </div>
+                          </a>
+                      </div>
+                  </span>
+                  </div>
                 <!-- <div class="model-spec-slider-item p-relative" *ngFor="let sponCar of sponsoredCarsList">
                   <div class="model-spec-top-sec bg-light-theme">
                     <a [routerLink]="['/car-detail',sponCar.id]">
@@ -679,7 +697,7 @@
                   </div>
                 </div> -->
 
-                <div class="model-spec-slider-item p-relative">
+                <!-- <div class="model-spec-slider-item p-relative">
                   <div class="model-spec-top-sec bg-light-theme">
                     <a >
                       <h4 class="text-dark-grey">Audi</h4>
@@ -818,7 +836,7 @@
                       </div>
                     </div>
                   </div>
-                </div> 
+                </div>  -->
               </div>
               <div class="model-spec-slider-arrows">
                 <div class="model-spec-slider-prevtab slick-arrow"> <i class="flaticon-left-chevron"></i>
@@ -927,104 +945,19 @@
     
     <!-- In Media -->
 <app-footer2></app-footer2>
+<!-- <div class="articles">
+  <span *ngFor="let car of sponsoredCarsList">
+      <div class="versions-item">
+          <a [routerLink]="['/car-detail',car.id]">
+              <picture>
+                  <img (error)="onImgError($event)" [src]="car.pictureVoitures[0]?.picture">
+              </picture>
+              <h2>{{car.brand}} {{car.model}}</h2>
 
-    <!-- <div class="modal fade" id="register">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h6 class="modal-title text-left no-margin"><i class="fas fa-unlock-alt mr-2"></i> <span id="signup-text">Sign Up</span><span
-              id="signin-text" class="none">Sign In</span></h6>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-         Sign up form 
-          <div class="modal-body" id="signup-form">
-            <form>
-              <div class="form-group">
-                <input type="email" class="form-control" name="#" placeholder="Email">
+              <div class="price">
+                  A partir de <span>{{car.price || '0'}} <span class="suffix">DT</span></span>
               </div>
-              <div class="form-group">
-                <input type="password" class="form-control" name="#" placeholder="Password">
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn-second orange-btn full-width">Sign Up</button>
-              </div>
-            </form>
-            <div class="form-excerpts">
-              <ul>
-                <li>Already a member? <a href="javascript:void(0)" id="signin-btn">Sign In</a>
-                </li>
-                <li><a routerLink="/homepage2">Recover Password</a>
-                </li>
-              </ul>
-            </div>
-            <div class="social-login">
-              <span>Or Signup with</span>
-              <div class="social-btn">	<a routerLink="/homepage2" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
-                <a routerLink="/homepage2" class="google"><i class="fab fa-google-plus-g"></i> Google</a>
-              </div>
-            </div>
-          </div>
-           Sign up form 
-           Sign in form 
-          <div class="modal-body none" id="signin-form">
-            <form>
-              <div class="form-group">
-                <input type="text" class="form-control" name="#" placeholder="Username or Email">
-              </div>
-              <div class="form-group">
-                <input type="password" class="form-control" name="#" placeholder="Password">
-              </div>
-              <div class="form-group">
-                <label class="custom-checkbox">
-                <input type="checkbox" name="#">Keep me signed in	<span class="checkmark"></span>
-                </label>
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn-second orange-btn full-width">Sign In</button>
-              </div>
-            </form>
-            <div class="form-excerpts">
-              <ul>
-                <li>Not a member? <a href="javascript:void(0)" id="signup-btn">Sign Up</a>
-                </li>
-                <li><a routerLink="/homepage2">Recover Password</a>
-                </li>
-              </ul>
-            </div>
-            <div class="social-login">
-              <span>Or connect with</span>
-              <div class="social-btn">	<a routerLink="/homepage2" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
-                <a routerLink="/homepage2" class="google"><i class="fab fa-google-plus-g"></i> Google</a>
-              </div>
-            </div>
-          </div>
-        
-        </div>
+          </a>
       </div>
-    </div> -->
-    <!-- <div class="menu-style-3">
-      <div class="search-box search-elem">
-        <button class="close">x</button>
-        <div class="inner row">
-          <div class="col-12">
-            <label class="text-custom-white">Search Your Category</label>
-            <div class="input-group">
-              <input type="text" class="form-control form-control-custom" placeholder="Search keywords, category, brand of part">
-              <div class="input-group-prepend">
-                <select class="menu-style-3-search">
-                  <option>All Category</option>
-                  <option>Luxury Car</option>
-                  <option>Sports Car</option>
-                  <option>Vintage Car</option>
-                  <option>Excutive Car</option>
-                  <option>Economy Car</option>
-                </select>
-              </div>
-              <div class="input-group-append">
-                <button class="btn-second orange-btn full-width" type="submit">Search</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
+  </span>
+  </div> -->

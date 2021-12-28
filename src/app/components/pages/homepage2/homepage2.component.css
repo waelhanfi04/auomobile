@@ -27,3 +27,58 @@ color:#a5a5a5
 .vehicles-slider-item {
     height: 150px;
 }
+/*-----spons bloc--------*/
+/* picture img {
+    height: auto;
+    width: calc(100% + (2 * 10px));
+    margin: 0 -10px;
+    max-width: unset
+} */
+
+.versions-item {
+    min-height: 220px;
+    text-align: center;
+    position: relative;
+    width: 49%;
+    display: inline-block;
+    vertical-align: top
+}
+
+@media screen and (min-width:768px) and (max-width:919px) {
+    .versions-item {
+        padding-top: 30px
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .versions-item {
+        padding-top: 30px
+    }
+}
+
+.versions-item a {
+    position: relative;
+    display: inline-block
+}
+
+.versions-item a h2 {
+    font-size: 16px;
+    color: #272727;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 5px;
+    padding: 0 0 5px
+}
+
+.versions-item a .price {
+    color: #3d3d3d;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 0
+}
+
+.versions-item a .price span {
+    font-weight: 600;
+    font-size: 14px;
+    color: #3d3d3d
+}

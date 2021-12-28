@@ -65,16 +65,16 @@ export class RegisterProComponent implements OnInit {
               setTimeout(() => {
                 this.router.navigate(['/login'])
               }, 1000);
-            }else if(data.message=== "Failed! Email is already in use!"){
-              this.errorMsg='Cet Email existe déjà';
-              this.successMsg='';
             }
             /*message: "User was registered successfully!"
              "message": "Failed! Email is already in use!"
             */
 
           }, (error: any) => {
-
+            if(error.error.message=== "Failed! Email is already in use!"){
+              this.errorMsg='Cet Email existe déjà';
+              this.successMsg='';
+            }
           });
     }
   }

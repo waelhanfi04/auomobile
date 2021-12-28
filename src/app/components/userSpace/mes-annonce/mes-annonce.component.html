@@ -1,1 +1,69 @@
-<p>mes-annonce works!</p>
+<div class="mobile-menu-second">
+	<app-header2></app-header2>
+<!-- Sub header -->
+  <div class="sub-header-sec p-relative">
+    <app-banner-header></app-banner-header>
+    <!-- <img src="assets/images/blog/banner/banner-1.jpg" class="img-fluid" alt="Sub header"> -->
+    <div class="sub-header-overlay"></div>
+    <div class="sub-header-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="sub-header-text-wrapper text-center">
+              <h1 class="text-custom-white">Mes annonces</h1>
+              <ul class="breadcrumbs">
+                <li><a routerLink="/" class="text-custom-white">Accueil</a>
+                </li>
+                <li><a routerLink="/mon-espace" class="text-custom-white">Mon espace</a>
+                </li>
+                <li><span class="text-custom-white">Mes annonces</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Sub header -->
+  
+  <section class="section-padding our_articles">
+    <div class="container">
+        <div class="row justify-content-center" *ngIf="this.noData || this.successMsg !==''">
+            <span class="error-msg no-data-span" >Pas de données</span>
+            <span class="success-msg no-data-span" >{{successMsg}}</span>
+          </div>
+      <div class="row">
+          <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-2" *ngFor="let car of carsList">
+            <div class="car-grid-layout-box">
+              <div class="car-grid-layout-inner text-center">
+                <h5 class="car-name"><a  [routerLink]="['/car-detail',car.id]"  class="text-light-black">{{car.brand}} {{car.model}}</a>
+             
+                  <span  class=" float-right custom-tooltip span-fas">
+                    <i (click)="deleteCar(car.id)" class="fas fa-trash"></i> 
+                    <i [routerLink]="['/car-detail',car.id]" class="fas fa-pen"></i>  
+                </span>
+                </h5>
+                <h6 class="text-light-black text-uppercase mb-2">{{car.title}}</h6>
+                <p class="text-dark-grey">{{car.description}}</p>
+                <span class="text-orange price-text">{{car.price || '0'}} DT</span>
+                <div class="car-grid-layout-img">
+                    <!-- <img src="assets/images/trendingmodels/trending6.jpg" class="img-fluid full-width" alt="Image"> -->
+
+                  <img [src]="car.pictureVoitures[0]?.picture" (error)="onImgError($event)" class="img-fluid full-width max-height-img" alt="Car img">
+                </div>
+                <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i>{{car.mileage || '0'}} Km</span>
+                  <span class="text-dark-white p-relative"><i class="icon-car"></i> {{car.year || '0'}}  Model</span>
+                </div>
+                <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i>{{car.city}}</span>
+                  <span class="text-dark-white"><i class="fas fa-cog mr-2"></i>{{car.gearbox}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+  
+	<app-footer2></app-footer2>
+</div>

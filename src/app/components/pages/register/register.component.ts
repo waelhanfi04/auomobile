@@ -39,12 +39,12 @@ export class RegisterComponent implements OnInit {
                 this.router.navigate(['/login'])
               }, 1000);
              // this.router.navigate(['login'])
-            }else if(data.message=== "Failed! Email is already in use!"){
+            }
+          }, (error: any) => {
+            if(error.error.message=== "Failed! Email is already in use!"){
               this.errorMsg='Cet Email existe déjà';
               this.successMsg='';
             }
-
-          }, (error: any) => {
 
           });
     }

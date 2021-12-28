@@ -27,26 +27,24 @@ export class LoginComponent implements OnInit {
         .subscribe(
           (data:any) => {
             this.isSubmitting= false;
-            console.log(data,'data.message',data.message)
             this.errorMsg= ''
            if(data.accessToken!=='' || data.accessToken !==null){
-
               localStorage.setItem('accessToken', data.accessToken);
             //  localStorage.setItem('expiredIn', data.accessToken);
               localStorage.setItem('isAuthenticated', 'true');
               localStorage.setItem('type', data.type);
              localStorage.setItem('idUser', data.id);
              localStorage.setItem('role', data.role);
-
            this.router.navigate([''])
-         }else  if(data.message ==='User Not found.'){
-            this.errorMsg= 'Email incorrect!';
-          }else if(data.message==='Invalid Password!'){
-            this.errorMsg='Mot de passe incorrect!'
-          }
+         }
           
           }, (error: any) => {
-           
+           console.log('errr',error)
+           if(error.error.message ==='User Not found.'){
+            this.errorMsg= 'Email incorrect!';
+          }else if(error.error.message==="Invalid Password!"){
+            this.errorMsg='Mot de passe incorrect!'
+          }
           });
     }
   }

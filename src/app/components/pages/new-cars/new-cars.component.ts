@@ -24,14 +24,17 @@ export class NewCarsComponent implements OnInit {
   }
   getCars(){
     this.carService.getAllCars().subscribe((data:any)=>{
-      console.log('cars from home--> ',data)
+      
       if(data!==null || data!==undefined)
       {
         //car?.type !=='neuf'
         this.carsList=data.voitures;
         if(this.carsList.length===0){
           this.noData=true
+        }else{
+          this.noData=false
         }
+
 
         this.carsList=  data.voitures.filter((car:any)=> 
         car.status ==='accepted' && car.type ==='Neuve'        )
@@ -41,13 +44,15 @@ export class NewCarsComponent implements OnInit {
   }
   getCarByBrand(brand:string){
     this.carService.getAllCars().subscribe((data:any)=>{
-      console.log('cars from home--> ',data)
+      
       if(data!==null || data!==undefined)
       {
         this.carsList=  data.voitures.filter((car:any)=> 
         car.status ==='accepted' && car.type ==='Neuve' && car.brand===brand        )
         if(this.carsList.length===0){
           this.noData=true
+        }else{
+          this.noData=false
         }
 
 

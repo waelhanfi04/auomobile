@@ -27,25 +27,30 @@ filterForm:FormGroup
 
   ngOnInit(): void {
     this.getCars()
+  }
+  ngOnChanges(){
     this.filterForm.get('category')?.valueChanges.subscribe((value:any)=>{
       this.carsList= this.carsList.filter((car:any)=> car.category===value)
+      // if(value===''){
+      //   this.getCars();
+      // }
     });
     this.filterForm.get('city')?.valueChanges.subscribe((value:any)=>{
       this.carsList= this.carsList.filter((car:any)=> car.city===value)
     });
-  //  this.filterForm.get('price')?.valueChanges.subscribe((value:any)=>{
+      //  this.filterForm.get('price')?.valueChanges.subscribe((value:any)=>{
  //     console.log('priiiiice',value)
      // this.carsList = this.carsList.filter((car:any)=> car.price<value)
    // });
   }
   getCars(){
     this.carService.getAllCars().subscribe((data:any)=>{
-      console.log('cars from home--> ',data)
+      
       if(data!==null || data!==undefined)
       { 
-
+        this.carsList=data.voitures;
         this.carsList=data.voitures.filter((car:any)=>{
-          car.status ==='accepted'
+          car?.status ==='accepted'
         });
         this.carListLength=this.carsList.length;
         // data.voitures.forEach((car:any) => {
@@ -53,15 +58,28 @@ filterForm:FormGroup
         //   this.sponsoredCarsList.push(car)
         // });
         this.sponsoredCarsList=  data.voitures.filter((car:any)=> 
-        car?.user?.type !=='part'
+        car?.user?.type !=='part' && car.status==='accepted'
         )
         console.log('spoooon',this.sponsoredCarsList)
       }
     })
   }
+ 
   getCarByBrand(brand:string){
-    this.getCars();
-    this.carsList= this.carsList.filter((car:any)=> car.brand===brand)
+    this.carService.getAllCars().subscribe((data:any)=>{
+      
+      if(data!==null || data!==undefined)
+      {
+        this.carsList=  data.voitures.filter((car:any)=> 
+        car.status ==='accepted' && car.brand===brand        )
+        // if(this.carsList.length===0){
+        //   this.noData=true
+        // }else{
+        //   this.noData=false
+        // }
+
+      }
+    })
   }
   onImgError(event: any) {
     event.target.src = '../../../../assets/images/new-icons/default-car.jpg';
@@ -70,6 +88,19 @@ filterForm:FormGroup
     
   }
  getCarByCategory(category:string){
-  this.carsList= this.carsList.filter((car:any)=> car.category===category)
+  this.carService.getAllCars().subscribe((data:any)=>{
+    if(data!==null || data!==undefined)
+    {
+      this.carsList=  data.voitures.filter((car:any)=> 
+      car.status ==='accepted'  && car.category===category        )
+      // if(this.carsList.length===0){
+      //   this.noData=true
+      // }else{
+      //   this.noData=false
+      // }
+
+    }
+  })
+ // this.carsList= this.carsList.filter((car:any)=> car.category===category)
  }
 }
