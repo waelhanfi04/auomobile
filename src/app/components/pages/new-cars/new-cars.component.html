@@ -28,20 +28,265 @@
     <!-- Blog -->
     <section class="section-padding our_articles">
         <div class="container">
+            <div   #brandList class="brandList text-center" *ngIf="!show">
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Acura')">
+                    <a>
+                        <img src="assets/images/brand-car/Acura.png" class="img-fluid full-width" alt="Image">
 
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Audi')">
+                    <a>
+                        <img src="assets/images/brand-car/Audi.png" class="img-fluid full-width" alt="Image">
+
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('BMW')">
+                    <a>
+                        <img src="assets/images/brand-car/BMW.png" class="img-fluid full-width" alt="Image">
+
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Chery')">
+                    <a>
+                        <img src="assets/images/brand-car/Chery.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+
+
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Ferrari')">
+                    <a>
+                        <img src="assets/images/brand-car/Ferrari.jpg" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Geely')">
+                    <a>
+                        <img src="assets/images/brand-car/Geely.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Hyundai')">
+                    <a>
+                        <img src="assets/images/brand-car/Hyundai.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Isuzu')">
+                    <a>
+                        <img src="assets/images/brand-car/Isuzu.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Jaguar')">
+                    <a>
+                        <img src="assets/images/brand-car/Jaguar.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('KIA')">
+                    <a>
+                        <img src="assets/images/brand-car/KIA.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Lamborghini')">
+                    <a>
+                        <img src="assets/images/brand-car/Lamborghini.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Maserati')">
+                    <a>
+                        <img src="assets/images/brand-car/Maserati.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Mercedes-Benz')">
+                    <a>
+                        <img src="assets/images/brand-car/Mercedes-Benz.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Nissan')">
+                    <a>
+                        <img src="assets/images/brand-car/Nissan.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Opel')">
+                    <a>
+                        <img src="assets/images/brand-car/Opel.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Porsche')">
+                    <a>
+                        <img src="assets/images/brand-car/Porsche.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Renault')">
+                    <a>
+                        <img src="assets/images/brand-car/Renault.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Suzuki')">
+                    <a>
+                        <img src="assets/images/brand-car/Suzuki.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Toyota')">
+                    <a>
+                        <img src="assets/images/brand-car/Toyota.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Volkswagen')">
+                    <a>
+                        <img src="assets/images/brand-car/Volkswagen.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Wallys')">
+                    <a>
+                        <img src="assets/images/brand-car/Wallys.png" class="img-fluid full-width" alt="Image">
+                    </a>
+                </div>
+
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Alfa Romeo')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Alfa Romeo.jpg">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('BMW')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/BMW.png">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('BYD')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/BYD.png">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Changan')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Changan.png">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Dacia')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Dacia.png">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('DFSK')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/DFSK.png">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Dongfeng')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Dongfeng.png">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('FAW')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/FAW.png">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Foday')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Foday.png">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Ford')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Ford.png">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('GWM')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/GWM.png">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Haval')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Haval.png">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Honda')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Honda.png">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Hyundai')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Hyundai.png">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Jeep')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Jeep.png">
+                    </a>
+                </div>
+                
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Land Rover')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Land Rover.png">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Mahindra')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Mahindra.png">
+                    </a>
+                </div>
+                
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Mini')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Mini.png">
+                    </a>
+                </div>
+                
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Peugeot')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Peugeot.png">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Seat')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Seat.png">
+                    </a>
+                </div>
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Skoda')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Skoda.png">
+                    </a>
+                </div>
+                
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Toyota')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Toyota.png">
+                    </a>
+                </div>
+                
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Chevrolet')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Chevrolet.png">
+                    </a>
+                </div>
+                
+                <div class="vehicles-item  text-center padding-10" (click)="getCarByBrand('Mazda')">
+                    <a>
+                        <img class="img-fluid full-width" alt="Image" src="assets/images/brand-car/Mazda.png">
+                    </a>
+                </div>
+
+            </div>
+            <div *ngIf="!scrollrightdisable" class="btn-left" id="left-button" (click)="scrollLeft()"><i class="flaticon-left-chevron"></i></div>
+            <div *ngIf="!scrollleftdisable" class="btn-right" id="right-button" (click)="scrollRight()"><i class="flaticon-right-chevron"></i></div>
+       
 
             <div class="content-wrapper">
-                <div id="facets-pjax" data-pjax-container="" data-pjax-push-state="" data-pjax-timeout="5000">
+               
+                <div id="facets-pjax" class="div-cars" data-pjax-container="" data-pjax-push-state="" data-pjax-timeout="5000">
                     <div id="w0" class="occasions-results">
 
                         <div class="articles">
-                            <span  *ngFor="let car of carsList">
+                            <span *ngFor="let car of carsList">
                                 <div class="versions-item">
-                                    <a [routerLink]="['car-detail',car.id]">
+                                    <a [routerLink]="['/car-detail',car.id]">
 
 
                                         <picture>
-                        
+
                                             <img (error)="onImgError($event)" [src]="car.pictureVoitures[0]?.picture">
                                         </picture>
                                         <h2>{{car.brand}} {{car.model}}</h2>
@@ -274,13 +519,10 @@
                         <div class="vs"></div>
                     </div>
                 </div>
-
-
-
             </div>
-
-        </div>
+     
     </section>
     <!-- Blog -->
     <app-footer2></app-footer2>
 </div>
+

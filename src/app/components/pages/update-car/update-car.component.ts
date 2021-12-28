@@ -185,7 +185,8 @@ export class UpdateCarComponent implements OnInit {
       numberDoors: this.updateCarForm.get('numberDoors')?.value,
       insideEquipment: this.updateCarForm.get('insideEquipment')?.value,
       outsideEquipment: this.updateCarForm.get('outsideEquipment')?.value,
-      securityEquipment: this.updateCarForm.get('securityEquipment')?.value
+      securityEquipment: this.updateCarForm.get('securityEquipment')?.value,
+      type: this.updateCarForm.get('type')?.value,
     }
 
     this.carService.updateCar(body).subscribe((response: any) => {

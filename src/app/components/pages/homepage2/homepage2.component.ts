@@ -60,6 +60,7 @@ filterForm:FormGroup
     })
   }
   getCarByBrand(brand:string){
+    this.getCars();
     this.carsList= this.carsList.filter((car:any)=> car.brand===brand)
   }
   onImgError(event: any) {

@@ -40,6 +40,7 @@ export class AddListingComponent implements OnInit {
       guarantee: new FormControl(''),
       month: new FormControl(''),
       year: new FormControl(''),
+      type: new FormControl(''),
       category: new FormControl(''),
       price: new FormControl(''),
       description: new FormControl(''),
@@ -55,8 +56,7 @@ export class AddListingComponent implements OnInit {
       securityEquipment: this.fb.array([]),
       pictures: this.fb.array([]),
       seatingCapacity: new FormControl(''),
-      numberDoors: new FormControl(''),
-      type: new FormControl('')
+      numberDoors: new FormControl('')
     });
 
   }
@@ -92,7 +92,6 @@ export class AddListingComponent implements OnInit {
   type
   */
   ngOnInit(): void {
-    this.getCars()
     /*---add list of years from 1900 to current year-- */
     var aujd = new Date();
     const currentYear = aujd.getFullYear();
@@ -190,9 +189,5 @@ base64ToFile(data: any, filename: any) {
 
   return new File([u8arr], filename, { type: mime });
 }
-getCars(){
-  this.carService.getAllCars().subscribe((data:any)=>{
-    console.log('car',data)
-  })
-}
+
 }

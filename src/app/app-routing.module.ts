@@ -50,7 +50,7 @@ const routes: Routes = [
   {
     path: 'creer-une-annonce',
     component: AddListingComponent,
-    canActivate:[AuthGuardService]
+ //   canActivate:[AuthGuardService]
   },
   {
     path: 'register',

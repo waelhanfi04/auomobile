@@ -15,3 +15,15 @@ color:#a5a5a5
 .orange-fa-heart:hover{
     color: #c0562a;
 }
+.banner-tabs ul li a{
+   cursor: pointer;
+}
+.banner-tabs ul li a img{
+    filter: invert(1);
+}
+.banner-tabs ul li a span{
+   color: white;
+}
+.vehicles-slider-item {
+    height: 150px;
+}

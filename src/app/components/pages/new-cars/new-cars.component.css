@@ -16883,3 +16883,57 @@ body.compacted-header .content-wrapper {
         margin-top: 117px
     }
 }
+/* -------------------------------- */
+.vehicles-item  {
+    min-width: 90px;
+    width: 90px;
+    height: 80px;
+    /* margin: 20px 45px; */
+    /* display: inline-block; */
+    /* -webkit-transform: translateZ(0);
+    transition: all .5s ease; */
+    cursor:pointer;
+    /* -webkit-filter: grayscale(100%); */
+}
+.vehicles-item:hover{
+    -webkit-filter: grayscale(0);
+}
+
+.vehicles-item a img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
+
+.brandList{
+    display:flex;
+    width:100%;
+    min-width:100vw;
+    height: 100%;
+    gap: 1em;
+overflow: hidden;
+
+
+}
+.btn-left{
+    position: absolute;
+    left: 0;
+    color: #6c6d72;
+    font-size: 35px;
+    cursor: pointer;
+}
+.btn-right{
+    position: absolute;
+    right: 0; 
+    cursor: pointer;
+    color: #6c6d72;
+    font-size: 35px;
+}
+.btn-right:hover,
+.btn-left:hover{
+    color: #ff6e14;
+}
+.div-cars{
+    margin-top: 6rem;
+    padding: 15px;
+}

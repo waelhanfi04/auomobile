@@ -21,7 +21,7 @@ export class AncienCarsComponent implements OnInit {
         // car?.type !=='occasions'
         this.carsList=data.voitures;
         this.carsList=  data.voitures.filter((car:any)=> 
-        car.status ==='accepted'
+        car.status ==='accepted' && car.type ==='Occasion'
         )
 
       }

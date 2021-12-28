@@ -762,11 +762,11 @@ Version:1.0.1
 		}]
 	});
 	// steps
-	// $('#add-listing-tab').steps({
-	// 	onFinish: function () {
-	// 		alert('Completed');
-	// 	}
-	// });
+	$('#add-listing-tab').steps({
+		onFinish: function () {
+			//alert('Completed');
+		}
+	});
 	// darg & drop
 	$(document).ready(function () {
 		$(".form-group input[type='file']").change(function () {
