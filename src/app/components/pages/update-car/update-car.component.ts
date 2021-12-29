@@ -92,7 +92,7 @@ export class UpdateCarComponent implements OnInit {
   }
   getCarDetails(id: any) {
     this.carService.getOneCar(id).subscribe((data: any) => {
-      if (data) {
+      if (data !== null && data !== undefined) {
         this.carDetails = data.voiture
         const outsideEquipmentArray: FormArray = this.updateCarForm.get('outsideEquipment') as FormArray;
         this.carDetails.outsideEquipmentVoitures.forEach((itemEquip: any) => {
@@ -124,11 +124,11 @@ export class UpdateCarComponent implements OnInit {
         });
         const pictureArray: FormArray = this.updateCarForm.get('pictures') as FormArray;
         this.carDetails.pictureVoitures.forEach((element: any) => {
-          console.log('eleeeem',element)
+         
           pictureArray.push(new FormControl(element.picture));
         });
         this.kits = this.updateCarForm.get('pictures')?.value
-        console.log('kiiiits', this.kits)
+       
       }
 
     })
@@ -190,7 +190,6 @@ export class UpdateCarComponent implements OnInit {
     }
 
     this.carService.updateCar(body).subscribe((response: any) => {
-      console.log('response', response)
       if (response.message === 'voiture was registered successfully!') {
         this.successMsg = 'Voiture a été modifié avec succès!'
         setTimeout(() => {
@@ -218,10 +217,10 @@ export class UpdateCarComponent implements OnInit {
           let selectedFilename = file.name;
           // const FileKit = this.base64ToFile(selectedFile, selectedFilename);
           const fileKit = r.result
-          console.log('FileKit', fileKit)
+       
           const picArray: FormArray = this.updateCarForm.get('pictures') as FormArray;
           picArray.push(new FormControl(fileKit));
-          console.log('piiiiiic-->', this.updateCarForm.get('pictures')?.value)
+         
           this.kits = this.updateCarForm.get('pictures')?.value
         }
       }

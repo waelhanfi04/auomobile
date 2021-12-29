@@ -3,9 +3,14 @@
 <!-- User Details -->
   <div class="user-page-sec p-relative car-details">
     <div class="car-details-slider" *ngIf="picturesList">
-      <div class="slider-item"  *ngFor="let p of picturesList">
-        <img [src]="p.picture" class="img-fluid full-width" alt="#" >
+      <div class="slider-item">
+        <img [src]="picturesList[0]?.picture" class="img-fluid full-width" alt="#" (error)="onImgError($event)">
       </div> 
+
+      <!-- <div class="slider-item"  *ngFor="let p of picturesList">
+        <img [src]="p.picture" class="img-fluid full-width" alt="#" >
+      </div>  -->
+
       <!-- <div class="slider-item">
         <img src="assets/images/cardetails/cardetails-1.jpg" class="img-fluid full-width" alt="#">
       </div>
@@ -106,12 +111,15 @@
   <div class="listing-with-map car-details">
     <div class="container">
       <div class="row no-use-row">
+        <aside class="col-lg-4">
+          <app-advertising-sidebar></app-advertising-sidebar>
+        </aside>
         <div class="col-lg-8">
           <!-- <div class="page-title">
             <h3 class="text-light-black">Ghibli Versions</h3> 
             <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.A masterful combination of style, power, sporty handling and comfort.</p>
           </div> -->
-          <div class="d-flex gap-3" *ngIf="isOwner">
+          <div class="d-flex gap-3 mt-3" *ngIf="isOwner">
             <div class="add-car-btn">
               <a [routerLink]="['/voitures/modifier',car.id]" class="text-custom-white">Modifier</a>
            </div>
@@ -321,10 +329,11 @@
               </div> -->
             </div>
             <div class="car-detail-slider-nav">
-              <div class="slider-item" *ngFor="let p of picturesList">
+            <!--   <div class="slider-item" *ngFor="let p of picturesList">
                 <img [src]="p.picture" class="img-fluid full-width pictures-item" alt="#">
               </div>
-              <!-- <div class="slide-item">
+              ***
+              <div class="slide-item">
                 <img src="assets/images/cardetails/gallery-1a.jpg" class="img-fluid full-width" alt="#">
               </div>
               <div class="slide-item">
@@ -341,218 +350,10 @@
               </div>
               <div class="slide-item">
                 <img src="assets/images/cardetails/gallery-6a.jpg" class="img-fluid full-width" alt="#">
-              </div> -->
-            </div>
+              </div> 
+            </div>-->
           </div>
-          <!-- <div class="contant-wrapper">
-            <h4 class="text-light-black">What is Lorem Ipsum?</h4>
-            <p class="text-dark-grey">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
-            <p class="text-dark-grey">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-          </div> -->
-          <!-- <div class="contant-wrapper">
-            <h4 class="text-light-black">What is Lorem Ipsum?</h4>
-            <p class="text-dark-grey">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
-          </div> -->
-          <!-- <div class="video-wrapper">
-            <h4 class="text-light-black">Watch Video</h4>
-            <div class="video_wrapper video_wrapper_full js-videoWrapper">
-              <iframe class="videoIframe js-videoIframe" src="https://www.youtube.com/embed/pbiEfJd2Hpw" data-src="https://www.youtube.com/embed/pbiEfJd2Hpw?autoplay=1" allow="autoplay"></iframe>
-              <div class="videoPoster js-videoPoster">
-                <img src="assets/images/cardetails/video-1.jpg" class="img-fluid full-width" alt="#">
-                <div class="video-inner"> <i class="flaticon-triangle"></i>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="product-reviews">
-            <h4 class="text-light-black comment-reply-title">2 Reviews for Rims</h4>
-            <div class="reviews-section">
-              <article class="review-post">
-                <div class="review-box">
-                  <div class="review-thumbnail">
-                    <a routerLink="/car-detail">
-                      <img src="assets/images/cardetails/user-2.jpg" alt="#">
-                    </a>
-                  </div>
-                  <div class="user-name">
-                    <h6><a routerLink="/car-detail" class="text-light-black">Jhon</a></h6>
-                    <p class="text-dark-white"><i class="fas fa-star text-yellow"></i> 36 Reviews</p>
-                  </div>
-                </div>
-                <section class="details">
-                  <div class="top-section">
-                    <h5 class="text-light-black rubik mb-1 fw-600">I loved there Cars.</h5>
-                    <span class="text-dark-grey">November 15, 2020 5:30 Pm</span>
-                    <div class="review-count">
-                      <div class="rating">  <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i> 
-                      </div>  <span class="rate">4<sup>/ 5</sup></span> 
-                    </div>
-                  </div>
-                  <div class="comment-box">
-                    <p class="text-dark-grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <div class="img-slider-reviews">
-                      <a routerLink="/car-detail">
-                        <img src="assets/images/cardetails/290x213/comment-5.jpg" class="img-fluid full-width" alt="#">
-                      </a>
-                      <a routerLink="/car-detail">
-                        <img src="assets/images/cardetails/290x213/comment-4.jpg" class="img-fluid full-width" alt="#">
-                      </a>
-                      <a routerLink="/car-detail">
-                        <img src="assets/images/cardetails/290x213/comment-1.jpg" class="img-fluid full-width" alt="#">
-                      </a>
-                      <a routerLink="/car-detail">
-                        <img src="assets/images/cardetails/290x213/comment-3.jpg" class="img-fluid full-width" alt="#">
-                      </a>
-                      <a routerLink="/car-detail">
-                        <img src="assets/images/cardetails/290x213/comment-6.jpg" class="img-fluid full-width" alt="#">
-                      </a>
-                      <a routerLink="/car-detail">
-                        <img src="assets/images/cardetails/290x213/comment-2.jpg" class="img-fluid full-width" alt="#">
-                      </a>
-                    </div>
-                    <div class="comment-footer">  <span class="text-dark-white">Was This Review ...?</span>
-                      <ul>
-                        <li>  <a routerLink="/car-detail" class="interesting"><i class="far fa-thumbs-up"></i> Interesting <span class="text-dark-white">220</span></a>
-                        </li>
-                        <li>  <a routerLink="/car-detail" class="lol"><i class="far fa-laugh"></i> Lol <span class="text-dark-white">150</span></a>
-                        </li>
-                        <li>  <a routerLink="/car-detail" class="love"><i class="far fa-heart"></i> Love <span class="text-dark-white">500</span></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </section>
-              </article>
-              <article class="review-post">
-                <div class="review-box">
-                  <div class="review-thumbnail">
-                    <a routerLink="/car-detail">
-                      <img src="assets/images/cardetails/user-3.jpg" alt="#">
-                    </a>
-                  </div>
-                  <div class="user-name">
-                    <h6><a routerLink="/car-detail" class="text-light-black">Deo</a></h6>
-                    <p class="text-dark-white"><i class="fas fa-star text-yellow"></i> 20 Reviews</p>
-                  </div>
-                </div>
-                <section class="details">
-                  <div class="top-section">
-                    <h5 class="text-light-black rubik mb-1 fw-600">Amazing Cars</h5>
-                    <span class="text-dark-grey">October 18, 2020 7:26 Pm</span>
-                    <div class="review-count">
-                      <div class="rating">  <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i> 
-                      </div>  <span class="rate">5<sup>/ 5</sup></span> 
-                    </div>
-                  </div>
-                  <div class="comment-box">
-                    <p class="text-dark-grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <div class="img-slider-reviews">
-                      <a routerLink="/car-detail">
-                        <img src="assets/images/cardetails/290x213/comment-1.jpg" class="img-fluid full-width" alt="#">
-                      </a>
-                      <a routerLink="/car-detail">
-                        <img src="assets/images/cardetails/290x213/comment-2.jpg" class="img-fluid full-width" alt="#">
-                      </a>
-                      <a routerLink="/car-detail">
-                        <img src="assets/images/cardetails/290x213/comment-3.jpg" class="img-fluid full-width" alt="#">
-                      </a>
-                      <a routerLink="/car-detail">
-                        <img src="assets/images/cardetails/290x213/comment-4.jpg" class="img-fluid full-width" alt="#">
-                      </a>
-                      <a routerLink="/car-detail">
-                        <img src="assets/images/cardetails/290x213/comment-5.jpg" class="img-fluid full-width" alt="#">
-                      </a>
-                      <a routerLink="/car-detail">
-                        <img src="assets/images/cardetails/290x213/comment-6.jpg" class="img-fluid full-width" alt="#">
-                      </a>
-                    </div>
-                    <div class="comment-footer">  <span class="text-dark-white">Was This Review ...?</span>
-                      <ul>
-                        <li>  <a routerLink="/car-detail" class="interesting"><i class="far fa-thumbs-up"></i> Interesting <span class="text-dark-white">180</span></a>
-                        </li>
-                        <li>  <a routerLink="/car-detail" class="lol"><i class="far fa-laugh"></i> Lol <span class="text-dark-white">125</span></a>
-                        </li>
-                        <li>  <a routerLink="/car-detail" class="love"><i class="far fa-heart"></i> Love <span class="text-dark-white">350</span></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </section>
-              </article>
-            </div>
-          </div>
-          <div class="comment-form-second bg-white">
-            <h4 class="text-light-black comment-reply-title">Rate us and Write a Review</h4>
-            <form>
-              <div class="form-group">
-                <div class="row align-items-center">
-                  <div class="col-sm-6">
-                    <label class="text-light-black">Your Rating for this listing</label>
-                    <div class="star-rating"> <span>
-                        <i class="far fa-star"></i>
-                      </span>
-                      <span>
-                        <i class="far fa-star"></i>
-                      </span>
-                      <span>
-                        <i class="far fa-star"></i>
-                      </span>
-                      <span>
-                        <i class="far fa-star"></i>
-                      </span>
-                      <span>
-                        <i class="far fa-star"></i>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-12">
-                    <label class="text-dark-grey">Email<sup>*</sup>
-                    </label>
-                    <input type="email" class="form-control form-control-custom" name="#" placeholder="Enter your email i'd">
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-12">
-                    <label class="text-dark-grey">Title<sup>*</sup>
-                    </label>
-                    <input type="email" class="form-control form-control-custom" name="#" placeholder="Example: It was an awesome experience to be there">
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-12">
-                    <label class="text-dark-grey">Review<sup>*</sup>
-                    </label>
-                    <textarea class="form-control form-control-custom" name="#" placeholder="Review" rows="6"></textarea>
-                    <p>Your review is recommended to be at least 140 characters long</p>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-12">
-                    <button type="submit" class="btn-second orange-btn">Submit Review</button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div> -->
-        </div>
+         </div>
         <aside class="col-lg-4">
           <!-- <app-car-detail-sidebar></app-car-detail-sidebar> -->
         </aside>

@@ -19,9 +19,9 @@ userId=localStorage.getItem('idUser') as string;
 filterForm:FormGroup
   constructor(private carService:CarService) {
     this.filterForm = new FormGroup({
-      category: new FormControl(),
+      category: new FormControl(''),
     //  price: new FormControl(),
-      city: new FormControl(),
+      city: new FormControl(''),
     })
    }
 
@@ -30,13 +30,18 @@ filterForm:FormGroup
   }
   ngOnChanges(){
     this.filterForm.get('category')?.valueChanges.subscribe((value:any)=>{
-      this.carsList= this.carsList.filter((car:any)=> car.category===value)
-      // if(value===''){
-      //   this.getCars();
-      // }
+      if(value!=='')
+     { this.carsList= this.carsList.filter((car:any)=> car.category===value)
+    }else{
+        this.getCars();
+      }
     });
     this.filterForm.get('city')?.valueChanges.subscribe((value:any)=>{
-      this.carsList= this.carsList.filter((car:any)=> car.city===value)
+      if(value!=='')
+    {  this.carsList= this.carsList.filter((car:any)=> car.city===value)
+    }else{
+        this.getCars();
+      }
     });
       //  this.filterForm.get('price')?.valueChanges.subscribe((value:any)=>{
  //     console.log('priiiiice',value)
