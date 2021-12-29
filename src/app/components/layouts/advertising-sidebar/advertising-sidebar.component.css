@@ -3,4 +3,7 @@
     /* .bloc{
     height: 300px !important;
 } */
+img{
+    max-height: 392px;
+}
 }
