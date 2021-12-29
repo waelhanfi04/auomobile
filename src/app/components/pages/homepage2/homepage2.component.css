@@ -39,11 +39,17 @@ color:#a5a5a5
     min-height: 220px;
     text-align: center;
     position: relative;
-    width: 49%;
+    width: 350px;
+    max-width: 350px;
+    margin: 3em;
     display: inline-block;
     vertical-align: top
 }
-
+.versions-item img{
+    max-height: 197px;
+    max-width: 350px;
+    height: 197px;
+}
 @media screen and (min-width:768px) and (max-width:919px) {
     .versions-item {
         padding-top: 30px
@@ -70,6 +76,9 @@ color:#a5a5a5
     padding: 0 0 5px
 }
 
+.versions-item a h2:hover {
+ color:#ff6e14 ;
+}
 .versions-item a .price {
     color: #3d3d3d;
     text-transform: uppercase;

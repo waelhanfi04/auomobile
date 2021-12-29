@@ -12,7 +12,7 @@ export class MesAnnonceComponent implements OnInit {
   errorMsg = ''
   successMsg = ''
   noData:boolean=false;
-  userId=localStorage.get('userId')
+  
   constructor(private carService:CarService,private router: Router) { }
   ngOnInit(): void {
     this.getCars()

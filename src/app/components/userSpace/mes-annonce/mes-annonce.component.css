@@ -1,0 +1,22 @@
+.fas,
+.fa{
+    color: #ff6e14;
+    font-size: 20px;
+    cursor: pointer;
+}
+.fa:hover,
+.fas:hover{
+ color: #c0562a;
+}
+.span-fas{
+    display: flex;
+    position: absolute;
+    width: 40px;
+    gap: 6px;
+    top: 0;
+    /* top: 7px; */
+    flex-direction: column;
+}
+.custom-tooltip:after, .custom-tooltip:before{
+    background: white !important;
+}

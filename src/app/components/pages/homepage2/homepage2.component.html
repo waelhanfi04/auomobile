@@ -340,7 +340,7 @@
                 
                     <div class="form-group">
                       <select class="form-control form-control-custom" formControlName="city">
-                        <option value=''>Choisir..</option>
+                        <option value=''>Choisir une ville</option>
                         <option value="">Gouvernorat</option>
                         <option value="Ariana">Ariana</option>
                         <option value="Béja">Béja</option>
@@ -644,8 +644,8 @@
         <div class="row">
           <div class="col-12">
             <div class="p-relative">
-              <div class="model-spec-slider">
-                <div class="articles">
+              <div class="">
+                <div class="articles text-center">
                   <span *ngFor="let car of sponsoredCarsList">
                       <div class="versions-item">
                           <a [routerLink]="['/car-detail',car.id]">
@@ -838,12 +838,12 @@
                   </div>
                 </div>  -->
               </div>
-              <div class="model-spec-slider-arrows">
+              <!-- <div class="model-spec-slider-arrows">
                 <div class="model-spec-slider-prevtab slick-arrow"> <i class="flaticon-left-chevron"></i>
                 </div>
                 <div class="model-spec-slider-nexttab slick-arrow"> <i class="flaticon-right-chevron"></i>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
