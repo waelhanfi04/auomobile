@@ -53,15 +53,28 @@ filterForm:FormGroup
       
       if(data!==null || data!==undefined)
       { 
+        if(localStorage.getItem('fav_store__')){
+        let local:any =localStorage.getItem('fav_store__')
+        var fav = JSON.parse(local)
+        fav.forEach((element:any) => {
+        data.voitures.forEach((car:any) => {
+        
+              if(car.id===element){
+                car.favoris=true
+              }else{  car.favoris=false}
+          
+        //    localStorage.getItem('fav_store__')
+         
+        });
+      });
+    }
         this.carsList=data.voitures;
+        this.carListLength=this.carsList.length;
         this.carsList=data.voitures.filter((car:any)=>
           car.status==='accepted'
         );
-        this.carListLength=this.carsList.length;
-        // data.voitures.forEach((car:any) => {
-        //   if(car.user.type==='pro')
-        //   this.sponsoredCarsList.push(car)
-        // });
+  
+        //console.log(' this.carsList', this.carsList)
         this.sponsoredCarsList=  data.voitures.filter((car:any)=> 
         car?.user?.type !=='part' && car.status==='accepted'
         )
@@ -89,8 +102,25 @@ filterForm:FormGroup
   onImgError(event: any) {
     event.target.src = '../../../../assets/images/new-icons/default-car.jpg';
   }
-  addToFavorites(){
+  addToFavorites(id:any){
+    var items = [];
+    if(localStorage.getItem('fav_store__')){
+      let local:any =localStorage.getItem('fav_store__')
+      var fav = JSON.parse(local)
+      fav.forEach((element:any) => {
+        items.push(element);
+      });
     
+      items.push(id);
+      localStorage.setItem('fav_store__',JSON.stringify(items));
+      console.log('fav111--------->',localStorage.getItem('fav_store__'))
+    }else{
+      items.push(id);
+      localStorage.setItem('fav_store__',JSON.stringify(items));
+      let local:any =localStorage.getItem('fav_store__')
+      var fav = JSON.parse(local)
+      console.log('fav--------->',fav)
+    }
   }
  getCarByCategory(category:string){
   this.carService.getAllCars().subscribe((data:any)=>{

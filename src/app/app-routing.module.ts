@@ -44,6 +44,7 @@ import { GererComptesComponent } from './components/backOffice/gerer-comptes/ger
 import {AuthGuardService} from './services/authGard.service'
 import { AncienCarsComponent } from './components/pages/ancien-cars/ancien-cars.component';
 import { NewCarsComponent } from './components/pages/new-cars/new-cars.component';
+import { FavorisComponent } from './components/userSpace/favoris/favoris.component';
 const routes: Routes = [
 
   { path: '', component: Homepage2Component },
@@ -112,7 +113,7 @@ const routes: Routes = [
   {
     path: 'mes-annonces',
     component: MesAnnonceComponent,
-    //canActivate:[AuthGuardService]
+    canActivate:[AuthGuardService]
   },
   {
     path: 'gerer-annonces',
@@ -128,6 +129,11 @@ const routes: Routes = [
     path: 'mot-de-passe',
     component: UpdatePasswordComponent,
     canActivate:[AuthGuardService]
+  },
+  {
+    path: 'favoris',
+    component: FavorisComponent,
+    canActivate:[ AuthGuardService]
   },
   // {path: 'media', component: MediaComponent},
   { path: 'listing', component: ListingComponent },

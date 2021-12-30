@@ -15,130 +15,6 @@
                 <div class="add-car-btn"  *ngIf='showAddListing'>
                    <a routerLink="/creer-une-annonce" class="text-custom-white">+ Ajouter une annonce</a>
                 </div>
-           
-              
-               
-            
-              <!-- <nav>
-                    <ul>
-                      <li class="menu-item dropdownbtn" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                        <a href="javascript:void(0)" class="text-custom-white dropdown-toggle">Accueil</a>
-                          <ul class="dropdown-menu">
-		                        <li><a routerLink="/" class="text-dark-grey">Landing Page</a></li>
-		                         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/homepage2" class="text-light-black">Homepage 2</a></li>
-		                        <li><a routerLink="/homepage3" class="text-light-black">Homepage 3</a></li>
-		                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/homepage4" class="text-light-black">Homepage 4</a></li>
-		                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/homepage5" class="text-light-black">Homepage 5</a></li>
-		                        <li><a routerLink="/homepage6" class="text-light-black">Homepage 6</a></li>
-		                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/homepage7" class="text-light-black">Homepage 7</a></li>
-                       </ul>
-                      </li>
-                      <li class="menu-item">	<a routerLink="/media" class="text-custom-white">Media</a>
-                      </li>
-                      <li class="menu-item parent-megamenu">
-                        <a href="javascript:void(0)" class="text-custom-white dropdown-toggle">Pages</a>
-                        <div class="megamenu">
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <div class="row">
-                                <div class="col-sm-4">
-                                  <div class="menu-style">
-                                    <div class="menu-title">
-                                      <h6 class="cat-name"><a href="javascript:void(0)" class="text-light-black">Listing</a></h6>
-                                    </div>
-                                    <ul>
-                                      <li><a routerLink="/listing" class="text-dark-grey">Listing</a>
-                                      </li>
-                                      <li><a routerLink="/listing1" class="text-dark-grey">Listing 1</a>
-                                      </li>
-                                      <li><a routerLink="/listing2" class="text-dark-grey">Listing 2</a>
-                                      </li>
-                                      <li><a routerLink="/listing3" class="text-dark-grey">Listing 3</a>
-                                      </li>
-                                      <li><a routerLink="/listing4" class="text-dark-grey">Listing 4</a>
-                                      </li>
-                                      <li><a routerLink="/listing1-style2" class="text-dark-grey">Listing 1 Style 2</a>
-                                      </li>
-                                      <li><a routerLink="/listing2-style2" class="text-dark-grey">Listing 2 Style 2</a>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <div class="col-sm-4">
-                                  <div class="menu-style">
-                                    <div class="menu-title">
-                                      <h6 class="cat-name"><a href="javascript:void(0)" class="text-light-black">Addon</a></h6>
-                                    </div>
-                                    <ul>
-                                      <li><a routerLink="/creer-une-annonce" class="text-dark-grey">Ajouter une annonce</a>
-                                      </li>
-                                      <li><a routerLink="/aboutus" class="text-dark-grey">About Us</a>
-                                      </li>
-                                      <li><a routerLink="/car-detail" class="text-dark-grey">Car Details</a>
-                                      </li>
-                                      <li><a routerLink="/car-page" class="text-dark-grey">Car Page</a>
-                                      </li>
-                                      <li><a routerLink="/user" class="text-dark-grey">User</a>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <div class="col-sm-4">
-                                  <div class="menu-style">
-                                    <div class="menu-title">
-                                      <h6 class="cat-name"><a href="javascript:void(0)" class="text-light-black">Extra Pages</a></h6>
-                                    </div>
-                                    <ul>
-                                      <li><a routerLink="/account/creation" class="text-dark-grey">Register</a>
-                                      </li>
-                                      <li><a routerLink="/login" class="text-dark-grey">Login</a>
-                                      </li>
-                                      <li><a routerLink="/invoice" class="text-dark-grey">Invoice</a>
-                                      </li>
-                                      <li><a routerLink="/coming-soon" class="text-dark-grey">Coming Soon</a>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="menu-item dropdownbtn">
-                        <a href="javascript:void(0)" class="text-custom-white dropdown-toggle">Blog</a>
-                        <ul class="dropdown-menu">
-                          <li><a routerLink="/blog-grid" class="text-light-black">Blog Grid</a>
-                          </li>
-                          <li><a routerLink="/blog-left" class="text-light-black">Blog Left Sidebar</a>
-                          </li>
-                          <li><a routerLink="/blog-right" class="text-light-black">Blog Right Sidebar</a>
-                          </li>
-                          <li class="dropdownbtn">
-                            <a href="javascript:void(0)" class="text-light-black dropdown-toggle">Blog Single</a>
-                            <ul class="dropdown-menu">
-                              <li><a routerLink="/blog-standard" class="text-light-black">Standard</a>
-                              </li>
-                              <li><a routerLink="/blog-gallery" class="text-light-black">Gallery</a>
-                              </li>
-                              <li><a routerLink="/blog-video" class="text-light-black">Video</a>
-                              </li>
-                              <li><a routerLink="/blog-quote" class="text-light-black">Quote</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li><a routerLink="/blog-detail-left" class="text-light-black">Blog Details Left</a>
-                          </li>
-                          <li><a routerLink="/blog-detail-right" class="text-light-black">Blog Details Right</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="menu-item">	<a routerLink="/pricing" class="text-custom-white">Pricing</a>
-                      </li>
-                      <li class="menu-item">	<a routerLink="/contact" class="text-custom-white">Contact</a>
-                      </li>
-                    </ul>
-                  </nav> -->
             </div>
             <!-- <div class="logo">
               <a routerLink="/">
@@ -165,7 +41,7 @@
                       </a>
                     </li>
                     <li>
-                      <a class="text-light-black">
+                      <a class="text-light-black"  routerLink="/favoris">
                         Favoris
                       </a>
                     </li>
@@ -310,7 +186,7 @@
                 </a>
               </li>
               <li>
-                <a >
+                <a  routerLink="/favoris">
                   <h6 class="mb-0">Favoris</h6>
                 </a>
               </li>

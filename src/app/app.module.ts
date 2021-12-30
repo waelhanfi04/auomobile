@@ -65,6 +65,9 @@ import { DisqusModule } from 'ngx-disqus';
 import { CommonModule } from '@angular/common';
 import { AncienCarsComponent } from './components/pages/ancien-cars/ancien-cars.component';
 import { NewCarsComponent } from './components/pages/new-cars/new-cars.component';
+import { FavorisComponent } from './components/userSpace/favoris/favoris.component';
+// import { CookieService } from 'ngx-cookie-service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -116,7 +119,8 @@ import { NewCarsComponent } from './components/pages/new-cars/new-cars.component
     GererAnnonceComponent,
     GererComptesComponent,
     AncienCarsComponent,
-    NewCarsComponent
+    NewCarsComponent,
+    FavorisComponent
   ],
   imports: [
     BrowserModule,
