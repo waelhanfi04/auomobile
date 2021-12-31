@@ -58,4 +58,33 @@ export class CarDetailsComponent implements OnInit {
   onImgError(event: any) {
     event.target.src = '../../../../assets/images/new-icons/default-car.jpg';
   }
+
+  addToFavorites(id:any){
+    var items:any = [];
+    if(localStorage.getItem('fav_store__')){
+      let local:any =localStorage.getItem('fav_store__')
+      var fav = JSON.parse(local)
+      fav.forEach((element:any) => {
+        items.push(element);
+      });
+    
+      const index = items.indexOf(id);
+      if (index > -1) {
+        console.log("exist")
+        items.splice(index, 1);
+      }
+      else{
+        items.push(id);
+        console.log("n'existe pas");
+      }      localStorage.setItem('fav_store__',JSON.stringify(items));
+      console.log('fav111--------->',localStorage.getItem('fav_store__'))
+    }else{
+      items.push(id);
+      localStorage.setItem('fav_store__',JSON.stringify(items));
+      let local:any =localStorage.getItem('fav_store__')
+      var fav = JSON.parse(local)
+      console.log('fav--------->',fav)
+    }
+  }
+
 }

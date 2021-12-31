@@ -103,7 +103,7 @@ filterForm:FormGroup
     event.target.src = '../../../../assets/images/new-icons/default-car.jpg';
   }
   addToFavorites(id:any){
-    var items = [];
+    var items:any = [];
     if(localStorage.getItem('fav_store__')){
       let local:any =localStorage.getItem('fav_store__')
       var fav = JSON.parse(local)
@@ -111,8 +111,15 @@ filterForm:FormGroup
         items.push(element);
       });
     
-      items.push(id);
-      localStorage.setItem('fav_store__',JSON.stringify(items));
+      const index = items.indexOf(id);
+      if (index > -1) {
+        console.log("exist")
+        items.splice(index, 1);
+      }
+      else{
+        items.push(id);
+        console.log("n'existe pas");
+      }      localStorage.setItem('fav_store__',JSON.stringify(items));
       console.log('fav111--------->',localStorage.getItem('fav_store__'))
     }else{
       items.push(id);

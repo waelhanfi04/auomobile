@@ -1,17 +1,17 @@
 <div class="mobile-menu-second" *ngIf="car">
-	<app-header2></app-header2>
-<!-- User Details -->
-  <div class="user-page-sec p-relative car-details">
-    <div class="car-details-slider" *ngIf="picturesList">
-      <div class="slider-item">
-        <img [src]="picturesList[0]?.picture" class="img-fluid full-width" alt="#" (error)="onImgError($event)">
-      </div> 
+    <app-header2></app-header2>
+    <!-- User Details -->
+    <div class="user-page-sec p-relative car-details">
+        <div class="car-details-slider" *ngIf="picturesList">
+            <div class="slider-item">
+                <img [src]="picturesList[0]?.picture" class="img-fluid full-width" alt="#" (error)="onImgError($event)">
+            </div>
 
-      <!-- <div class="slider-item"  *ngFor="let p of picturesList">
+            <!-- <div class="slider-item"  *ngFor="let p of picturesList">
         <img [src]="p.picture" class="img-fluid full-width" alt="#" >
       </div>  -->
 
-      <!-- <div class="slider-item">
+            <!-- <div class="slider-item">
         <img src="assets/images/cardetails/cardetails-1.jpg" class="img-fluid full-width" alt="#">
       </div>
       <div class="slider-item">
@@ -23,33 +23,33 @@
       <div class="slider-item">
         <img src="assets/images/cardetails/cardetails-4.jpg" class="img-fluid full-width" alt="#">
       </div> -->
-    </div>
-    <div class="car-details-slider" *ngIf="!picturesList">
-      <div class="slider-item">
-        <img [src]="" class="img-fluid full-width" alt="#" (error)="onImgError($event)">
-      </div> 
-      </div>
-    <div class="slider-contant-wrapper offset-lg-1 col-lg-4 col-md-6">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="slider-contant">
-            <div class="content-box">
-              <h1 class="text-custom-white">{{car.title}}</h1>
-              <p class="text-custom-white"><i class="fas fa-map-marker-alt"></i>{{car.city}}</p>
-              <!-- <div class="social-share">  <span>Share: </span>
+        </div>
+        <div class="car-details-slider" *ngIf="!picturesList">
+            <div class="slider-item">
+                <img [src]="" class="img-fluid full-width" alt="#" (error)="onImgError($event)">
+            </div>
+        </div>
+        <div class="slider-contant-wrapper offset-lg-1 col-lg-4 col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="slider-contant">
+                        <div class="content-box">
+                            <h1 class="text-custom-white">{{car.title}}</h1>
+                            <p class="text-custom-white"><i class="fas fa-map-marker-alt"></i>{{car.city}}</p>
+                            <!-- <div class="social-share">  <span>Share: </span>
                 <div class="user-social-links"> <a routerLink="/car-detail" class="facebook"><i class="fab fa-facebook-square"></i></a>
                   <a routerLink="/car-detail" class="twitter"><i class="fab fa-twitter"></i></a>
                   <a routerLink="/car-detail" class="pintrest"><i class="fab fa-pinterest-square"></i></a>
                 </div>
               </div> -->
+                        </div>
+                        <div class="price-btn"> <span> {{car.price || '0'}} DT</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="price-btn"> <span> {{car.price || '0'}} DT</span>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <!-- <div class="user-page-details-sec">
+        <!-- <div class="user-page-details-sec">
       <div class="container-fluid">
         <div class="row">
           <div class="offset-lg-1 col-lg-10">
@@ -104,215 +104,215 @@
         </div>
       </div>
     </div> -->
-    <div class="space-85"></div>
-  </div>
-  <!-- User Details -->
-  <!-- User page bottom -->
-  <div class="listing-with-map car-details">
-    <div class="container">
-      <div class="row no-use-row">
-        <aside class="col-lg-4">
-          <app-advertising-sidebar></app-advertising-sidebar>
-        </aside>
-        <div class="col-lg-8">
-          <!-- <div class="page-title">
+        <div class="space-85"></div>
+    </div>
+    <!-- User Details -->
+    <!-- User page bottom -->
+    <div class="listing-with-map car-details">
+        <div class="container">
+            <div class="row no-use-row">
+                <aside class="col-lg-4">
+                    <app-advertising-sidebar></app-advertising-sidebar>
+                </aside>
+                <div class="col-lg-8">
+                    <!-- <div class="page-title">
             <h3 class="text-light-black">Ghibli Versions</h3> 
             <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.A masterful combination of style, power, sporty handling and comfort.</p>
           </div> -->
-          <div class="d-flex gap-3 mt-3" *ngIf="isOwner">
-            <div class="add-car-btn">
-              <a [routerLink]="['/voitures/modifier',car.id]" class="text-custom-white">Modifier</a>
-           </div>
-           <div class="add-car-btn" (click)="deleteCar()">
-            <a  class="text-custom-white">Supprimer</a>
-          </div>
-          </div>
-          <div class="d-flex gap-3" *ngIf="!isOwner">
-            <div class="add-car-btn">
-              <a  class="text-custom-white">Ajouter à mes Favoris</a>
-           </div>
-          </div>
-          <div class="car-details-tab">
-            <ul class="nav nav-tabs">
-              <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#informations">Informations</a>
-              </li>
-              <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#tech-spec">Spécifications Techniques</a>
-              </li>
-              <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#accessories">Accessoires</a>
-              </li>
-              <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#contact">Contact</a>
-              </li>
-            </ul>
-            <div class="tab-content">
-              <div class="tab-pane fade" id="informations">
-                <div class="car-details-box">
-                  <div class="text-wrapper">
-                    <h5 class="text-light-black">Déscription</h5>
-                    <p class="text-dark-grey">s{{car.Description}}</p>
-                    <h5 class="text-light-black">Disponibilité</h5>
-                    <p class="text-dark-grey">{{car.availablity}}</p>
-                    <h5 class="text-light-black" *ngIf="car.guarantee">Guarantie</h5>
-                    <p class="text-dark-grey" *ngIf="car.guarantee">{{car.guarantee}}</p>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane active" id="tech-spec">
-                <div class="car-details-box">
-                  <div class="table-responsive">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th colspan="2">INFORMATIONS DE BASE</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Type</td>
-                          <td>{{car.type}}</td>
-                        </tr>
-                        <tr>
-                        <tr>
-                          <td>Catégorie</td>
-                          <td>{{car.category}}</td>
-                        </tr>
-                        <tr>
-                          <td>Marque</td>
-                          <td>{{car.brand}}</td>
-                        </tr>
-                        <tr>
-                          <td>Modèle</td>
-                          <td>{{car.model}}</td>
-                        </tr>
-                        <tr>
-                          <td>Mois / Année</td>
-                          <td>{{car.month}} {{car.year}}</td>
-                        </tr>
-                        <tr>
-                          <td>Kilométrage</td>
-                          <td>{{car.mileage}}</td>
-                        </tr>
-                        <tr>
-                          <td>Energie</td>
-                          <td>{{car.energy}}</td>
-                        </tr>
-                        <tr>
-                          <td>Couleur</td>
-                          <td>{{car.color}}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th colspan="2">Spécifications Techniques</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Motorization</td>
-                          <td>{{car.motorization}}</td>
-                        </tr>
-                        <tr>
-                          <td>Puissance fiscale</td>
-                          <td>{{car.powerFiscal}}</td>
-                        </tr>
-                        <tr>
-                          <td>Transmission</td>
-                          <td>{{car.transmission}}</td>
-                        </tr>
-                        <tr>
-                          <td>Boîte</td>
-                          <td>{{car.gearbox}}</td>
-                        </tr>
-                        <tr>
-                          <td>Carrosserie</td>
-                          <td>{{car.carrosserie}}</td>
-                        </tr>
-                        <tr>
-                          <td>Nombre de portes</td>
-                          <td>{{car.numberDoors}}</td>
-                        </tr>
-                        <tr>
-                          <td>Nombre de places</td>
-                          <td>{{car.seatingCapacity}}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="accessories">
-                <div class="car-details-box">
-                  <div class="table-responsive">
-                    <table class="table table-bordered" *ngIf="outsideEquipmentList !==[]">
-                      <thead>
-                        <tr>
-                          <th colspan="2">Equipements extérieurs</th>
-                        </tr>
-                      </thead>
-                    <tbody>
-                      <tr  *ngFor="let s of outsideEquipmentList ;let index=index">
-                        <td class="w-75">{{s.equipment}}</td>
-                        <td><i class="fas fa-check" aria-hidden="true"></i></td>
-                      </tr>
-                    </tbody>
-                    </table>
+                    <div class="d-flex gap-3 mt-3" *ngIf="isOwner">
+                        <div class="add-car-btn">
+                            <a [routerLink]="['/voitures/modifier',car.id]" class="text-custom-white">Modifier</a>
+                        </div>
+                        <div class="add-car-btn" (click)="deleteCar()">
+                            <a class="text-custom-white">Supprimer</a>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3" *ngIf="!isOwner">
+                        <div class="add-car-btn">
+                            <a class="text-custom-white" (click)="addToFavorites(car.id)">Ajouter à mes Favoris</a>
+                        </div>
+                    </div>
+                    <div class="car-details-tab">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#informations">Informations</a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#tech-spec">Spécifications Techniques</a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#accessories">Accessoires</a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade" id="informations">
+                                <div class="car-details-box">
+                                    <div class="text-wrapper">
+                                        <h5 class="text-light-black">Déscription</h5>
+                                        <p class="text-dark-grey">s{{car.Description}}</p>
+                                        <h5 class="text-light-black">Disponibilité</h5>
+                                        <p class="text-dark-grey">{{car.availablity}}</p>
+                                        <h5 class="text-light-black" *ngIf="car.guarantee">Guarantie</h5>
+                                        <p class="text-dark-grey" *ngIf="car.guarantee">{{car.guarantee}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane active" id="tech-spec">
+                                <div class="car-details-box">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2">INFORMATIONS DE BASE</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Type</td>
+                                                    <td>{{car.type}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <tr>
+                                                        <td>Catégorie</td>
+                                                        <td>{{car.category}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Marque</td>
+                                                        <td>{{car.brand}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Modèle</td>
+                                                        <td>{{car.model}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mois / Année</td>
+                                                        <td>{{car.month}} {{car.year}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Kilométrage</td>
+                                                        <td>{{car.mileage}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Energie</td>
+                                                        <td>{{car.energy}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Couleur</td>
+                                                        <td>{{car.color}}</td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2">Spécifications Techniques</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Motorization</td>
+                                                    <td>{{car.motorization}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Puissance fiscale</td>
+                                                    <td>{{car.powerFiscal}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Transmission</td>
+                                                    <td>{{car.transmission}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Boîte</td>
+                                                    <td>{{car.gearbox}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Carrosserie</td>
+                                                    <td>{{car.carrosserie}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Nombre de portes</td>
+                                                    <td>{{car.numberDoors}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Nombre de places</td>
+                                                    <td>{{car.seatingCapacity}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="accessories">
+                                <div class="car-details-box">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" *ngIf="outsideEquipmentList !==[]">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2">Equipements extérieurs</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let s of outsideEquipmentList ;let index=index">
+                                                    <td class="w-75">{{s.equipment}}</td>
+                                                    <td><i class="fas fa-check" aria-hidden="true"></i></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
 
-                    <table class="table table-bordered" *ngIf="insideEquipmentList !== []">
-                      <thead>
-                        <tr>
-                          <th colspan="2">Equipements intérieurs</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr  *ngFor="let s of insideEquipmentList ;let index=index">
-                          <td class="w-75">{{s.equipment}}</td>
-                          <td><i class="fas fa-check" aria-hidden="true"></i> </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <table class="table table-bordered"*ngIf="securityEquipmentList !==[]">
-                      <thead>
-                        <tr>
-                          <th colspan="2">Equipements de sécurité</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr  *ngFor="let s of securityEquipmentList;let index=index">
-                          <td class="w-75">{{s.equipment}}</td>
-                          <td><i class="fas fa-check" aria-hidden="true"></i> </td>
-                          <!-- <td><i class="fas fa-times" aria-hidden="true"></i></td> -->
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="contact">
-                <div class="car-details-box">
-                  <div class="text-wrapper">
-                    <h5 class="text-light-black">Nom et prénom</h5>
-                    <p class="text-dark-grey">{{car.user.username}}</p>
-                    <h5 class="text-light-black">Téléphone</h5>
-                    <p class="text-dark-grey">{{car.phone}}</p>
-                    <h5 class="text-light-black">Gouvernorat</h5>
-                    <p class="text-dark-grey">{{car.city}}</p>
-                    <h5 class="text-light-black">Adresse</h5>
-                    <p class="text-dark-grey">{{car.address}}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="image-slider-sec">
-            <div class="car-detail-slider-for">
-              <div class="slider-item" *ngFor="let p of picturesList">
-                <img [src]="p.picture" class="img-fluid full-width pictures-item" alt="#" (error)="onImgError($event)">
-              </div> 
-              <!-- <div class="slide-item">
+                                        <table class="table table-bordered" *ngIf="insideEquipmentList !== []">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2">Equipements intérieurs</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let s of insideEquipmentList ;let index=index">
+                                                    <td class="w-75">{{s.equipment}}</td>
+                                                    <td><i class="fas fa-check" aria-hidden="true"></i> </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="table table-bordered" *ngIf="securityEquipmentList !==[]">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2">Equipements de sécurité</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let s of securityEquipmentList;let index=index">
+                                                    <td class="w-75">{{s.equipment}}</td>
+                                                    <td><i class="fas fa-check" aria-hidden="true"></i> </td>
+                                                    <!-- <td><i class="fas fa-times" aria-hidden="true"></i></td> -->
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contact">
+                                <div class="car-details-box">
+                                    <div class="text-wrapper">
+                                        <h5 class="text-light-black">Nom et prénom</h5>
+                                        <p class="text-dark-grey">{{car.user.username}}</p>
+                                        <h5 class="text-light-black">Téléphone</h5>
+                                        <p class="text-dark-grey">{{car.phone}}</p>
+                                        <h5 class="text-light-black">Gouvernorat</h5>
+                                        <p class="text-dark-grey">{{car.city}}</p>
+                                        <h5 class="text-light-black">Adresse</h5>
+                                        <p class="text-dark-grey">{{car.address}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-slider-sec">
+                        <div class="car-detail-slider-for">
+                            <div class="slider-item" *ngFor="let p of picturesList">
+                                <img [src]="p.picture" class="img-fluid full-width pictures-item" alt="#" (error)="onImgError($event)">
+                            </div>
+                            <!-- <div class="slide-item">
                 <img src="assets/images/cardetails/gallery-1.jpg" class="img-fluid full-width" alt="#">
               </div> -->
-              <!-- <div class="slide-item">
+                            <!-- <div class="slide-item">
                 <img src="assets/images/cardetails/gallery-2.jpg" class="img-fluid full-width" alt="#">
               </div>
               <div class="slide-item">
@@ -327,9 +327,9 @@
               <div class="slide-item">
                 <img src="assets/images/cardetails/gallery-2.jpg" class="img-fluid full-width" alt="#">
               </div> -->
-            </div>
-            <div class="car-detail-slider-nav">
-            <!--   <div class="slider-item" *ngFor="let p of picturesList">
+                        </div>
+                        <div class="car-detail-slider-nav">
+                            <!--   <div class="slider-item" *ngFor="let p of picturesList">
                 <img [src]="p.picture" class="img-fluid full-width pictures-item" alt="#">
               </div>
               ***
@@ -352,14 +352,14 @@
                 <img src="assets/images/cardetails/gallery-6a.jpg" class="img-fluid full-width" alt="#">
               </div> 
             </div>-->
-          </div>
-         </div>
-        <aside class="col-lg-4">
-          <!-- <app-car-detail-sidebar></app-car-detail-sidebar> -->
-        </aside>
-      </div>
+                        </div>
+                    </div>
+                    <aside class="col-lg-4">
+                        <!-- <app-car-detail-sidebar></app-car-detail-sidebar> -->
+                    </aside>
+                </div>
+            </div>
+        </div>
+        <!-- User page bottom -->
+        <app-footer2></app-footer2>
     </div>
-  </div>
-  <!-- User page bottom -->
-	<app-footer2></app-footer2>
-</div>

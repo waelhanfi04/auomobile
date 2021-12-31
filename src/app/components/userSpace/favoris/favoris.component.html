@@ -6,24 +6,24 @@
         <!-- <img src="assets/images/blog/banner/banner-1.jpg" class="img-fluid" alt="Sub header"> -->
         <div class="sub-header-overlay"></div>
         <div class="sub-header-wrapper">
-          <div class="container">
-            <div class="row">
-              <div class="col-xl-12">
-                <div class="sub-header-text-wrapper text-center">
-                  <h1 class="text-custom-white">Annonces favorites</h1>
-                  <ul class="breadcrumbs">
-                    <li><a routerLink="/" class="text-custom-white">Accueil</a>
-                    </li>
-                    <li><span class="text-custom-white">Annonces favorites</span>
-                    </li>
-                  </ul>
-                
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="sub-header-text-wrapper text-center">
+                            <h1 class="text-custom-white">Annonces favorites</h1>
+                            <ul class="breadcrumbs">
+                                <li><a routerLink="/" class="text-custom-white">Accueil</a>
+                                </li>
+                                <li><span class="text-custom-white">Annonces favorites</span>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
     <!-- Sub header -->
     <!-- Blog -->
     <section class="section-padding our_articles">
@@ -33,19 +33,19 @@
                 <div id="facets-pjax" data-pjax-container="" data-pjax-push-state data-pjax-timeout="5000">
                     <div class="occasions-results layout-list">
 
-                        <div class="articles" >
-                            <div  *ngFor="let car of carsList" style=" margin-top: 3%;">
+                        <div class="articles">
+                            <div *ngFor="let car of carsList" style=" margin-top: 3%;">
                                 <div class="occasion-item" data-pjax="0">
                                     <div class="anchor" id="occasion-72414"></div>
-                                    <a class="details-container" [routerLink]="['car-detail',car.id]">
+                                    <a class="details-container" [routerLink]="['/car-detail',car.id]">
                                         <div class="details-wrapper">
                                             <picture>
-                                                
-                                                <img class="thumb cdn-image lazyload"  [src]="car.pictureVoitures[0]?.picture" (error)="onImgError($event)"></picture>
+
+                                                <img class="thumb cdn-image lazyload" [src]="car.pictureVoitures[0]?.picture" (error)="onImgError($event)"></picture>
                                             <div class="thumb-caption">
                                                 <h2><span>{{car.brand}} {{car.model}}</span></h2>
                                                 <div class="price">
-                                                   {{car.price}} <span class="suffix">DT</span> </div>
+                                                    {{car.price}} <span class="suffix">DT</span> </div>
                                             </div>
                                             <p> {{car.description}} </p>
                                         </div>
