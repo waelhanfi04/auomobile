@@ -16,7 +16,7 @@
                                 </li>
                                 <li><a routerLink="/vendeur-pro" class="text-custom-white">Vendeur Pro</a>
                                 </li>
-                                <li><span class="text-custom-white">{{this.user.CampanyName}}</span>
+                                <li><span class="text-custom-white">{{user.companyName }}</span>
                                 </li>
                             </ul>
 
@@ -30,13 +30,13 @@
     <!-- Blog -->
     <section class="section-padding our_articles">
         <div class="container">
-            <div class="content-wrapper">
+            <div class="row">
                 <aside class="col-lg-4">
                     <article class="post div-user-details">
                         <div class="blog-wrap p-relative">
                           <div class="blog-img no-margin p-relative">
                             <a>
-                              <img [src]="user.photo"  (error)="onImgError($event)" class="img-fluid full-width" alt="Blog img">
+                              <img [src]="user.photo"  (error)="onImgError($event)" class="img-fluid full-width" >
                               <!-- <img src="assets/images/concrete-wall-3.png" class="img-fluid full-width" alt="Blog img"> -->
                             </a>
                          
@@ -62,7 +62,9 @@
                       </article>
                     <!-- <app-advertising-sidebar></app-advertising-sidebar> -->
                   </aside>
-                 
+                  <div  class="col-lg-8" *ngIf="carsList.length===0">
+                    <h4 class="text-center" >Pas de données</h4>
+                </div>
                 <div  class="col-lg-8" id="facets-pjax" data-pjax-container="" data-pjax-push-state data-pjax-timeout="5000">
                     <div class="occasions-results layout-list">
 

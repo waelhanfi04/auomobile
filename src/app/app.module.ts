@@ -69,6 +69,7 @@ import { FavorisComponent } from './components/userSpace/favoris/favoris.compone
 import { VendeurProComponent } from './components/pages/vendeur-pro/vendeur-pro.component';
 import { VendeurProDetailsComponent } from './components/pages/vendeur-pro-details/vendeur-pro-details.component';
 // import { CookieService } from 'ngx-cookie-service';
+// import { ImageCropperModule } from 'ngx-image-cropper';
 
 @NgModule({
   declarations: [
@@ -137,6 +138,7 @@ import { VendeurProDetailsComponent } from './components/pages/vendeur-pro-detai
     Ng2SearchPipeModule,
  //   NgxEditorModule,
     CustomFormsModule,
+   // ImageCropperModule
    // NgbModule
   ],
   providers: [IsConnectedService,AuthentificationService,CarService,ProfileService,AuthGuardService],

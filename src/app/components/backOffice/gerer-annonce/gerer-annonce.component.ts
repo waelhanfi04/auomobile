@@ -42,8 +42,8 @@ export class GererAnnonceComponent implements OnInit {
           this.ngOnInit();
           setTimeout(() => {
             this.successMsg=''
-            // this.router.navigate(['/gerer-annonces']);
-            // this.ngOnInit();
+            this.router.navigate(['/gerer-annonces']);
+            this.ngOnInit();
           }, 1000);
         }
       }
@@ -57,8 +57,8 @@ export class GererAnnonceComponent implements OnInit {
       this.ngOnInit();
       setTimeout(() => {
         this.successMsg=''
-        // this.router.navigate(['/gerer-annonces']);
-        // this.ngOnInit();
+        this.router.navigate(['/gerer-annonces']);
+        this.ngOnInit();
       }, 1000);
     })
   }

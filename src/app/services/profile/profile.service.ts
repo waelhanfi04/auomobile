@@ -64,5 +64,14 @@ export class ProfileService {
       serverUrl + "blockUser/"+id,{ headers:header}
     );
   }
+  getDetailsUserPro(id:any){
+    const header = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
+    });
+    return this.http.get(
+      serverUrl + "vendeurPro/"+id,{ headers:header}
+    );
+  }
 
 }

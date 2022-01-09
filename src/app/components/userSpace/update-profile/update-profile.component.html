@@ -34,7 +34,22 @@
         </aside>
         <div *ngIf=" this.accountType==='part'" class="col-lg-8">
           <form [formGroup]="updateProfileForm">
-
+            <div class="col-md-8">
+              <div class="form-group div-input-file" *ngIf="!userPic">
+                <div class="d-flex justify-content-center text-div-input-file" >
+                  Cliquez ou faites glisser vos photos ici
+                   </div>
+              </div>
+            
+                <input type="file" class="input-pictures" accept="image/*" (change)="onFileChange($event)">
+            
+            </div>
+            <div >
+              <div class="col p-2">
+                <img class="picture-car" [src]="userPic">
+                <!-- <img src="assets/images/new-icons/deletekit.svg" class="delete-icon" (click)="delete()"> -->
+              </div>
+          </div>
             <div class="col-md-8">
               <div class="form-group">
                 <label>Prénom</label>
@@ -81,7 +96,34 @@
         <div  *ngIf=" this.accountType==='pro'"  class="col-lg-8">
 
           <form [formGroup]="updateProfileFormPro">
-    
+            <div class="col-md-8 " >
+             
+              <div class="form-group div-input-file text-center" >
+                <i class="fas fa-pen update-fas" *ngIf="userPic"> <input type="file" class="input-pictures" accept="image/*" (change)="onFileChange($event)"></i>
+                <div class="d-flex justify-content-center text-div-input-file" *ngIf="!userPic" >
+                  Cliquez ou faites glisser vos photos ici
+                   </div>
+                   <img *ngIf="userPic" class="picture-car" [src]="userPic">
+                   <input type="file" class="input-pictures" accept="image/*" (change)="onFileChange($event)">
+              </div>
+            </div>
+            <!-- <div *ngIf="userPic">
+                  <div class="col p-2">
+                  </div>
+                  </div> -->
+            <!-- <div class="col-md-8">
+              <div class="form-group">
+                <img
+                [src]="user.photo"
+                (error)="onImgError($event)"
+                class="avatar"
+              />
+              <i class="fas fa-pen fas-update"  (click)="openModal(pictureModal)"></i>
+                <label class="error-msg"
+                  *ngIf="updateProfileFormPro.controls.photo.errors?.required && this.isSubmitting ">Champ
+                  obligatoire</label>
+              </div>
+            </div> -->
             <div class="col-md-8">
               <div class="form-group">
                 <label>Prénom</label>
@@ -163,3 +205,111 @@
   </section>
   <app-footer2></app-footer2>
 </div>
+<!-- <ng-template #pictureModal>
+  <div class="modal-header modal-customm">
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      (click)="closeModal(pictureModal); imageChangedEvent = ''"
+    ></button>
+  </div>
+  <div
+    class="
+      modal-body modal-customm
+      d-flex
+      flex-column
+      justify-content-center
+      align-items-center
+      modal-customm
+    "
+  >
+    <form
+      [formGroup]="updateProfileForm"
+      id="updateProfileForm"
+      class="mx-lg-4 mx-md-4"
+    >
+      <div class="row d-flex justify-content-center">
+        <div class="col-10 d-flex justify-content-center">
+          <h5>
+            <label class="bold-title-modal">
+              Télécharger nouveau image
+            </label>
+          </h5>
+        </div>
+      </div>
+
+      <div class="row mt-2 mx-lg-1 mx-sm-1">
+        <div class="col-12 d-flex justify-content-center">
+          <div class="cropArea">
+            <image-cropper
+              [imageChangedEvent]="imageChangedEvent"
+              [maintainAspectRatio]="true"
+              [aspectRatio]="4 / 4"
+              format="png"
+              (imageCropped)="imageCropped($event)"
+              [roundCropper]="true"
+              [cropperMinWidth]="90"
+              [resizeToWidth]="300"
+              [imageBase64]="
+                user.photo.changingThisBreaksApplicationSecurity
+              "
+              [imageURL]="user.photo"
+            >
+            </image-cropper>
+          </div>
+        </div>
+      </div>
+     
+      <div class="row d-flex justify-content-start mt-2">
+        <div
+          class="col-4 error"
+          *ngIf="
+            this.updateProfileForm.get('photo')?.errors?.required &&
+            this.updateProfileForm.get('photo')?.touched
+          "
+        >Champs obligatoire</span>
+        </div>
+      </div>
+      <input
+        type="file"
+        name="file"
+        formControlName="photo"
+        (change)="fileChangeEvent($event)"
+        accept="image/*"
+        [hidden]="true"
+        id="selectAvatar"
+      />
+
+      <label
+        class="
+          btn-choose-pic btn-primary-action
+          d-flex
+          justify-content-center
+          gap-2
+          align-items-center
+          my-2
+        "
+        for="selectAvatar"
+      >
+        <img src="assets/Images/upload-icon.svg" />
+        <span>Choisir une image</span>
+      </label>
+
+      <button
+        type="submit"
+        class="
+          btn-green
+          d-flex
+          justify-content-center
+          gap-2
+          align-items-center
+        "
+        [disabled]="!this.srcFile"
+      >
+        <img src="assets/Images/save-icon.svg" alt="" />
+        <span>Enregistrer</span>
+      </button>
+    </form>
+  </div>
+</ng-template> -->

@@ -141,12 +141,12 @@ const routes: Routes = [
   {
     path: 'vendeur-pro',
     component: VendeurProComponent,
-    canActivate:[ AuthGuardService]
+   // canActivate:[ AuthGuardService]
   },
   {
     path: 'vendeur-pro/:id',
     component: VendeurProDetailsComponent,
-    canActivate:[ AuthGuardService]
+  //  canActivate:[ AuthGuardService]
   },
   // {path: 'media', component: MediaComponent},
   { path: 'listing', component: ListingComponent },

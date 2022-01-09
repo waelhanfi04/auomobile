@@ -47,6 +47,9 @@
             </div>
           </div>
           <div class="row">
+            <div class="col-md-6" *ngIf="blogList.length===0">
+              <h4 class="text-center">Pas de données</h4>
+            </div>
             <div class="col-md-6" *ngFor="let blog of blogList">
               <!-- article 1 -->
               <article class="post">

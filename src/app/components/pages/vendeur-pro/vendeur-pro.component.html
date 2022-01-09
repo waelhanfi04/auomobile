@@ -39,6 +39,9 @@
           </div>
           </div> -->
           <div class="row">
+            <div class="" *ngIf="usersProList.length===0">
+              <h4 >Pas de données</h4>
+          </div>
             <div class="col-md-6" *ngFor="let user of usersProList">
               <!-- article 1 -->
               <article class="post">
