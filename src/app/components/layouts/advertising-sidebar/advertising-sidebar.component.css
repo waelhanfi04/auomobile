@@ -7,3 +7,18 @@ img{
     max-height: 392px;
 }
 }
+ iframe {
+    max-width: unset;
+}
+@media screen and (max-width: 500px){
+
+ iframe {
+    transform: scale(0.4);
+    transform-origin: 10px 0;
+}
+}
+ iframe {
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}

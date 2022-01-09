@@ -48,8 +48,10 @@
                 carquery.initMakeModelTrimList('make-list', 'model-list', 'trim-list', 'trim-data-list');
 
                 //Optional: set minimum and/or maximum year options.
+                var currentTime = new Date()
+                var year = currentTime.getFullYear();
                 carquery.year_select_min = 1990;
-                carquery.year_select_max = 2022;
+                carquery.year_select_max = year;
 
                 //Optional: initialize search interface elements.
                 //The IDs provided below are the IDs of the text and select inputs that will be used to set the search criteria.
@@ -89,7 +91,8 @@
                 $('#cq-search-btn').click(function() {
                     carquery.search();
                 });
-            });
+            }
+            );
     </script>
 </body>
 

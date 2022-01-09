@@ -25,7 +25,7 @@ export class GererComptesComponent implements OnInit {
     this.ProfileService.blockUser(id).subscribe((data: any) => {
       console.log('blockeed', data)
       if(data.message === "user was blocked successfully!"){
-
+        this.ngOnInit();
       }
     //    this.router.navigate([''])
     })

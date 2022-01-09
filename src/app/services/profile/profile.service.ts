@@ -16,6 +16,15 @@ export class ProfileService {
       serverUrl + "allUsers",{ headers:header }
     );
   }
+  getAllProUsers(){
+    const header = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
+    });
+    return this.http.get(
+      serverUrl + "allProUsers",{ headers:header }
+    );
+  }
   userDetails(){
     const header = new HttpHeaders({
       "Content-Type": "application/json",

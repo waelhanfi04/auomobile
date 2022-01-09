@@ -31,13 +31,19 @@ export class GererAnnonceComponent implements OnInit {
       if(response.message=== "car status was updated successfully!"){
         if(type==='accepted'){
           this.successMsg='Annonce a été accéptée avec succès!';
+          this.ngOnInit();
           setTimeout(() => {
-            this.router.navigate(['/gerer-annonces'])
+            this.successMsg=''
+            // this.router.navigate(['/gerer-annonces'])
+            // this.ngOnInit();
           }, 1000);
         }else{
           this.successMsg='Annonce a été rejectée avec succès!'
+          this.ngOnInit();
           setTimeout(() => {
-            this.router.navigate(['/gerer-annonces'])
+            this.successMsg=''
+            // this.router.navigate(['/gerer-annonces']);
+            // this.ngOnInit();
           }, 1000);
         }
       }
@@ -47,9 +53,12 @@ export class GererAnnonceComponent implements OnInit {
   deleteCar(id:any){
     this.carService.deleteCar(id).subscribe((data:any)=>{
       if(data.message === "voiture was deleted successfully!")
-      this.successMsg='Annonce a été supprimée avec succès!'
+      this.successMsg='Annonce a été supprimée avec succès!';
+      this.ngOnInit();
       setTimeout(() => {
-        this.router.navigate(['/gerer-annonces'])
+        this.successMsg=''
+        // this.router.navigate(['/gerer-annonces']);
+        // this.ngOnInit();
       }, 1000);
     })
   }

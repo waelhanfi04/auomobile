@@ -28,41 +28,12 @@
     <!-- Blog -->
     <section class="section-padding our_articles">
         <div class="container">
-            <!-- <div class="row">
-    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-2" *ngFor="let car of carsList">
-        <div class="car-grid-layout-box">
-          <div class="car-grid-layout-inner text-center">
-            <h5 class="car-name"><a  [routerLink]="['car-detail',car.id]"  class="text-light-black">{{car.brand}} {{car.model}}</a>
-         
-              <span  class=" float-right custom-tooltip span-fas" data-tip="Sauvgarder">
-                <span *ngIf="car.userId !== this.userId" class="gray-fa-heart float-right custom-tooltip" data-tip="Sauvgarder"><i class="fa fa-heart"></i></span>
-            </span>
-            </h5>
-            <h6 class="text-light-black text-uppercase mb-2">{{car.title}}</h6>
-            <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
-            <span class="text-orange price-text">{{car.price || '0'}} DT</span>
-            <div class="car-grid-layout-img">
-                <img src="assets/images/trendingmodels/trending6.jpg" class="img-fluid full-width" alt="Image">
-
-            </div>
-            <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i>{{car.mileage || '0'}} Km</span>
-              <span class="text-dark-white p-relative"><i class="icon-car"></i> {{car.year || '0'}}  Model</span>
-            </div>
-            <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i>{{car.city}}</span>
-              <span class="text-dark-white"><i class="fas fa-cog mr-2"></i>{{car.gearbox}}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-</div> -->
-            <!-- <img [src]="car.pictureVoitures[0]?.picture" (error)="onImgError($event)" class="img-fluid full-width max-height-img" alt="Car img"> -->
-
-
-
-
             <div class="content-wrapper">
-
-                <div id="facets-pjax" data-pjax-container="" data-pjax-push-state data-pjax-timeout="5000">
+                <aside class="col-lg-4">
+                    <app-advertising-sidebar></app-advertising-sidebar>
+                  </aside>
+                 
+                <div  class="col-lg-8" id="facets-pjax" data-pjax-container="" data-pjax-push-state data-pjax-timeout="5000">
                     <div class="occasions-results layout-list">
 
                         <div class="articles">
@@ -111,20 +82,9 @@
                             </div>
                   
                         </div>
-                        <!-- <div class="pages">
-                            <ul class="pagination">
-                                <li class="prev disabled"><span><i class="fa fa-caret-left"></i></span></li>
-                                <li class="active"><a href="#" data-page="0">1</a></li>
-                                <li><a href="#" data-page="1">2</a></li>
-                                <li><a href="#" data-page="2">3</a></li>
-                                <li><a href="#" data-page="3">4</a></li>
-                                <li><a href="#" data-page="4">5</a></li>
-                                <li class="next"><a href="#" data-page="1"><i class="fa fa-caret-right"></i></a></li>
-                            </ul>
-                        </div> -->
+
                     </div>
                 </div>
-
 
 
             </div>

@@ -66,6 +66,8 @@ import { CommonModule } from '@angular/common';
 import { AncienCarsComponent } from './components/pages/ancien-cars/ancien-cars.component';
 import { NewCarsComponent } from './components/pages/new-cars/new-cars.component';
 import { FavorisComponent } from './components/userSpace/favoris/favoris.component';
+import { VendeurProComponent } from './components/pages/vendeur-pro/vendeur-pro.component';
+import { VendeurProDetailsComponent } from './components/pages/vendeur-pro-details/vendeur-pro-details.component';
 // import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
@@ -120,7 +122,9 @@ import { FavorisComponent } from './components/userSpace/favoris/favoris.compone
     GererComptesComponent,
     AncienCarsComponent,
     NewCarsComponent,
-    FavorisComponent
+    FavorisComponent,
+    VendeurProComponent,
+    VendeurProDetailsComponent
   ],
   imports: [
     BrowserModule,

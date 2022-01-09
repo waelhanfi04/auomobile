@@ -77,7 +77,7 @@
                                                     <input type="text" name="title" formControlName="title" class="form-control form-control-custom">
                                                 </div>
                                             </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                            <div class="col-lg-3 col-md-4 col-sm-4" *ngIf="this.userRole!=='user'">
                                                 <label>Type</label>
                                                 <div class="form-group p-relative">
                                                     <select class="form-control form-control-custom" formControlName="type">

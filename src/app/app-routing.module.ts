@@ -45,6 +45,9 @@ import {AuthGuardService} from './services/authGard.service'
 import { AncienCarsComponent } from './components/pages/ancien-cars/ancien-cars.component';
 import { NewCarsComponent } from './components/pages/new-cars/new-cars.component';
 import { FavorisComponent } from './components/userSpace/favoris/favoris.component';
+import { VendeurProComponent } from './components/pages/vendeur-pro/vendeur-pro.component';
+import { VendeurProDetailsComponent } from './components/pages/vendeur-pro-details/vendeur-pro-details.component';
+
 const routes: Routes = [
 
   { path: '', component: Homepage2Component },
@@ -133,6 +136,16 @@ const routes: Routes = [
   {
     path: 'favoris',
     component: FavorisComponent,
+    canActivate:[ AuthGuardService]
+  },
+  {
+    path: 'vendeur-pro',
+    component: VendeurProComponent,
+    canActivate:[ AuthGuardService]
+  },
+  {
+    path: 'vendeur-pro/:id',
+    component: VendeurProDetailsComponent,
     canActivate:[ AuthGuardService]
   },
   // {path: 'media', component: MediaComponent},

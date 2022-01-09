@@ -26,6 +26,7 @@ export class UpdateCarComponent implements OnInit {
   kits = []
   isAcceptedImageFileType: boolean = true
   carDetails: any;
+  userRole:any
   constructor(private router: Router, private fb: FormBuilder, private carService: CarService, private route: ActivatedRoute) {
     this.updateCarForm = new FormGroup({
       id: new FormControl(''),
@@ -62,6 +63,8 @@ export class UpdateCarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.userRole = localStorage.getItem('role')
+
     this.route.params
       .pipe(
         map((params: any) => {
@@ -186,7 +189,7 @@ export class UpdateCarComponent implements OnInit {
       insideEquipment: this.updateCarForm.get('insideEquipment')?.value,
       outsideEquipment: this.updateCarForm.get('outsideEquipment')?.value,
       securityEquipment: this.updateCarForm.get('securityEquipment')?.value,
-      type: this.updateCarForm.get('type')?.value,
+      type: this.userRole!=='user'? 'Occasion': this.updateCarForm.get('type')?.value,
     }
 
     this.carService.updateCar(body).subscribe((response: any) => {
