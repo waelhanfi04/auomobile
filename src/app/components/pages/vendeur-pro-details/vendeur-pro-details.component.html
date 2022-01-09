@@ -10,11 +10,13 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="sub-header-text-wrapper text-center">
-                            <h1 class="text-custom-white">Occasions</h1>
+                            <h1 class="text-custom-white">Vendeur Pro</h1>
                             <ul class="breadcrumbs">
                                 <li><a routerLink="/" class="text-custom-white">Accueil</a>
                                 </li>
-                                <li><span class="text-custom-white">Occasions</span>
+                                <li><a routerLink="/vendeur-pro" class="text-custom-white">Vendeur Pro</a>
+                                </li>
+                                <li><span class="text-custom-white">{{this.user.CampanyName}}</span>
                                 </li>
                             </ul>
 
@@ -30,7 +32,35 @@
         <div class="container">
             <div class="content-wrapper">
                 <aside class="col-lg-4">
-                    <app-advertising-sidebar></app-advertising-sidebar>
+                    <article class="post div-user-details">
+                        <div class="blog-wrap p-relative">
+                          <div class="blog-img no-margin p-relative">
+                            <a>
+                              <img [src]="user.photo"  (error)="onImgError($event)" class="img-fluid full-width" alt="Blog img">
+                              <!-- <img src="assets/images/concrete-wall-3.png" class="img-fluid full-width" alt="Blog img"> -->
+                            </a>
+                         
+                          </div>
+        
+                          <div class="blog-meta">
+                            <div class="entry-meta-content">
+                              <div class="entry-date"> <span class="text-dark-white">
+                                   <a  class="text-dark-white">{{user.companyName }}</a></span>
+                              </div>
+                            </div>
+                            <div class="blog-caption">
+                              <h5 class="">
+                                <a  class="text-light-black d-flex flex-column">
+                                    <span>{{user.companyAddress}}</span>
+                                    <span>{{user.gender}} :{{user.firstName}} {{user.lastName}} </span> 
+                                    <span>Tél:{{user.companyPhone}}</span> 
+                                </a>
+                              </h5>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+                    <!-- <app-advertising-sidebar></app-advertising-sidebar> -->
                   </aside>
                  
                 <div  class="col-lg-8" id="facets-pjax" data-pjax-container="" data-pjax-push-state data-pjax-timeout="5000">

@@ -113,12 +113,19 @@
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Année</label>
                         <div class="form-group p-relative">
+                            <select class="form-control form-control-custom"  [(ngModel)]="this.carDetails.year" formControlName="year" id="car-years">
+                            </select>
+                        </div>
+                    </div>
+                      <!-- <div class="col-lg-3 col-md-4 col-sm-4">
+                        <label>Année</label>
+                        <div class="form-group p-relative">
                           <select class="form-control form-control-custom"  [(ngModel)]="this.carDetails.year" formControlName="year">
                             <option value=""></option>
                             <option *ngFor="let y of years.slice().reverse()" [value]="y">{{ y }}</option>
                           </select>
                         </div>
-                      </div>
+                      </div> -->
                    
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Kilométrage</label>
@@ -162,7 +169,7 @@
                           </select>
                         </div>
                       </div>
-                      <div class="col-lg-3 col-md-4 col-sm-4">
+                      <!-- <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Marque</label>
                         <div class="form-group p-relative">
                           <select class="form-control form-control-custom"  [(ngModel)]="this.carDetails.brand" formControlName="brand">
@@ -179,8 +186,22 @@
                             <option *ngFor="let m of arrayModel" [value]="m">{{m}}</option>
                           </select>
                         </div>
-                      </div>
-
+                      </div> -->
+                      <div class="col-lg-3 col-md-4 col-sm-4">
+                        <label>Marque</label>
+                        <div class="form-group p-relative">
+                            <select class="form-control form-control-custom"  [(ngModel)]="this.carDetails.brand" formControlName="brand" id="car-makes">
+  
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-4">
+                        <label>Modèle</label>
+                        <div class="form-group p-relative">
+                            <select class="form-control form-control-custom"  [(ngModel)]="this.carDetails.model" formControlName="model" id="car-models">
+                            </select>
+                        </div>
+                    </div>
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Couleur</label>
                         <div class="form-group p-relative">

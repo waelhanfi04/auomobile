@@ -16883,3 +16883,7 @@ body.compacted-header .content-wrapper {
         margin-top: 117px
     }
 }
+.div-user-details{
+    max-width:300px;
+    height:max-content;
+}

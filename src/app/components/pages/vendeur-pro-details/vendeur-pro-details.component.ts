@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarService } from 'src/app/services/car/car.service';
+import { ProfileService } from 'src/app/services/profile/profile.service';
 
 @Component({
   selector: 'app-vendeur-pro-details',
@@ -8,10 +9,18 @@ import { CarService } from 'src/app/services/car/car.service';
 })
 export class VendeurProDetailsComponent implements OnInit {
   carsList:any;
-  constructor(private carService:CarService) { }
+  user:any
+  constructor(private carService:CarService,private profileService:ProfileService) { }
 
   ngOnInit(): void {
     this.getCars();
+    this.getUserDetails();
+  }
+  getUserDetails() {
+    this.profileService.userDetails().subscribe((data: any) => {
+      console.log('dataa user', data.user)
+      this.user = data.user
+    })
   }
   getCars(){
     this.carService.getAllCars().subscribe((data:any)=>{
