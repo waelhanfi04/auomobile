@@ -35,26 +35,26 @@
         <div *ngIf=" this.accountType==='part'" class="col-lg-8">
           <form [formGroup]="updateProfileForm">
             <div class="col-md-8">
-              <div class="form-group div-input-file" *ngIf="!userPic">
-                <div class="d-flex justify-content-center text-div-input-file" >
+              <div class="form-group div-input-file text-center">
+
+                <div class="d-flex justify-content-center text-div-input-file" *ngIf="!userPic">
                   Cliquez ou faites glisser vos photos ici
-                   </div>
-              </div>
-            
+                </div>
+              
+                  <img class="picture-car"  *ngIf="userPic" [src]="userPic">
+                 
                 <input type="file" class="input-pictures" accept="image/*" (change)="onFileChange($event)">
-            
-            </div>
-            <div >
-              <div class="col p-2">
-                <img class="picture-car" [src]="userPic">
-                <!-- <img src="assets/images/new-icons/deletekit.svg" class="delete-icon" (click)="delete()"> -->
+
               </div>
-          </div>
+
+
+            </div>
+
             <div class="col-md-8">
               <div class="form-group">
                 <label>Prénom</label>
-                <input type="text" name="firstName" [(ngModel)]="this.user.firstName" formControlName="firstName" class="form-control form-control-custom"
-                  >
+                <input type="text" name="firstName" [(ngModel)]="this.user.firstName" formControlName="firstName"
+                  class="form-control form-control-custom">
                 <label class="error-msg"
                   *ngIf="updateProfileForm.controls.firstName.errors?.required && this.isSubmitting ">Champ
                   obligatoire</label>
@@ -63,8 +63,8 @@
             <div class="col-md-8">
               <label>Nom</label>
               <div class="form-group">
-                <input type="text" name="lastName" [(ngModel)]="this.user.lastName" formControlName="lastName" class="form-control form-control-custom"
-                 >
+                <input type="text" name="lastName" [(ngModel)]="this.user.lastName" formControlName="lastName"
+                  class="form-control form-control-custom">
                 <label class="error-msg"
                   *ngIf="updateProfileForm.controls.lastName.errors?.required && this.isSubmitting ">Champ
                   obligatoire</label>
@@ -73,38 +73,40 @@
             <div class="col-md-8">
               <label>Téléphone</label>
               <div class="form-group">
-                <input type="number" name="userPhone" [(ngModel)]="this.user.companyPhone" formControlName="companyPhone" class="form-control form-control-custom"
-                  >
+                <input type="number" name="userPhone" [(ngModel)]="this.user.companyPhone"
+                  formControlName="companyPhone" class="form-control form-control-custom">
               </div>
             </div>
             <div class="col-lg-12">
               <label>Adresse</label>
               <div class="form-group">
-                <textarea class="form-control form-control-custom" [(ngModel)]="this.user.companyAddress" formControlName="companyAddress"
-                  rows="5"></textarea>
+                <textarea class="form-control form-control-custom" [(ngModel)]="this.user.companyAddress"
+                  formControlName="companyAddress" rows="5"></textarea>
               </div>
             </div>
             <div class="d-flex justify-content-center" *ngIf="this.successMsg!=='' ">
               <span class="success-msg">{{successMsg}}</span>
             </div>
             <div class="form-group">
-              <button type="submit" (click)="updateInfo('part')" class="btn-second orange-btn full-width">Modifier</button>
+              <button type="submit" (click)="updateInfo('part')"
+                class="btn-second orange-btn full-width">Modifier</button>
             </div>
           </form>
 
         </div>
-        <div  *ngIf=" this.accountType==='pro'"  class="col-lg-8">
+        <div *ngIf=" this.accountType==='pro'" class="col-lg-8">
 
           <form [formGroup]="updateProfileFormPro">
-            <div class="col-md-8 " >
-             
-              <div class="form-group div-input-file text-center" >
-                <i class="fas fa-pen update-fas" *ngIf="userPic"> <input type="file" class="input-pictures" accept="image/*" (change)="onFileChange($event)"></i>
-                <div class="d-flex justify-content-center text-div-input-file" *ngIf="!userPic" >
+            <div class="col-md-8 ">
+
+              <div class="form-group div-input-file text-center">
+                <i class="fas fa-pen update-fas" *ngIf="userPic"> <input type="file" class="input-pictures"
+                    accept="image/*" (change)="onFileChange($event)"></i>
+                <div class="d-flex justify-content-center text-div-input-file" *ngIf="!userPic">
                   Cliquez ou faites glisser vos photos ici
-                   </div>
-                   <img *ngIf="userPic" class="picture-car" [src]="userPic">
-                   <input type="file" class="input-pictures" accept="image/*" (change)="onFileChange($event)">
+                </div>
+                <img *ngIf="userPic" class="picture-car" [src]="userPic">
+                <input type="file" class="input-pictures" accept="image/*" (change)="onFileChange($event)">
               </div>
             </div>
             <!-- <div *ngIf="userPic">
@@ -127,8 +129,8 @@
             <div class="col-md-8">
               <div class="form-group">
                 <label>Prénom</label>
-                <input type="text" name="firstName" [(ngModel)]="this.user.firstName" formControlName="firstName" class="form-control form-control-custom"
-                  >
+                <input type="text" name="firstName" [(ngModel)]="this.user.firstName" formControlName="firstName"
+                  class="form-control form-control-custom">
                 <label class="error-msg"
                   *ngIf="updateProfileFormPro.controls.firstName.errors?.required && this.isSubmitting ">Champ
                   obligatoire</label>
@@ -137,8 +139,8 @@
             <div class="col-md-8">
               <label>Nom</label>
               <div class="form-group">
-                <input type="text" name="lastName" [(ngModel)]="this.user.lastName" formControlName="lastName" class="form-control form-control-custom"
-                 >
+                <input type="text" name="lastName" [(ngModel)]="this.user.lastName" formControlName="lastName"
+                  class="form-control form-control-custom">
                 <label class="error-msg"
                   *ngIf="updateProfileFormPro.controls.lastName.errors?.required && this.isSubmitting ">Champ
                   obligatoire</label>
@@ -147,55 +149,63 @@
             <div class="col-md-8">
               <label>Nom de la société</label>
               <div class="form-group">
-                <input type="text" name="companyName" [(ngModel)]="this.user.companyName" formControlName="companyName" class="form-control form-control-custom"
-               >
+                <input type="text" name="companyName" [(ngModel)]="this.user.companyName" formControlName="companyName"
+                  class="form-control form-control-custom">
                 <label class="error-msg"
                   *ngIf="updateProfileFormPro.controls.companyName.errors?.required && this.isSubmitting ">Champ
                   obligatoire</label>
               </div>
             </div>
-    
+
             <div class="col-md-8">
               <label>Téléphone</label>
               <div class="form-group">
-                <input type="number" name="companyPhone" [(ngModel)]="this.user.companyPhone" formControlName="companyPhone" class="form-control form-control-custom"
-                  >
+                <input type="number" name="companyPhone" [(ngModel)]="this.user.companyPhone"
+                  formControlName="companyPhone" class="form-control form-control-custom">
               </div>
-              <label class="error-msg" *ngIf="updateProfileFormPro.controls.companyPhone.errors?.required && this.isSubmitting ">Champ obligatoire</label>   
+              <label class="error-msg"
+                *ngIf="updateProfileFormPro.controls.companyPhone.errors?.required && this.isSubmitting ">Champ
+                obligatoire</label>
 
             </div>
             <div class="col-md-8">
               <label>Ville ou code postal</label>
               <div class="form-group">
-                <input type="text" name="companyZipCode" [(ngModel)]="this.user.companyZipCode" formControlName="companyZipCode" class="form-control form-control-custom"
-                  >
+                <input type="text" name="companyZipCode" [(ngModel)]="this.user.companyZipCode"
+                  formControlName="companyZipCode" class="form-control form-control-custom">
               </div>
-              <label class="error-msg" *ngIf="updateProfileFormPro.controls.companyZipCode.errors?.required && this.isSubmitting ">Champ obligatoire</label>   
+              <label class="error-msg"
+                *ngIf="updateProfileFormPro.controls.companyZipCode.errors?.required && this.isSubmitting ">Champ
+                obligatoire</label>
 
             </div>
             <div class="col-md-8">
               <label>Catégorie associée à votre activité</label>
               <div class="form-group">
-                <select class="input-select"[(ngModel)]="this.user.companyCategory" formControlName="companyCategory">
+                <select class="input-select" [(ngModel)]="this.user.companyCategory" formControlName="companyCategory">
                   <option value="" class="option"></option>
-                  <option *ngFor="let cat of categoriesList" class="option" [value]="cat.category">{{cat.category}}</option>
+                  <option *ngFor="let cat of categoriesList" class="option" [value]="cat.category">{{cat.category}}
+                  </option>
                 </select>
               </div>
-              <label class="error-msg" *ngIf="updateProfileFormPro.controls.companyCategory.errors?.required && this.isSubmitting ">Champ obligatoire</label>   
+              <label class="error-msg"
+                *ngIf="updateProfileFormPro.controls.companyCategory.errors?.required && this.isSubmitting ">Champ
+                obligatoire</label>
 
             </div>
             <div class="col-lg-12">
               <label>Adresse</label>
               <div class="form-group">
-                <textarea class="form-control form-control-custom"  [(ngModel)]="this.user.companyAddress" formControlName="companyAddress"
-                  rows="5"></textarea>
+                <textarea class="form-control form-control-custom" [(ngModel)]="this.user.companyAddress"
+                  formControlName="companyAddress" rows="5"></textarea>
               </div>
             </div>
             <div class="d-flex justify-content-center" *ngIf="this.successMsg!=='' ">
               <span class="success-msg">{{successMsg}}</span>
             </div>
             <div class="form-group">
-              <button type="submit" (click)="updateInfo('pro')" class="btn-second orange-btn full-width">Modifier</button>
+              <button type="submit" (click)="updateInfo('pro')"
+                class="btn-second orange-btn full-width">Modifier</button>
             </div>
           </form>
 
