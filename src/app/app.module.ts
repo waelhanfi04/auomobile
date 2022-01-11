@@ -68,6 +68,7 @@ import { NewCarsComponent } from './components/pages/new-cars/new-cars.component
 import { FavorisComponent } from './components/userSpace/favoris/favoris.component';
 import { VendeurProComponent } from './components/pages/vendeur-pro/vendeur-pro.component';
 import { VendeurProDetailsComponent } from './components/pages/vendeur-pro-details/vendeur-pro-details.component';
+import { BrandsListComponent } from './components/pages/brands-list/brands-list.component';
 // import { CookieService } from 'ngx-cookie-service';
 // import { ImageCropperModule } from 'ngx-image-cropper';
 
@@ -125,7 +126,8 @@ import { VendeurProDetailsComponent } from './components/pages/vendeur-pro-detai
     NewCarsComponent,
     FavorisComponent,
     VendeurProComponent,
-    VendeurProDetailsComponent
+    VendeurProDetailsComponent,
+    BrandsListComponent
   ],
   imports: [
     BrowserModule,

@@ -41,12 +41,13 @@ import { UpdatePasswordComponent } from './components/userSpace/update-password/
 import { MesAnnonceComponent } from './components/userSpace/mes-annonce/mes-annonce.component';
 import { GererAnnonceComponent } from './components/backOffice/gerer-annonce/gerer-annonce.component';
 import { GererComptesComponent } from './components/backOffice/gerer-comptes/gerer-comptes.component';
-import {AuthGuardService} from './services/authGard.service'
+import { AuthGuardService } from './services/authGard.service'
 import { AncienCarsComponent } from './components/pages/ancien-cars/ancien-cars.component';
 import { NewCarsComponent } from './components/pages/new-cars/new-cars.component';
 import { FavorisComponent } from './components/userSpace/favoris/favoris.component';
 import { VendeurProComponent } from './components/pages/vendeur-pro/vendeur-pro.component';
 import { VendeurProDetailsComponent } from './components/pages/vendeur-pro-details/vendeur-pro-details.component';
+import { BrandsListComponent } from './components/pages/brands-list/brands-list.component';
 
 const routes: Routes = [
 
@@ -54,7 +55,7 @@ const routes: Routes = [
   {
     path: 'creer-une-annonce',
     component: AddListingComponent,
-   canActivate:[AuthGuardService]
+    canActivate: [AuthGuardService]
   },
   {
     path: 'register',
@@ -82,7 +83,7 @@ const routes: Routes = [
   }, {
     path: 'voitures/modifier/:id',
     component: UpdateCarComponent,
-    canActivate:[AuthGuardService]
+    canActivate: [AuthGuardService]
   },
 
   {
@@ -96,57 +97,70 @@ const routes: Routes = [
   {
     path: 'ajouter-blog',
     component: AddBlogComponent,
-    canActivate:[AuthGuardService]
+    canActivate: [AuthGuardService]
   },
   {
     path: 'blogs/modifier/:id',
     component: UpdateBlogComponent,
-    canActivate:[AuthGuardService]
+    canActivate: [AuthGuardService]
   },
   {
     path: 'mes-infos',
     component: UpdateProfileComponent,
-    canActivate:[AuthGuardService]
+    canActivate: [AuthGuardService]
   },
   {
     path: 'mon-espace',
     component: MySpaceComponent,
-    canActivate:[AuthGuardService]
+    canActivate: [AuthGuardService]
   },
   {
     path: 'mes-annonces',
     component: MesAnnonceComponent,
-    canActivate:[AuthGuardService]
+    canActivate: [AuthGuardService]
   },
   {
     path: 'gerer-annonces',
     component: GererAnnonceComponent,
-    canActivate:[AuthGuardService]
+    canActivate: [AuthGuardService]
   },
   {
     path: 'comptes',
     component: GererComptesComponent,
-    canActivate:[AuthGuardService]
+    canActivate: [AuthGuardService]
   },
   {
     path: 'mot-de-passe',
     component: UpdatePasswordComponent,
-    canActivate:[AuthGuardService]
+    canActivate: [AuthGuardService]
   },
   {
     path: 'favoris',
     component: FavorisComponent,
-    canActivate:[ AuthGuardService]
+    canActivate: [AuthGuardService]
   },
   {
     path: 'vendeur-pro',
     component: VendeurProComponent,
-   // canActivate:[ AuthGuardService]
+    // canActivate:[ AuthGuardService]
   },
   {
     path: 'vendeur-pro/:id',
     component: VendeurProDetailsComponent,
-  //  canActivate:[ AuthGuardService]
+    //  canActivate:[ AuthGuardService]
+  },
+  {
+    path: 'neuf',
+    component: BrandsListComponent,
+    //  canActivate:[ AuthGuardService]
+  },
+  {
+    path: 'ancien-car',
+    component: AncienCarsComponent
+  },
+  {
+    path: 'voitures-neuves/:brand',
+    component: NewCarsComponent
   },
   // {path: 'media', component: MediaComponent},
   { path: 'listing', component: ListingComponent },
@@ -158,8 +172,6 @@ const routes: Routes = [
   { path: 'listing2-style2', component: Listing2Style2Component },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'car-page', component: CarpageComponent },
-  { path: 'ancien-car', component: AncienCarsComponent },
-  { path: 'new-car', component: NewCarsComponent },
   { path: 'user', component: UserComponent },
   { path: 'invoice', component: InvoiceComponent },
   { path: 'coming-soon', component: ComingSoonComponent },

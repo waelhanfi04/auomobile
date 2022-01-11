@@ -76,7 +76,7 @@ filterForm:FormGroup
   
         //console.log(' this.carsList', this.carsList)
         this.sponsoredCarsList=  data.voitures.filter((car:any)=> 
-        car?.user?.type !=='part' && car.status==='accepted'
+        car.type !=='Neuve' && car.status==='accepted'
         )
         console.log('spoooon',this.sponsoredCarsList)
       }

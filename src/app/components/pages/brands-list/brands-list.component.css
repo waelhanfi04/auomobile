@@ -1,0 +1,20 @@
+.vehicles-item  {
+    min-width: 90px;
+    width: 100px;
+    height: 90px;
+    margin: 20px 41px;
+    display: inline-block; 
+    -webkit-transform: translateZ(0);
+    transition: all .5s ease;
+    cursor:pointer;
+  -webkit-filter: grayscale(100%);
+}
+.vehicles-item:hover{
+    -webkit-filter: grayscale(0);
+}
+
+.vehicles-item a img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}

@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
 import { CarService } from 'src/app/services/car/car.service';
 
 @Component({
@@ -17,28 +19,33 @@ export class NewCarsComponent implements OnInit {
   carsList:any;
   show :boolean =false;
   noData:boolean =false;
-  constructor(private carService:CarService) { }
+  brand:string=''
+  constructor(private carService:CarService,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getCars();
+    this.route.params
+    .pipe(
+      map((params: any) => {
+        this.brand=params['brand']
+        console.log(params['brand']);
+        return params['brand'];
+      })
+    )
+    .subscribe((params) => this.getCars(params));
+
   }
-  getCars(){
+  getCars(brand:any){
     this.carService.getAllCars().subscribe((data:any)=>{
       
       if(data!==null || data!==undefined)
       {
-        //car?.type !=='neuf'
-        this.carsList=data.voitures;
+        this.carsList=  data.voitures.filter((car:any)=> 
+        car.status ==='accepted' && car.type ==='Neuve' && car.brand===brand)
         if(this.carsList.length===0){
           this.noData=true
         }else{
           this.noData=false
         }
-
-
-        this.carsList=  data.voitures.filter((car:any)=> 
-        car.status ==='accepted' && car.type ==='Neuve'        )
-
       }
     })
   }
