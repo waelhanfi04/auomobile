@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
             this.errorMsg= ''
            if(data.accessToken!=='' || data.accessToken !==null){
               localStorage.setItem('accessToken', data.accessToken);
-            //  localStorage.setItem('expiredIn', data.accessToken);
+              localStorage.setItem('expiredIn', data.expiresIn);
               localStorage.setItem('isAuthenticated', 'true');
               localStorage.setItem('type', data.type);
              localStorage.setItem('idUser', data.id);
