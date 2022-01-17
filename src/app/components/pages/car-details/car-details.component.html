@@ -149,15 +149,7 @@
                                     <div class="text-wrapper">
                                         <h5 class="text-light-black">Déscription</h5>
                                         <p class="text-dark-grey">s{{car.Description}}</p>
-                                        <h5 class="text-light-black">Disponibilité</h5>
-                                        <p class="text-dark-grey">{{car.availablity}}</p>
-                                        <h5 class="text-light-black" *ngIf="car.guarantee">Guarantie</h5>
-                                        <p class="text-dark-grey" *ngIf="car.guarantee">{{car.guarantee}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane active" id="tech-spec">
-                                <div class="car-details-box">
+                                   </div>
                                     <div class="table-responsive">
                                         <table class="table table-bordered">
                                             <thead>
@@ -184,8 +176,8 @@
                                                         <td>{{car.model}}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Mois / Année</td>
-                                                        <td>{{car.month}} {{car.year}}</td>
+                                                        <td>Année</td>
+                                                        <td>{{car.year}}</td>
                                                     </tr>
                                                     <tr>
                                                         <td>Kilométrage</td>
@@ -196,11 +188,28 @@
                                                         <td>{{car.energy}}</td>
                                                     </tr>
                                                     <tr>
+                                                        <td>Disponibilité</td>
+                                                        <td>{{car.availablity}}</td>
+                                                    </tr>
+                                                    <tr>
                                                         <td>Couleur</td>
                                                         <td>{{car.color}}</td>
                                                     </tr>
+                                                   
+                                                    <tr>
+                                                        <td>Guarantie</td>
+                                                        <td>{{car.guarantee}}</td>
+                                                    </tr>
+                                                    
                                             </tbody>
                                         </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane active" id="tech-spec">
+                                <div class="car-details-box">
+                                    <div class="table-responsive">
+ 
                                         <table class="table table-bordered">
                                             <thead>
                                                 <tr>
@@ -228,14 +237,12 @@
                                                     <td>Carrosserie</td>
                                                     <td>{{car.carrosserie}}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td>Nombre de portes</td>
-                                                    <td>{{car.numberDoors}}</td>
+                                               
+                                                <tr *ngFor="let s of arraySpecification">
+                                                    <td>{{s.name}}</td>
+                                                    <td>{{s.value}}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td>Nombre de places</td>
-                                                    <td>{{car.seatingCapacity}}</td>
-                                                </tr>
+                                             
                                             </tbody>
                                         </table>
                                     </div>

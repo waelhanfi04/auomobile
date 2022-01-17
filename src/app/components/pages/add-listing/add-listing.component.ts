@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CarService } from 'src/app/services/car/car.service';
@@ -23,8 +23,17 @@ export class AddListingComponent implements OnInit {
   outsideEquipmentList = arrayOutsideEquipment
   securityEquipmentList = arraysecurityEquipment
   categoriesList = arrayCategoryCar
-  arrayBrand = arrayBrand
+  arrayBrand: any
+  nameBrand: string = ''
   arrayModel: any
+  nameModel: string = ''
+  arrayTrim: any
+  nameTrim: string = ''
+  arrayGeneration: any
+  nameGeneration: string = ''
+  arraySpecification: any
+  arraySerie: any
+  nameSerie: string = ''
   kits = []
   isAcceptedImageFileType: boolean = true;
   userRole: any
@@ -39,7 +48,7 @@ export class AddListingComponent implements OnInit {
       color: new FormControl(''),
       carrosserie: new FormControl(''),
       guarantee: new FormControl(''),
-      month: new FormControl(''),
+      //month: new FormControl(''),
       year: new FormControl(''),
       type: new FormControl('Occasion'),
       category: new FormControl(''),
@@ -56,12 +65,17 @@ export class AddListingComponent implements OnInit {
       outsideEquipment: this.fb.array([]),
       securityEquipment: this.fb.array([]),
       pictures: this.fb.array([]),
-      seatingCapacity: new FormControl(''),
-      numberDoors: new FormControl('')
+      // seatingCapacity: new FormControl(''),
+      // numberDoors: new FormControl(''),
+      trim: new FormControl(''),
+      generation: new FormControl(''),
+      serie: new FormControl(''),
     });
 
   }
+
   ngOnInit(): void {
+    this.getBrands()
     this.userRole = localStorage.getItem('role')
     /*---add list of years from 1900 to current year-- */
     var aujd = new Date();
@@ -74,16 +88,58 @@ export class AddListingComponent implements OnInit {
       this.powerFiscalArray.push(i);
     }
     /*---Update list of model-- */
-    this.addCarForm.get('brand')?.valueChanges.subscribe((value: any) => {
-      this.arrayModel = []
-      arrayBrand.map((b: any) => {
-        if (b.brand === value) {
-          this.arrayModel = b.model
-        }
-      })
+    // this.addCarForm.get('brand')?.valueChanges.subscribe((value: any) => {
+    //   this.arrayModel = []
+    //   arrayBrand.map((b: any) => {
+    //     if (b.brand === value) {
+    //       this.arrayModel = b.model
+    //     }
+    //   })
 
-    })
+    // })
+    this.addCarForm.get('brand')?.valueChanges.subscribe((value: any) => {
+      let parts = value.split(',');
+      this.nameBrand=parts[0]
+      this.carService.getModel(parts[1]).subscribe((data: any) => {
+        this.arrayModel = data.car_model
+      })
+    });
+    this.addCarForm.get('model')?.valueChanges.subscribe((value: any) => {
+      let parts = value.split(',');
+      this.nameModel=parts[0]
+      this.carService.getGeneration(parts[1]).subscribe((data: any) => {
+        this.arrayGeneration = data.car_generation
+      })
+    });
+    this.addCarForm.get('generation')?.valueChanges.subscribe((value: any) => {
+      let parts = value.split(',');
+      this.nameGeneration=parts[0]
+      this.carService.getSerie(parts[1]).subscribe((data: any) => {
+        this.arraySerie = data.car_serie
+      })
+    });
+    this.addCarForm.get('serie')?.valueChanges.subscribe((value: any) => {
+      let parts = value.split(',');
+      this.nameSerie=parts[0]
+      this.carService.getTrim(parts[1]).subscribe((data: any) => {
+        this.arrayTrim = data.car_trim
+      })
+    });
+    this.addCarForm.get('trim')?.valueChanges.subscribe((value: any) => {
+      let parts = value.split(',');
+      this.nameTrim=parts[0]
+      this.carService.getSpecification(parts[1]).subscribe((data: any) => {
+        this.arraySpecification = data.specifications
+      })
+    });
   }
+  getBrands() {
+    this.carService.getMarque().subscribe((data: any) => {
+      this.arrayBrand = data.car_make;
+    })
+
+  }
+  
   onCheckboxChange(e: any, controlName: any) {
     const checkArray: FormArray = this.addCarForm.get(controlName) as FormArray;
 
@@ -111,8 +167,40 @@ export class AddListingComponent implements OnInit {
     if (this.userRole !== 'user') {
       this.addCarForm.get('type')?.setValue('Occasion')
     }
-    console.log('this.addCarForm?.value', this.addCarForm?.value)
-    this.carService.addCar(this.addCarForm?.value).subscribe((response: any) => {
+
+     let body = {
+      availablity: this.addCarForm.get('availablity')?.value,
+      title: this.addCarForm.get('title')?.value,
+      phone: this.addCarForm.get('phone')?.value,
+      country: this.addCarForm.get('country')?.value,
+      city: this.addCarForm.get('city')?.value,
+      price: this.addCarForm.get('price')?.value,
+      color: this.addCarForm.get('color')?.value,
+      carrosserie: this.addCarForm.get('carrosserie')?.value,
+      guarantee: this.addCarForm.get('guarantee')?.value,
+      year: this.addCarForm.get('year')?.value,
+      category: this.addCarForm.get('category')?.value,
+      pictures: this.addCarForm.get('pictures')?.value,
+      address: this.addCarForm.get('address')?.value,
+      motorization: this.addCarForm.get('motorization')?.value,
+      mileage: this.addCarForm.get('mileage')?.value,
+      energy: this.addCarForm.get('energy')?.value,
+      transmission: this.addCarForm.get('transmission')?.value,
+      powerFiscal: this.addCarForm.get('powerFiscal')?.value,
+      gearbox: this.addCarForm.get('gearbox')?.value,
+      description: this.addCarForm.get('description')?.value,
+      insideEquipment: this.addCarForm.get('insideEquipment')?.value,
+      outsideEquipment: this.addCarForm.get('outsideEquipment')?.value,
+      securityEquipment: this.addCarForm.get('securityEquipment')?.value,
+      type: this.userRole!=='user'? 'Occasion': this.addCarForm.get('type')?.value,
+      brand: this.nameBrand,
+      model: this.nameModel,
+      trims: this.nameTrim,
+      generation: this.nameGeneration,
+      serie: this.nameSerie
+    }
+  
+    this.carService.addCar(body).subscribe((response: any) => {
       console.log('response', response)
       this.successMsg = 'Votre annonce a été ajouté avec succès!';
       setTimeout(() => {

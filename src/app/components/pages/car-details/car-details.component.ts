@@ -18,6 +18,7 @@ export class CarDetailsComponent implements OnInit {
   picturesList:any=[]
   idCar:any;
   isOwner: boolean = false;
+  arraySpecification: any
   constructor(
     private route: ActivatedRoute,
     private carService: CarService,
@@ -38,6 +39,9 @@ export class CarDetailsComponent implements OnInit {
     this.carService.getOneCar(id).subscribe((data: any) => {
       console.log('car from details -----> ', data)
       this.car = data.voiture;
+      this.carService.getSpecification(this.car.trims).subscribe((data: any) => {
+        this.arraySpecification = data.specifications
+      });
       this.insideEquipmentList = data.voiture.insideEquipmentVoitures;
       this.outsideEquipmentList = data.voiture.outsideEquipmentVoitures;
       this.securityEquipmentList = data.voiture.securityEquipmentVoitures;

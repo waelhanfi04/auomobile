@@ -21,8 +21,17 @@ export class UpdateCarComponent implements OnInit {
   outsideEquipmentList = arrayOutsideEquipment
   securityEquipmentList = arraysecurityEquipment
   categoriesList = arrayCategoryCar
-  arrayBrand = arrayBrand
+  arrayBrand: any
+  nameBrand: string = ''
   arrayModel: any
+  nameModel: string = ''
+  arrayTrim: any
+  nameTrim: string = ''
+  arrayGeneration: any
+  nameGeneration: string = ''
+  arraySpecification: any
+  arraySerie: any
+  nameSerie: string = ''
   kits = []
   isAcceptedImageFileType: boolean = true
   carDetails: any;
@@ -39,7 +48,7 @@ export class UpdateCarComponent implements OnInit {
       color: new FormControl(''),
       carrosserie: new FormControl(''),
       guarantee: new FormControl(''),
-      month: new FormControl(''),
+     // month: new FormControl(''),
       year: new FormControl(''),
       category: new FormControl(''),
       price: new FormControl(''),
@@ -55,14 +64,18 @@ export class UpdateCarComponent implements OnInit {
       outsideEquipment: this.fb.array([]),
       securityEquipment: this.fb.array([]),
       pictures: this.fb.array([]),
-      seatingCapacity: new FormControl(''),
-      numberDoors: new FormControl(''),
-      type: new FormControl('')
+      // seatingCapacity: new FormControl(''),
+      // numberDoors: new FormControl(''),
+      type: new FormControl(''),
+      trim: new FormControl(''),
+      generation: new FormControl(''),
+      serie: new FormControl(''),
     });
 
   }
 
   ngOnInit(): void {
+    this.getBrands()
     this.userRole = localStorage.getItem('role')
 
     this.route.params
@@ -83,20 +96,74 @@ export class UpdateCarComponent implements OnInit {
       this.powerFiscalArray.push(i);
     }
     /*---Update list of model-- */
-    this.updateCarForm.get('brand')?.valueChanges.subscribe((value: any) => {
-      this.arrayModel = []
-      arrayBrand.map((b: any) => {
-        if (b.brand === value) {
-          this.arrayModel = b.model
-        }
-      })
+    // this.updateCarForm.get('brand')?.valueChanges.subscribe((value: any) => {
+    //   this.arrayModel = []
+    //   arrayBrand.map((b: any) => {
+    //     if (b.brand === value) {
+    //       this.arrayModel = b.model
+    //     }
+    //   })
 
+    // })
+    this.updateCarForm.get('brand')?.valueChanges.subscribe((value: any) => {
+      let parts = value.split(',');
+      this.nameBrand=parts[0]
+      this.carService.getModel(parts[1]).subscribe((data: any) => {
+        this.arrayModel = data.car_model
+      })
+    });
+    this.updateCarForm.get('model')?.valueChanges.subscribe((value: any) => {
+      let parts = value.split(',');
+      this.nameModel=parts[0]
+      this.carService.getGeneration(parts[1]).subscribe((data: any) => {
+        this.arrayGeneration = data.car_generation
+      })
+    });
+    this.updateCarForm.get('generation')?.valueChanges.subscribe((value: any) => {
+      let parts = value.split(',');
+      this.nameGeneration=parts[0]
+      this.carService.getSerie(parts[1]).subscribe((data: any) => {
+        this.arraySerie = data.car_serie
+      })
+    });
+    this.updateCarForm.get('serie')?.valueChanges.subscribe((value: any) => {
+      let parts = value.split(',');
+      this.nameSerie=parts[0]
+      this.carService.getTrim(parts[1]).subscribe((data: any) => {
+        this.arrayTrim = data.car_trim
+      })
+    });
+    this.updateCarForm.get('trim')?.valueChanges.subscribe((value: any) => {
+      let parts = value.split(',');
+      this.nameTrim=parts[0]
+      this.carService.getSpecification(parts[1]).subscribe((data: any) => {
+        this.arraySpecification = data.specifications
+      })
+    });
+  }
+  getBrands() {
+    this.carService.getMarque().subscribe((data: any) => {
+      this.arrayBrand = data.car_make;
     })
+
   }
   getCarDetails(id: any) {
     this.carService.getOneCar(id).subscribe((data: any) => {
       if (data !== null && data !== undefined) {
-        this.carDetails = data.voiture
+        this.carDetails = data.voiture;
+        this.arrayBrand.forEach((element:any) => {
+          if(element.name===this.carDetails.brand){
+            console.log('ouii',element)
+            this.updateCarForm.get('brand')?.setValue([this.carDetails.brand,element.id_car_make])
+          }
+        });
+     //  this.updateCarForm.get('brand')?.setValue(this.carDetails.brand)
+        // this.updateCarForm.get('marque')?.setValue(this.carDetails.marque)
+        // this.updateCarForm.get('generation')?.setValue(this.carDetails.generation)
+        // this.updateCarForm.get('serie')?.setValue(this.carDetails.serie)
+        this.carService.getSpecification(this.carDetails.trims).subscribe((data: any) => {
+          this.arraySpecification = data.specifications
+        });
         const outsideEquipmentArray: FormArray = this.updateCarForm.get('outsideEquipment') as FormArray;
         this.carDetails.outsideEquipmentVoitures.forEach((itemEquip: any) => {
           outsideEquipmentArray.push(new FormControl(itemEquip.equipment));
@@ -166,13 +233,10 @@ export class UpdateCarComponent implements OnInit {
       phone: this.updateCarForm.get('phone')?.value,
       country: this.updateCarForm.get('country')?.value,
       city: this.updateCarForm.get('city')?.value,
-      brand: this.updateCarForm.get('brand')?.value,
-      model: this.updateCarForm.get('model')?.value,
       price: this.updateCarForm.get('price')?.value,
       color: this.updateCarForm.get('color')?.value,
       carrosserie: this.updateCarForm.get('carrosserie')?.value,
       guarantee: this.updateCarForm.get('guarantee')?.value,
-      month: this.updateCarForm.get('month')?.value,
       year: this.updateCarForm.get('year')?.value,
       category: this.updateCarForm.get('category')?.value,
       pictures: this.updateCarForm.get('pictures')?.value,
@@ -184,12 +248,15 @@ export class UpdateCarComponent implements OnInit {
       powerFiscal: this.updateCarForm.get('powerFiscal')?.value,
       gearbox: this.updateCarForm.get('gearbox')?.value,
       description: this.updateCarForm.get('description')?.value,
-      seatingCapacity: this.updateCarForm.get('seatingCapacity')?.value,
-      numberDoors: this.updateCarForm.get('numberDoors')?.value,
       insideEquipment: this.updateCarForm.get('insideEquipment')?.value,
       outsideEquipment: this.updateCarForm.get('outsideEquipment')?.value,
       securityEquipment: this.updateCarForm.get('securityEquipment')?.value,
       type: this.userRole!=='user'? 'Occasion': this.updateCarForm.get('type')?.value,
+      brand: this.nameBrand,
+      model: this.nameModel,
+      trims: this.nameTrim,
+      generation: this.nameGeneration,
+      serie: this.nameSerie
     }
 
     this.carService.updateCar(body).subscribe((response: any) => {

@@ -65,50 +65,37 @@
                             <div class="step-tab-panel" id="step1">
                                 <div class="tab-from-content">
                                     <div class="title-icon">
-                                        <h5 class="title rubik fw-600"><i class="flaticon-comment"></i>Informations générales</h5>
+                                        <h5 class="title rubik fw-600"><i class="flaticon-comment"></i>Informations
+                                            générales</h5>
                                     </div>
                                     <form [formGroup]="addCarForm">
                                         <div class="row">
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Titre</label>
                                                 <div class="form-group">
-                                                    <input type="text" name="title" formControlName="title" class="form-control form-control-custom">
+                                                    <input type="text" name="title" formControlName="title"
+                                                        class="form-control form-control-custom">
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-4 col-sm-4" *ngIf="this.userRole!=='user'">
                                                 <label>Type</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom" formControlName="type">
-                            <option value=""></option>
-                            <option value="Occasion">Occasion</option>
-                            <option value="Neuve">Neuve</option>
-                          </select>
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="type">
+                                                        <option value=""></option>
+                                                        <option value="Occasion">Occasion</option>
+                                                        <option value="Neuve">Neuve</option>
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-4">
-                                                <label>Mois</label>
-                                                <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom" formControlName="month">
-                            <option value=""></option>
-                            <option value="02">02</option>
-                            <option value="01">01</option>
-                            <option value="03">03</option>
-                            <option value="04">04</option>
-                            <option value="05">05</option>
-                            <option value="06">06</option>
-                            <option value="07">07</option>
-                            <option value="08">08</option>
-                            <option value="09">09</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                          </select>
-                                                </div>
-                                            </div>
+                                         
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Année</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom" formControlName="year" id="car-years">
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="year">
+                                                        <option  value=""></option>
+                                                        <option *ngFor="let year of years" [value]="year">{{year}}</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -116,102 +103,151 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Kilométrage</label>
                                                 <div class="form-group">
-                                                    <input type="text" name="mileage" formControlName="mileage" class="form-control form-control-custom">
+                                                    <input type="text" name="mileage" formControlName="mileage"
+                                                        class="form-control form-control-custom">
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Motorization</label>
                                                 <div class="form-group">
-                                                    <input type="text" name="motorization" formControlName="motorization" class="form-control form-control-custom">
+                                                    <input type="text" name="motorization"
+                                                        formControlName="motorization"
+                                                        class="form-control form-control-custom">
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Energie</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom" formControlName="energy">
-                            <option value=""></option>
-                            <option value="essence">Essence</option>
-                            <option value="diesel">Diesel</option>
-                          </select>
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="energy">
+                                                        <option value=""></option>
+                                                        <option value="essence">Essence</option>
+                                                        <option value="diesel">Diesel</option>
+                                                    </select>
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Prix</label>
                                                 <div class="form-group">
-                                                    <input type="number" name="price" formControlName="price" class="form-control form-control-custom">
+                                                    <input type="number" name="price" formControlName="price"
+                                                        class="form-control form-control-custom">
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Catégorie</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom" formControlName="category">
-                            <option value=""></option>
-                            <option *ngFor="let c of categoriesList" [value]="c.category">{{c.category}} Car</option>
-                          </select>
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="category">
+                                                        <option value=""></option>
+                                                        <option *ngFor="let c of categoriesList" [value]="c.category">
+                                                            {{c.category}} Car</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                              
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Couleur</label>
+                                                <div class="form-group p-relative">
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="color">
+                                                        <option value=""></option>
+                                                        <option value="Noir">Noir</option>
+                                                        <option value="Gris argent">Gris argent</option>
+                                                        <option value="Gris anthracite">Gris anthracite</option>
+                                                        <option value="Gris Shark">Gris Shark</option>
+                                                        <option value="Blanc">Blanc</option>
+                                                        <option value="Rouge">Rouge</option>
+                                                        <option value="Bleu">Bleu</option>
+                                                        <option value="Beige">Beige</option>
+                                                        <option value="Jaune">Jaune</option>
+                                                        <option value="Orange">Orange</option>
+                                                        <option value="Vert">Vert</option>
+                                                        <option value="Aubergine">Aubergine</option>
+                                                        <option value="Marron">Marron</option>
+                                                        <option value="Autre">Autre</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Disponibilité</label>
+                                                <div class="form-group p-relative">
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="availablity">
+                                                        <option value=""></option>
+                                                        <option value="Immediatement">Immediatement</option>
+                                                        <option value="Sur-commande">Sur commande</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Guarantie</label>
+                                                <div class="form-group">
+                                                    <input type="text" name="Guarantie" formControlName="guarantee"
+                                                        class="form-control form-control-custom">
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Marque</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom" formControlName="brand" id="car-makes">
-                          
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="brand">
+                                                        <option *ngFor="let b of arrayBrand" [value]="[b.name,b.id_car_make]" >{{b.name}}</option>
+
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Modèle</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom" formControlName="model" id="car-models">
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="model" >
+                                                        <option *ngFor="let m of arrayModel"[value]="[m.name,m.id_car_model]" >{{m.name}}</option>
                                                     </select>
                                                 </div>
                                             </div>
-
                                             <div class="col-lg-3 col-md-4 col-sm-4">
-                                                <label>Couleur</label>
+                                                <label>Génération</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom" formControlName="color">
-                            <option value=""></option>
-                            <option value="Noir">Noir</option>
-                            <option value="Gris argent">Gris argent</option>
-                            <option value="Gris anthracite">Gris anthracite</option>
-                            <option value="Gris Shark">Gris Shark</option>
-                            <option value="Blanc">Blanc</option>
-                            <option value="Rouge">Rouge</option>
-                            <option value="Bleu">Bleu</option>
-                            <option value="Beige">Beige</option>
-                            <option value="Jaune">Jaune</option>
-                            <option value="Orange">Orange</option>
-                            <option value="Vert">Vert</option>
-                            <option value="Aubergine">Aubergine</option>
-                            <option value="Marron">Marron</option>
-                            <option value="Autre">Autre</option>
-                          </select>
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="generation">
+                                                        <option  *ngFor="let g of arrayGeneration" [value]="[g.name,g.id_car_generation]">{{g.name}}</option>
+                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-4 col-sm-4">
-                                                <label>Disponibilité</label>
+                                                <label>Série</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom" formControlName="availablity">
-                            <option value=""></option>
-                            <option value="Immediatement">Immediatement</option>
-                            <option value="Sur-commande">Sur commande</option>
-                          </select>
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="serie">
+                                                        <option  *ngFor="let s of arraySerie" [value]="[s.name,s.id_car_serie]">{{s.name}}</option>
+                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-4 col-sm-4">
-                                                <label>Guarantie</label>
+                                                <label>Modification</label>
+                                                <div class="form-group p-relative">
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="trim">
+                                                        <option *ngFor="let t of arrayTrim"  [value]="[t.name,t.id_car_trim]">{{t.name}}</option>
+                                                     </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4" *ngFor="let s of arraySpecification" >
+                                                <label>{{s.name}}</label>
                                                 <div class="form-group">
-                                                    <input type="text" name="Guarantie" formControlName="guarantee" class="form-control form-control-custom">
-                                                </div>
+                                                <input  class="form-control form-control-custom" type="text" value='{{s.value}}' readonly> 
+                                            </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <label>Description</label>
                                                 <div class="form-group">
-                                                    <textarea class="form-control form-control-custom" formControlName="description" rows="5"></textarea>
+                                                    <textarea class="form-control form-control-custom"
+                                                        formControlName="description" rows="5"></textarea>
                                                 </div>
                                             </div>
+                                        
 
                                         </div>
                                     </form>
@@ -221,74 +257,84 @@
                             <div class="step-tab-panel" id="step2">
                                 <div class="tab-from-content">
                                     <div class="title-icon">
-                                        <h5 class="title rubik fw-600"><i class="flaticon-check-square"></i>Spécifications techniques</h5>
+                                        <h5 class="title rubik fw-600"><i
+                                                class="flaticon-check-square"></i>Spécifications techniques</h5>
                                     </div>
                                     <form [formGroup]="addCarForm">
                                         <div class="row">
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Boîte</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom" formControlName="gearbox">
-                            <option value=""></option>
-                            <option value="manuelle">Manuelle</option>
-                            <option value="automatique">Automatique</option>
-                          </select>
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="gearbox">
+                                                        <option value=""></option>
+                                                        <option value="manuelle">Manuelle</option>
+                                                        <option value="automatique">Automatique</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Puissance fiscale</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom" formControlName="powerFiscal">
-                            <option value=""></option>
-                            <option *ngFor="let power of powerFiscalArray" [value]="power">{{ power }}</option>
-                            <option value="more-48">Plus de 48</option>
-                          </select>
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="powerFiscal">
+                                                        <option value=""></option>
+                                                        <option *ngFor="let power of powerFiscalArray" [value]="power">
+                                                            {{ power }}</option>
+                                                        <option value="more-48">Plus de 48</option>
+                                                    </select>
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Carrosserie</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom" formControlName="carrosserie">
-                            <option value=""></option>
-                            <option value="Citadine">Citadine</option>
-                            <option value="Compacte">Compacte</option>
-                            <option value="Berline">Berline</option>
-                            <option value="Coupé">Coupé</option>
-                            <option value="Cabriolet">Cabriolet</option>
-                            <option value="4 x 4">4 x 4</option>
-                            <option value="Monospace">Monospace</option>
-                            <option value="Utilitaire">Utilitaire</option>
-                            <option value="Pick up">Pick up</option>
-                            <option value="Autres">Autres</option>
-                          </select>
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="carrosserie">
+                                                        <option value=""></option>
+                                                        <option value="Citadine">Citadine</option>
+                                                        <option value="Compacte">Compacte</option>
+                                                        <option value="Berline">Berline</option>
+                                                        <option value="Coupé">Coupé</option>
+                                                        <option value="Cabriolet">Cabriolet</option>
+                                                        <option value="4 x 4">4 x 4</option>
+                                                        <option value="Monospace">Monospace</option>
+                                                        <option value="Utilitaire">Utilitaire</option>
+                                                        <option value="Pick up">Pick up</option>
+                                                        <option value="Autres">Autres</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>transmission</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom" formControlName="transmission">
-                            <option value=""></option>
-                            <option value="traction">Traction</option>
-                            <option value="propulsion">Propulsion</option>
-                            <option value="intégrale">Intégrale</option>
-                          </select>
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="transmission">
+                                                        <option value=""></option>
+                                                        <option value="traction">Traction</option>
+                                                        <option value="propulsion">Propulsion</option>
+                                                        <option value="intégrale">Intégrale</option>
+                                                    </select>
                                                 </div>
                                             </div>
-
+<!-- 
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Nombre de places</label>
                                                 <div class="form-group">
-                                                    <input type="number" name="seatingCapacity" formControlName="seatingCapacity" class="form-control form-control-custom">
+                                                    <input type="number" name="seatingCapacity"
+                                                        formControlName="seatingCapacity"
+                                                        class="form-control form-control-custom">
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Nombre de portes</label>
                                                 <div class="form-group">
-                                                    <input type="number" name="numberDoors" formControlName="numberDoors" class="form-control form-control-custom">
+                                                    <input type="number" name="numberDoors"
+                                                        formControlName="numberDoors"
+                                                        class="form-control form-control-custom">
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </form>
                                 </div>
@@ -296,7 +342,8 @@
                             <div class="step-tab-panel" id="step3">
                                 <div class="tab-from-content">
                                     <div class="title-icon">
-                                        <h5 class="title rubik fw-600"><i class="flaticon-price-tag"></i>Accessoires</h5>
+                                        <h5 class="title rubik fw-600"><i class="flaticon-price-tag"></i>Accessoires
+                                        </h5>
                                     </div>
                                     <form [formGroup]="addCarForm">
                                         <div class="row">
@@ -305,10 +352,12 @@
                                                 <div formArrayName="outsideEquipment" class="form-group  p-relative">
                                                     <ul class="boxes" id="inside-equip">
                                                         <li *ngFor="let ex of outsideEquipmentList;let index=index">
-                                                            <label class="custom-checkbox black-text " for="ex{{index}}">
-                                <input type="checkbox" id="ex{{index}}" [value]="ex.equipement"
-                                  (change)="onCheckboxChange($event,'outsideEquipment')">
-                                <span class="checkmark"></span>{{ex.equipement}}</label>
+                                                            <label class="custom-checkbox black-text "
+                                                                for="ex{{index}}">
+                                                                <input type="checkbox" id="ex{{index}}"
+                                                                    [value]="ex.equipement"
+                                                                    (change)="onCheckboxChange($event,'outsideEquipment')">
+                                                                <span class="checkmark"></span>{{ex.equipement}}</label>
                                                         </li>
 
                                                     </ul>
@@ -320,10 +369,12 @@
                                                 <div formArrayName="insideEquipment" class="form-group">
                                                     <ul class="boxes" id="outside-equip">
                                                         <li *ngFor="let i of insideEquipmentList;let index=index">
-                                                            <label class="custom-checkbox black-text" for="int{{index}}">
-                                <input type="checkbox" id="int{{index}}" [value]="i.equipement"
-                                  (change)="onCheckboxChange($event,'insideEquipment')">
-                                <span class="checkmark"></span>{{i.equipement}}</label>
+                                                            <label class="custom-checkbox black-text"
+                                                                for="int{{index}}">
+                                                                <input type="checkbox" id="int{{index}}"
+                                                                    [value]="i.equipement"
+                                                                    (change)="onCheckboxChange($event,'insideEquipment')">
+                                                                <span class="checkmark"></span>{{i.equipement}}</label>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -335,10 +386,12 @@
                                                 <div formArrayName="securityEquipment" class="form-group">
                                                     <ul class="boxes" id="security-equip">
                                                         <li *ngFor="let s of securityEquipmentList;let index=index">
-                                                            <label class="custom-checkbox black-text" for="security{{index}}">
-                                <input type="checkbox" id="security{{index}}" [value]="s.equipement"
-                                  (change)="onCheckboxChange($event,'securityEquipment')">
-                                <span class="checkmark"></span>{{s.equipement}}</label>
+                                                            <label class="custom-checkbox black-text"
+                                                                for="security{{index}}">
+                                                                <input type="checkbox" id="security{{index}}"
+                                                                    [value]="s.equipement"
+                                                                    (change)="onCheckboxChange($event,'securityEquipment')">
+                                                                <span class="checkmark"></span>{{s.equipement}}</label>
                                                         </li>
 
                                                     </ul>
@@ -352,52 +405,56 @@
                             <div class="step-tab-panel" id="step4">
                                 <div class="tab-from-content">
                                     <div class="title-icon">
-                                        <h5 class="title rubik fw-600"><i class="flaticon-location-pin"></i> Location</h5>
+                                        <h5 class="title rubik fw-600"><i class="flaticon-location-pin"></i> Location
+                                        </h5>
                                     </div>
                                     <form [formGroup]="addCarForm">
                                         <div class="row">
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Téléphone</label>
                                                 <div class="form-group">
-                                                    <input type="number" name="phone" formControlName="phone" class="form-control form-control-custom">
+                                                    <input type="number" name="phone" formControlName="phone"
+                                                        class="form-control form-control-custom">
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Gouvernorat</label>
                                                 <div class="form-group p-relativ">
-                                                    <select class="form-control form-control-custom" formControlName="city">
-                            <option value=""></option>
-                            <option value="Ariana">Ariana</option>
-                            <option value="Béja">Béja</option>
-                            <option value="Ben Arous">Ben Arous</option>
-                            <option value="Bizerte">Bizerte</option>
-                            <option value="Gabès">Gabès</option>
-                            <option value="Gafsa">Gafsa</option>
-                            <option value="Jendouba">Jendouba</option>
-                            <option value="Kairouan">Kairouan</option>
-                            <option value="Kasserine">Kasserine</option>
-                            <option value="Kébili">Kébili</option>
-                            <option value="La Manouba">La Manouba</option>
-                            <option value="Le Kef">Le Kef</option>
-                            <option value="Mahdia">Mahdia</option>
-                            <option value="Médenine">Médenine</option>
-                            <option value="Monastir">Monastir</option>
-                            <option value="Nabeul">Nabeul</option>
-                            <option value="Sfax">Sfax</option>
-                            <option value="Sidi Bouzid">Sidi Bouzid</option>
-                            <option value="Siliana">Siliana</option>
-                            <option value="Sousse">Sousse</option>
-                            <option value="Tataouine">Tataouine</option>
-                            <option value="Tozeur">Tozeur</option>
-                            <option value="Tunis">Tunis</option>
-                            <option value="Zaghouan">Zaghouan</option>
-                          </select>
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="city">
+                                                        <option value=""></option>
+                                                        <option value="Ariana">Ariana</option>
+                                                        <option value="Béja">Béja</option>
+                                                        <option value="Ben Arous">Ben Arous</option>
+                                                        <option value="Bizerte">Bizerte</option>
+                                                        <option value="Gabès">Gabès</option>
+                                                        <option value="Gafsa">Gafsa</option>
+                                                        <option value="Jendouba">Jendouba</option>
+                                                        <option value="Kairouan">Kairouan</option>
+                                                        <option value="Kasserine">Kasserine</option>
+                                                        <option value="Kébili">Kébili</option>
+                                                        <option value="La Manouba">La Manouba</option>
+                                                        <option value="Le Kef">Le Kef</option>
+                                                        <option value="Mahdia">Mahdia</option>
+                                                        <option value="Médenine">Médenine</option>
+                                                        <option value="Monastir">Monastir</option>
+                                                        <option value="Nabeul">Nabeul</option>
+                                                        <option value="Sfax">Sfax</option>
+                                                        <option value="Sidi Bouzid">Sidi Bouzid</option>
+                                                        <option value="Siliana">Siliana</option>
+                                                        <option value="Sousse">Sousse</option>
+                                                        <option value="Tataouine">Tataouine</option>
+                                                        <option value="Tozeur">Tozeur</option>
+                                                        <option value="Tunis">Tunis</option>
+                                                        <option value="Zaghouan">Zaghouan</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Adresse</label>
                                                 <div class="form-group">
-                                                    <input type="text" name="address" formControlName="address" class="form-control form-control-custom">
+                                                    <input type="text" name="address" formControlName="address"
+                                                        class="form-control form-control-custom">
                                                 </div>
                                             </div>
                                         </div>
@@ -417,7 +474,8 @@
                                                     <div class="d-flex justify-content-center text-div-input-file">
                                                         Cliquez ou faites glisser vos photos ici
                                                     </div>
-                                                    <input type="file" class="input-pictures" accept="image/*" (change)="onFileChange($event)">
+                                                    <input type="file" class="input-pictures" accept="image/*"
+                                                        (change)="onFileChange($event)">
 
                                                 </div>
                                             </div>
@@ -437,7 +495,8 @@
 
                                                 <div class="col p-2" *ngFor="let pic of kits;let index = index">
                                                     <img class="picture-car" [src]="pic">
-                                                    <img src="assets/images/new-icons/deletekit.svg" class="delete-icon" (click)="delete(index)">
+                                                    <img src="assets/images/new-icons/deletekit.svg" class="delete-icon"
+                                                        (click)="delete(index)">
                                                 </div>
 
 
@@ -458,7 +517,8 @@
                         <div class="step-footer step-tab-pager">
                             <button data-direction="prev" class="btn-second orange-btn">Précédent</button>
                             <button data-direction="next" class="btn-second orange-btn">Suivant</button>
-                            <button data-direction="finish" class="btn-second orange-btn" (click)="addCar()">Enregistrer</button>
+                            <button data-direction="finish" class="btn-second orange-btn"
+                                (click)="addCar()">Enregistrer</button>
                         </div>
                     </div>
                 </div>
