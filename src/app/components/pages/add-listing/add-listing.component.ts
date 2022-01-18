@@ -98,36 +98,37 @@ export class AddListingComponent implements OnInit {
 
     // })
     this.addCarForm.get('brand')?.valueChanges.subscribe((value: any) => {
+      console.log('braand',value,typeof(value))
       let parts = value.split(',');
-      this.nameBrand=parts[0]
+      this.nameBrand=parts
       this.carService.getModel(parts[1]).subscribe((data: any) => {
         this.arrayModel = data.car_model
       })
     });
     this.addCarForm.get('model')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
-      this.nameModel=parts[0]
+      this.nameModel=parts
       this.carService.getGeneration(parts[1]).subscribe((data: any) => {
         this.arrayGeneration = data.car_generation
       })
     });
     this.addCarForm.get('generation')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
-      this.nameGeneration=parts[0]
+      this.nameGeneration=parts
       this.carService.getSerie(parts[1]).subscribe((data: any) => {
         this.arraySerie = data.car_serie
       })
     });
     this.addCarForm.get('serie')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
-      this.nameSerie=parts[0]
+      this.nameSerie=parts;
       this.carService.getTrim(parts[1]).subscribe((data: any) => {
         this.arrayTrim = data.car_trim
       })
     });
     this.addCarForm.get('trim')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
-      this.nameTrim=parts[0]
+      this.nameTrim=parts;
       this.carService.getSpecification(parts[1]).subscribe((data: any) => {
         this.arraySpecification = data.specifications
       })
@@ -193,11 +194,11 @@ export class AddListingComponent implements OnInit {
       outsideEquipment: this.addCarForm.get('outsideEquipment')?.value,
       securityEquipment: this.addCarForm.get('securityEquipment')?.value,
       type: this.userRole!=='user'? 'Occasion': this.addCarForm.get('type')?.value,
-      brand: this.nameBrand,
-      model: this.nameModel,
-      trims: this.nameTrim,
-      generation: this.nameGeneration,
-      serie: this.nameSerie
+      brand: {'id':this.nameBrand[1],'name':this.nameBrand[0]},
+      model: {'id':this.nameModel[1],'name':this.nameModel[0]},
+      trims: {'id':this.nameTrim[1],'name':this.nameTrim[0]},
+      generation:{'id':this.nameGeneration[1],'name':this.nameGeneration[0]},
+      serie:{'id':this.nameSerie[1],'name':this.nameSerie[0]}
     }
   
     this.carService.addCar(body).subscribe((response: any) => {

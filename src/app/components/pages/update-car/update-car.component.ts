@@ -35,7 +35,7 @@ export class UpdateCarComponent implements OnInit {
   kits = []
   isAcceptedImageFileType: boolean = true
   carDetails: any;
-  userRole:any
+  userRole: any
   constructor(private router: Router, private fb: FormBuilder, private carService: CarService, private route: ActivatedRoute) {
     this.updateCarForm = new FormGroup({
       id: new FormControl(''),
@@ -48,7 +48,7 @@ export class UpdateCarComponent implements OnInit {
       color: new FormControl(''),
       carrosserie: new FormControl(''),
       guarantee: new FormControl(''),
-     // month: new FormControl(''),
+      // month: new FormControl(''),
       year: new FormControl(''),
       category: new FormControl(''),
       price: new FormControl(''),
@@ -107,35 +107,35 @@ export class UpdateCarComponent implements OnInit {
     // })
     this.updateCarForm.get('brand')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
-      this.nameBrand=parts[0]
+      this.nameBrand = parts;
       this.carService.getModel(parts[1]).subscribe((data: any) => {
         this.arrayModel = data.car_model
       })
     });
     this.updateCarForm.get('model')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
-      this.nameModel=parts[0]
+      this.nameModel = parts;
       this.carService.getGeneration(parts[1]).subscribe((data: any) => {
         this.arrayGeneration = data.car_generation
       })
     });
     this.updateCarForm.get('generation')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
-      this.nameGeneration=parts[0]
+      this.nameGeneration = parts;
       this.carService.getSerie(parts[1]).subscribe((data: any) => {
         this.arraySerie = data.car_serie
       })
     });
     this.updateCarForm.get('serie')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
-      this.nameSerie=parts[0]
+      this.nameSerie = parts;
       this.carService.getTrim(parts[1]).subscribe((data: any) => {
         this.arrayTrim = data.car_trim
       })
     });
     this.updateCarForm.get('trim')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
-      this.nameTrim=parts[0]
+      this.nameTrim = parts;
       this.carService.getSpecification(parts[1]).subscribe((data: any) => {
         this.arraySpecification = data.specifications
       })
@@ -151,17 +151,59 @@ export class UpdateCarComponent implements OnInit {
     this.carService.getOneCar(id).subscribe((data: any) => {
       if (data !== null && data !== undefined) {
         this.carDetails = data.voiture;
-        this.arrayBrand.forEach((element:any) => {
-          if(element.name===this.carDetails.brand){
-            console.log('ouii',element)
-            this.updateCarForm.get('brand')?.setValue([this.carDetails.brand,element.id_car_make])
+        // this.carDetails = {
+        //   address: "azjjk",
+        //   availablity: "Immediatement",
+        //   brand: { id: "2", name: "Acura" },
+        //   carrosserie: "Compacte",
+        //   category: "Sports",
+        //   city: "Tunis",
+        //   color: "Noir",
+        //   description: "nkn",
+        //   energy: "essence",
+        //   gearbox: "manuelle",
+        //   generation: {"id": "123941",  "name": "1 génération [2pi restyling]" }, 
+        //   guarantee: "0",
+        //   insideEquipment: ["Autoradio CD/Mp3", "Bluetooth", "Climatisation"],
+        //   mileage: "120000",
+        //   model: { id: "8", name: "ILX" },
+        //   motorization: "100000",
+        //   outsideEquipment: ["Détecteur de pluie", "Jantes en alliage"],
+        //   phone: 35625656,
+        //   pictures: [],
+        //   powerFiscal: "4",
+        //   price: 300000,
+        //   securityEquipment: ["Fixations ISOFIX", "Airbags latéraux "],
+        //   serie: { id: "47088", name: "Berline" },
+        //   title: "jhh",
+        //   transmission: "traction",
+        //   trims: { id: "255090", name: "2.4 AMT (201 cv)" },
+        //   type: "Occasion",
+        //   year: "2020"
+        // }
+        this.arrayBrand.forEach((element: any) => {
+          if (element.name === this.carDetails.brand) {
+            console.log('ouii', element)
+            this.updateCarForm.get('brand')?.setValue([this.carDetails.brand, element.id_car_make])
           }
         });
-     //  this.updateCarForm.get('brand')?.setValue(this.carDetails.brand)
+        this.carService.getModel(this.carDetails.brand.name).subscribe((data: any) => {
+          this.arrayModel = data.car_model
+        });
+        this.carService.getGeneration(this.carDetails.model.id).subscribe((data: any) => {
+          this.arrayGeneration = data.car_generation
+        });
+        this.carService.getSerie(this.carDetails.generation.id).subscribe((data: any) => {
+          this.arraySerie = data.car_serie
+        });
+        this.carService.getTrim(this.carDetails.serie.id).subscribe((data: any) => {
+          this.arrayTrim = data.car_trim
+        });
+        //  this.updateCarForm.get('brand')?.setValue(this.carDetails.brand)
         // this.updateCarForm.get('marque')?.setValue(this.carDetails.marque)
         // this.updateCarForm.get('generation')?.setValue(this.carDetails.generation)
         // this.updateCarForm.get('serie')?.setValue(this.carDetails.serie)
-        this.carService.getSpecification(this.carDetails.trims).subscribe((data: any) => {
+        this.carService.getSpecification(this.carDetails.trims.id).subscribe((data: any) => {
           this.arraySpecification = data.specifications
         });
         const outsideEquipmentArray: FormArray = this.updateCarForm.get('outsideEquipment') as FormArray;
@@ -194,11 +236,11 @@ export class UpdateCarComponent implements OnInit {
         });
         const pictureArray: FormArray = this.updateCarForm.get('pictures') as FormArray;
         this.carDetails.pictureVoitures.forEach((element: any) => {
-         
+
           pictureArray.push(new FormControl(element.picture));
         });
         this.kits = this.updateCarForm.get('pictures')?.value
-       
+
       }
 
     })
@@ -251,12 +293,17 @@ export class UpdateCarComponent implements OnInit {
       insideEquipment: this.updateCarForm.get('insideEquipment')?.value,
       outsideEquipment: this.updateCarForm.get('outsideEquipment')?.value,
       securityEquipment: this.updateCarForm.get('securityEquipment')?.value,
-      type: this.userRole!=='user'? 'Occasion': this.updateCarForm.get('type')?.value,
-      brand: this.nameBrand,
-      model: this.nameModel,
-      trims: this.nameTrim,
-      generation: this.nameGeneration,
-      serie: this.nameSerie
+      type: this.userRole !== 'user' ? 'Occasion' : this.updateCarForm.get('type')?.value,
+      brand: { 'id': this.nameBrand[1], 'name': this.nameBrand[0] },
+      model: { 'id': this.nameModel[1], 'name': this.nameModel[0] },
+      trims: { 'id': this.nameTrim[1], 'name': this.nameTrim[0] },
+      generation: { 'id': this.nameGeneration[1], 'name': this.nameGeneration[0] },
+      serie: { 'id': this.nameSerie[1], 'name': this.nameSerie[0] }
+      // brand: this.nameBrand,
+      // model: this.nameModel,
+      // trims: this.nameTrim,
+      // generation: this.nameGeneration,
+      // serie: this.nameSerie
     }
 
     this.carService.updateCar(body).subscribe((response: any) => {
@@ -287,10 +334,10 @@ export class UpdateCarComponent implements OnInit {
           let selectedFilename = file.name;
           // const FileKit = this.base64ToFile(selectedFile, selectedFilename);
           const fileKit = r.result
-       
+
           const picArray: FormArray = this.updateCarForm.get('pictures') as FormArray;
           picArray.push(new FormControl(fileKit));
-         
+
           this.kits = this.updateCarForm.get('pictures')?.value
         }
       }
@@ -312,5 +359,5 @@ export class UpdateCarComponent implements OnInit {
 
     return new File([u8arr], filename, { type: mime });
   }
- 
+
 }

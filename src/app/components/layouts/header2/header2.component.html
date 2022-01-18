@@ -63,10 +63,10 @@
                       </ul>
                     </li> -->
                <li class="menu-item text-header">
-                  <a  id="navbarDropdownMenuLink2" [routerLink]="['/mon-espace']" role="button" aria-haspopup="true" aria-expanded="false" 
+                  <a  id="navbarDropdownMenuLink3" [routerLink]="['/mon-espace']"  role="button" aria-haspopup="true" aria-expanded="false" 
                   data-toggle="dropdown" class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
                     Mon espace</a>
-                  <ul class="dropdown-menu dropdown-account">
+                  <ul class="dropdown-menu dropdown-account" aria-labelledby="navbarDropdownMenuLink3">
                     <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/account/creation" class="text-black">S'inscrire</a>
                     </li>
                     <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/login" class="text-black">Se Connecter</a>
@@ -114,7 +114,7 @@
                 <a   [routerLink]="['/mon-espace']" id="navbarDropdownMenuLink2" role="button" aria-haspopup="true" aria-expanded="false" 
                 data-toggle="dropdown" class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
                   </a>
-                <ul class="dropdown-menu dropdown-account">
+                <ul class="dropdown-menu dropdown-account" aria-labelledby="navbarDropdownMenuLink2">
                   <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/account/creation" class="text-black">S'inscrire</a>
                   </li>
                   <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/login" class="text-black">Se Connecter</a>

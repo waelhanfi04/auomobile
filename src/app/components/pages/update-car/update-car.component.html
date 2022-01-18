@@ -90,7 +90,7 @@
                           </select>
                         </div>
                       </div>
-                      <div class="col-lg-3 col-md-4 col-sm-4">
+                      <!-- <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Mois</label>
                         <div class="form-group p-relative">
                           <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.month" formControlName="month">
@@ -109,7 +109,7 @@
                             <option value="12">12</option>
                           </select>
                         </div>
-                      </div>
+                      </div> -->
                       <div class="col-lg-3 col-md-4 col-sm-4">
                         <label>Année</label>
                         <div class="form-group p-relative">
@@ -230,7 +230,7 @@
                         <label>Marque</label>
                         <div class="form-group p-relative">
                             <select class="form-control form-control-custom"
-                                formControlName="brand"  [(ngModel)]="this.carDetails.brand">
+                                formControlName="brand"  [(ngModel)]="this.carDetails.brand.name">
                                 <option *ngFor="let b of arrayBrand" [value]="[b.name,b.id_car_make]" >{{b.name}}</option>
 
                             </select>
@@ -240,7 +240,7 @@
                         <label>Modèle</label>
                         <div class="form-group p-relative">
                             <select class="form-control form-control-custom"
-                                formControlName="model"  [(ngModel)]="this.carDetails.model">
+                                formControlName="model"  [(ngModel)]="this.carDetails.model.name">
                                 <option *ngFor="let m of arrayModel"[value]="[m.name,m.id_car_model]" >{{m.name}}</option>
                             </select>
                         </div>
@@ -249,7 +249,7 @@
                         <label>Génération</label>
                         <div class="form-group p-relative">
                             <select class="form-control form-control-custom"
-                                formControlName="generation" [(ngModel)]="this.carDetails.generation">
+                                formControlName="generation" [(ngModel)]="this.carDetails.generation.name">
                                 <option  *ngFor="let g of arrayGeneration" [value]="[g.name,g.id_car_generation]">{{g.name}}</option>
                              </select>
                         </div>
@@ -267,7 +267,7 @@
                         <label>Modification</label>
                         <div class="form-group p-relative">
                             <select class="form-control form-control-custom"
-                                formControlName="trim">
+                                formControlName="trim" [(ngModel)]="this.carDetails.trims.name">
                                 <option *ngFor="let t of arrayTrim"  [value]="[t.name,t.id_car_trim]">{{t.name}}</option>
                              </select>
                         </div>
