@@ -19,10 +19,14 @@ export class MesAnnonceComponent implements OnInit {
   }
   getCars(){
     this.carService.getUserCars().subscribe((data:any)=>{
-      console.log('cars from home--> ',data)
       if(data!==null || data!==undefined)
       { 
         this.carsList=data.voitures
+        this.carsList.forEach((car:any) => {
+          car.brand=JSON.parse(car.brand)
+          car.voitureOption=JSON.parse(car.voitureOption)
+        });
+      
       }
     })
   }

@@ -151,61 +151,38 @@ export class UpdateCarComponent implements OnInit {
     this.carService.getOneCar(id).subscribe((data: any) => {
       if (data !== null && data !== undefined) {
         this.carDetails = data.voiture;
-        // this.carDetails = {
-        //   address: "azjjk",
-        //   availablity: "Immediatement",
-        //   brand: { id: "2", name: "Acura" },
-        //   carrosserie: "Compacte",
-        //   category: "Sports",
-        //   city: "Tunis",
-        //   color: "Noir",
-        //   description: "nkn",
-        //   energy: "essence",
-        //   gearbox: "manuelle",
-        //   generation: {"id": "123941",  "name": "1 génération [2pi restyling]" }, 
-        //   guarantee: "0",
-        //   insideEquipment: ["Autoradio CD/Mp3", "Bluetooth", "Climatisation"],
-        //   mileage: "120000",
-        //   model: { id: "8", name: "ILX" },
-        //   motorization: "100000",
-        //   outsideEquipment: ["Détecteur de pluie", "Jantes en alliage"],
-        //   phone: 35625656,
-        //   pictures: [],
-        //   powerFiscal: "4",
-        //   price: 300000,
-        //   securityEquipment: ["Fixations ISOFIX", "Airbags latéraux "],
-        //   serie: { id: "47088", name: "Berline" },
-        //   title: "jhh",
-        //   transmission: "traction",
-        //   trims: { id: "255090", name: "2.4 AMT (201 cv)" },
-        //   type: "Occasion",
-        //   year: "2020"
-        // }
-        this.arrayBrand.forEach((element: any) => {
-          if (element.name === this.carDetails.brand) {
-            console.log('ouii', element)
-            this.updateCarForm.get('brand')?.setValue([this.carDetails.brand, element.id_car_make])
-          }
-        });
-        this.carService.getModel(this.carDetails.brand.name).subscribe((data: any) => {
-          this.arrayModel = data.car_model
-        });
-        this.carService.getGeneration(this.carDetails.model.id).subscribe((data: any) => {
-          this.arrayGeneration = data.car_generation
-        });
-        this.carService.getSerie(this.carDetails.generation.id).subscribe((data: any) => {
-          this.arraySerie = data.car_serie
-        });
-        this.carService.getTrim(this.carDetails.serie.id).subscribe((data: any) => {
-          this.arrayTrim = data.car_trim
-        });
-        //  this.updateCarForm.get('brand')?.setValue(this.carDetails.brand)
-        // this.updateCarForm.get('marque')?.setValue(this.carDetails.marque)
-        // this.updateCarForm.get('generation')?.setValue(this.carDetails.generation)
-        // this.updateCarForm.get('serie')?.setValue(this.carDetails.serie)
-        this.carService.getSpecification(this.carDetails.trims.id).subscribe((data: any) => {
-          this.arraySpecification = data.specifications
-        });
+        this.carDetails.brand = JSON.parse(this.carDetails.brand)
+        this.carDetails.voitureOption = JSON.parse(this.carDetails.voitureOption)
+        if (this.carDetails.brand.id) {
+          this.carService.getModel(this.carDetails.brand.id).subscribe((data: any) => {
+            this.arrayModel = data.car_model
+          });
+        }
+        if (this.carDetails.voitureOption.model.id) {
+          this.carService.getGeneration(this.carDetails.voitureOption.model.id).subscribe((data: any) => {
+            this.arrayGeneration = data.car_generation
+          });
+        }
+        if (this.carDetails.voitureOption.generation.id) {
+          this.carService.getSerie(this.carDetails.voitureOption.generation.id).subscribe((data: any) => {
+            this.arraySerie = data.car_serie
+          });
+        }
+        if (this.carDetails.voitureOption.serie.id) {
+          this.carService.getTrim(this.carDetails.voitureOption.serie.id).subscribe((data: any) => {
+            this.arrayTrim = data.car_trim
+          });
+        }
+        if (this.carDetails.voitureOption.trims.id) {
+          this.carService.getSpecification(this.carDetails.voitureOption.trims.id).subscribe((data: any) => {
+            this.arraySpecification = data.specifications
+          });
+        }
+        this.updateCarForm.get('brand')?.setValue([this.carDetails.brand.value, this.carDetails.brand.id])
+        this.updateCarForm.get('model')?.setValue([this.carDetails.voitureOption.model, this.carDetails.voitureOption.model.id])
+        this.updateCarForm.get('generation')?.setValue([this.carDetails.generation.value, this.carDetails.generation.id])
+        this.updateCarForm.get('serie')?.setValue([this.carDetails.serie.value, this.carDetails.serie.id])
+
         const outsideEquipmentArray: FormArray = this.updateCarForm.get('outsideEquipment') as FormArray;
         this.carDetails.outsideEquipmentVoitures.forEach((itemEquip: any) => {
           outsideEquipmentArray.push(new FormControl(itemEquip.equipment));
@@ -268,6 +245,11 @@ export class UpdateCarComponent implements OnInit {
     // this.kits.filter((data:any)=>{data})
   }
   updateCar() {
+    let brand = { 'id': this.nameBrand[1], 'value': this.nameBrand[0] }
+    let model = { 'id': this.nameModel[1], 'value': this.nameModel[0] }
+    let trims = { 'id': this.nameTrim[1], 'value': this.nameTrim[0] }
+    let generation = { 'id': this.nameGeneration[1], 'value': this.nameGeneration[0] }
+    let serie = { 'id': this.nameSerie[1], 'value': this.nameSerie[0] }
     let body = {
       id: this.carDetails.id,
       availablity: this.updateCarForm.get('availablity')?.value,
@@ -294,16 +276,16 @@ export class UpdateCarComponent implements OnInit {
       outsideEquipment: this.updateCarForm.get('outsideEquipment')?.value,
       securityEquipment: this.updateCarForm.get('securityEquipment')?.value,
       type: this.userRole !== 'user' ? 'Occasion' : this.updateCarForm.get('type')?.value,
-      brand: { 'id': this.nameBrand[1], 'name': this.nameBrand[0] },
-      model: { 'id': this.nameModel[1], 'name': this.nameModel[0] },
-      trims: { 'id': this.nameTrim[1], 'name': this.nameTrim[0] },
-      generation: { 'id': this.nameGeneration[1], 'name': this.nameGeneration[0] },
-      serie: { 'id': this.nameSerie[1], 'name': this.nameSerie[0] }
-      // brand: this.nameBrand,
-      // model: this.nameModel,
-      // trims: this.nameTrim,
-      // generation: this.nameGeneration,
-      // serie: this.nameSerie
+      brand: JSON.stringify(brand),
+      model: JSON.stringify(model),
+      trims: JSON.stringify(trims),
+      generation: JSON.stringify(generation),
+      serie: JSON.stringify(serie)
+      // brand: { 'id': this.nameBrand[1], 'value': this.nameBrand[0] },
+      // model: { 'id': this.nameModel[1], 'value': this.nameModel[0] },
+      // trims: { 'id': this.nameTrim[1], 'value': this.nameTrim[0] },
+      // generation: { 'id': this.nameGeneration[1], 'value': this.nameGeneration[0] },
+      // serie: { 'id': this.nameSerie[1], 'value': this.nameSerie[0] }
     }
 
     this.carService.updateCar(body).subscribe((response: any) => {

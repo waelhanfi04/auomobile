@@ -53,6 +53,10 @@ filterForm:FormGroup
       
       if(data!==null || data!==undefined)
       { 
+        data.forEach((car:any) => {
+          car.brand=JSON.parse(car.brand)
+          car.voitureOption=JSON.parse(car.voitureOption)
+        });
         if(localStorage.getItem('fav_store__')){
         let local:any =localStorage.getItem('fav_store__')
         var fav = JSON.parse(local)
@@ -69,6 +73,7 @@ filterForm:FormGroup
       });
     }
         this.carsList=data.voitures;
+    
         this.carListLength=this.carsList.length;
         this.carsList=data.voitures.filter((car:any)=>
           car.status==='accepted'

@@ -22,6 +22,10 @@ export class GererAnnonceComponent implements OnInit {
       { 
 
         this.carsList=data.voitures
+        this.carsList.forEach((car:any) => {
+          car.brand=JSON.parse(car.brand)
+          car.voitureOption=JSON.parse(car.voitureOption)
+        });
       }
     })
   }

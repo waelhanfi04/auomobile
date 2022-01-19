@@ -452,7 +452,7 @@
                         <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6" *ngFor="let car of carsList | filter : searchData">
                             <div class="car-grid-layout-box">
                                 <div class="car-grid-layout-inner text-center">
-                                    <h5 class="car-name"><a [routerLink]="['car-detail',car.id]" class="text-light-black">{{car.brand}} {{car.model}}</a>
+                                    <h5 class="car-name"><a [routerLink]="['car-detail',car.id]" class="text-light-black">{{car.brand.value}} {{car.voitureOption.model.value}}</a>
                                         <!-- [ngClass]="{'orange-fa-heart':car.useId === this.userId }"-->
                                         <span *ngIf="car.userId !== this.userId" class="gray-fa-heart float-right custom-tooltip" (click)="addToFavorites(car.id)" data-tip="Sauvgarder">
                           <i [ngClass]="{'orange-fa-heart':car.favoris }" class="fa fa-heart"></i></span>
@@ -654,7 +654,7 @@
                               <picture>
                                   <img (error)="onImgError($event)" [src]="car.pictureVoitures[0]?.picture">
                               </picture>
-                              <h2>{{car.brand}} {{car.model}}</h2>
+                              <h2>{{car.brand.value}} {{car.voitureOption.model.value}}</h2>
                 
                               <div class="price">
                                   A partir de <span>{{car.price || '0'}} <span class="suffix">DT</span></span>

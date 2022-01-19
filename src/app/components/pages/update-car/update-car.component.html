@@ -230,7 +230,7 @@
                         <label>Marque</label>
                         <div class="form-group p-relative">
                             <select class="form-control form-control-custom"
-                                formControlName="brand"  [(ngModel)]="this.carDetails.brand.name">
+                                formControlName="brand"  [(ngModel)]="this.carDetails.brand.id">
                                 <option *ngFor="let b of arrayBrand" [value]="[b.name,b.id_car_make]" >{{b.name}}</option>
 
                             </select>
@@ -240,7 +240,7 @@
                         <label>Modèle</label>
                         <div class="form-group p-relative">
                             <select class="form-control form-control-custom"
-                                formControlName="model"  [(ngModel)]="this.carDetails.model.name">
+                                formControlName="model"  [(ngModel)]="this.carDetails.voitureOption.model.id">
                                 <option *ngFor="let m of arrayModel"[value]="[m.name,m.id_car_model]" >{{m.name}}</option>
                             </select>
                         </div>
@@ -249,7 +249,7 @@
                         <label>Génération</label>
                         <div class="form-group p-relative">
                             <select class="form-control form-control-custom"
-                                formControlName="generation" [(ngModel)]="this.carDetails.generation.name">
+                                formControlName="generation" [(ngModel)]="this.carDetails.voitureOption.generation.id">
                                 <option  *ngFor="let g of arrayGeneration" [value]="[g.name,g.id_car_generation]">{{g.name}}</option>
                              </select>
                         </div>
@@ -258,7 +258,7 @@
                         <label>Série</label>
                         <div class="form-group p-relative">
                             <select class="form-control form-control-custom"
-                                formControlName="serie"  [(ngModel)]="this.carDetails.serie">
+                                formControlName="serie"  [(ngModel)]="this.carDetails.voitureOption.serie.id">
                                 <option  *ngFor="let s of arraySerie" [value]="[s.name,s.id_car_serie]">{{s.name}}</option>
                              </select>
                         </div>
@@ -267,7 +267,7 @@
                         <label>Modification</label>
                         <div class="form-group p-relative">
                             <select class="form-control form-control-custom"
-                                formControlName="trim" [(ngModel)]="this.carDetails.trims.name">
+                                formControlName="trim" [(ngModel)]="this.carDetails.voitureOption.trims.id">
                                 <option *ngFor="let t of arrayTrim"  [value]="[t.name,t.id_car_trim]">{{t.name}}</option>
                              </select>
                         </div>

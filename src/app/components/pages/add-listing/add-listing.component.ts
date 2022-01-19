@@ -165,6 +165,11 @@ export class AddListingComponent implements OnInit {
     // this.kits.filter((data:any)=>{data})
   }
   addCar() {
+    let brand = { 'id': this.nameBrand[1], 'value': this.nameBrand[0] }
+    let model = { 'id': this.nameModel[1], 'value': this.nameModel[0] }
+    let trims = { 'id': this.nameTrim[1], 'value': this.nameTrim[0] }
+    let generation = { 'id': this.nameGeneration[1], 'value': this.nameGeneration[0] }
+    let serie = { 'id': this.nameSerie[1], 'value': this.nameSerie[0] }
     if (this.userRole !== 'user') {
       this.addCarForm.get('type')?.setValue('Occasion')
     }
@@ -194,11 +199,16 @@ export class AddListingComponent implements OnInit {
       outsideEquipment: this.addCarForm.get('outsideEquipment')?.value,
       securityEquipment: this.addCarForm.get('securityEquipment')?.value,
       type: this.userRole!=='user'? 'Occasion': this.addCarForm.get('type')?.value,
-      brand: {'id':this.nameBrand[1],'name':this.nameBrand[0]},
-      model: {'id':this.nameModel[1],'name':this.nameModel[0]},
-      trims: {'id':this.nameTrim[1],'name':this.nameTrim[0]},
-      generation:{'id':this.nameGeneration[1],'name':this.nameGeneration[0]},
-      serie:{'id':this.nameSerie[1],'name':this.nameSerie[0]}
+      brand: JSON.stringify(brand),
+      model:JSON.stringify(model),
+      trims:JSON.stringify(trims),
+      generation: JSON.stringify(generation),
+      serie:JSON.stringify(serie)
+      // brand: {'id':this.nameBrand[1],'value':this.nameBrand[0]},
+      // model: {'id':this.nameModel[1],'value':this.nameModel[0]},
+      // trims: {'id':this.nameTrim[1],'value':this.nameTrim[0]},
+      // generation:{'id':this.nameGeneration[1],'value':this.nameGeneration[0]},
+      // serie:{'id':this.nameSerie[1],'value':this.nameSerie[0]}
     }
   
     this.carService.addCar(body).subscribe((response: any) => {
