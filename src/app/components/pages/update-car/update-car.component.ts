@@ -277,10 +277,10 @@ export class UpdateCarComponent implements OnInit {
       securityEquipment: this.updateCarForm.get('securityEquipment')?.value,
       type: this.userRole !== 'user' ? 'Occasion' : this.updateCarForm.get('type')?.value,
       brand: JSON.stringify(brand),
-      model: JSON.stringify(model),
-      trims: JSON.stringify(trims),
-      generation: JSON.stringify(generation),
-      serie: JSON.stringify(serie)
+      model: model,
+      trims:trims,
+      generation:generation,
+      serie:serie
       // brand: { 'id': this.nameBrand[1], 'value': this.nameBrand[0] },
       // model: { 'id': this.nameModel[1], 'value': this.nameModel[0] },
       // trims: { 'id': this.nameTrim[1], 'value': this.nameTrim[0] },
