@@ -67,7 +67,7 @@ export class UpdateCarComponent implements OnInit {
       pictures: this.fb.array([]),
       // seatingCapacity: new FormControl(''),
       // numberDoors: new FormControl(''),
-      type: new FormControl(''),
+      type: new FormControl('Occasion'),
       trim: new FormControl(''),
       generation: new FormControl(''),
       serie: new FormControl(''),
@@ -99,7 +99,8 @@ export class UpdateCarComponent implements OnInit {
     /*---Update lists-- */
     this.updateCarForm.get('brand')?.valueChanges.subscribe((value: string) => {
       //  let parts = value.split(',');
-      this.arrayBrand.forEach((brand: any) => {
+      if( this.arrayBrand)
+    {  this.arrayBrand.forEach((brand: any) => {
         if (brand.id_car_make === value) {
           console.log('iouiii')
           this.nameBrand = { 'id': value, 'value': brand.name }
@@ -107,7 +108,7 @@ export class UpdateCarComponent implements OnInit {
       });
       this.carService.getModel(value).subscribe((data: any) => {
         this.arrayModel = data.car_model
-      })
+      })}
     });
     this.updateCarForm.get('model')?.valueChanges.subscribe((value: string) => {
       console.log('vaaaa', value)
