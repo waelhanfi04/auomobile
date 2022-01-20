@@ -87,18 +87,9 @@ export class AddListingComponent implements OnInit {
     for (let i = 4; i < 49; i++) {
       this.powerFiscalArray.push(i);
     }
-    /*---Update list of model-- */
-    // this.addCarForm.get('brand')?.valueChanges.subscribe((value: any) => {
-    //   this.arrayModel = []
-    //   arrayBrand.map((b: any) => {
-    //     if (b.brand === value) {
-    //       this.arrayModel = b.model
-    //     }
-    //   })
+    /*---get data-- */
 
-    // })
     this.addCarForm.get('brand')?.valueChanges.subscribe((value: any) => {
-      console.log('braand',value,typeof(value))
       let parts = value.split(',');
       this.nameBrand=parts
       this.carService.getModel(parts[1]).subscribe((data: any) => {

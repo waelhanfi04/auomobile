@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { arrayInsideEquipment, arrayOutsideEquipment, arraysecurityEquipment, ar
   templateUrl: './update-car.component.html',
   styleUrls: ['./update-car.component.css']
 })
-export class UpdateCarComponent implements OnInit {
+export class UpdateCarComponent implements OnInit{
   updateCarForm: FormGroup
   errorMsg = ''
   successMsg = ''
@@ -22,20 +22,21 @@ export class UpdateCarComponent implements OnInit {
   securityEquipmentList = arraysecurityEquipment
   categoriesList = arrayCategoryCar
   arrayBrand: any
-  nameBrand: string = ''
-  arrayModel: any
-  nameModel: string = ''
+  nameBrand: any;
+  arrayModel:any
+  nameModel:any;
   arrayTrim: any
-  nameTrim: string = ''
+  nameTrim:any;
   arrayGeneration: any
-  nameGeneration: string = ''
+  nameGeneration:any;
   arraySpecification: any
   arraySerie: any
-  nameSerie: string = ''
+  nameSerie:any;
   kits = []
   isAcceptedImageFileType: boolean = true
   carDetails: any;
   userRole: any
+  voitureOption: any;
   constructor(private router: Router, private fb: FormBuilder, private carService: CarService, private route: ActivatedRoute) {
     this.updateCarForm = new FormGroup({
       id: new FormControl(''),
@@ -95,52 +96,77 @@ export class UpdateCarComponent implements OnInit {
     for (let i = 4; i < 49; i++) {
       this.powerFiscalArray.push(i);
     }
-    /*---Update list of model-- */
-    // this.updateCarForm.get('brand')?.valueChanges.subscribe((value: any) => {
-    //   this.arrayModel = []
-    //   arrayBrand.map((b: any) => {
-    //     if (b.brand === value) {
-    //       this.arrayModel = b.model
-    //     }
-    //   })
-
-    // })
-    this.updateCarForm.get('brand')?.valueChanges.subscribe((value: any) => {
-      let parts = value.split(',');
-      this.nameBrand = parts;
-      this.carService.getModel(parts[1]).subscribe((data: any) => {
+    /*---Update lists-- */
+    this.updateCarForm.get('brand')?.valueChanges.subscribe((value: string) => {
+      //  let parts = value.split(',');
+      this.arrayBrand.forEach((brand:any) => {
+        if(brand.id_car_make===value){
+          this.nameBrand = { 'id': value, 'value':brand.name }
+        }
+      });
+      this.updateCarForm.valueChanges.subscribe((val)=>{
+        console.log('vaal f',val)
+      })
+      this.carService.getModel(value).subscribe((data: any) => {
         this.arrayModel = data.car_model
+        console.log('this.arrayModel ',this.arrayModel )
       })
     });
-    this.updateCarForm.get('model')?.valueChanges.subscribe((value: any) => {
-      let parts = value.split(',');
-      this.nameModel = parts;
-      this.carService.getGeneration(parts[1]).subscribe((data: any) => {
+    this.updateCarForm.get('model')?.valueChanges.subscribe((value: string) => {
+    
+      // let parts = value.split(',');
+      // this.nameModel = parts;
+      this.arrayModel.forEach((model:any) => {
+        if(model.id_car_model===value){
+          this.nameModel = { 'id': value, 'value':model.name }
+        }
+      });
+      console.log('vaaaa',value)
+      this.carService.getGeneration(value).subscribe((data: any) => {
         this.arrayGeneration = data.car_generation
       })
     });
-    this.updateCarForm.get('generation')?.valueChanges.subscribe((value: any) => {
-      let parts = value.split(',');
-      this.nameGeneration = parts;
-      this.carService.getSerie(parts[1]).subscribe((data: any) => {
+    this.updateCarForm.get('generation')?.valueChanges.subscribe((value: string) => {
+      // let parts = value.split(',');
+      // this.nameGeneration = parts;
+      this.arrayGeneration.forEach((generation:any) => {
+        if(generation.id_car_generation===value){
+          this.nameGeneration = { 'id': value, 'value':generation.name }
+        }
+      });
+      this.carService.getSerie(value).subscribe((data: any) => {
         this.arraySerie = data.car_serie
       })
     });
-    this.updateCarForm.get('serie')?.valueChanges.subscribe((value: any) => {
-      let parts = value.split(',');
-      this.nameSerie = parts;
-      this.carService.getTrim(parts[1]).subscribe((data: any) => {
+    this.updateCarForm.get('serie')?.valueChanges.subscribe((value: string) => {
+      // let parts = value.split(',');
+      // this.nameSerie = parts;
+      this.arraySerie.forEach((serie:any) => {
+        if(serie.id_car_serie===value){
+          this.nameSerie = { 'id': value, 'value':serie.name }
+        }
+      });
+      this.carService.getTrim(value).subscribe((data: any) => {
         this.arrayTrim = data.car_trim
       })
     });
-    this.updateCarForm.get('trim')?.valueChanges.subscribe((value: any) => {
-      let parts = value.split(',');
-      this.nameTrim = parts;
-      this.carService.getSpecification(parts[1]).subscribe((data: any) => {
+    this.updateCarForm.get('trim')?.valueChanges.subscribe((value: string) => {
+      // let parts = value.split(',');
+      // this.nameTrim = parts;
+      this.arrayTrim.forEach((trim:any) => {
+        if(trim.id_car_trim===value){
+          this.nameTrim = { 'id': value, 'value':trim.name }
+        }
+      });
+      this.carService.getSpecification(value).subscribe((data: any) => {
         this.arraySpecification = data.specifications
       })
     });
+  
   }
+  // ngOnChanges(): void {
+
+  // }
   getBrands() {
     this.carService.getMarque().subscribe((data: any) => {
       this.arrayBrand = data.car_make;
@@ -153,6 +179,12 @@ export class UpdateCarComponent implements OnInit {
         this.carDetails = data.voiture;
         this.carDetails.brand = JSON.parse(this.carDetails.brand)
         this.carDetails.voitureOption = JSON.parse(this.carDetails.voitureOption)
+        this.voitureOption =this.carDetails.voitureOption;
+        this.nameBrand = { 'id': this.carDetails.brand.id, 'value':this.carDetails.brand.value}
+        this.nameModel = { 'id': this.carDetails.voitureOption.model.id, 'value': this.carDetails.voitureOption.model.value }
+        this.nameTrim = { 'id':this.carDetails.voitureOption.trims.id, 'value': this.carDetails.voitureOption.trims.value }
+        this.nameSerie = { 'id':this.carDetails.voitureOption.serie.id, 'value': this.carDetails.voitureOption.serie.value }
+        this.nameGeneration = { 'id': this.carDetails.voitureOption.generation.id, 'value': this.carDetails.voitureOption.generation.value }
         if (this.carDetails.brand.id) {
           this.carService.getModel(this.carDetails.brand.id).subscribe((data: any) => {
             this.arrayModel = data.car_model
@@ -178,11 +210,11 @@ export class UpdateCarComponent implements OnInit {
             this.arraySpecification = data.specifications
           });
         }
-        this.updateCarForm.get('brand')?.setValue([this.carDetails.brand.value, this.carDetails.brand.id])
-        this.updateCarForm.get('model')?.setValue([this.carDetails.voitureOption.model, this.carDetails.voitureOption.model.id])
-        this.updateCarForm.get('generation')?.setValue([this.carDetails.generation.value, this.carDetails.generation.id])
-        this.updateCarForm.get('serie')?.setValue([this.carDetails.serie.value, this.carDetails.serie.id])
-
+      /*  this.updateCarForm.get('brand')?.setValue(this.carDetails.brand.id)
+        this.updateCarForm.get('model')?.setValue( this.carDetails.voitureOption.model.id)
+        this.updateCarForm.get('generation')?.setValue( this.carDetails.voitureOption.generation.id)
+        this.updateCarForm.get('serie')?.setValue( this.carDetails.voitureOption.serie.id)
+*/
         const outsideEquipmentArray: FormArray = this.updateCarForm.get('outsideEquipment') as FormArray;
         this.carDetails.outsideEquipmentVoitures.forEach((itemEquip: any) => {
           outsideEquipmentArray.push(new FormControl(itemEquip.equipment));
@@ -276,11 +308,11 @@ export class UpdateCarComponent implements OnInit {
       outsideEquipment: this.updateCarForm.get('outsideEquipment')?.value,
       securityEquipment: this.updateCarForm.get('securityEquipment')?.value,
       type: this.userRole !== 'user' ? 'Occasion' : this.updateCarForm.get('type')?.value,
-      brand: JSON.stringify(brand),
-      model: model,
-      trims:trims,
-      generation:generation,
-      serie:serie
+      brand: JSON.stringify(this.nameBrand),
+      model: this.nameModel,
+      trims: this.nameTrim,
+      generation: this.nameGeneration,
+      serie: this.nameSerie
       // brand: { 'id': this.nameBrand[1], 'value': this.nameBrand[0] },
       // model: { 'id': this.nameModel[1], 'value': this.nameModel[0] },
       // trims: { 'id': this.nameTrim[1], 'value': this.nameTrim[0] },

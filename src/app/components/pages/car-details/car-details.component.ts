@@ -37,13 +37,13 @@ export class CarDetailsComponent implements OnInit {
   }
   getCarDetails(id: any) {
     this.carService.getOneCar(id).subscribe((data: any) => {
-      console.log('car from details -----> ', data)
       this.car = data.voiture;
       this.car.brand=JSON.parse(this.car.brand)
       this.car.voitureOption=JSON.parse(this.car.voitureOption)
-      this.carService.getSpecification(this.car.trims).subscribe((data: any) => {
+      if(this.car.voitureOption.trims.id)
+     { this.carService.getSpecification(this.car.voitureOption.trims.id).subscribe((data: any) => {
         this.arraySpecification = data.specifications
-      });
+      });}
       this.insideEquipmentList = data.voiture.insideEquipmentVoitures;
       this.outsideEquipmentList = data.voiture.outsideEquipmentVoitures;
       this.securityEquipmentList = data.voiture.securityEquipmentVoitures;
