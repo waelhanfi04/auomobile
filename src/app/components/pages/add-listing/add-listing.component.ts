@@ -198,12 +198,12 @@ export class AddListingComponent implements OnInit {
       trims:trims,
       generation: generation,
       serie:serie,
-       numberDoors:'',
-      seatingCapacity:'',
-      puissanceDIN:'',
-      permis:'' ,
-      carburant:'',
-      miseCirculation:''
+      numberDoors:null,
+      seatingCapacity:null,
+      puissanceDIN:null,
+      permis:null,
+      carburant:null,
+      miseCirculation:null
       // brand: {'id':this.nameBrand[1],'value':this.nameBrand[0]},
       // model: {'id':this.nameModel[1],'value':this.nameModel[0]},
       // trims: {'id':this.nameTrim[1],'value':this.nameTrim[0]},
