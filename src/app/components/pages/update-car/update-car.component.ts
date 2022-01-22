@@ -320,12 +320,12 @@ export class UpdateCarComponent implements OnInit {
       trims: this.nameTrim,
       generation: this.nameGeneration,
       serie: this.nameSerie,
-      numberDoors:'',
-      seatingCapacity:'',
-      puissanceDIN:'',
-      permis:'' ,
-      carburant:'',
-      miseCirculation:''
+      numberDoors:null,
+      seatingCapacity:null,
+      puissanceDIN:null,
+      permis:null,
+      carburant:null,
+      miseCirculation:null
       // brand: { 'id': this.nameBrand[1], 'value': this.nameBrand[0] },
       // model: { 'id': this.nameModel[1], 'value': this.nameModel[0] },
       // trims: { 'id': this.nameTrim[1], 'value': this.nameTrim[0] },
