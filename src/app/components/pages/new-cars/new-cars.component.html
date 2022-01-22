@@ -36,8 +36,8 @@
                 <div id="facets-pjax" class="div-cars" data-pjax-container="" data-pjax-push-state="" data-pjax-timeout="5000">
                     <div id="w0" class="occasions-results">
                         <div class="row justify-content-center" *ngIf="this.noData">
-                            <span class="error-msg no-data-span" >Pas de données</span>
-                          </div>
+                            <span class="error-msg no-data-span">Pas de données</span>
+                        </div>
                         <div class="articles">
                             <span *ngFor="let car of carsList">
                                 <div class="versions-item">
@@ -48,17 +48,17 @@
 
                                             <img (error)="onImgError($event)" [src]="car.pictureVoitures[0]?.picture">
                                         </picture>
-                                        <h2>{{car.brand}} {{car.model}}</h2>
+                                        <h2>{{car.title}}</h2>
 
                                         <div class="price">
                                             A partir de <span>{{car.price || '0'}} <span class="suffix">DT</span></span>
-                                        </div>
+                        </div>
 
 
-                                    </a>
-                                </div>
-                            </span>
-                            <!-- <span data-key="43357">
+                        </a>
+                    </div>
+                    </span>
+                    <!-- <span data-key="43357">
                                 <div class="versions-item">
                                     <a href="/fr/neuf/alfa-romeo/giulia/2.0-turbo-bva-super">
 
@@ -273,16 +273,15 @@
                                     </a>
                                 </div>
                             </span> -->
-                        </div>
-                        <div class="pages"></div>
-                        <div class="vs"></div>
-                    </div>
                 </div>
+                <div class="pages"></div>
+                <div class="vs"></div>
             </div>
-
         </div>
-    </section>
-    <!-- Blog -->
-    <app-footer2></app-footer2>
 </div>
 
+</div>
+</section>
+<!-- Blog -->
+<app-footer2></app-footer2>
+</div>

@@ -27,7 +27,6 @@ export class NewCarsComponent implements OnInit {
     .pipe(
       map((params: any) => {
         this.brand=params['brand']
-        console.log(params['brand']);
         return params['brand'];
       })
     )
@@ -36,15 +35,19 @@ export class NewCarsComponent implements OnInit {
   }
   getCars(brand:any){
     this.carService.getAllCars().subscribe((data:any)=>{
-      
       if(data!==null || data!==undefined)
       {
-        this.carsList=  data.voitures.filter((car:any)=> 
-        car.status ==='accepted' && car.type ==='Neuve' && car.brand===brand)
+       
+        this.carsList=  data.voitures.filter((car:any)=> {
+          let obj:any;
+          eval("obj = " + car.brand);
+         return car.status ==='accepted' && car.type ==='Neuve' && obj?.value===brand
+        }
+        )
         if(this.carsList.length===0){
           this.noData=true
         }else{
-          this.noData=false
+          this.noData=false;
         }
       }
     })
