@@ -54,7 +54,7 @@ filterForm:FormGroup
       
       if(data!==null || data!==undefined)
       { 
-        data.forEach((car:any) => {
+        data.voitures.forEach((car:any) => {
           car.brand=JSON.parse(car.brand)
           car.voitureOption=JSON.parse(car.voitureOption)
         });
@@ -74,7 +74,7 @@ filterForm:FormGroup
       });
     }
         this.carsList=data.voitures;
-    
+      console.log("length",this.carsList);
         this.carListLength=this.carsList.length;
         this.carsList=data.voitures.filter((car:any)=>
           car.status==='accepted'
