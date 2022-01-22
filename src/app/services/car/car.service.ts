@@ -94,7 +94,7 @@ export class CarService {
       serverUrl + "getMarque/1",{ headers:header }
     );
   }
-  getModel(idMarque:string){
+  getModel(idMarque:any){
     const header = new HttpHeaders({
       "Content-Type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("accessToken"),
@@ -103,7 +103,7 @@ export class CarService {
       serverUrl + "getModel/"+idMarque,{ headers:header }
     );
   }
-  getGeneration(idModel:string){
+  getGeneration(idModel:any){
     const header = new HttpHeaders({
       "Content-Type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("accessToken"),
@@ -112,7 +112,7 @@ export class CarService {
       serverUrl + "getGeneration/"+idModel,{ headers:header }
     );
   }
-  getSerie(idGeneration:string){
+  getSerie(idGeneration:any){
     const header = new HttpHeaders({
       "Content-Type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("accessToken"),
@@ -121,7 +121,7 @@ export class CarService {
       serverUrl + "getSerie/"+idGeneration,{ headers:header }
     );
   }
-  getTrim(idSerie:string){
+  getTrim(idSerie:any){
     const header = new HttpHeaders({
       "Content-Type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("accessToken"),
@@ -130,7 +130,7 @@ export class CarService {
       serverUrl + "getTrim/"+idSerie,{ headers:header }
     );
   }
-  getSpecification(idTrim:string){
+  getSpecification(idTrim:any){
     const header = new HttpHeaders({
       "Content-Type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("accessToken"),

@@ -22,6 +22,7 @@ filterForm:FormGroup
       category: new FormControl(''),
     //  price: new FormControl(),
       city: new FormControl(''),
+      search: new FormControl(''),
     })
    }
 

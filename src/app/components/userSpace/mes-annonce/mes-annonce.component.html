@@ -34,7 +34,7 @@
             <span class="success-msg no-data-span" >{{successMsg}}</span>
           </div>
       <div class="row">
-        <div  class="col-lg-8" *ngIf="carsList.length===0">
+        <div  class="col-lg-8" *ngIf="carsList===[]">
           <h4 class="text-center" >Pas de données</h4>
       </div>
           <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-2" *ngFor="let car of carsList">

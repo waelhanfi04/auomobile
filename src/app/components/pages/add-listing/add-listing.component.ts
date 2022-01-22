@@ -48,7 +48,6 @@ export class AddListingComponent implements OnInit {
       color: new FormControl(''),
       carrosserie: new FormControl(''),
       guarantee: new FormControl(''),
-      //month: new FormControl(''),
       year: new FormControl(''),
       type: new FormControl('Occasion'),
       category: new FormControl(''),
@@ -65,11 +64,15 @@ export class AddListingComponent implements OnInit {
       outsideEquipment: this.fb.array([]),
       securityEquipment: this.fb.array([]),
       pictures: this.fb.array([]),
-      // seatingCapacity: new FormControl(''),
-      // numberDoors: new FormControl(''),
       trim: new FormControl(''),
       generation: new FormControl(''),
       serie: new FormControl(''),
+      // numberDoors: new FormControl(''),
+      // seatingCapacity: new FormControl(''),
+      // puissanceDIN: new FormControl(''),
+      // permis: new FormControl('') ,
+      // carburant: new FormControl(''),
+      // miseCirculation: new FormControl('')
     });
 
   }
@@ -194,7 +197,13 @@ export class AddListingComponent implements OnInit {
       model:model,
       trims:trims,
       generation: generation,
-      serie:serie
+      serie:serie,
+       numberDoors:'',
+      seatingCapacity:'',
+      puissanceDIN:'',
+      permis:'' ,
+      carburant:'',
+      miseCirculation:''
       // brand: {'id':this.nameBrand[1],'value':this.nameBrand[0]},
       // model: {'id':this.nameModel[1],'value':this.nameModel[0]},
       // trims: {'id':this.nameTrim[1],'value':this.nameTrim[0]},

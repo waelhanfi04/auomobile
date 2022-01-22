@@ -49,7 +49,6 @@ export class UpdateCarComponent implements OnInit {
       color: new FormControl(''),
       carrosserie: new FormControl(''),
       guarantee: new FormControl(''),
-      // month: new FormControl(''),
       year: new FormControl(''),
       category: new FormControl(''),
       price: new FormControl(''),
@@ -65,12 +64,16 @@ export class UpdateCarComponent implements OnInit {
       outsideEquipment: this.fb.array([]),
       securityEquipment: this.fb.array([]),
       pictures: this.fb.array([]),
-      // seatingCapacity: new FormControl(''),
-      // numberDoors: new FormControl(''),
       type: new FormControl('Occasion'),
       trim: new FormControl(''),
       generation: new FormControl(''),
       serie: new FormControl(''),
+      // numberDoors: new FormControl(''),
+      // seatingCapacity: new FormControl(''),
+      // puissanceDIN: new FormControl(''),
+      // permis: new FormControl('') ,
+      // carburant: new FormControl(''),
+      // miseCirculation: new FormControl('')
     });
 
   }
@@ -101,7 +104,7 @@ export class UpdateCarComponent implements OnInit {
       //  let parts = value.split(',');
       if( this.arrayBrand)
     {  this.arrayBrand.forEach((brand: any) => {
-        if (brand.id_car_make === value) {
+        if (brand.id_car_make.toString() === value) {
           console.log('iouiii')
           this.nameBrand = { 'id': value, 'value': brand.name }
         }
@@ -111,15 +114,16 @@ export class UpdateCarComponent implements OnInit {
       })}
     });
     this.updateCarForm.get('model')?.valueChanges.subscribe((value: string) => {
-      console.log('vaaaa', value)
+
       // let parts = value.split(',');
       // this.nameModel = parts;
       if (this.arrayModel) {
         this.arrayModel.forEach((model: any) => {
-          if (model.id_car_model === value) {
+          if (model.id_car_model.toString() === value) {
             this.nameModel = { 'id': value, 'value': model.name }
           }
         });
+        console.log('this.nameModel', this.nameModel)
 
 
         this.carService.getGeneration(value).subscribe((data: any) => {
@@ -132,7 +136,7 @@ export class UpdateCarComponent implements OnInit {
       // this.nameGeneration = parts;
       if (this.arrayGeneration) {
         this.arrayGeneration.forEach((generation: any) => {
-          if (generation.id_car_generation === value) {
+          if (generation.id_car_generation.toString() === value) {
             this.nameGeneration = { 'id': value, 'value': generation.name }
           }
         });
@@ -146,7 +150,7 @@ export class UpdateCarComponent implements OnInit {
       // this.nameSerie = parts;
       if (this.arraySerie) {
         this.arraySerie.forEach((serie: any) => {
-          if (serie.id_car_serie === value) {
+          if (serie.id_car_serie.toString() === value) {
             this.nameSerie = { 'id': value, 'value': serie.name }
           }
         });
@@ -160,7 +164,7 @@ export class UpdateCarComponent implements OnInit {
       // this.nameTrim = parts;
       if (this.arrayTrim) {
         this.arrayTrim.forEach((trim: any) => {
-          if (trim.id_car_trim === value) {
+          if (trim.id_car_trim.toString() === value) {
             this.nameTrim = { 'id': value, 'value': trim.name }
           }
         });
@@ -284,11 +288,7 @@ export class UpdateCarComponent implements OnInit {
     // this.kits.filter((data:any)=>{data})
   }
   updateCar() {
-    let brand = { 'id': this.nameBrand[1], 'value': this.nameBrand[0] }
-    let model = { 'id': this.nameModel[1], 'value': this.nameModel[0] }
-    let trims = { 'id': this.nameTrim[1], 'value': this.nameTrim[0] }
-    let generation = { 'id': this.nameGeneration[1], 'value': this.nameGeneration[0] }
-    let serie = { 'id': this.nameSerie[1], 'value': this.nameSerie[0] }
+  
     let body = {
       id: this.carDetails.id,
       availablity: this.updateCarForm.get('availablity')?.value,
@@ -319,7 +319,13 @@ export class UpdateCarComponent implements OnInit {
       model: this.nameModel,
       trims: this.nameTrim,
       generation: this.nameGeneration,
-      serie: this.nameSerie
+      serie: this.nameSerie,
+      numberDoors:'',
+      seatingCapacity:'',
+      puissanceDIN:'',
+      permis:'' ,
+      carburant:'',
+      miseCirculation:''
       // brand: { 'id': this.nameBrand[1], 'value': this.nameBrand[0] },
       // model: { 'id': this.nameModel[1], 'value': this.nameModel[0] },
       // trims: { 'id': this.nameTrim[1], 'value': this.nameTrim[0] },
