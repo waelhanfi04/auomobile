@@ -68,12 +68,12 @@ export class UpdateCarComponent implements OnInit {
       trim: new FormControl(''),
       generation: new FormControl(''),
       serie: new FormControl(''),
-      // numberDoors: new FormControl(''),
-      // seatingCapacity: new FormControl(''),
-      // puissanceDIN: new FormControl(''),
-      // permis: new FormControl('') ,
-      // carburant: new FormControl(''),
-      // miseCirculation: new FormControl('')
+      numberDoors: new FormControl(''),
+      seatingCapacity: new FormControl(''),
+      puissanceDIN: new FormControl(''),
+      permis: new FormControl('') ,
+      carburant: new FormControl(''),
+      miseCirculation: new FormControl('')
     });
 
   }
@@ -101,11 +101,9 @@ export class UpdateCarComponent implements OnInit {
     }
     /*---Update lists-- */
     this.updateCarForm.get('brand')?.valueChanges.subscribe((value: string) => {
-      //  let parts = value.split(',');
       if( this.arrayBrand)
     {  this.arrayBrand.forEach((brand: any) => {
         if (brand.id_car_make.toString() === value) {
-          console.log('iouiii')
           this.nameBrand = { 'id': value, 'value': brand.name }
         }
       });
@@ -114,26 +112,19 @@ export class UpdateCarComponent implements OnInit {
       })}
     });
     this.updateCarForm.get('model')?.valueChanges.subscribe((value: string) => {
-
-      // let parts = value.split(',');
-      // this.nameModel = parts;
       if (this.arrayModel) {
         this.arrayModel.forEach((model: any) => {
           if (model.id_car_model.toString() === value) {
             this.nameModel = { 'id': value, 'value': model.name }
           }
         });
-        console.log('this.nameModel', this.nameModel)
-
-
         this.carService.getGeneration(value).subscribe((data: any) => {
           this.arrayGeneration = data.car_generation
         })
       }
     });
     this.updateCarForm.get('generation')?.valueChanges.subscribe((value: string) => {
-      // let parts = value.split(',');
-      // this.nameGeneration = parts;
+
       if (this.arrayGeneration) {
         this.arrayGeneration.forEach((generation: any) => {
           if (generation.id_car_generation.toString() === value) {
@@ -146,8 +137,6 @@ export class UpdateCarComponent implements OnInit {
       }
     });
     this.updateCarForm.get('serie')?.valueChanges.subscribe((value: string) => {
-      // let parts = value.split(',');
-      // this.nameSerie = parts;
       if (this.arraySerie) {
         this.arraySerie.forEach((serie: any) => {
           if (serie.id_car_serie.toString() === value) {
@@ -160,8 +149,6 @@ export class UpdateCarComponent implements OnInit {
       }
     });
     this.updateCarForm.get('trim')?.valueChanges.subscribe((value: string) => {
-      // let parts = value.split(',');
-      // this.nameTrim = parts;
       if (this.arrayTrim) {
         this.arrayTrim.forEach((trim: any) => {
           if (trim.id_car_trim.toString() === value) {
@@ -175,9 +162,7 @@ export class UpdateCarComponent implements OnInit {
     });
 
   }
-  // ngOnChanges(): void {
 
-  // }
   getBrands() {
     this.carService.getMarque().subscribe((data: any) => {
       this.arrayBrand = data.car_make;
@@ -256,11 +241,9 @@ export class UpdateCarComponent implements OnInit {
         });
         const pictureArray: FormArray = this.updateCarForm.get('pictures') as FormArray;
         this.carDetails.pictureVoitures.forEach((element: any) => {
-
           pictureArray.push(new FormControl(element.picture));
         });
-        this.kits = this.updateCarForm.get('pictures')?.value
-
+        this.kits = this.updateCarForm.get('pictures')?.value;
       }
 
     })
@@ -285,7 +268,6 @@ export class UpdateCarComponent implements OnInit {
     const checkArray: FormArray = this.updateCarForm.get('pictures') as FormArray;
     checkArray.removeAt(index);
     this.kits = this.updateCarForm.get('pictures')?.value
-    // this.kits.filter((data:any)=>{data})
   }
   updateCar() {
   
@@ -314,23 +296,18 @@ export class UpdateCarComponent implements OnInit {
       insideEquipment: this.updateCarForm.get('insideEquipment')?.value,
       outsideEquipment: this.updateCarForm.get('outsideEquipment')?.value,
       securityEquipment: this.updateCarForm.get('securityEquipment')?.value,
-      type: this.userRole !== 'user' ? 'Occasion' : this.updateCarForm.get('type')?.value,
+      type: this.userRole === 'user' ? 'Occasion' : this.updateCarForm.get('type')?.value,
+      numberDoors:this.updateCarForm.get('numberDoors')?.value,
+      seatingCapacity:this.updateCarForm.get('seatingCapacity')?.value,
+      puissanceDIN:this.updateCarForm.get('puissanceDIN')?.value,
+      permis:this.updateCarForm.get('permis')?.value ,
+      carburant:this.updateCarForm.get('carburant')?.value,
+      miseCirculation:this.updateCarForm.get('miseCirculation')?.value,
       brand: JSON.stringify(this.nameBrand),
       model: this.nameModel,
       trims: this.nameTrim,
       generation: this.nameGeneration,
-      serie: this.nameSerie,
-      numberDoors:'',
-      seatingCapacity:'',
-      puissanceDIN:'',
-      permis:'' ,
-      carburant:'',
-      miseCirculation:''
-      // brand: { 'id': this.nameBrand[1], 'value': this.nameBrand[0] },
-      // model: { 'id': this.nameModel[1], 'value': this.nameModel[0] },
-      // trims: { 'id': this.nameTrim[1], 'value': this.nameTrim[0] },
-      // generation: { 'id': this.nameGeneration[1], 'value': this.nameGeneration[0] },
-      // serie: { 'id': this.nameSerie[1], 'value': this.nameSerie[0] }
+      serie: this.nameSerie
     }
 
     this.carService.updateCar(body).subscribe((response: any) => {
@@ -340,7 +317,6 @@ export class UpdateCarComponent implements OnInit {
           this.router.navigate(['/car-detail', this.carDetails.id])
         }, 1000);
       }
-      //this.router.navigate([''])
     })
   }
   onFileChange(e: any) {
@@ -357,14 +333,10 @@ export class UpdateCarComponent implements OnInit {
       if (e.target.files[0]) {
         r.readAsDataURL(file);
         r.onload = () => {
-          let selectedFile = r.result;
           let selectedFilename = file.name;
-          // const FileKit = this.base64ToFile(selectedFile, selectedFilename);
           const fileKit = r.result
-
           const picArray: FormArray = this.updateCarForm.get('pictures') as FormArray;
           picArray.push(new FormControl(fileKit));
-
           this.kits = this.updateCarForm.get('pictures')?.value
         }
       }
@@ -372,19 +344,6 @@ export class UpdateCarComponent implements OnInit {
         this.isAcceptedImageFileType = false;
       }
     }
-  }
-  base64ToFile(data: any, filename: any) {
-    const arr = data.split(",");
-    const mime = arr[0].match(/:(.*?);/)[1];
-    const bstr = atob(arr[1]);
-    let n = bstr.length;
-    let u8arr = new Uint8Array(n);
-
-    while (n--) {
-      u8arr[n] = bstr.charCodeAt(n);
-    }
-
-    return new File([u8arr], filename, { type: mime });
   }
 
 }

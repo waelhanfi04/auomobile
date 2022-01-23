@@ -67,12 +67,12 @@ export class AddListingComponent implements OnInit {
       trim: new FormControl(''),
       generation: new FormControl(''),
       serie: new FormControl(''),
-      // numberDoors: new FormControl(''),
-      // seatingCapacity: new FormControl(''),
-      // puissanceDIN: new FormControl(''),
-      // permis: new FormControl('') ,
-      // carburant: new FormControl(''),
-      // miseCirculation: new FormControl('')
+      numberDoors: new FormControl(''),
+      seatingCapacity: new FormControl(''),
+      puissanceDIN: new FormControl(''),
+      permis: new FormControl(''),
+      carburant: new FormControl(''),
+      miseCirculation: new FormControl('')
     });
 
   }
@@ -94,35 +94,35 @@ export class AddListingComponent implements OnInit {
 
     this.addCarForm.get('brand')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
-      this.nameBrand=parts
+      this.nameBrand = parts
       this.carService.getModel(parts[1]).subscribe((data: any) => {
         this.arrayModel = data.car_model
       })
     });
     this.addCarForm.get('model')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
-      this.nameModel=parts
+      this.nameModel = parts
       this.carService.getGeneration(parts[1]).subscribe((data: any) => {
         this.arrayGeneration = data.car_generation
       })
     });
     this.addCarForm.get('generation')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
-      this.nameGeneration=parts
+      this.nameGeneration = parts
       this.carService.getSerie(parts[1]).subscribe((data: any) => {
         this.arraySerie = data.car_serie
       })
     });
     this.addCarForm.get('serie')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
-      this.nameSerie=parts;
+      this.nameSerie = parts;
       this.carService.getTrim(parts[1]).subscribe((data: any) => {
         this.arrayTrim = data.car_trim
       })
     });
     this.addCarForm.get('trim')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
-      this.nameTrim=parts;
+      this.nameTrim = parts;
       this.carService.getSpecification(parts[1]).subscribe((data: any) => {
         this.arraySpecification = data.specifications
       })
@@ -134,7 +134,7 @@ export class AddListingComponent implements OnInit {
     })
 
   }
-  
+
   onCheckboxChange(e: any, controlName: any) {
     const checkArray: FormArray = this.addCarForm.get(controlName) as FormArray;
 
@@ -168,7 +168,7 @@ export class AddListingComponent implements OnInit {
       this.addCarForm.get('type')?.setValue('Occasion')
     }
 
-     let body = {
+    let body = {
       availablity: this.addCarForm.get('availablity')?.value,
       title: this.addCarForm.get('title')?.value,
       phone: this.addCarForm.get('phone')?.value,
@@ -192,31 +192,27 @@ export class AddListingComponent implements OnInit {
       insideEquipment: this.addCarForm.get('insideEquipment')?.value,
       outsideEquipment: this.addCarForm.get('outsideEquipment')?.value,
       securityEquipment: this.addCarForm.get('securityEquipment')?.value,
-      type: this.userRole!=='user'? 'Occasion': this.addCarForm.get('type')?.value,
+      type: this.userRole === 'user' ? 'Occasion' : this.addCarForm.get('type')?.value,
+      numberDoors: this.addCarForm.get('numberDoors')?.value,
+      seatingCapacity: this.addCarForm.get('seatingCapacity')?.value,
+      puissanceDIN: this.addCarForm.get('puissanceDIN')?.value,
+      permis: this.addCarForm.get('permis')?.value,
+      carburant: this.addCarForm.get('carburant')?.value,
+      miseCirculation: this.addCarForm.get('miseCirculation')?.value,
       brand: JSON.stringify(brand),
-      model:model,
-      trims:trims,
+      model: model,
+      trims: trims,
       generation: generation,
-      serie:serie,
-       numberDoors:'',
-      seatingCapacity:'',
-      puissanceDIN:'',
-      permis:'' ,
-      carburant:'',
-      miseCirculation:''
-      // brand: {'id':this.nameBrand[1],'value':this.nameBrand[0]},
-      // model: {'id':this.nameModel[1],'value':this.nameModel[0]},
-      // trims: {'id':this.nameTrim[1],'value':this.nameTrim[0]},
-      // generation:{'id':this.nameGeneration[1],'value':this.nameGeneration[0]},
-      // serie:{'id':this.nameSerie[1],'value':this.nameSerie[0]}
+      serie: serie
     }
-  
+
     this.carService.addCar(body).subscribe((response: any) => {
-      console.log('response', response)
-      this.successMsg = 'Votre annonce a été ajouté avec succès!';
-      setTimeout(() => {
-        this.router.navigate(['/'])
-      }, 1000);
+      //if (response.message === 'voiture was registered successfully!') {
+        this.successMsg = 'Votre annonce a été ajouté avec succès!';
+        setTimeout(() => {
+          this.router.navigate(['/mes-annonces'])
+        }, 1000);
+     // }
     })
   }
   onFileChange(e: any) {
@@ -233,14 +229,10 @@ export class AddListingComponent implements OnInit {
       if (e.target.files[0]) {
         r.readAsDataURL(file);
         r.onload = () => {
-          let selectedFile = r.result;
           let selectedFilename = file.name;
-          // const FileKit = this.base64ToFile(selectedFile, selectedFilename);
           const fileKit = r.result
-          console.log('FileKit', fileKit)
           const picArray: FormArray = this.addCarForm.get('pictures') as FormArray;
           picArray.push(new FormControl(fileKit));
-          console.log('piiiiiic-->', this.addCarForm.get('pictures')?.value)
           this.kits = this.addCarForm.get('pictures')?.value
         }
       }
@@ -248,19 +240,6 @@ export class AddListingComponent implements OnInit {
         this.isAcceptedImageFileType = false;
       }
     }
-  }
-  base64ToFile(data: any, filename: any) {
-    const arr = data.split(",");
-    const mime = arr[0].match(/:(.*?);/)[1];
-    const bstr = atob(arr[1]);
-    let n = bstr.length;
-    let u8arr = new Uint8Array(n);
-
-    while (n--) {
-      u8arr[n] = bstr.charCodeAt(n);
-    }
-
-    return new File([u8arr], filename, { type: mime });
   }
 
 }

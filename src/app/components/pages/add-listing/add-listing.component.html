@@ -82,7 +82,7 @@
                                                 <div class="form-group p-relative">
                                                     <select class="form-control form-control-custom"
                                                         formControlName="type">
-                                                        <option value=""></option>
+                                                        <option value="">Choisir..</option>
                                                         <option value="Occasion">Occasion</option>
                                                         <option value="Neuve">Neuve</option>
                                                     </select>
@@ -94,8 +94,8 @@
                                                 <div class="form-group p-relative">
                                                     <select class="form-control form-control-custom"
                                                         formControlName="year">
-                                                        <option  value=""></option>
-                                                        <option *ngFor="let year of years" [value]="year">{{year}}</option>
+                                                        <option value="">Choisir..</option>
+                                                        <option *ngFor="let year of years.slice().reverse()" [value]="year">{{year}}</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -120,7 +120,7 @@
                                                 <div class="form-group p-relative">
                                                     <select class="form-control form-control-custom"
                                                         formControlName="energy">
-                                                        <option value=""></option>
+                                                        <option value="">Choisir..</option>
                                                         <option value="essence">Essence</option>
                                                         <option value="diesel">Diesel</option>
                                                     </select>
@@ -140,19 +140,71 @@
                                                 <div class="form-group p-relative">
                                                     <select class="form-control form-control-custom"
                                                         formControlName="category">
-                                                        <option value=""></option>
+                                                        <option value="">Choisir..</option>
                                                         <option *ngFor="let c of categoriesList" [value]="c.category">
                                                             {{c.category}} Car</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                              
+                                         
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Marque</label>
+                                                <div class="form-group p-relative">
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="brand">
+                                                        <option value="">Choisir..</option>
+                                                        <option *ngFor="let b of arrayBrand" [value]="[b.name,b.id_car_make]" >{{b.name}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Modèle</label>
+                                                <div class="form-group p-relative">
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="model" >
+                                                        <option value="">Choisir..</option>
+                                                        <option *ngFor="let m of arrayModel"[value]="[m.name,m.id_car_model]" >{{m.name}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Génération</label>
+                                                <div class="form-group p-relative">
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="generation">
+                                                        <option value="">Choisir..</option>
+                                                        <option  *ngFor="let g of arrayGeneration" [value]="[g.name,g.id_car_generation]">{{g.name}}</option>
+                                                     </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Série</label>
+                                                <div class="form-group p-relative">
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="serie">
+                                                        <option value="">Choisir..</option>
+                                                        <option  *ngFor="let s of arraySerie" [value]="[s.name,s.id_car_serie]">{{s.name}}</option>
+                                                     </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Modification</label>
+                                                <div class="form-group p-relative">
+                                                    <select class="form-control form-control-custom"
+                                                        formControlName="trim">
+                                                        <option value="">Choisir..</option>
+                                                        <option *ngFor="let t of arrayTrim"  [value]="[t.name,t.id_car_trim]">{{t.name}}</option>
+                                                     </select>
+                                                </div>
+                                            </div>
+                                                 
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Couleur</label>
                                                 <div class="form-group p-relative">
                                                     <select class="form-control form-control-custom"
                                                         formControlName="color">
-                                                        <option value=""></option>
+                                                        <option value="">Choisir..</option>
                                                         <option value="Noir">Noir</option>
                                                         <option value="Gris argent">Gris argent</option>
                                                         <option value="Gris anthracite">Gris anthracite</option>
@@ -175,7 +227,7 @@
                                                 <div class="form-group p-relative">
                                                     <select class="form-control form-control-custom"
                                                         formControlName="availablity">
-                                                        <option value=""></option>
+                                                        <option value="">Choisir..</option>
                                                         <option value="Immediatement">Immediatement</option>
                                                         <option value="Sur-commande">Sur commande</option>
                                                     </select>
@@ -187,58 +239,6 @@
                                                     <input type="text" name="Guarantie" formControlName="guarantee"
                                                         class="form-control form-control-custom">
                                                 </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-4">
-                                                <label>Marque</label>
-                                                <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="brand">
-                                                        <option *ngFor="let b of arrayBrand" [value]="[b.name,b.id_car_make]" >{{b.name}}</option>
-
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-4">
-                                                <label>Modèle</label>
-                                                <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="model" >
-                                                        <option *ngFor="let m of arrayModel"[value]="[m.name,m.id_car_model]" >{{m.name}}</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-4">
-                                                <label>Génération</label>
-                                                <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="generation">
-                                                        <option  *ngFor="let g of arrayGeneration" [value]="[g.name,g.id_car_generation]">{{g.name}}</option>
-                                                     </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-4">
-                                                <label>Série</label>
-                                                <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="serie">
-                                                        <option  *ngFor="let s of arraySerie" [value]="[s.name,s.id_car_serie]">{{s.name}}</option>
-                                                     </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-4">
-                                                <label>Modification</label>
-                                                <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="trim">
-                                                        <option *ngFor="let t of arrayTrim"  [value]="[t.name,t.id_car_trim]">{{t.name}}</option>
-                                                     </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-4" *ngFor="let s of arraySpecification" >
-                                                <label>{{s.name}}</label>
-                                                <div class="form-group">
-                                                <input  class="form-control form-control-custom" type="text" value='{{s.value}}' readonly> 
-                                            </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <label>Description</label>
@@ -261,13 +261,21 @@
                                                 class="flaticon-check-square"></i>Spécifications techniques</h5>
                                     </div>
                                     <form [formGroup]="addCarForm">
-                                        <div class="row">
+                                        <div class="row" *ngIf="this.userRole!=='user' && arraySpecification">
+                                        <div class="col-lg-3 col-md-4 col-sm-4" *ngFor="let s of arraySpecification" >
+                                            <label>{{s.name}}</label>
+                                            <div class="form-group">
+                                            <input  class="form-control form-control-custom" type="text" value='{{s.value}}' readonly> 
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <div class="row"  *ngIf="this.userRole==='user'">
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Boîte</label>
                                                 <div class="form-group p-relative">
                                                     <select class="form-control form-control-custom"
                                                         formControlName="gearbox">
-                                                        <option value=""></option>
+                                                        <option value="">Choisir..</option>
                                                         <option value="manuelle">Manuelle</option>
                                                         <option value="automatique">Automatique</option>
                                                     </select>
@@ -278,7 +286,7 @@
                                                 <div class="form-group p-relative">
                                                     <select class="form-control form-control-custom"
                                                         formControlName="powerFiscal">
-                                                        <option value=""></option>
+                                                        <option value="">Choisir..</option>
                                                         <option *ngFor="let power of powerFiscalArray" [value]="power">
                                                             {{ power }}</option>
                                                         <option value="more-48">Plus de 48</option>
@@ -291,7 +299,7 @@
                                                 <div class="form-group p-relative">
                                                     <select class="form-control form-control-custom"
                                                         formControlName="carrosserie">
-                                                        <option value=""></option>
+                                                        <option value="">Choisir..</option>
                                                         <option value="Citadine">Citadine</option>
                                                         <option value="Compacte">Compacte</option>
                                                         <option value="Berline">Berline</option>
@@ -310,14 +318,14 @@
                                                 <div class="form-group p-relative">
                                                     <select class="form-control form-control-custom"
                                                         formControlName="transmission">
-                                                        <option value=""></option>
+                                                        <option value="">Choisir..</option>
                                                         <option value="traction">Traction</option>
                                                         <option value="propulsion">Propulsion</option>
                                                         <option value="intégrale">Intégrale</option>
                                                     </select>
                                                 </div>
                                             </div>
-<!-- 
+
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Nombre de places</label>
                                                 <div class="form-group">
@@ -334,7 +342,41 @@
                                                         formControlName="numberDoors"
                                                         class="form-control form-control-custom">
                                                 </div>
-                                            </div> -->
+                                            </div> 
+
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Puissance DIN</label>
+                                                <div class="form-group">
+                                                    <input type="number" name="puissanceDIN"
+                                                        formControlName="puissanceDIN"
+                                                        class="form-control form-control-custom">
+                                                </div>
+                                            </div> 
+
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Carburant</label>
+                                                <div class="form-group">
+                                                    <input type="number" name="carburant"
+                                                        formControlName="carburant"
+                                                        class="form-control form-control-custom">
+                                                </div>
+                                            </div> 
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Mise en Circulation</label>
+                                                <div class="form-group">
+                                                    <input type="date" name="miseCirculation"
+                                                        formControlName="miseCirculation"
+                                                        class="form-control form-control-custom">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Permis</label>
+                                                <div class="form-group">
+                                                    <input type="text" name="permis"
+                                                        formControlName="permis"
+                                                        class="form-control form-control-custom">
+                                                </div>
+                                            </div> 
                                         </div>
                                     </form>
                                 </div>
@@ -422,7 +464,7 @@
                                                 <div class="form-group p-relativ">
                                                     <select class="form-control form-control-custom"
                                                         formControlName="city">
-                                                        <option value=""></option>
+                                                        <option value="">Choisir..</option>
                                                         <option value="Ariana">Ariana</option>
                                                         <option value="Béja">Béja</option>
                                                         <option value="Ben Arous">Ben Arous</option>
