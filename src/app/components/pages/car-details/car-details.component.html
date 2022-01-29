@@ -149,7 +149,7 @@
                                     <div class="text-wrapper">
                                         <h5 class="text-light-black">Déscription</h5>
                                         <p class="text-dark-grey">s{{car.Description}}</p>
-                                   </div>
+                                    </div>
                                     <div class="table-responsive">
                                         <table class="table table-bordered">
                                             <thead>
@@ -192,10 +192,6 @@
                                                         <td>{{car.mileage}}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Energie</td>
-                                                        <td>{{car.energy}}</td>
-                                                    </tr>
-                                                    <tr>
                                                         <td>Disponibilité</td>
                                                         <td>{{car.availablity}}</td>
                                                     </tr>
@@ -203,12 +199,12 @@
                                                         <td>Couleur</td>
                                                         <td>{{car.color}}</td>
                                                     </tr>
-                                                   
+
                                                     <tr>
                                                         <td>Guarantie</td>
                                                         <td>{{car.guarantee}}</td>
                                                     </tr>
-                                                    
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -217,7 +213,7 @@
                             <div class="tab-pane active" id="tech-spec">
                                 <div class="car-details-box">
                                     <div class="table-responsive">
- 
+
                                         <table class="table table-bordered">
                                             <thead>
                                                 <tr>
@@ -225,32 +221,11 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>Motorization</td>
-                                                    <td>{{car.motorization}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Puissance fiscale</td>
-                                                    <td>{{car.powerFiscal}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Transmission</td>
-                                                    <td>{{car.transmission}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Boîte</td>
-                                                    <td>{{car.gearbox}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Carrosserie</td>
-                                                    <td>{{car.carrosserie}}</td>
-                                                </tr>
-                                               
                                                 <tr *ngFor="let s of arraySpecification">
                                                     <td>{{s.name}}</td>
                                                     <td>{{s.value}}</td>
                                                 </tr>
-                                             
+
                                             </tbody>
                                         </table>
                                     </div>

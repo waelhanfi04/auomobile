@@ -164,11 +164,7 @@ export class AddListingComponent implements OnInit {
     let trims = { 'id': this.nameTrim[1], 'value': this.nameTrim[0] }
     let generation = { 'id': this.nameGeneration[1], 'value': this.nameGeneration[0] }
     let serie = { 'id': this.nameSerie[1], 'value': this.nameSerie[0] }
-    if (this.userRole !== 'user') {
-      this.addCarForm.get('type')?.setValue('Occasion')
-    }
-
-    let body = {
+     let body = {
       availablity: this.addCarForm.get('availablity')?.value,
       title: this.addCarForm.get('title')?.value,
       phone: this.addCarForm.get('phone')?.value,
@@ -182,8 +178,8 @@ export class AddListingComponent implements OnInit {
       category: this.addCarForm.get('category')?.value,
       pictures: this.addCarForm.get('pictures')?.value,
       address: this.addCarForm.get('address')?.value,
-      motorization: this.addCarForm.get('motorization')?.value,
-      mileage: this.addCarForm.get('mileage')?.value,
+      motorization: null,
+      mileage: this.userRole === 'admin' ? 0 : this.addCarForm.get('mileage')?.value,
       energy: this.addCarForm.get('energy')?.value,
       transmission: this.addCarForm.get('transmission')?.value,
       powerFiscal: this.addCarForm.get('powerFiscal')?.value,
@@ -192,7 +188,7 @@ export class AddListingComponent implements OnInit {
       insideEquipment: this.addCarForm.get('insideEquipment')?.value,
       outsideEquipment: this.addCarForm.get('outsideEquipment')?.value,
       securityEquipment: this.addCarForm.get('securityEquipment')?.value,
-      type: this.userRole === 'user' ? 'Occasion' : this.addCarForm.get('type')?.value,
+      type: this.userRole === 'admin'? 'Neuve': 'Occasion',
       numberDoors: this.addCarForm.get('numberDoors')?.value,
       seatingCapacity: this.addCarForm.get('seatingCapacity')?.value,
       puissanceDIN: this.addCarForm.get('puissanceDIN')?.value,

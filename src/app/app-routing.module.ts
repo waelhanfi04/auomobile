@@ -55,7 +55,7 @@ const routes: Routes = [
   {
     path: 'creer-une-annonce',
     component: AddListingComponent,
-    canActivate: [AuthGuardService]
+   // canActivate: [AuthGuardService]
   },
   {
     path: 'register',
@@ -83,7 +83,7 @@ const routes: Routes = [
   }, {
     path: 'voitures/modifier/:id',
     component: UpdateCarComponent,
-    canActivate: [AuthGuardService]
+   // canActivate: [AuthGuardService]
   },
 
   {
