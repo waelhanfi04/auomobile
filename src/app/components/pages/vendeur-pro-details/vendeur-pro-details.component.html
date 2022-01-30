@@ -34,38 +34,38 @@
                 <aside class="col-lg-4">
                     <article class="post div-user-details">
                         <div class="blog-wrap p-relative">
-                          <div class="blog-img no-margin p-relative">
-                            <a>
-                              <img [src]="user.photo"  (error)="onImgError($event)" class="img-fluid full-width" >
-                              <!-- <img src="assets/images/concrete-wall-3.png" class="img-fluid full-width" alt="Blog img"> -->
-                            </a>
-                         
-                          </div>
-        
-                          <div class="blog-meta">
-                            <div class="entry-meta-content">
-                              <div class="entry-date"> <span class="text-dark-white">
-                                   <a  class="text-dark-white">{{user.companyName }}</a></span>
-                              </div>
-                            </div>
-                            <div class="blog-caption">
-                              <h5 class="">
-                                <a  class="text-light-black d-flex flex-column">
-                                    <span>{{user.companyAddress}}</span>
-                                    <span>{{user.gender}} :{{user.firstName}} {{user.lastName}} </span> 
-                                    <span>Tél:{{user.companyPhone}}</span> 
+                            <div class="blog-img no-margin p-relative">
+                                <a>
+                                    <img [src]="user.photo" (error)="onImgError($event)" class="img-fluid full-width">
+                                    <!-- <img src="assets/images/concrete-wall-3.png" class="img-fluid full-width" alt="Blog img"> -->
                                 </a>
-                              </h5>
+
                             </div>
-                          </div>
+
+                            <div class="blog-meta">
+                                <div class="entry-meta-content">
+                                    <div class="entry-date"> <span class="text-dark-white">
+                                   <a  class="text-dark-white">{{user.companyName }}</a></span>
+                                    </div>
+                                </div>
+                                <div class="blog-caption">
+                                    <h5 class="">
+                                        <a class="text-light-black d-flex flex-column">
+                                            <span>{{user.companyAddress}}</span>
+                                            <span>{{user.gender}} :{{user.firstName}} {{user.lastName}} </span>
+                                            <span>Tél:{{user.companyPhone}}</span>
+                                        </a>
+                                    </h5>
+                                </div>
+                            </div>
                         </div>
-                      </article>
+                    </article>
                     <!-- <app-advertising-sidebar></app-advertising-sidebar> -->
-                  </aside>
-                  <div  class="col-lg-8" *ngIf="carsList.length===0">
-                    <h4 class="text-center" >Pas de données</h4>
+                </aside>
+                <div class="col-lg-8" *ngIf="carsList.length===0">
+                    <h4 class="text-center">Pas de données</h4>
                 </div>
-                <div  class="col-lg-8" id="facets-pjax" data-pjax-container="" data-pjax-push-state data-pjax-timeout="5000">
+                <div class="col-lg-8" id="facets-pjax" data-pjax-container="" data-pjax-push-state data-pjax-timeout="5000">
                     <div class="occasions-results layout-list">
 
                         <div class="articles">
@@ -80,7 +80,7 @@
 
                                                 <img class="thumb cdn-image lazyload" [src]="car.pictureVoitures[0]?.picture" (error)="onImgError($event)"></picture>
                                             <div class="thumb-caption">
-                                                <h2><span>{{car.brand}} {{car.model}}</span></h2>
+                                                <h2><span>{{car.brand}}</span></h2>
                                                 <div class="price">
                                                     {{car.price}} <span class="suffix">DT</span> </div>
                                             </div>
@@ -112,7 +112,7 @@
                                     </a>
                                 </div>
                             </div>
-                  
+
                         </div>
 
                     </div>

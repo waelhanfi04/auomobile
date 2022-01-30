@@ -26,13 +26,20 @@ export class VendeurProDetailsComponent implements OnInit {
     .subscribe((params) => this.getUserDetails(this.idUser));
   }
   getUserDetails(id:any) {
+    console.log("d'accord")
     this.profileService.getDetailsUserPro(id).subscribe((data: any) => {
-      console.log('dataa user', data)
  this.user = data.user
  this.carsList=data.voitures;
  this.carsList=  data.voitures.filter((car:any)=> 
  car.status ==='accepted' && car.type ==='Occasion'
  )
+ for(let i=0;i<this.carsList.length;i++){
+  let obj:any;
+  eval("obj = " + this.carsList[i].brand);
+  this.carsList[i].brand=obj?.value;
+ }
+
+
     })
   }
 
