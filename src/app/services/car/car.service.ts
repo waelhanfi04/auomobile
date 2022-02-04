@@ -85,13 +85,22 @@ export class CarService {
   //   );
 
   // }
-  getMarque(){
+  getCategory(){
     const header = new HttpHeaders({
       "Content-Type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("accessToken"),
     });
     return this.http.get(
-      serverUrl + "getMarque/1",{ headers:header }
+      serverUrl + "allTypeCar",{ headers:header }
+    );
+  }
+  getMarque(id:any){
+    const header = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
+    });
+    return this.http.get(
+      serverUrl + "getMarque/"+id,{ headers:header }
     );
   }
   getModel(idMarque:any){
@@ -112,13 +121,13 @@ export class CarService {
       serverUrl + "getGeneration/"+idModel,{ headers:header }
     );
   }
-  getSerie(idGeneration:any){
+  getSerie(idGeneration:any,type=null){
     const header = new HttpHeaders({
       "Content-Type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("accessToken"),
     });
     return this.http.get(
-      serverUrl + "getSerie/"+idGeneration,{ headers:header }
+      serverUrl + "getSerie/"+idGeneration+"?type="+type,{ headers:header }
     );
   }
   getTrim(idSerie:any){

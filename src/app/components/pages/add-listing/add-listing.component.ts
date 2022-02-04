@@ -22,8 +22,9 @@ export class AddListingComponent implements OnInit {
   insideEquipmentList = arrayInsideEquipment
   outsideEquipmentList = arrayOutsideEquipment
   securityEquipmentList = arraysecurityEquipment
-  categoriesList = arrayCategoryCar
-  arrayBrand: any
+  categoriesList : any= []
+  arrayBrand: any;
+  nameCategory:any;
   nameBrand: string = ''
   arrayModel: any
   nameModel: string = ''
@@ -78,7 +79,8 @@ export class AddListingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getBrands()
+    this.getCategory();
+    this.getBrands();
     this.userRole = localStorage.getItem('role')
     /*---add list of years from 1900 to current year-- */
     var aujd = new Date();
@@ -91,7 +93,13 @@ export class AddListingComponent implements OnInit {
       this.powerFiscalArray.push(i);
     }
     /*---get data-- */
-
+    this.addCarForm.get('category')?.valueChanges.subscribe((value: any) => {
+      this.nameCategory = value;
+      console.log(this.nameCategory);
+      this.carService.getMarque(this.nameCategory).subscribe((data: any) => {
+        this.arrayBrand = data.car_make
+      })
+    });
     this.addCarForm.get('brand')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
       this.nameBrand = parts
@@ -100,11 +108,20 @@ export class AddListingComponent implements OnInit {
       })
     });
     this.addCarForm.get('model')?.valueChanges.subscribe((value: any) => {
-      let parts = value.split(',');
-      this.nameModel = parts
-      this.carService.getGeneration(parts[1]).subscribe((data: any) => {
-        this.arrayGeneration = data.car_generation
-      })
+      if(this.nameCategory === 1){
+        let parts = value.split(',');
+        this.nameModel = parts
+        this.carService.getGeneration(parts[1]).subscribe((data: any) => {
+          this.arrayGeneration = data.car_generation
+        })
+      }else{
+        let parts = value.split(',');
+        this.nameModel = parts
+        this.carService.getSerie(parts[1],'moto').subscribe((data: any) => {
+          this.arraySerie = data.car_serie
+        })
+      }
+      
     });
     this.addCarForm.get('generation')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
@@ -128,11 +145,16 @@ export class AddListingComponent implements OnInit {
       })
     });
   }
-  getBrands() {
-    this.carService.getMarque().subscribe((data: any) => {
-      this.arrayBrand = data.car_make;
+  getCategory() {
+    this.carService.getCategory().subscribe((data: any) => {
+      this.categoriesList = data.car_type;
     })
 
+  }
+  getBrands() {
+    this.carService.getMarque(this.nameCategory).subscribe((data: any) => {
+      this.arrayBrand = data.car_make;
+    })
   }
 
   onCheckboxChange(e: any, controlName: any) {
