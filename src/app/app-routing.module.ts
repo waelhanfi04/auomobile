@@ -48,13 +48,35 @@ import { FavorisComponent } from './components/userSpace/favoris/favoris.compone
 import { VendeurProComponent } from './components/pages/vendeur-pro/vendeur-pro.component';
 import { VendeurProDetailsComponent } from './components/pages/vendeur-pro-details/vendeur-pro-details.component';
 import { BrandsListComponent } from './components/pages/brands-list/brands-list.component';
-
+import { AddMotorcycleComponent } from './components/pages/add-motorcycle/add-motorcycle.component';
+import { UpdateMotorcycleComponent } from './components/pages/update-motorcycle/update-motorcycle.component';
+import { CreerAnnonceComponent } from './components/pages/creer-annonce/creer-annonce.component';
 const routes: Routes = [
 
   { path: '', component: Homepage2Component },
   {
     path: 'creer-une-annonce',
+    component: CreerAnnonceComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'creer-une-annonce/voiture',
     component: AddListingComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'creer-une-annonce/moto',
+    component: AddMotorcycleComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'creer-une-annonce/moto',
+    component: AddMotorcycleComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'moteur/modifier/:id',
+    component: UpdateMotorcycleComponent,
     canActivate: [AuthGuardService]
   },
   {
@@ -78,7 +100,7 @@ const routes: Routes = [
     canActivate: [IsConnectedService]
   },
   {
-    path: 'car-detail/:id',
+    path: 'details-annonce/:id',
     component: CarDetailsComponent
   }, {
     path: 'voitures/modifier/:id',

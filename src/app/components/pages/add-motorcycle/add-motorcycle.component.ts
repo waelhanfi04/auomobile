@@ -3,13 +3,15 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 import { Router } from '@angular/router';
 import { CarService } from 'src/app/services/car/car.service';
 import { arrayInsideEquipment, arrayOutsideEquipment, arraysecurityEquipment, arrayCategoryCar, arrayCategories, arrayBrand } from 'src/app/shared/config';
+
 @Component({
-  selector: 'app-add-listing',
-  templateUrl: './add-listing.component.html',
-  styleUrls: ['./add-listing.component.css']
+  selector: 'app-add-motorcycle',
+  templateUrl: './add-motorcycle.component.html',
+  styleUrls: ['./add-motorcycle.component.css']
 })
-export class AddListingComponent implements OnInit {
-  addCarForm: FormGroup
+export class AddMotorcycleComponent implements OnInit {
+
+  addMotoForm: FormGroup
   step1: boolean = true
   step2: boolean = false
   step3: boolean = false
@@ -24,7 +26,7 @@ export class AddListingComponent implements OnInit {
   securityEquipmentList = arraysecurityEquipment
   categoriesList : any= []
   arrayBrand: any;
-  nameCategory:any;
+  nameCategory='20';
   nameBrand: string = ''
   arrayModel: any
   nameModel: string = ''
@@ -39,7 +41,7 @@ export class AddListingComponent implements OnInit {
   isAcceptedImageFileType: boolean = true;
   userRole: any
   constructor(private router: Router, private fb: FormBuilder, private carService: CarService) {
-    this.addCarForm = new FormGroup({
+    this.addMotoForm = new FormGroup({
       title: new FormControl(''),
       availablity: new FormControl(''),
       phone: new FormControl(''),
@@ -51,7 +53,7 @@ export class AddListingComponent implements OnInit {
       guarantee: new FormControl(''),
       year: new FormControl(''),
       type: new FormControl('Occasion'),
-      category: new FormControl('1'),
+      category: new FormControl('20'),
       price: new FormControl(''),
       description: new FormControl(''),
       address: new FormControl(''),
@@ -93,51 +95,51 @@ export class AddListingComponent implements OnInit {
       this.powerFiscalArray.push(i);
     }
     /*---get data-- */
-    // this.addCarForm.get('category')?.valueChanges.subscribe((value: any) => {
+    // this.addMotoForm.get('category')?.valueChanges.subscribe((value: any) => {
     //   this.nameCategory = value;
     //   console.log(this.nameCategory);
     //   this.carService.getMarque(this.nameCategory).subscribe((data: any) => {
     //     this.arrayBrand = data.car_make
     //   })
     // });
-    this.addCarForm.get('brand')?.valueChanges.subscribe((value: any) => {
+    this.addMotoForm.get('brand')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
       this.nameBrand = parts
       this.carService.getModel(parts[1]).subscribe((data: any) => {
         this.arrayModel = data.car_model
       })
     });
-    this.addCarForm.get('model')?.valueChanges.subscribe((value: any) => {
-      //if(this.nameCategory === 1){
+    this.addMotoForm.get('model')?.valueChanges.subscribe((value: any) => {
+     // if(this.nameCategory === 1){
+        // let parts = value.split(',');
+        // this.nameModel = parts
+        // this.carService.getGeneration(parts[1]).subscribe((data: any) => {
+        //   this.arrayGeneration = data.car_generation
+        // })
+      // }else{
         let parts = value.split(',');
         this.nameModel = parts
-        this.carService.getGeneration(parts[1]).subscribe((data: any) => {
-          this.arrayGeneration = data.car_generation
+        this.carService.getSerie(parts[1],'moto').subscribe((data: any) => {
+          this.arraySerie = data.car_serie
         })
-      // }else{
-      //   let parts = value.split(',');
-      //   this.nameModel = parts
-      //   this.carService.getSerie(parts[1],'moto').subscribe((data: any) => {
-      //     this.arraySerie = data.car_serie
-      //   })
       // }
       
     });
-    this.addCarForm.get('generation')?.valueChanges.subscribe((value: any) => {
-      let parts = value.split(',');
-      this.nameGeneration = parts
-      this.carService.getSerie(parts[1],'voiture').subscribe((data: any) => {
-        this.arraySerie = data.car_serie
-      })
-    });
-    this.addCarForm.get('serie')?.valueChanges.subscribe((value: any) => {
+    // this.addMotoForm.get('generation')?.valueChanges.subscribe((value: any) => {
+    //   let parts = value.split(',');
+    //   this.nameGeneration = parts
+    //   this.carService.getSerie(parts[1],'moto').subscribe((data: any) => {
+    //     this.arraySerie = data.car_serie
+    //   })
+    // });
+    this.addMotoForm.get('serie')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
       this.nameSerie = parts;
       this.carService.getTrim(parts[1]).subscribe((data: any) => {
         this.arrayTrim = data.car_trim
       })
     });
-    this.addCarForm.get('trim')?.valueChanges.subscribe((value: any) => {
+    this.addMotoForm.get('trim')?.valueChanges.subscribe((value: any) => {
       let parts = value.split(',');
       this.nameTrim = parts;
       this.carService.getSpecification(parts[1]).subscribe((data: any) => {
@@ -152,14 +154,14 @@ export class AddListingComponent implements OnInit {
 
   // }
   getBrands() {
-    this.nameCategory='1'
+    this.nameCategory='20'
     this.carService.getMarque(this.nameCategory).subscribe((data: any) => {
       this.arrayBrand = data.car_make;
     })
   }
 
   onCheckboxChange(e: any, controlName: any) {
-    const checkArray: FormArray = this.addCarForm.get(controlName) as FormArray;
+    const checkArray: FormArray = this.addMotoForm.get(controlName) as FormArray;
 
     if (e.target.checked) {
       checkArray.push(new FormControl(e.target.value));
@@ -175,10 +177,10 @@ export class AddListingComponent implements OnInit {
     }
   }
   delete(index: any) {
-    const checkArray: FormArray = this.addCarForm.get('pictures') as FormArray;
+    const checkArray: FormArray = this.addMotoForm.get('pictures') as FormArray;
     checkArray.removeAt(index);
-    this.kits = this.addCarForm.get('pictures')?.value
-    console.log('looog', this.addCarForm.get('pictures')?.value)
+    this.kits = this.addMotoForm.get('pictures')?.value
+    console.log('looog', this.addMotoForm.get('pictures')?.value)
     // this.kits.filter((data:any)=>{data})
   }
   addCar() {
@@ -188,40 +190,40 @@ export class AddListingComponent implements OnInit {
     let generation = { 'id': this.nameGeneration[1], 'value': this.nameGeneration[0] }
     let serie = { 'id': this.nameSerie[1], 'value': this.nameSerie[0] }
      let body = {
-      availablity: this.addCarForm.get('availablity')?.value,
-      title: this.addCarForm.get('title')?.value,
-      phone: this.addCarForm.get('phone')?.value,
-      country: this.addCarForm.get('country')?.value,
-      city: this.addCarForm.get('city')?.value,
-      price: this.addCarForm.get('price')?.value,
-      color: this.addCarForm.get('color')?.value,
-      carrosserie: this.addCarForm.get('carrosserie')?.value,
-      guarantee: this.addCarForm.get('guarantee')?.value,
-      year: this.addCarForm.get('year')?.value,
-      category: this.addCarForm.get('category')?.value,
-      pictures: this.addCarForm.get('pictures')?.value,
-      address: this.addCarForm.get('address')?.value,
+      availablity: this.addMotoForm.get('availablity')?.value,
+      title: this.addMotoForm.get('title')?.value,
+      phone: this.addMotoForm.get('phone')?.value,
+      country: this.addMotoForm.get('country')?.value,
+      city: this.addMotoForm.get('city')?.value,
+      price: this.addMotoForm.get('price')?.value,
+      color: this.addMotoForm.get('color')?.value,
+      carrosserie: this.addMotoForm.get('carrosserie')?.value,
+      guarantee: this.addMotoForm.get('guarantee')?.value,
+      year: this.addMotoForm.get('year')?.value,
+      category: this.addMotoForm.get('category')?.value,
+      pictures: this.addMotoForm.get('pictures')?.value,
+      address: this.addMotoForm.get('address')?.value,
       motorization: null,
-      mileage: this.userRole === 'admin' ? 0 : this.addCarForm.get('mileage')?.value,
-      energy: this.addCarForm.get('energy')?.value,
-      transmission: this.addCarForm.get('transmission')?.value,
-      powerFiscal: this.addCarForm.get('powerFiscal')?.value,
-      gearbox: this.addCarForm.get('gearbox')?.value,
-      description: this.addCarForm.get('description')?.value,
-      insideEquipment: this.addCarForm.get('insideEquipment')?.value,
-      outsideEquipment: this.addCarForm.get('outsideEquipment')?.value,
-      securityEquipment: this.addCarForm.get('securityEquipment')?.value,
+      mileage: this.userRole === 'admin' ? 0 : this.addMotoForm.get('mileage')?.value,
+      energy: this.addMotoForm.get('energy')?.value,
+      transmission: this.addMotoForm.get('transmission')?.value,
+      powerFiscal: this.addMotoForm.get('powerFiscal')?.value,
+      gearbox: this.addMotoForm.get('gearbox')?.value,
+      description: this.addMotoForm.get('description')?.value,
+      insideEquipment: this.addMotoForm.get('insideEquipment')?.value,
+      outsideEquipment: this.addMotoForm.get('outsideEquipment')?.value,
+      securityEquipment: this.addMotoForm.get('securityEquipment')?.value,
       type: this.userRole === 'admin'? 'Neuve': 'Occasion',
-      numberDoors: this.addCarForm.get('numberDoors')?.value,
-      seatingCapacity: this.addCarForm.get('seatingCapacity')?.value,
-      puissanceDIN: this.addCarForm.get('puissanceDIN')?.value,
-      permis: this.addCarForm.get('permis')?.value,
-      carburant: this.addCarForm.get('carburant')?.value,
-      miseCirculation: this.addCarForm.get('miseCirculation')?.value,
+      numberDoors: this.addMotoForm.get('numberDoors')?.value,
+      seatingCapacity: this.addMotoForm.get('seatingCapacity')?.value,
+      puissanceDIN: this.addMotoForm.get('puissanceDIN')?.value,
+      permis: this.addMotoForm.get('permis')?.value,
+      carburant: this.addMotoForm.get('carburant')?.value,
+      miseCirculation: this.addMotoForm.get('miseCirculation')?.value,
       brand: JSON.stringify(brand),
       model: model,
       trims: trims,
-      generation: generation,
+      generation: this.nameGeneration,
       serie: serie
     }
 
@@ -250,9 +252,9 @@ export class AddListingComponent implements OnInit {
         r.onload = () => {
           let selectedFilename = file.name;
           const fileKit = r.result
-          const picArray: FormArray = this.addCarForm.get('pictures') as FormArray;
+          const picArray: FormArray = this.addMotoForm.get('pictures') as FormArray;
           picArray.push(new FormControl(fileKit));
-          this.kits = this.addCarForm.get('pictures')?.value
+          this.kits = this.addMotoForm.get('pictures')?.value
         }
       }
       else {
@@ -260,5 +262,6 @@ export class AddListingComponent implements OnInit {
       }
     }
   }
+
 
 }

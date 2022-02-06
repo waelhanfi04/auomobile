@@ -40,7 +40,7 @@
           <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-2" *ngFor="let car of carsList">
             <div class="car-grid-layout-box">
               <div class="car-grid-layout-inner text-center">
-                <h5 class="car-name"><a  [routerLink]="['/car-detail',car.id]"  class="text-light-black">{{car.brand.value}} {{car.voitureOption.model.value}}</a>
+                <h5 class="car-name"><a  [routerLink]="['/details-annonce',car.id]"  class="text-light-black">{{car.brand.value}} {{car.voitureOption.model.value}}</a>
              
                   <span  class=" float-right custom-tooltip span-fas">
                     <i (click)="deleteCar(car.id)" class="fas fa-trash"></i> 

@@ -121,14 +121,22 @@ export class CarService {
       serverUrl + "getGeneration/"+idModel,{ headers:header }
     );
   }
-  getSerie(idGeneration:any,type=null){
+  getSerie(idGeneration:any,type:string){
+
     const header = new HttpHeaders({
       "Content-Type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("accessToken"),
     });
-    return this.http.get(
-      serverUrl + "getSerie/"+idGeneration+"?type="+type,{ headers:header }
-    );
+    if(type==='moto'){
+      return this.http.get(
+        serverUrl + "getSerie/"+idGeneration+"?type="+type,{ headers:header }
+      );
+    }else{
+      return this.http.get(
+        serverUrl + "getSerie/"+idGeneration,{ headers:header }
+      );
+    }
+ 
   }
   getTrim(idSerie:any){
     const header = new HttpHeaders({

@@ -22,6 +22,9 @@ export class MesAnnonceComponent implements OnInit {
       if(data!==null || data!==undefined)
       { 
         this.carsList=data.voitures
+        if(data.voitures===[]){
+          this.noData=true
+        }
         this.carsList.forEach((car:any) => {
           car.brand=JSON.parse(car.brand)
           car.voitureOption=JSON.parse(car.voitureOption)

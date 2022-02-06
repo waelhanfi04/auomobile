@@ -69,6 +69,9 @@ import { FavorisComponent } from './components/userSpace/favoris/favoris.compone
 import { VendeurProComponent } from './components/pages/vendeur-pro/vendeur-pro.component';
 import { VendeurProDetailsComponent } from './components/pages/vendeur-pro-details/vendeur-pro-details.component';
 import { BrandsListComponent } from './components/pages/brands-list/brands-list.component';
+import { AddMotorcycleComponent } from './components/pages/add-motorcycle/add-motorcycle.component';
+import { UpdateMotorcycleComponent } from './components/pages/update-motorcycle/update-motorcycle.component';
+import { CreerAnnonceComponent } from './components/pages/creer-annonce/creer-annonce.component';
 // import { CookieService } from 'ngx-cookie-service';
 // import { ImageCropperModule } from 'ngx-image-cropper';
 
@@ -127,7 +130,10 @@ import { BrandsListComponent } from './components/pages/brands-list/brands-list.
     FavorisComponent,
     VendeurProComponent,
     VendeurProDetailsComponent,
-    BrandsListComponent
+    BrandsListComponent,
+    AddMotorcycleComponent,
+    UpdateMotorcycleComponent,
+    CreerAnnonceComponent
   ],
   imports: [
     BrowserModule,

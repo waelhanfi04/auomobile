@@ -37,9 +37,9 @@
                             <h1 class="text-custom-white">{{car.title}}</h1>
                             <p class="text-custom-white"><i class="fas fa-map-marker-alt"></i>{{car.city}}</p>
                             <!-- <div class="social-share">  <span>Share: </span>
-                <div class="user-social-links"> <a routerLink="/car-detail" class="facebook"><i class="fab fa-facebook-square"></i></a>
-                  <a routerLink="/car-detail" class="twitter"><i class="fab fa-twitter"></i></a>
-                  <a routerLink="/car-detail" class="pintrest"><i class="fab fa-pinterest-square"></i></a>
+                <div class="user-social-links"> <a routerLink="/details-annonce" class="facebook"><i class="fab fa-facebook-square"></i></a>
+                  <a routerLink="/details-annonce" class="twitter"><i class="fab fa-twitter"></i></a>
+                  <a routerLink="/details-annonce" class="pintrest"><i class="fab fa-pinterest-square"></i></a>
                 </div>
               </div> -->
                         </div>
@@ -63,12 +63,12 @@
                     <div class="user-details">
                       <div class="user-details-top">
                         <h5 class="title text-custom-white">Jhon Deo <span><i class="fas fa-check"></i></span></h5>
-                        <span><a routerLink="/car-detail" class="text-custom-white"><i class="fas fa-map-marker-alt"></i> New York</a></span>
-                        <span><a routerLink="/car-detail" class="text-custom-white"><i class="fas fa-link"></i> @jhon_deo</a></span>
+                        <span><a routerLink="/details-annonce" class="text-custom-white"><i class="fas fa-map-marker-alt"></i> New York</a></span>
+                        <span><a routerLink="/details-annonce" class="text-custom-white"><i class="fas fa-link"></i> @jhon_deo</a></span>
                       </div>
-                      <div class="user-social-links"> <a routerLink="/car-detail" class="facebook"><i class="fab fa-facebook-square"></i></a>
-                        <a routerLink="/car-detail" class="twitter"><i class="fab fa-twitter"></i></a>
-                        <a routerLink="/car-detail" class="pintrest"><i class="fab fa-pinterest-square"></i></a>
+                      <div class="user-social-links"> <a routerLink="/details-annonce" class="facebook"><i class="fab fa-facebook-square"></i></a>
+                        <a routerLink="/details-annonce" class="twitter"><i class="fab fa-twitter"></i></a>
+                        <a routerLink="/details-annonce" class="pintrest"><i class="fab fa-pinterest-square"></i></a>
                       </div>
                     </div>
                   </div>
@@ -82,7 +82,7 @@
                       <span class="text-yellow"><i class="fas fa-star-half-alt"></i></span>
                       <ul>
                         <li class="text-custom-white">5.00 average</li>
-                        <li><a routerLink="/car-detail" class="text-custom-white">3 Reviews</a> 
+                        <li><a routerLink="/details-annonce" class="text-custom-white">3 Reviews</a> 
                         </li>
                       </ul>
                     </div>
@@ -134,17 +134,20 @@
                     </div>
                     <div class="car-details-tab">
                         <ul class="nav nav-tabs">
-                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#informations">Informations</a>
+                            <li class="nav-item"> <a class="nav-link active" data-toggle="tab"
+                                    href="#informations">Informations</a>
                             </li>
-                            <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#tech-spec">Spécifications Techniques</a>
+                            <li class="nav-item"> <a class="nav-link " data-toggle="tab"
+                                    href="#tech-spec">Spécifications Techniques</a>
                             </li>
-                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#accessories">Accessoires</a>
+                            <li class="nav-item"> <a class="nav-link" data-toggle="tab"
+                                    href="#accessories">Accessoires</a>
                             </li>
                             <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#contact">Contact</a>
                             </li>
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane fade" id="informations">
+                            <div class="tab-pane active" id="informations">
                                 <div class="car-details-box">
                                     <div class="text-wrapper">
                                         <h5 class="text-light-black">Déscription</h5>
@@ -163,54 +166,56 @@
                                                     <td>{{car.type}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <tr>
-                                                        <td>Catégorie</td>
-                                                        <td>{{car.category}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Marque</td>
-                                                        <td>{{car.brand.value}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Génération</td>
-                                                        <td> {{car.voitureOption.generation.value}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Série</td>
-                                                        <td> {{car.voitureOption.serie.value}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Modèle</td>
-                                                        <td> {{car.voitureOption.model.value}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Année</td>
-                                                        <td>{{car.year}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Kilométrage</td>
-                                                        <td>{{car.mileage}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Disponibilité</td>
-                                                        <td>{{car.availablity}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Couleur</td>
-                                                        <td>{{car.color}}</td>
-                                                    </tr>
+                                                <tr>
+                                                    <td>Catégorie</td>
+                                                    <td *ngIf="car.category==='1'">Voiture</td>
+                                                    <td *ngIf="car.category==='20'">Motot</td>
 
-                                                    <tr>
-                                                        <td>Guarantie</td>
-                                                        <td>{{car.guarantee}}</td>
-                                                    </tr>
+                                                </tr>
+                                                <tr>
+                                                    <td>Marque</td>
+                                                    <td>{{car.brand.value}}</td>
+                                                </tr>
+                                                <tr *ngIf="car.voitureOption.generation">
+                                                    <td>Génération</td>
+                                                    <td> {{car.voitureOption.generation.value}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Série</td>
+                                                    <td> {{car.voitureOption.serie.value}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Modèle</td>
+                                                    <td> {{car.voitureOption.model.value}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Année</td>
+                                                    <td>{{car.year}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Kilométrage</td>
+                                                    <td>{{car.mileage}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Disponibilité</td>
+                                                    <td>{{car.availablity}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Couleur</td>
+                                                    <td>{{car.color}}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>Guarantie</td>
+                                                    <td>{{car.guarantee}}</td>
+                                                </tr>
 
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane active" id="tech-spec">
+                            <div class="tab-pane fade" id="tech-spec">
                                 <div class="car-details-box">
                                     <div class="table-responsive">
 
@@ -220,7 +225,33 @@
                                                     <th colspan="2">Spécifications Techniques</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody *ngIf="!this.arraySpecification">
+                                                <tr>
+                                                    <td>Nombre de portes</td>
+                                                    <td>{{car.numberDoors || '-'}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Nombre de place</td>
+                                                    <td>{{car.seatingCapacity || '-'}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Puissance DIN</td>
+                                                    <td>{{car.puissanceDIN || '-'}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Permis</td>
+                                                    <td>{{car.permis || '-'}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Carburant</td>
+                                                    <td>{{car.carburant|| '-'}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mise en Circulation</td>
+                                                    <td>{{car.miseCirculation || '-'}}</td>
+                                                </tr>
+                                            </tbody>
+                                            <tbody *ngIf="this.arraySpecification">
                                                 <tr *ngFor="let s of arraySpecification">
                                                     <td>{{s.name}}</td>
                                                     <td>{{s.value}}</td>
@@ -297,7 +328,8 @@
                     <div class="image-slider-sec">
                         <div class="car-detail-slider-for">
                             <div class="slider-item" *ngFor="let p of picturesList">
-                                <img [src]="p.picture" class="img-fluid full-width pictures-item" alt="#" (error)="onImgError($event)">
+                                <img [src]="p.picture" class="img-fluid full-width pictures-item" alt="#"
+                                    (error)="onImgError($event)">
                             </div>
                             <!-- <div class="slide-item">
                 <img src="assets/images/cardetails/gallery-1.jpg" class="img-fluid full-width" alt="#">
