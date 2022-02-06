@@ -75,7 +75,7 @@ const routes: Routes = [
     canActivate: [AuthGuardService]
   },
   {
-    path: 'moteur/modifier/:id',
+    path: 'moto/modifier/:id',
     component: UpdateMotorcycleComponent,
     canActivate: [AuthGuardService]
   },

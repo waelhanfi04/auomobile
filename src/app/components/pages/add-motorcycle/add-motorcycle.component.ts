@@ -187,7 +187,6 @@ export class AddMotorcycleComponent implements OnInit {
     let brand = { 'id': this.nameBrand[1], 'value': this.nameBrand[0] }
     let model = { 'id': this.nameModel[1], 'value': this.nameModel[0] }
     let trims = { 'id': this.nameTrim[1], 'value': this.nameTrim[0] }
-    let generation = { 'id': this.nameGeneration[1], 'value': this.nameGeneration[0] }
     let serie = { 'id': this.nameSerie[1], 'value': this.nameSerie[0] }
      let body = {
       availablity: this.addMotoForm.get('availablity')?.value,
@@ -214,9 +213,9 @@ export class AddMotorcycleComponent implements OnInit {
       outsideEquipment: this.addMotoForm.get('outsideEquipment')?.value,
       securityEquipment: this.addMotoForm.get('securityEquipment')?.value,
       type: this.userRole === 'admin'? 'Neuve': 'Occasion',
-      numberDoors: this.addMotoForm.get('numberDoors')?.value,
-      seatingCapacity: this.addMotoForm.get('seatingCapacity')?.value,
-      puissanceDIN: this.addMotoForm.get('puissanceDIN')?.value,
+      numberDoors: Number(this.addMotoForm.get('numberDoors')?.value),
+      seatingCapacity: Number(this.addMotoForm.get('seatingCapacity')?.value),
+      puissanceDIN: Number(this.addMotoForm.get('puissanceDIN')?.value),
       permis: this.addMotoForm.get('permis')?.value,
       carburant: this.addMotoForm.get('carburant')?.value,
       miseCirculation: this.addMotoForm.get('miseCirculation')?.value,
