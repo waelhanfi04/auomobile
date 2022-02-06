@@ -180,7 +180,6 @@ export class AddMotorcycleComponent implements OnInit {
     const checkArray: FormArray = this.addMotoForm.get('pictures') as FormArray;
     checkArray.removeAt(index);
     this.kits = this.addMotoForm.get('pictures')?.value
-    console.log('looog', this.addMotoForm.get('pictures')?.value)
     // this.kits.filter((data:any)=>{data})
   }
   addCar() {
@@ -199,7 +198,7 @@ export class AddMotorcycleComponent implements OnInit {
       carrosserie: this.addMotoForm.get('carrosserie')?.value,
       guarantee: this.addMotoForm.get('guarantee')?.value,
       year: this.addMotoForm.get('year')?.value,
-      category: this.addMotoForm.get('category')?.value,
+      category:this.nameGeneration,
       pictures: this.addMotoForm.get('pictures')?.value,
       address: this.addMotoForm.get('address')?.value,
       motorization: null,
@@ -222,7 +221,7 @@ export class AddMotorcycleComponent implements OnInit {
       brand: JSON.stringify(brand),
       model: model,
       trims: trims,
-      generation: this.nameGeneration,
+      generation: '',
       serie: serie
     }
 

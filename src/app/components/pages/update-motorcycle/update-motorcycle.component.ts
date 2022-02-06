@@ -177,7 +177,7 @@ export class UpdateMotorcycleComponent implements OnInit {
         }
 
         if (this.carDetails.voitureOption.model.id) {
-          this.carService.getSerie(this.carDetails.voitureOption.generation.id,'moto').subscribe((data: any) => {
+          this.carService.getSerie(this.carDetails.voitureOption.model.id,'moto').subscribe((data: any) => {
             this.arraySerie = data.car_serie
           });
         }
@@ -268,7 +268,7 @@ export class UpdateMotorcycleComponent implements OnInit {
       carrosserie: this.updateMotoForm.get('carrosserie')?.value,
       guarantee: this.updateMotoForm.get('guarantee')?.value,
       year: this.updateMotoForm.get('year')?.value,
-      category: this.updateMotoForm.get('category')?.value,
+      category: this.nameGeneration,
       pictures: this.updateMotoForm.get('pictures')?.value,
       address: this.updateMotoForm.get('address')?.value,
       motorization: this.updateMotoForm.get('motorization')?.value,
@@ -291,7 +291,7 @@ export class UpdateMotorcycleComponent implements OnInit {
       brand: JSON.stringify(this.nameBrand),
       model: this.nameModel,
       trims: this.nameTrim,
-      generation: this.nameGeneration,
+      generation: '',
       serie: this.nameSerie
     }
 
