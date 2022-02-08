@@ -170,7 +170,7 @@
                           <select class="form-control form-control-custom" formControlName="brand"
                             [(ngModel)]="this.carDetails.brand.id">
                             <option value="">Choisir..</option>
-                            <option *ngFor="let b of arrayBrand" [value]="[b.id_car_make]">{{b.name}}</option>
+                            <option *ngFor="let b of arrayBrand" [value]="b.brand">{{b.brand}}</option>
   
                           </select>
                         </div>
@@ -181,7 +181,7 @@
                           <select class="form-control form-control-custom" formControlName="model"
                             [(ngModel)]="this.carDetails.voitureOption.model.id">
                             <option value="">Choisir..</option>
-                            <option *ngFor="let m of arrayModel" [value]="[m.id_car_model]">{{m.name}}</option>
+                            <option *ngFor="let m of arrayModel" [value]="m">{{m}}</option>
                           </select>
                         </div>
                       </div>

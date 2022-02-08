@@ -26,7 +26,7 @@ export class CreerAnnonceComponent implements OnInit {
           this.router.navigate(['/creer-une-annonce/voiture'])
         }, 1000);
        
-      }else{
+      }else if(type==='moto'){
         setTimeout(() => {
           this.router.navigate(['creer-une-annonce/moto'])
         }, 1000);

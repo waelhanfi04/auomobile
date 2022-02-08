@@ -4,15 +4,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { CarService } from 'src/app/services/car/car.service';
 import { Car } from '../../../models/car'
-import { arrayInsideEquipment, arrayOutsideEquipment, arraysecurityEquipment, arrayCategoryCar, arrayCategories, arrayBrand } from 'src/app/shared/config';
+import { arrayInsideEquipment, arrayOutsideEquipment, arraysecurityEquipment, arrayCategoryCar, arrayCategories, arrayBrand, arrayPiecesMarque, arrayNautismeMarque } from 'src/app/shared/config';
 
 @Component({
-  selector: 'app-update-motorcycle',
-  templateUrl: './update-motorcycle.component.html',
-  styleUrls: ['./update-motorcycle.component.css']
+  selector: 'app-update-piece-nautisme',
+  templateUrl: './update-piece-nautisme.component.html',
+  styleUrls: ['./update-piece-nautisme.component.css']
 })
-export class UpdateMotorcycleComponent implements OnInit {
-
+export class UpdatePieceNautismeComponent implements OnInit {
+  arrayPiecesMarque=arrayPiecesMarque
+  arrayNautismeMarque=arrayNautismeMarque
   updateMotoForm: FormGroup
   errorMsg = ''
   successMsg = ''
@@ -62,9 +63,9 @@ export class UpdateMotorcycleComponent implements OnInit {
       transmission: new FormControl(null),
       powerFiscal: new FormControl(null),
       gearbox: new FormControl(null),
-      insideEquipment: this.fb.array([]),
-      outsideEquipment: this.fb.array([]),
-      securityEquipment: this.fb.array([]),
+      insideEquipment: new FormControl(null),
+      outsideEquipment: new FormControl(null),
+      securityEquipment: new FormControl(null),
       pictures: this.fb.array([]),
       type: new FormControl('Occasion'),
       trim: new FormControl(null),
@@ -81,7 +82,7 @@ export class UpdateMotorcycleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getBrands()
+ 
     this.userRole = localStorage.getItem('role')
 
     this.route.params
@@ -103,62 +104,17 @@ export class UpdateMotorcycleComponent implements OnInit {
     }
     /*---Update lists-- */
     this.updateMotoForm.get('brand')?.valueChanges.subscribe((value: string) => {
-      if( this.arrayBrand)
-    {  this.arrayBrand.forEach((brand: any) => {
-        if (brand.id_car_make.toString() === value) {
-          this.nameBrand = { 'id': value, 'value': brand.name }
+      this.arrayModel=[]
+      arrayPiecesMarque.map((b:any)=>{
+        if(b.brand===value){          
+          this.arrayModel= b.model
         }
-      });
-      this.carService.getModel(value).subscribe((data: any) => {
-        this.arrayModel = data.car_model
-      })}
+      })
     });
-    this.updateMotoForm.get('model')?.valueChanges.subscribe((value: string) => {
-      if (this.arrayModel) {
-        this.arrayModel.forEach((model: any) => {
-          if (model.id_car_model.toString() === value) {
-            this.nameModel = { 'id': value, 'value': model.name }
-          }
-        });
-        this.carService.getSerie(value,'moto').subscribe((data: any) => {
-          this.arraySerie = data.car_serie
-        })
-      }
-    });
-    this.updateMotoForm.get('serie')?.valueChanges.subscribe((value: string) => {
-      if (this.arraySerie) {
-        this.arraySerie.forEach((serie: any) => {
-          if (serie.id_car_serie.toString() === value) {
-            this.nameSerie = { 'id': value, 'value': serie.name }
-          }
-        });
-        this.carService.getTrim(value).subscribe((data: any) => {
-          this.arrayTrim = data.car_trim
-        })
-      }
-    });
-    this.updateMotoForm.get('trim')?.valueChanges.subscribe((value: string) => {
-      if (this.arrayTrim) {
-        this.arrayTrim.forEach((trim: any) => {
-          if (trim.id_car_trim.toString() === value) {
-            this.nameTrim = { 'id': value, 'value': trim.name }
-          }
-        });
-        this.carService.getSpecification(value).subscribe((data: any) => {
-          this.arraySpecification = data.specifications
-        })
-      }
-    });
-
+ 
   }
 
-  getBrands() {
-    this.nameCategory='20';
-        this.carService.getMarque(this.nameCategory).subscribe((data: any) => {
-      this.arrayBrand = data.car_make;
-    })
 
-  }
   getCarDetails(id: any) {
     this.carService.getOneCar(id).subscribe((data: any) => {
       if (data !== null && data !== undefined) {
@@ -288,5 +244,6 @@ export class UpdateMotorcycleComponent implements OnInit {
       }
     }
   }
+
 
 }

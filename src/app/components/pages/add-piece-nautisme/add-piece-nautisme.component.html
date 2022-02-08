@@ -122,24 +122,13 @@
                                                 </div>
                                             </div>
 
-                                            <!-- <div class="col-lg-3 col-md-4 col-sm-4">
-                                                <label>Catégorie</label>
-                                                <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom" formControlName="category">
-                                                        <option value="">Choisir..</option>
-                                                        <option *ngFor="let c of categoriesList" [value]="c.id_car_type">
-                                                            {{c.name}}</option>
-                                                    </select>
-                                                </div>
-                                            </div> -->
-
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Marque</label>
                                                 <div class="form-group p-relative">
                                                     <select class="form-control form-control-custom" formControlName="brand">
                                                         <option value="">Choisir..</option>
                                                         <option *ngFor="let b of arrayBrand"
-                                                            [value]="[b.name,b.id_car_make]">{{b.name}}</option>
+                                                            [value]="b.brand">{{b.brand}}</option>
 
                                                     </select>
                                                 </div>
@@ -150,31 +139,12 @@
                                                     <select class="form-control form-control-custom" formControlName="model">
                                                         <option value="">Choisir..</option>
                                                         <option *ngFor="let m of arrayModel"
-                                                            [value]="[m.name,m.id_car_model]">{{m.name}}</option>
+                                                            [value]="m">{{m}}</option>
                                                     </select>
                                                 </div>
                                             </div>
                     
-                                            <div class="col-lg-3 col-md-4 col-sm-4">
-                                                <label>Série</label>
-                                                <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom" formControlName="serie">
-                                                        <option value="">Choisir..</option>
-                                                        <option *ngFor="let s of arraySerie"
-                                                            [value]="[s.name,s.id_car_serie]">{{s.name}}</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-4" *ngIf="this.userRole==='admin'">
-                                                <label>Modification</label>
-                                                <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom" formControlName="trim">
-                                                        <option value="">Choisir..</option>
-                                                        <option *ngFor="let t of arrayTrim"
-                                                            [value]="[t.name,t.id_car_trim]">{{t.name}}</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+                                       
 
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Couleur</label>

@@ -51,6 +51,9 @@ import { BrandsListComponent } from './components/pages/brands-list/brands-list.
 import { AddMotorcycleComponent } from './components/pages/add-motorcycle/add-motorcycle.component';
 import { UpdateMotorcycleComponent } from './components/pages/update-motorcycle/update-motorcycle.component';
 import { CreerAnnonceComponent } from './components/pages/creer-annonce/creer-annonce.component';
+import { AddPieceNautismeComponent } from './components/pages/add-piece-nautisme/add-piece-nautisme.component';
+import { UpdatePieceNautismeComponent } from './components/pages/update-piece-nautisme/update-piece-nautisme.component';
+
 const routes: Routes = [
 
   { path: '', component: Homepage2Component },
@@ -70,8 +73,13 @@ const routes: Routes = [
     canActivate: [AuthGuardService]
   },
   {
-    path: 'creer-une-annonce/moto',
-    component: AddMotorcycleComponent,
+    path: 'creer-une-annonce/:category',
+    component: AddPieceNautismeComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'modifier/:category/:id',
+    component: UpdatePieceNautismeComponent,
     canActivate: [AuthGuardService]
   },
   {
