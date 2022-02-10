@@ -124,7 +124,7 @@ export class UpdatePieceNautismeComponent implements OnInit {
           this.arrayBrand = arrayPiecesMarque
         }
         this.arrayBrand.map((b: any) => {
-          if (b.brand === this.carDetails.voitureOption.model.value) {
+          if (b.brand === this.carDetails.brand.value) {
             console.log('mod',b.model)
             this.arrayModel = b.model
           }
