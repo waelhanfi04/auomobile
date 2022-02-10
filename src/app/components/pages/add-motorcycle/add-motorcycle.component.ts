@@ -100,6 +100,7 @@ export class AddMotorcycleComponent implements OnInit {
     //   })
     // });
     this.addMotoForm.get('brand')?.valueChanges.subscribe((value: any) => {
+      console.log(value)
       let parts = value.split(',');
       this.nameBrand = parts
       this.carService.getModel(parts[1]).subscribe((data: any) => {
@@ -180,7 +181,7 @@ export class AddMotorcycleComponent implements OnInit {
       carrosserie: this.addMotoForm.get('carrosserie')?.value,
       guarantee: this.addMotoForm.get('guarantee')?.value,
       year: this.addMotoForm.get('year')?.value,
-      category:this.nameGeneration,
+      category:20,
       pictures: this.addMotoForm.get('pictures')?.value,
       address: this.addMotoForm.get('address')?.value,
       motorization: null,
@@ -202,7 +203,7 @@ export class AddMotorcycleComponent implements OnInit {
       miseCirculation: this.addMotoForm.get('miseCirculation')?.value,
       brand: JSON.stringify(brand),
       model: model,
-      trims: trims,
+      trims: null,
       generation:null,
       serie: serie
     }

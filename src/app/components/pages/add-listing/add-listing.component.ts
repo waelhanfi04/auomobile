@@ -198,7 +198,7 @@ export class AddListingComponent implements OnInit {
       carrosserie: this.addCarForm.get('carrosserie')?.value,
       guarantee: this.addCarForm.get('guarantee')?.value,
       year: this.addCarForm.get('year')?.value,
-      category: this.addCarForm.get('category')?.value,
+      category: 1,
       pictures: this.addCarForm.get('pictures')?.value,
       address: this.addCarForm.get('address')?.value,
       motorization: null,

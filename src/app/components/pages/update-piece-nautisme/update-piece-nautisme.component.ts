@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { CarService } from 'src/app/services/car/car.service';
 import { Car } from '../../../models/car'
-import { arrayInsideEquipment, arrayOutsideEquipment, arraysecurityEquipment, arrayCategoryCar, arrayCategories, arrayBrand, arrayPiecesMarque, arrayNautismeMarque } from 'src/app/shared/config';
+import { arrayEtatVelo, arrayTypeVelo, arrayCategoryCar, arrayCategories, arrayPiecesMarque, arrayNautismeMarque } from 'src/app/shared/config';
 
 @Component({
   selector: 'app-update-piece-nautisme',
@@ -12,19 +12,15 @@ import { arrayInsideEquipment, arrayOutsideEquipment, arraysecurityEquipment, ar
   styleUrls: ['./update-piece-nautisme.component.css']
 })
 export class UpdatePieceNautismeComponent implements OnInit {
-  arrayPiecesMarque=arrayPiecesMarque
-  arrayNautismeMarque=arrayNautismeMarque
+  arrayPiecesMarque = arrayPiecesMarque
+  arrayNautismeMarque = arrayNautismeMarque
   updateMotoForm: FormGroup
   errorMsg = ''
   successMsg = ''
   isSubmitting: boolean = false
   years: any = []
-  powerFiscalArray: any = []
-  insideEquipmentList = arrayInsideEquipment
-  outsideEquipmentList = arrayOutsideEquipment
-  securityEquipmentList = arraysecurityEquipment
   categoriesList = arrayCategoryCar
-  nameCategory:any
+  nameCategory: any
   arrayBrand: any
   nameBrand: any;
   arrayModel: any
@@ -63,9 +59,9 @@ export class UpdatePieceNautismeComponent implements OnInit {
       transmission: new FormControl(null),
       powerFiscal: new FormControl(null),
       gearbox: new FormControl(null),
-      insideEquipment: new FormControl(null),
-      outsideEquipment: new FormControl(null),
-      securityEquipment: new FormControl(null),
+      insideEquipment: new FormControl([]),
+      outsideEquipment: new FormControl([]),
+      securityEquipment: new FormControl([]),
       pictures: this.fb.array([]),
       type: new FormControl('Occasion'),
       trim: new FormControl(null),
@@ -74,7 +70,7 @@ export class UpdatePieceNautismeComponent implements OnInit {
       numberDoors: new FormControl(null),
       seatingCapacity: new FormControl(null),
       puissanceDIN: new FormControl(null),
-      permis: new FormControl(null) ,
+      permis: new FormControl(null),
       carburant: new FormControl(null),
       miseCirculation: new FormControl(null)
     });
@@ -82,7 +78,7 @@ export class UpdatePieceNautismeComponent implements OnInit {
   }
 
   ngOnInit(): void {
- 
+
     this.userRole = localStorage.getItem('role')
 
     this.route.params
@@ -98,20 +94,18 @@ export class UpdatePieceNautismeComponent implements OnInit {
     for (let year = 1900; year < currentYear + 1; year++) {
       this.years.push(year);
     }
-    /*---add list array of numbers form 4 to 48-- */
-    for (let i = 4; i < 49; i++) {
-      this.powerFiscalArray.push(i);
-    }
+
     /*---Update lists-- */
     this.updateMotoForm.get('brand')?.valueChanges.subscribe((value: string) => {
-      this.arrayModel=[]
-      arrayPiecesMarque.map((b:any)=>{
-        if(b.brand===value){          
-          this.arrayModel= b.model
+      this.updateMotoForm.get('model')?.setValue('')
+      this.arrayModel = []
+      arrayPiecesMarque.map((b: any) => {
+        if (b.brand === value) {
+          this.arrayModel = b.model
         }
       })
     });
- 
+
   }
 
 
@@ -122,36 +116,19 @@ export class UpdatePieceNautismeComponent implements OnInit {
         this.carDetails.brand = JSON.parse(this.carDetails.brand)
         this.carDetails.voitureOption = JSON.parse(this.carDetails.voitureOption)
         this.voitureOption = this.carDetails.voitureOption;
-        this.nameBrand = { 'id': this.carDetails.brand.id, 'value': this.carDetails.brand.value }
-        this.nameModel = { 'id': this.carDetails.voitureOption.model.id, 'value': this.carDetails.voitureOption.model.value }
-        this.nameTrim = { 'id': this.carDetails.voitureOption.trims.id, 'value': this.carDetails.voitureOption.trims.value }
-        this.nameSerie = { 'id': this.carDetails.voitureOption.serie.id, 'value': this.carDetails.voitureOption.serie.value }
-        if (this.carDetails.brand.id) {
-          this.carService.getModel(this.carDetails.brand.id).subscribe((data: any) => {
-            this.arrayModel = data.car_model
-          });
+       
+        if (data.voiture.category === '2') {
+       
+          this.arrayBrand = arrayNautismeMarque
+        } else if (data.voiture.category === '3') {
+          this.arrayBrand = arrayPiecesMarque
         }
-
-        if (this.carDetails.voitureOption.model.id) {
-          this.carService.getSerie(this.carDetails.voitureOption.model.id,'moto').subscribe((data: any) => {
-            this.arraySerie = data.car_serie
-          });
-        }
-        if (this.carDetails.voitureOption.serie.id) {
-          this.carService.getTrim(this.carDetails.voitureOption.serie.id).subscribe((data: any) => {
-            this.arrayTrim = data.car_trim
-          });
-        }
-        if (this.carDetails.voitureOption.trims.id) {
-          this.carService.getSpecification(this.carDetails.voitureOption.trims.id).subscribe((data: any) => {
-            this.arraySpecification = data.specifications
-          });
-        }
-        /*  this.updateMotoForm.get('brand')?.setValue(this.carDetails.brand.id)
-          this.updateMotoForm.get('model')?.setValue( this.carDetails.voitureOption.model.id)
-          this.updateMotoForm.get('generation')?.setValue( this.carDetails.voitureOption.generation.id)
-          this.updateMotoForm.get('serie')?.setValue( this.carDetails.voitureOption.serie.id)
-  */
+        this.arrayBrand.map((b: any) => {
+          if (b.brand === this.carDetails.voitureOption.model.value) {
+            console.log('mod',b.model)
+            this.arrayModel = b.model
+          }
+        })
     
         const pictureArray: FormArray = this.updateMotoForm.get('pictures') as FormArray;
         this.carDetails.pictureVoitures.forEach((element: any) => {
@@ -169,7 +146,9 @@ export class UpdatePieceNautismeComponent implements OnInit {
     this.kits = this.updateMotoForm.get('pictures')?.value
   }
   updateCar() {
-  
+    let brand = { 'id': this.updateMotoForm.get('brand')?.value, 'value': this.updateMotoForm.get('brand')?.value }
+    let model = { 'id': this.updateMotoForm.get('model')?.value, 'value': this.updateMotoForm.get('model')?.value }
+    let obj = { 'id': '', 'value': '' }
     let body = {
       id: this.carDetails.id,
       availablity: this.updateMotoForm.get('availablity')?.value,
@@ -192,21 +171,21 @@ export class UpdatePieceNautismeComponent implements OnInit {
       powerFiscal: this.updateMotoForm.get('powerFiscal')?.value,
       gearbox: this.updateMotoForm.get('gearbox')?.value,
       description: this.updateMotoForm.get('description')?.value,
-      insideEquipment: this.updateMotoForm.get('insideEquipment')?.value,
-      outsideEquipment: this.updateMotoForm.get('outsideEquipment')?.value,
-      securityEquipment: this.updateMotoForm.get('securityEquipment')?.value,
-      numberDoors:this.updateMotoForm.get('numberDoors')?.value,
+      numberDoors: this.updateMotoForm.get('numberDoors')?.value,
       seatingCapacity: this.updateMotoForm.get('seatingCapacity')?.value,
-      puissanceDIN:this.updateMotoForm.get('puissanceDIN')?.value,
-      permis:this.updateMotoForm.get('permis')?.value ,
-      carburant:this.updateMotoForm.get('carburant')?.value,
-      miseCirculation:this.updateMotoForm.get('miseCirculation')?.value,
-      type: this.userRole === 'admin'? 'Neuve': 'Occasion',
-      brand: JSON.stringify(this.nameBrand),
-      model: this.nameModel,
-      trims: this.nameTrim,
-      generation: null,
-      serie: this.nameSerie
+      puissanceDIN: this.updateMotoForm.get('puissanceDIN')?.value,
+      permis: this.updateMotoForm.get('permis')?.value,
+      carburant: this.updateMotoForm.get('carburant')?.value,
+      miseCirculation: this.updateMotoForm.get('miseCirculation')?.value,
+      type: this.userRole === 'admin' ? 'Neuve' : 'Occasion',
+      insideEquipment: [],
+      outsideEquipment: [],
+      securityEquipment: [],
+      brand: JSON.stringify(brand),
+      model: model,
+      trims: obj,
+      generation: obj,
+      serie: obj
     }
 
     this.carService.updateCar(body).subscribe((response: any) => {

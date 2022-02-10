@@ -79,7 +79,7 @@
 
                                                 <img class="thumb cdn-image lazyload" [src]="car.pictureVoitures[0]?.picture" (error)="onImgError($event)"></picture>
                                             <div class="thumb-caption">
-                                                <h2><span>{{car.brand}} {{car.model}}</span></h2>
+                                                <h2><span>{{car.brand.value}} {{car.voitureOption.model.value}}</span></h2>
                                                 <div class="price">
                                                     {{car.price}} <span class="suffix">DT</span> </div>
                                             </div>

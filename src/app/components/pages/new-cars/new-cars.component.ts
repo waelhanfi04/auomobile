@@ -58,7 +58,7 @@ export class NewCarsComponent implements OnInit {
       if(data!==null || data!==undefined)
       {
         this.carsList=  data.voitures.filter((car:any)=> 
-        car.status ==='accepted' && car.type ==='Neuve' && car.brand===brand        )
+        car.status ==='accepted' && car.type ==='Neuve' && car.brand===brand  && car.category===1      )
         if(this.carsList.length===0){
           this.noData=true
         }else{

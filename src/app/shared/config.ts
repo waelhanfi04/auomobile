@@ -168,7 +168,21 @@ const arrayNautismeMarque = [{ brand: "Petites embarcations", model: ['Canoé', 
 { brand: "Services", model: ['Anneaux de port', 'Location bateaux', 'Mécanique bateaux'] },
 { brand: "Accessoirs", model: ['Remoques', 'Fournitures marines', 'Autres accessoires'] }
 ];
-const arrayPiecesMarque = [{ brand: "Pièces Détachées", model: ['Remoques', 'Fournitures marines', 'Autres accessoires'] },
+const arrayPiecesMarque = [{ brand: "Pièces Détachées", model: ['Balais et bras d\'essuie-glace',
+'Ampoules et Diodes',
+'Bougies',
+'Carrosserie et Rétroviseurs',
+'Direction et Transmission',
+'Electricité et Electronique',
+'Echappement',
+'Filtres',
+'Freinage',
+'Moteur, Boîte de Vitesse',
+'Optiques et Phares',
+'Refroidissement',
+'Suspension',
+'Voitures pour Pièces',
+'Autres Pièces Auto',] },
 {
   brand: "Accessoires et entretien", model: ['Convertisseurs, Compresseurs',
     'Alarmes, Antivol, Radars',
@@ -261,13 +275,48 @@ const arrayPiecesMarque = [{ brand: "Pièces Détachées", model: ['Remoques', '
     'Autre']
 }
 ];
+const arrayTypeVelo = [
+  { type: 'Enfant' },
+  { type: 'VTT ' },
+  { type: 'VTC ' },
+  { type: 'BMX' },
+  { type: 'Vélo de course ' },
+  { type: 'Vélo électrique ' },
+  { type: 'Vélo pliant ' },
+  { type: 'Vélo de ville ' },
+  { type: 'Pignon fixe' },
+  { type: 'Vélo d\'appartement' }, { type: 'Tandem Pièces & Accessoires Équipement Autres' }]
+const arrayEtatVelo = [{ etat: 'État neuf ' },
+{ etat: 'Très bon état ' },
+{ etat: 'Bon état ' },
+{ etat: 'État satisfaisant' }]
+const arrayRoueVelo = [{ taille: '26' },
+{ taille: '27.5' },
+{ taille: '29' },
+{ taille: '700c' },
+{ taille: 'Autre' }]
+const arrayTailleRoueVelo = [{ taille: 'XS' },
+{ taille: 'S' },
+{ taille: 'M' },
+{ taille: 'L' },
+{ taille: 'XL' }]
+/*
+
+Type de vélo : Enfant,VTT ,VTC ,BMX, Vélo de course ,Vélo électrique ,Vélo pliant ,Vélo de ville ,Pignon fixe, Vélo d'appartement , Tandem Pièces & Accessoires Équipement Autres
+Etat de vélo :État neuf ; Très bon état ; Bon état ; État satisfaisant ;Pour pièces
+Taille de roue de vélo :26 " 27.5 " 29 " 700c Autre
+Taille de vélo : XS S M L XL
+*/
 const headers = new HttpHeaders({
   "Content-Type": "application/json",
   Authorization: "Bearer " + localStorage.getItem("accessToken"),
 });
+const idNautisme = 2;
+const idPiece = 3;
+const idVelo = 4;
 export {
   serverUrl, headers, arrayCategories, arrayInsideEquipment, arrayOutsideEquipment,
-  arraysecurityEquipment, arrayCategoryCar, arrayBrand,arrayPiecesMarque,arrayNautismeMarque
+  arraysecurityEquipment, arrayCategoryCar, arrayBrand, arrayPiecesMarque, arrayNautismeMarque, arrayEtatVelo, arrayTypeVelo, idPiece, idNautisme, idVelo
 }
 
 /* Poids lourds
@@ -282,3 +331,4 @@ export {
 'Grues', 
 'Benn',e
 */
+

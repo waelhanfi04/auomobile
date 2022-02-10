@@ -28,9 +28,19 @@ export class CreerAnnonceComponent implements OnInit {
        
       }else if(type==='moto'){
         setTimeout(() => {
-          this.router.navigate(['creer-une-annonce/moto'])
+          this.router.navigate(['/creer-une-annonce/moto'])
         }, 1000);
       
+      }else if(type === 'nautisme'){
+        
+        setTimeout(() => {
+          this.router.navigate(['/creer-une-annonce/','nautisme'])
+        }, 1000);
+      }else if(type === 'pieces-auto'){
+        
+        setTimeout(() => {
+          this.router.navigate(['/creer-une-annonce/','pieces-auto'])
+        }, 1000);
       }
     }
   }

@@ -16,7 +16,7 @@
                                 </li>
                                 <li><a routerLink="/creer-une-annonce" class="text-custom-white">Mon espace</a>
                                 </li>
-                                <li><span class="text-custom-white">Moto</span>
+                                <li><span class="text-custom-white">{{this.nameCategory}}</span>
                                 </li>
                             </ul>
                         </div>
@@ -68,17 +68,7 @@
                                                     <input type="text" name="title" formControlName="title" class="form-control form-control-custom">
                                                 </div>
                                             </div>
-                                            <!-- <div class="col-lg-3 col-md-4 col-sm-4" *ngIf="this.userRole!=='user'">
-                                                <label>Type</label>
-                                                <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="type">
-                                                        <option value="">Choisir..</option>
-                                                        <option value="Occasion">Occasion</option>
-                                                        <option value="Neuve">Neuve</option>
-                                                    </select>
-                                                </div>
-                                            </div> -->
+                                        
 
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Année</label>
@@ -90,30 +80,6 @@
                                                     </select>
                                                 </div>
                                             </div>
-
-                                            <div class="col-lg-3 col-md-4 col-sm-4" *ngIf="this.userRole==='user'">
-                                                <label>Kilométrage</label>
-                                                <div class="form-group">
-                                                    <input type="text" name="mileage" formControlName="mileage" class="form-control form-control-custom">
-                                                </div>
-                                            </div>
-                                            <!-- <div class="col-lg-3 col-md-4 col-sm-4">
-                                                <label>Motorization</label>
-                                                <div class="form-group">
-                                                    <input type="text" name="motorization" formControlName="motorization" class="form-control form-control-custom">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-4">
-                                                <label>Energie</label>
-                                                <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="energy">
-                                                        <option value="">Choisir..</option>
-                                                        <option value="essence">Essence</option>
-                                                        <option value="diesel">Diesel</option>
-                                                    </select>
-                                                </div>
-                                            </div> -->
 
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Prix</label>
@@ -146,7 +112,7 @@
                     
                                        
 
-                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                            <div class="col-lg-3 col-md-4 col-sm-4" *ngIf="nameCategory=== 'nautisme'">
                                                 <label>Couleur</label>
                                                 <div class="form-group p-relative">
                                                     <select class="form-control form-control-custom" formControlName="color">
@@ -196,7 +162,6 @@
                                     </form>
                                 </div>
                             </div>
-
                             <div class="step-tab-panel" id="step2">
                                 <div class="tab-from-content">
                                     <div class="title-icon">
@@ -307,7 +272,7 @@
                                     </form>
                                 </div>
                             </div>
-                        
+                    
                             <div class="step-tab-panel" id="step3">
                                 <div class="tab-from-content">
                                     <div class="title-icon">

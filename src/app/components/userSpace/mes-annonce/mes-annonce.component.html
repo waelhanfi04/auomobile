@@ -45,8 +45,9 @@
                   <span  class=" float-right custom-tooltip span-fas">
                     <i (click)="deleteCar(car.id)" class="fas fa-trash"></i> 
                     <i *ngIf="car.category==='20'" [routerLink]="['/moto/modifier',car.id]" class="fas fa-pen"></i>  
-
-                    <i *ngIf="car.category!=='20'" [routerLink]="['/voitures/modifier',car.id]" class="fas fa-pen"></i>  
+                     <i *ngIf="car.category==='2'"[routerLink]="['/modifier/nautisme',car.id]" class="fas fa-pen"></i>  
+                    <i *ngIf="car.category=='3'" [routerLink]="['/modifier/pieces-auto',car.id]" class="fas fa-pen"></i>  
+                    <i *ngIf="car.category=='1'" [routerLink]="['/voitures/modifier',car.id]" class="fas fa-pen"></i>  
                 </span>
                 </h5>
                 <h6 class="text-light-black text-uppercase mb-2">{{car.title}}</h6>
@@ -57,12 +58,12 @@
 
                   <img [src]="car.pictureVoitures[0]?.picture" (error)="onImgError($event)" class="img-fluid full-width max-height-img" alt="Car img">
                 </div>
-                <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i>{{car.mileage || '0'}} Km</span>
+                <!-- <div class="car-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i>{{car.mileage || '0'}} Km</span>
                   <span class="text-dark-white p-relative"><i class="icon-car"></i> {{car.year || '0'}}  Model</span>
                 </div>
                 <div class="car-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i>{{car.city}}</span>
                   <span class="text-dark-white"><i class="fas fa-cog mr-2"></i>{{car.gearbox}}</span>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>

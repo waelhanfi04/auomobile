@@ -3,7 +3,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { CarService } from 'src/app/services/car/car.service';
-import { arrayPiecesMarque, arrayNautismeMarque } from 'src/app/shared/config';
+import {arrayEtatVelo, arrayTypeVelo, arrayPiecesMarque, arrayNautismeMarque,idPiece,idNautisme } from 'src/app/shared/config';
 
 @Component({
   selector: 'app-add-piece-nautisme',
@@ -61,9 +61,9 @@ export class AddPieceNautismeComponent implements OnInit {
       transmission: new FormControl(null),
       powerFiscal: new FormControl(null),
       gearbox: new FormControl(null),
-      insideEquipment: new FormControl(null),
-      outsideEquipment: new FormControl(null),
-      securityEquipment: new FormControl(null),
+      insideEquipment: new FormControl([]),
+      outsideEquipment: new FormControl([]),
+      securityEquipment: new FormControl([]),
       pictures: this.fb.array([]),
       trim: new FormControl(null),
       generation: new FormControl(null),
@@ -93,21 +93,17 @@ export class AddPieceNautismeComponent implements OnInit {
     for (let year = 1900; year < currentYear + 1; year++) {
       this.years.push(year);
     }
-    /*---add list array of numbers form 4 to 48-- */
-    for (let i = 4; i < 49; i++) {
-      this.powerFiscalArray.push(i);
-    }
+ 
     /*---get data-- */
-    // this.addMotoForm.get('category')?.valueChanges.subscribe((value: any) => {
-    //   this.nameCategory = value;
-    //   console.log(this.nameCategory);
-    //   this.carService.getMarque(this.nameCategory).subscribe((data: any) => {
-    //     this.arrayBrand = data.car_make
-    //   })
-    // });
+  if(this.nameCategory ==='nautisme'){
+        this.arrayBrand=this.arrayNautismeMarque
+      }else  if (this.nameCategory ==='pieces-auto'){
+        this.arrayBrand=this.arrayPiecesMarque
+      }
     this.addMotoForm.get('brand')?.valueChanges.subscribe((value: any) => {
+      this.addMotoForm.get('model')?.setValue('')
       this.arrayModel = []
-      arrayPiecesMarque.map((b: any) => {
+      this.arrayBrand.map((b: any) => { 
         if (b.brand === value) {
           this.arrayModel = b.model
         }
@@ -124,7 +120,10 @@ export class AddPieceNautismeComponent implements OnInit {
     // this.kits.filter((data:any)=>{data})
   }
   addCar() {
-
+ 
+    let brand = { 'id': this.addMotoForm.get('brand')?.value, 'value':this.addMotoForm.get('brand')?.value }
+    let model = { 'id': this.addMotoForm.get('model')?.value, 'value': this.addMotoForm.get('model')?.value }
+    let obj = { 'id': '', 'value': '' }
     let body = {
       availablity: this.addMotoForm.get('availablity')?.value,
       title: this.addMotoForm.get('title')?.value,
@@ -136,19 +135,16 @@ export class AddPieceNautismeComponent implements OnInit {
       carrosserie: this.addMotoForm.get('carrosserie')?.value,
       guarantee: this.addMotoForm.get('guarantee')?.value,
       year: this.addMotoForm.get('year')?.value,
-      category: this.nameGeneration,
+      category:this.nameCategory ==='nautisme' ? idNautisme :idPiece,
       pictures: this.addMotoForm.get('pictures')?.value,
       address: this.addMotoForm.get('address')?.value,
       motorization: null,
-      mileage: this.userRole === 'admin' ? 0 : this.addMotoForm.get('mileage')?.value,
+      mileage:this.addMotoForm.get('mileage')?.value,
       energy: this.addMotoForm.get('energy')?.value,
       transmission: this.addMotoForm.get('transmission')?.value,
       powerFiscal: this.addMotoForm.get('powerFiscal')?.value,
       gearbox: this.addMotoForm.get('gearbox')?.value,
       description: this.addMotoForm.get('description')?.value,
-      insideEquipment: this.addMotoForm.get('insideEquipment')?.value,
-      outsideEquipment: this.addMotoForm.get('outsideEquipment')?.value,
-      securityEquipment: this.addMotoForm.get('securityEquipment')?.value,
       type: this.userRole === 'admin' ? 'Neuve' : 'Occasion',
       numberDoors: this.addMotoForm.get('numberDoors')?.value,
       seatingCapacity: this.addMotoForm.get('seatingCapacity')?.value,
@@ -156,17 +152,21 @@ export class AddPieceNautismeComponent implements OnInit {
       permis: this.addMotoForm.get('permis')?.value,
       carburant: this.addMotoForm.get('carburant')?.value,
       miseCirculation: this.addMotoForm.get('miseCirculation')?.value,
-      brand: this.addMotoForm.get('brand')?.value,
-      model: this.addMotoForm.get('model')?.value,
-      trims: null,
-      generation: null,
-      serie: null
+      insideEquipment: [],
+      outsideEquipment: [],
+      securityEquipment: [],
+      brand: JSON.stringify(brand),
+      model: model,
+      trims: obj,
+      generation: obj,
+      serie: obj
     }
 
     this.carService.addCar(body).subscribe((response: any) => {
       //if (response.message === 'voiture was registered successfully!') {
       this.successMsg = 'Votre annonce a été ajouté avec succès!';
       setTimeout(() => {
+        this.addMotoForm.reset()
         this.router.navigate(['/mes-annonces'])
       }, 1000);
       // }

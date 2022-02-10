@@ -21,9 +21,13 @@ export class AncienCarsComponent implements OnInit {
         // car?.type !=='occasions'
         this.carsList=data.voitures;
         this.carsList=  data.voitures.filter((car:any)=> 
-        car.status ==='accepted' && car.type ==='Occasion'
+        car.status ==='accepted' && car.type ==='Occasion' && car.category===1
         )
-
+        this.carsList.forEach((element:any) => {
+          element.brand = JSON.parse(element.brand)
+          element.voitureOption = JSON.parse(element.voitureOption)
+        });
+      
       }
     })
   }

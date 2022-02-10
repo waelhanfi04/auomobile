@@ -121,8 +121,10 @@
           </div> -->
                     <div class="d-flex gap-3 mt-3" *ngIf="isOwner">
                         <div class="add-car-btn">
-                            <a *ngIf="car.category!=='20'" [routerLink]="['/voitures/modifier',car.id]" class="text-custom-white">Modifier</a>
+                            <a *ngIf="car.category==='1'" [routerLink]="['/voitures/modifier',car.id]" class="text-custom-white">Modifier</a>
                             <a *ngIf="car.category==='20'" [routerLink]="['/moto/modifier',car.id]" class="text-custom-white">Modifier</a>
+                            <a *ngIf="car.category==='2'" [routerLink]="['/modifier/nautisme',car.id]" class="text-custom-white">Modifier</a>
+                            <a *ngIf="car.category==='3'" [routerLink]="['/modifier/pieces-auto',car.id]" class="text-custom-white">Modifier</a>
 
                         </div>
                         <div class="add-car-btn" (click)="deleteCar()">
@@ -139,10 +141,10 @@
                             <li class="nav-item"> <a class="nav-link active" data-toggle="tab"
                                     href="#informations">Informations</a>
                             </li>
-                            <li class="nav-item"> <a class="nav-link " data-toggle="tab"
+                            <li class="nav-item" *ngIf="car.category==='1' ||car.category==='20'"> <a class="nav-link " data-toggle="tab"
                                     href="#tech-spec">Spécifications Techniques</a>
                             </li>
-                            <li class="nav-item"> <a class="nav-link" data-toggle="tab"
+                            <li class="nav-item" *ngIf="car.category==='1'"> <a class="nav-link" data-toggle="tab"
                                     href="#accessories">Accessoires</a>
                             </li>
                             <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#contact">Contact</a>
@@ -172,17 +174,18 @@
                                                     <td>Catégorie</td>
                                                     <td *ngIf="car.category==='1'">Voiture</td>
                                                     <td *ngIf="car.category==='20'">Motot</td>
-
+                                                    <td *ngIf="car.category!=='20' && car.category!=='1'">{{this.category}}</td>
+                                                    
                                                 </tr>
                                                 <tr>
                                                     <td>Marque</td>
                                                     <td>{{car.brand.value}}</td>
                                                 </tr>
-                                                <tr *ngIf="car.category!=='20'">
+                                                <tr *ngIf="car.category==='1'">
                                                     <td>Génération</td>
                                                     <td> {{car.voitureOption.generation.value}}</td>
                                                 </tr>
-                                                <tr>
+                                                <tr *ngIf="car.category==='1' ||car.category==='20'">
                                                     <td>Série</td>
                                                     <td> {{car.voitureOption.serie.value}}</td>
                                                 </tr>
@@ -217,7 +220,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="tech-spec">
+                            <div class="tab-pane fade" id="tech-spec" *ngIf="car.category==='1' ||car.category==='20'">
                                 <div class="car-details-box">
                                     <div class="table-responsive">
 
@@ -228,7 +231,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody *ngIf="!this.arraySpecification">
-                                                <tr *ngIf="car.category!=='20'">
+                                                <tr *ngIf="car.category==='1'">
                                                     <td>Nombre de portes</td>
                                                     <td>{{car.numberDoors || '-'}}</td>
                                                 </tr>
@@ -244,7 +247,7 @@
                                                     <td>Permis</td>
                                                     <td>{{car.permis || '-'}}</td>
                                                 </tr>
-                                                <tr *ngIf="car.category!=='20'">
+                                                <tr *ngIf="car.category==='1'">
                                                     <td>Carburant</td>
                                                     <td>{{car.carburant|| '-'}}</td>
                                                 </tr>
@@ -253,11 +256,11 @@
                                                     <td>{{car.miseCirculation || '-'}}</td>
                                                 </tr>
                                                
-                                                    <tr *ngIf="car.category!=='20'">
+                                                    <tr *ngIf="car.category==='1'">
                                                         <td>Boîte</td>
                                                         <td>{{car.gearbox || '-'}}</td>
                                                     </tr>  
-                                                <tr *ngIf="car.category!=='20'">
+                                                <tr *ngIf="car.category==='1'">
                                                     <td>Transmission</td>
                                                     <td>{{car.transmission || '-'}}</td>
                                                 </tr>
@@ -265,7 +268,7 @@
                                                     <td>Puissance fiscale</td>
                                                     <td>{{car.powerFiscal || '-'}}</td>
                                                 </tr>
-                                                <tr *ngIf="car.category!=='20'">
+                                                <tr *ngIf="car.category==='1'">
                                                     <td>Carrosserie</td>
                                                     <td>{{car.carrisserie || '-'}}</td>
                                                 </tr>
@@ -281,7 +284,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="accessories">
+                            <div class="tab-pane fade" id="accessories" *ngIf="car.category==='1'">
                                 <div class="car-details-box">
                                     <div class="table-responsive">
                                         <table class="table table-bordered" *ngIf="outsideEquipmentList !==[]">
