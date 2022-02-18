@@ -1,31 +1,6 @@
 <div class="mobile-menu-second">
     <app-header2></app-header2>
-    <!-- Sub header -->
-    <div class="sub-header-sec p-relative">
-        <app-banner-header></app-banner-header>
-        <!-- <img src="assets/images/blog/banner/banner-1.jpg" class="img-fluid" alt="Sub header"> -->
-        <div class="sub-header-overlay"></div>
-        <div class="sub-header-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="sub-header-text-wrapper text-center">
-                            <h1 class="text-custom-white">Gérer les comptes</h1>
-                            <ul class="breadcrumbs">
-                                <li><a routerLink="/" class="text-custom-white">Accueil</a>
-                                </li>
-                                <li><a routerLink="/mon-espace" class="text-custom-white">Mon espace</a>
-                                </li>
-                                <li><span class="text-custom-white">Gérer les comptes</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Sub header -->
+
 
     <section class="section-padding our_articles">
         <div class="container">
@@ -47,10 +22,10 @@
                                 <td>{{user.companyPhone || '-'}}</td>
                                 <td>{{user.companyAddress}}</td>
                                 <td class="text-center">
-                                    <a class="mt-2" *ngIf="user.status==='active'"  (click)="blockUser(user.id)"> 
+                                    <a class="mt-2" *ngIf="user.status==='active'" (click)="blockUser(user.id)">
                                         <i class="fas fa-stop-circle"></i>
                                     </a>
-                                    <a class="mt-2" *ngIf="user.status!=='active'" > <i class="fas fa-user-lock"></i>
+                                    <a class="mt-2" *ngIf="user.status!=='active'"> <i class="fas fa-user-lock"></i>
                                     </a>
                                 </td>
                             </tr>

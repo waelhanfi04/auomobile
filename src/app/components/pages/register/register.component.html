@@ -1,97 +1,73 @@
 <div class="mobile-menu-second">
-<app-header2></app-header2>	
-<!-- Sub header -->
-  <div class="sub-header-sec p-relative">
-    <app-banner-header></app-banner-header>
-    <div class="sub-header-overlay"></div>
-    <div class="sub-header-wrapper">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-12">
-            <div class="sub-header-text-wrapper text-center">
-              <h1 class="text-custom-white">Inscription</h1>
-              <ul class="breadcrumbs">
-                <li><a routerLink="/" class="text-custom-white">Accueil</a>
-                </li>
-                <li><a routerLink="/account/creation" class="text-custom-white">Pages</a>
-                </li>
-                <li><span class="text-custom-white">Inscription</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Sub header -->
-  <!-- login -->
-  <section class="section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="modal show" id="register-page">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h6 class="modal-title text-left no-margin"><i class="fas fa-unlock-alt mr-2"></i> <span>Inscription</span></h6>
-                </div>
-                <!-- Sign up form -->
-                <div class="modal-body">
-                  <div class="row justify-content-center" *ngIf="this.errorMsg!=='' ||this.successMsg!=='' ">
-                    <span class="error-msg"*ngIf="this.errorMsg!==''" >{{errorMsg}}</span>
-                    <span class="success-msg" *ngIf="this.successMsg!==''">{{successMsg}}</span>
-                  </div>
-                  <form [formGroup]="registerForm" (ngSubmit)="register()">
-                  
-                    <div class="form-group">
-                      <input type="text" name="username" formControlName="username" class="form-control form-control-custom" placeholder="Nom d'utilisateur">
-                   <label class="error-msg" *ngIf="registerForm.controls.username.errors?.required && isSubmitting" >Champ obligatoire</label>
+    <app-header2></app-header2>
 
-                    </div>
-                    <div class="form-group">
-                      <input type="email" name="email" formControlName="email" class="form-control form-control-custom" placeholder="Email">
-                      <label class="error-msg" *ngIf="registerForm.controls.email.errors?.email && !registerForm.controls.email.errors?.required ">Vérifiez l’adresse email, son format n’est pas valide</label>
-                      <label class="error-msg" *ngIf="registerForm.controls.email.errors?.required && this.isSubmitting ">Champ obligatoire</label>   
-                    </div>
-                    <div class="form-group">
-                      <input type="password"  autocomplete="on" name="password" formControlName="password" class="form-control form-control-custom" placeholder="Mot de passe">
-                      <label class="error-msg" *ngIf="registerForm.controls.password.errors?.required && this.isSubmitting ">Champ obligatoire</label>   
-                      <label class="error-msg" *ngIf="registerForm.controls.password.errors?.pattern && registerForm.controls.password.touched">votre mot de passe doit contenir au moins 8 caractères</label>   
+    <!-- login -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="modal show" id="register-page">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h6 class="modal-title text-left no-margin"><i class="fas fa-unlock-alt mr-2"></i> <span>Inscription</span></h6>
+                                </div>
+                                <!-- Sign up form -->
+                                <div class="modal-body">
+                                    <div class="row justify-content-center" *ngIf="this.errorMsg!=='' ||this.successMsg!=='' ">
+                                        <span class="error-msg" *ngIf="this.errorMsg!==''">{{errorMsg}}</span>
+                                        <span class="success-msg" *ngIf="this.successMsg!==''">{{successMsg}}</span>
+                                    </div>
+                                    <form [formGroup]="registerForm" (ngSubmit)="register()">
 
-                    </div>
-                    <div class="form-group">
-                      <input type="password"  autocomplete="on" name="confirmPassword" formControlName="confirmPassword" class="form-control form-control-custom" placeholder="Retaper le mot de passe">
-                      <label class="error-msg" *ngIf="registerForm.controls.confirmPassword.errors?.required && this.isSubmitting ">Champ obligatoire</label>   
-                      <label class="error-msg" *ngIf="registerForm.errors?.mustMatch &&  !registerForm.controls.confirmPassword.errors?.required">Les champs doivent correspondre</label>   
+                                        <div class="form-group">
+                                            <input type="text" name="username" formControlName="username" class="form-control form-control-custom" placeholder="Nom d'utilisateur">
+                                            <label class="error-msg" *ngIf="registerForm.controls.username.errors?.required && isSubmitting">Champ obligatoire</label>
 
-                    </div>
-                    <div class="form-group">
-                      <button type="submit" class="btn-second orange-btn full-width">Créer mon compte</button>
-                    </div>
-                  </form>
-                  <div class="form-excerpts">
-                    <ul>
-                      <li>Déjà membre? <a routerLink="/login">Se Connecter</a>
-                      </li>
-                      <li><a class="forgot-pwd">Mot de passe oublié</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <!-- <div class="social-login">  <span>Or Signup with</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" name="email" formControlName="email" class="form-control form-control-custom" placeholder="Email">
+                                            <label class="error-msg" *ngIf="registerForm.controls.email.errors?.email && !registerForm.controls.email.errors?.required ">Vérifiez l’adresse email, son format n’est pas valide</label>
+                                            <label class="error-msg" *ngIf="registerForm.controls.email.errors?.required && this.isSubmitting ">Champ obligatoire</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" autocomplete="on" name="password" formControlName="password" class="form-control form-control-custom" placeholder="Mot de passe">
+                                            <label class="error-msg" *ngIf="registerForm.controls.password.errors?.required && this.isSubmitting ">Champ obligatoire</label>
+                                            <label class="error-msg" *ngIf="registerForm.controls.password.errors?.pattern && registerForm.controls.password.touched">votre mot de passe doit contenir au moins 8 caractères</label>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" autocomplete="on" name="confirmPassword" formControlName="confirmPassword" class="form-control form-control-custom" placeholder="Retaper le mot de passe">
+                                            <label class="error-msg" *ngIf="registerForm.controls.confirmPassword.errors?.required && this.isSubmitting ">Champ obligatoire</label>
+                                            <label class="error-msg" *ngIf="registerForm.errors?.mustMatch &&  !registerForm.controls.confirmPassword.errors?.required">Les champs doivent correspondre</label>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn-second orange-btn full-width">Créer mon compte</button>
+                                        </div>
+                                    </form>
+                                    <div class="form-excerpts">
+                                        <ul>
+                                            <li>Déjà membre? <a routerLink="/login">Se Connecter</a>
+                                            </li>
+                                            <li><a class="forgot-pwd">Mot de passe oublié</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- <div class="social-login">  <span>Or Signup with</span>
                     <div class="social-btn">  <a routerLink="/register" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
                       <a routerLink="/register" class="google"><i class="fab fa-google-plus-g"></i> Google</a>
                     </div>
                   </div> -->
+                                </div>
+                                <!-- Sign up form -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Sign up form -->
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- login -->
-	<app-footer2></app-footer2>
+    </section>
+    <!-- login -->
+    <app-footer2></app-footer2>
 </div>

@@ -1,47 +1,23 @@
 <div class="drag mobile-menu-second">
-	<app-header2></app-header2>
-<!-- Sub header -->
-  <div class="sub-header-sec p-relative">
-    <img src="assets/images/banner/subbanner.jpg" class="img-fluid" alt="Sub header">
-    <div class="sub-header-overlay"></div>
-    <div class="sub-header-wrapper">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-12">
-            <div class="sub-header-text-wrapper text-center">
-              <h1 class="text-custom-white">Listing</h1>
-              <ul class="breadcrumbs">
-                <li><a routerLink="/" class="text-custom-white">Home</a>
-                </li>
-                <li><a routerLink="/listing1-style2" class="text-custom-white">Pages</a>
-                </li>
-                <li><span class="text-custom-white">Listing</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Sub header -->
-  <!-- listing -->
-  <div class="section-padding listing-with-map style-2">
-    <div class="container-fluid">
-      <div class="row">
-        <aside class="col-xl-3 col-lg-4">
-          <div class="side-search-bar h-auto mb-4">
-            <div class="title-icon">
-              <h5 class="title"><i class="flaticon-search"></i> Find a Vehicle</h5>
-            </div>
-            <div class="widget-search-filter">
-              <div class="widget-content">
-                <form>
-                  <div class="form-group">
-                    <input type="text" name="#" class="form-control form-control-custom" placeholder="What are you looking for?">
-                  </div>
-                  <div class="form-group">
-                    <select class="form-control form-control-custom">
+    <app-header2></app-header2>
+
+    <!-- listing -->
+    <div class="section-padding listing-with-map style-2">
+        <div class="container-fluid">
+            <div class="row">
+                <aside class="col-xl-3 col-lg-4">
+                    <div class="side-search-bar h-auto mb-4">
+                        <div class="title-icon">
+                            <h5 class="title"><i class="flaticon-search"></i> Find a Vehicle</h5>
+                        </div>
+                        <div class="widget-search-filter">
+                            <div class="widget-content">
+                                <form>
+                                    <div class="form-group">
+                                        <input type="text" name="#" class="form-control form-control-custom" placeholder="What are you looking for?">
+                                    </div>
+                                    <div class="form-group">
+                                        <select class="form-control form-control-custom">
                       <option>Filter By Category</option>
                       <option>Luxury Car</option>
                       <option>Sports Car</option>
@@ -49,9 +25,9 @@
                       <option>Excutive Car</option>
                       <option>Economy Car</option>
                     </select>
-                  </div>
-                  <div class="form-group">
-                    <select class="form-control form-control-custom">
+                                    </div>
+                                    <div class="form-group">
+                                        <select class="form-control form-control-custom">
                       <option>Filter By Country</option>
                       <option value="Afghanistan">Afghanistan</option>
                       <option value="Åland Islands">Åland Islands</option>
@@ -298,9 +274,9 @@
                       <option value="Zambia">Zambia</option>
                       <option value="Zimbabwe">Zimbabwe</option>
                     </select>
-                  </div>
-                  <div class="form-group">
-                    <select class="form-control form-control-custom">
+                                    </div>
+                                    <div class="form-group">
+                                        <select class="form-control form-control-custom">
                       <option>Filter By City</option>
                       <option>City one</option>
                       <option>City Two</option>
@@ -309,84 +285,84 @@
                       <option>City Five</option>
                       <option>City Six</option>
                     </select>
-                  </div>
-                  <div class="form-group location-box p-relative">
-                    <input type="text" class="form-control form-control-custom" placeholder="Location">
-                  </div>
-                  <div class="form-group">
-                    <div class="search-distance-value">Radius:
-                      <input type="text" class="range-slider-value distance-value" readonly>
-                    </div>
-                    <div id="search_distance"></div>
-                  </div>
-                  <div class="form-group">
-                    <div class="search-search-price">Price: $ 1 -
-                      <input type="text" class="range-slider-value price-value" readonly>
-                    </div>
-                    <div id="search_price"></div>
-                  </div>
-                  <div class="form-group"> <strong>Filter By Features</strong>
-                    <div class="tags-form-group">
-                      <div class="form-group">
-                        <label class="custom-checkbox">
+                                    </div>
+                                    <div class="form-group location-box p-relative">
+                                        <input type="text" class="form-control form-control-custom" placeholder="Location">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="search-distance-value">Radius:
+                                            <input type="text" class="range-slider-value distance-value" readonly>
+                                        </div>
+                                        <div id="search_distance"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="search-search-price">Price: $ 1 -
+                                            <input type="text" class="range-slider-value price-value" readonly>
+                                        </div>
+                                        <div id="search_price"></div>
+                                    </div>
+                                    <div class="form-group"> <strong>Filter By Features</strong>
+                                        <div class="tags-form-group">
+                                            <div class="form-group">
+                                                <label class="custom-checkbox">
                           <input type="checkbox" name="#">  <span class="checkmark"></span> Coupons</label>
-                      </div>
-                      <div class="form-group">
-                        <label class="custom-checkbox">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="custom-checkbox">
                           <input type="checkbox" name="#">  <span class="checkmark"></span> Smoking Allowed</label>
-                      </div>
-                      <div class="form-group">
-                        <label class="custom-checkbox">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="custom-checkbox">
                           <input type="checkbox" name="#">  <span class="checkmark"></span> Accessories</label>
-                      </div>
-                      <div class="form-group">
-                        <label class="custom-checkbox">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="custom-checkbox">
                           <input type="checkbox" name="#">  <span class="checkmark"></span> Camping</label>
-                      </div>
-                      <div class="form-group">
-                        <label class="custom-checkbox">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="custom-checkbox">
                           <input type="checkbox" name="#">  <span class="checkmark"></span> Field trips</label>
-                      </div>
-                      <div class="form-group">
-                        <label class="custom-checkbox">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="custom-checkbox">
                           <input type="checkbox" name="#">  <span class="checkmark"></span> Getway</label>
-                      </div>
-                      <div class="form-group">
-                        <label class="custom-checkbox">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="custom-checkbox">
                           <input type="checkbox" name="#">  <span class="checkmark"></span> Hot Spots</label>
-                      </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-submit text-center">
+                                        <button type="submit" class="btn-second orange-btn">APPLY FILTER</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="form-submit text-center">
-                    <button type="submit" class="btn-second orange-btn">APPLY FILTER</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          <div class="side-search-bar h-auto">
-            <div class="title-icon">
-              <h5 class="title"><i class="flaticon-checklist"></i> Sponsored Ad
-              </h5>
-            </div>
-            <div class="widget-search-filter mb-0">
-              <div class="widget-content">
-                <div class="advertisement">
-                  <a routerLink="/listing1-style2" target="_blank">
-                    <img src="assets/images/ad.jpg" class="img-fluid full-width" alt="advertisement">
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </aside>
-        <div class="col-xl-9 col-lg-8">
-          <div class="right-search-filter-box">
-            <div class="search-filter-options mb-0">
-              <h5 class="title2 no-margin">Cars <small class="text-dark-white fw-400 rubik">Showing 1,565 results</small></h5>
-              <div class="result-show-by-cat">
-                <div class="filter-and-sorting">  <span>Show rows: </span>
-                  <select>
+                    <div class="side-search-bar h-auto">
+                        <div class="title-icon">
+                            <h5 class="title"><i class="flaticon-checklist"></i> Sponsored Ad
+                            </h5>
+                        </div>
+                        <div class="widget-search-filter mb-0">
+                            <div class="widget-content">
+                                <div class="advertisement">
+                                    <a routerLink="/listing1-style2" target="_blank">
+                                        <img src="assets/images/ad.jpg" class="img-fluid full-width" alt="advertisement">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <div class="col-xl-9 col-lg-8">
+                    <div class="right-search-filter-box">
+                        <div class="search-filter-options mb-0">
+                            <h5 class="title2 no-margin">Cars <small class="text-dark-white fw-400 rubik">Showing 1,565 results</small></h5>
+                            <div class="result-show-by-cat">
+                                <div class="filter-and-sorting"> <span>Show rows: </span>
+                                    <select>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -398,174 +374,174 @@
                     <option>9</option>
                     <option>10</option>
                   </select> <span>Go to: </span>
-                  <input type="text" name="#" value="1">  <span>1 - 10 of 171 </span>
-                  <div class="arrow-btn">
-                    <button class="arrows" type="button"><i class="flaticon-left-chevron"></i>
+                                    <input type="text" name="#" value="1"> <span>1 - 10 of 171 </span>
+                                    <div class="arrow-btn">
+                                        <button class="arrows" type="button"><i class="flaticon-left-chevron"></i>
                     </button>
-                    <button class="arrows" type="button"><i class="flaticon-right-chevron"></i>
+                                        <button class="arrows" type="button"><i class="flaticon-right-chevron"></i>
                     </button>
-                  </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-section-car-box">
+                            <div class="row vertical-scroll">
+                                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <div class="car-grid-layout-box">
+                                        <div class="car-grid-layout-inner text-center">
+                                            <h5 class="car-name"><a routerLink="/car-detail" class="text-light-black">Acura TLX </a><span class="text-orange float-right custom-tooltip" data-tip="Add to compare"><i class="flaticon-add"></i></span></h5>
+                                            <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
+                                            <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
+                                            <div class="car-grid-layout-img">
+                                                <img src="assets/images/showcar7.jpg" class="img-fluid full-width" alt="Car img">
+                                            </div>
+                                            <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
+                                                <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
+                                            </div>
+                                            <div class="car-grid-layout-location"> <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
+                                                <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <div class="car-grid-layout-box">
+                                        <div class="car-grid-layout-inner text-center">
+                                            <h5 class="car-name"><a routerLink="/car-detail" class="text-light-black">BMW 4 Series </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
+                                            <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
+                                            <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
+                                            <div class="car-grid-layout-img">
+                                                <img src="assets/images/showcar8.jpg" class="img-fluid full-width" alt="Car img">
+                                            </div>
+                                            <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
+                                                <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
+                                            </div>
+                                            <div class="car-grid-layout-location"> <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
+                                                <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Manual</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <div class="car-grid-layout-box">
+                                        <div class="car-grid-layout-inner text-center">
+                                            <h5 class="car-name"><a routerLink="/car-detail" class="text-light-black">Audi A4 </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
+                                            <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
+                                            <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
+                                            <div class="car-grid-layout-img">
+                                                <img src="assets/images/showcar6.jpg" class="img-fluid full-width" alt="Car img">
+                                            </div>
+                                            <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
+                                                <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
+                                            </div>
+                                            <div class="car-grid-layout-location"> <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
+                                                <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <div class="car-grid-layout-box">
+                                        <div class="car-grid-layout-inner text-center">
+                                            <h5 class="car-name"><a routerLink="/car-detail" class="text-light-black">Infiniti Q50 </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
+                                            <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
+                                            <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
+                                            <div class="car-grid-layout-img">
+                                                <img src="assets/images/showcar9.jpg" class="img-fluid full-width" alt="Car img">
+                                            </div>
+                                            <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
+                                                <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
+                                            </div>
+                                            <div class="car-grid-layout-location"> <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
+                                                <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Manual</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <div class="car-grid-layout-box">
+                                        <div class="car-grid-layout-inner text-center">
+                                            <h5 class="car-name"><a routerLink="/car-detail" class="text-light-black">Mercedes-Benz </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
+                                            <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
+                                            <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
+                                            <div class="car-grid-layout-img">
+                                                <img src="assets/images/showcar2.jpg" class="img-fluid full-width" alt="Car img">
+                                            </div>
+                                            <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
+                                                <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
+                                            </div>
+                                            <div class="car-grid-layout-location"> <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
+                                                <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <div class="car-grid-layout-box">
+                                        <div class="car-grid-layout-inner text-center">
+                                            <h5 class="car-name"><a routerLink="/car-detail" class="text-light-black">Lexus ES </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
+                                            <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
+                                            <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
+                                            <div class="car-grid-layout-img">
+                                                <img src="assets/images/showcar2.jpg" class="img-fluid full-width" alt="Car img">
+                                            </div>
+                                            <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
+                                                <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
+                                            </div>
+                                            <div class="car-grid-layout-location"> <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
+                                                <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Manual</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <div class="car-grid-layout-box">
+                                        <div class="car-grid-layout-inner text-center">
+                                            <h5 class="car-name"><a routerLink="/car-detail" class="text-light-black">Tesla Model 3 </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
+                                            <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
+                                            <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
+                                            <div class="car-grid-layout-img">
+                                                <img src="assets/images/showcar7.jpg" class="img-fluid full-width" alt="Car img">
+                                            </div>
+                                            <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
+                                                <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
+                                            </div>
+                                            <div class="car-grid-layout-location"> <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
+                                                <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <div class="car-grid-layout-box">
+                                        <div class="car-grid-layout-inner text-center">
+                                            <h5 class="car-name"><a routerLink="/car-detail" class="text-light-black">Audi TT Rs v2 </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
+                                            <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
+                                            <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
+                                            <div class="car-grid-layout-img">
+                                                <img src="assets/images/showcar8.jpg" class="img-fluid full-width" alt="Car img">
+                                            </div>
+                                            <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
+                                                <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
+                                            </div>
+                                            <div class="car-grid-layout-location"> <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
+                                                <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Manual</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="map-container">
+                            <div id="map"></div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="right-section-car-box">
-              <div class="row vertical-scroll">
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Acura TLX </a><span class="text-orange float-right custom-tooltip" data-tip="Add to compare"><i class="flaticon-add"></i></span></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar7.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">  <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">BMW 4 Series </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar8.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">  <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Manual</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Audi A4 </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar6.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">  <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Infiniti Q50 </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar9.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">  <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Manual</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Mercedes-Benz </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar2.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">  <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Lexus ES </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar2.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">  <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Manual</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Tesla Model 3 </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar7.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">  <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
-                  <div class="car-grid-layout-box">
-                    <div class="car-grid-layout-inner text-center">
-                      <h5 class="car-name"><a routerLink="/car-detail"  class="text-light-black">Audi TT Rs v2 </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
-                      <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                      <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
-                      <div class="car-grid-layout-img">
-                        <img src="assets/images/showcar8.jpg" class="img-fluid full-width" alt="Car img">
-                      </div>
-                      <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 20,000 Km</span>
-                        <span class="text-dark-white p-relative"><i class="icon-car"></i> 2010 Model</span>
-                      </div>
-                      <div class="car-grid-layout-location">  <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                        <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Manual</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="map-container">
-              <div id="map"></div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  <!-- listing -->
-	<app-footer2></app-footer2>
+    <!-- listing -->
+    <app-footer2></app-footer2>
 </div>

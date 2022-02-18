@@ -1,56 +1,66 @@
 <!-- Desktop Nav -->
 <header id="menu-style-3">
-  <div class="container-fluid">
-    <div class="dekstop-nav">
-      <div class="row white-header">
-        <div class="col-12">
-          <div class="menu-style-3">
-            <div class="navigation d-flex">
-            
-              <div class="col">
-                <a routerLink="/" class="orange-title">
+    <div class="container-fluid">
+        <div class="dekstop-nav">
+            <div class="row white-header">
+                <div class="col-12">
+                    <div class="menu-style-3">
+                        <div class="navigation d-flex">
+
+                            <div class="col">
+                                <a routerLink="/" class="orange-title">
                   Sayara.tn                  <!-- <img src="assets/images/140x32logo.png" alt="Logo"> -->
                 </a>
-               </div>
-                <div class="add-car-btn"  *ngIf='showAddListing'>
-                   <a routerLink="/creer-une-annonce" class="text-custom-white">+ Ajouter une annonce</a>
-                </div>
-            </div>
-            <!-- <div class="logo">
+                            </div>
+                            <div class="add-car-btn" *ngIf='showAddListing'>
+                                <a routerLink="/creer-une-annonce" class="text-custom-white">+ Ajouter une annonce</a>
+                            </div>
+                        </div>
+                        <!-- <div class="logo">
               <a routerLink="/">
               <img src="assets/images/140x32logo.png" alt="Logo"> 
               </a>
             </div> -->
-            <div class="side-nav">
-              <ul>
-                <!-- <li class="search-btn">	<a href="javascript:void(0)" class="text-custom-white"><i class="flaticon-search"></i> Search Category</a>
+                        <div class="side-nav">
+                            <ul>
+                                <!-- <li class="search-btn">	<a href="javascript:void(0)" class="text-custom-white"><i class="flaticon-search"></i> Search Category</a>
                     </li> -->
-                    <li>
-                      <a class="text-light-black" routerLink="/blogs">
+                                <li>
+                                    <a class="text-light-black" routerLink="/blogs">
                         Blog
                       </a>
-                    </li>
-                    <li>
-                      <a class="text-light-black" routerLink="/neuf">
-                        Prix de neuf
+                                </li>
+                                <li>
+                                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                        Prix de neuf <span class="caret"></span>
                       </a>
-                    </li>
-                    <li>
-                      <a class="text-light-black" routerLink="/vendeur-pro">
+                                    <ul class="dropdown-menu">
+                                        <li><a (click)="getVehicule('voiture')">Voiture</a></li>
+                                        <li><a (click)="getVehicule('moto')">Moto</a></li>
+                                        <li><a routerLink="/concessionnaires">concessionnaire</a></li>
+
+                                    </ul>
+                                </li>
+                                <!-- <button class="btn dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                      </button> -->
+
+                                <li>
+                                    <a class="text-light-black" routerLink="/vendeur-pro">
                         Vendeur Pro
                       </a>
-                    </li>
-                    <li>
-                      <a class="text-light-black" routerLink="/ancien-car">
+                                </li>
+                                <li>
+                                    <a class="text-light-black" routerLink="/ancien-car">
                         Occasions
                       </a>
-                    </li>
-                    <li>
-                      <a class="text-light-black"  routerLink="/favoris">
+                                </li>
+                                <li>
+                                    <a class="text-light-black" routerLink="/favoris">
                         Favoris
                       </a>
-                    </li>
-                    <!-- <li class="menu-item dropdownbtn">
+                                </li>
+                                <!-- <li class="menu-item dropdownbtn">
                       <a  class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
                         Mon espace</a>
                       <ul class="dropdown-menu ">
@@ -62,45 +72,44 @@
                         </li>
                       </ul>
                     </li> -->
-               <li class="menu-item text-header">
-                  <a  id="navbarDropdownMenuLink3" [routerLink]="['/mon-espace']"  role="button" aria-haspopup="true" aria-expanded="false" 
-                  data-toggle="dropdown" class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
+                                <li class="menu-item text-header">
+                                    <a id="navbarDropdownMenuLink3" [routerLink]="['/mon-espace']" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
                     Mon espace</a>
-                  <ul class="dropdown-menu dropdown-account" aria-labelledby="navbarDropdownMenuLink3">
-                    <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/account/creation" class="text-black">S'inscrire</a>
-                    </li>
-                    <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/login" class="text-black">Se Connecter</a>
-                    </li>
-                    <li class="dropdown-li" *ngIf='showAddListing' (click)="logout()"><a  class="text-black">Se Déconnecter</a>
-                    </li>
-                  </ul>
-                </li> 
-               <!-- <li class="add-car-btn"  *ngIf='showAddListing'> <a routerLink="/creer-une-annonce" class="text-custom-white">+ Ajouter une annonce</a>
+                                    <ul class="dropdown-menu dropdown-account" aria-labelledby="navbarDropdownMenuLink3">
+                                        <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/account/creation" class="text-black">S'inscrire</a>
+                                        </li>
+                                        <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/login" class="text-black">Se Connecter</a>
+                                        </li>
+                                        <li class="dropdown-li" *ngIf='showAddListing' (click)="logout()"><a class="text-black">Se Déconnecter</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- <li class="add-car-btn"  *ngIf='showAddListing'> <a routerLink="/creer-une-annonce" class="text-custom-white">+ Ajouter une annonce</a>
                 </li>  -->
 
-              </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="mobile-nav">
-      <div class="row">
-        <div class="col-6">
-          <div class="logo align-item-center">
-            <a routerLink="/" class="orange-title">
+        <div class="mobile-nav">
+            <div class="row">
+                <div class="col-6">
+                    <div class="logo align-item-center">
+                        <a routerLink="/" class="orange-title">
               Sayara.tn
               <!-- <img src="assets/images/140x32logo.png" alt="Logo"> -->
             </a>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="mobile-nav-icons">
-            <ul>
-  
-              <!-- <li class="search-btn"><a href="javascript:void(0)" class="text-custom-white"><i class="flaticon-search"></i></a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mobile-nav-icons">
+                        <ul>
+
+                            <!-- <li class="search-btn"><a href="javascript:void(0)" class="text-custom-white"><i class="flaticon-search"></i></a>
                   </li> -->
-              <!-- <li class="dropdownbtn">
+                            <!-- <li class="dropdownbtn">
                 <a href="javascript:void(0)" class="text-custom-white"><i class="fas fa-user"></i></a>
                 <ul class="dropdown-menu">
                   <li><a routerLink="/account/creation" class="text-light-black">Register</a>
@@ -110,44 +119,43 @@
                 </ul>
               </li> -->
 
-              <li class="menu-item text-header">
-                <a   [routerLink]="['/mon-espace']" id="navbarDropdownMenuLink2" role="button" aria-haspopup="true" aria-expanded="false" 
-                data-toggle="dropdown" class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
+                            <li class="menu-item text-header">
+                                <a [routerLink]="['/mon-espace']" id="navbarDropdownMenuLink2" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
                   </a>
-                <ul class="dropdown-menu dropdown-account" aria-labelledby="navbarDropdownMenuLink2">
-                  <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/account/creation" class="text-black">S'inscrire</a>
-                  </li>
-                  <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/login" class="text-black">Se Connecter</a>
-                  </li>
-                  <li class="dropdown-li" *ngIf='showAddListing' (click)="logout()"><a  class="text-black">Se Déconnecter</a>
-                  </li>
-                </ul>
-              </li>
+                                <ul class="dropdown-menu dropdown-account" aria-labelledby="navbarDropdownMenuLink2">
+                                    <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/account/creation" class="text-black">S'inscrire</a>
+                                    </li>
+                                    <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/login" class="text-black">Se Connecter</a>
+                                    </li>
+                                    <li class="dropdown-li" *ngIf='showAddListing' (click)="logout()"><a class="text-black">Se Déconnecter</a>
+                                    </li>
+                                </ul>
+                            </li>
 
-              <li class="button" id="mobile-open-nav"><a href="javascript:void(0)" class="text-custom-white"><i
+                            <li class="button" id="mobile-open-nav"><a href="javascript:void(0)" class="text-custom-white"><i
                     class="flaticon-menu"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div id="mobile-mySidenav" class="sidenav">
-          <div class="side-nav-wrapper">
-            <!-- <span class="float-right">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div id="mobile-mySidenav" class="sidenav">
+                    <div class="side-nav-wrapper">
+                        <!-- <span class="float-right">
               <a href="javascript:void(0)" class="closebtn" id="mobile-close-nav">X</a>
             </span> -->
-             <div class="logo align-item-center">
-              <span class=" float-right">
+                        <div class="logo align-item-center">
+                            <span class=" float-right">
                 <a href="javascript:void(0)" class="closebtn close-sidenav" id="mobile-close-nav">X</a>
               </span>
-            </div>
-            <ul>
-              <li class="custom-dropdown-nav">
-                <!-- <a routerLink="/" class="text-custom-white">
+                        </div>
+                        <ul>
+                            <li class="custom-dropdown-nav">
+                                <!-- <a routerLink="/" class="text-custom-white">
                       <h3 class="mb-0">Accueil</h3>
                     </a> -->
-                <!-- <ul class="dropdown-menu">
+                                <!-- <ul class="dropdown-menu">
                       <li><a routerLink="/">Landing Page</a>
                       </li>
                       <li><a routerLink="/homepage2">Home 2</a>
@@ -163,55 +171,55 @@
                       <li><a routerLink="/homepage7">Home 7</a>
                       </li>
                     </ul> -->
-              </li>
-              <li>
-                <a routerLink="/" class="text-custom-white">
-                  <h6 class="mb-0">Accueil</h6>
-                </a>
-              </li>
-              <li *ngIf='showAddListing==true'>
-                <a routerLink="/creer-une-annonce">
-                  <h6 class="mb-0">Ajouter une annonce</h6>
-                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/" class="text-custom-white">
+                                    <h6 class="mb-0">Accueil</h6>
+                                </a>
+                            </li>
+                            <li *ngIf='showAddListing==true'>
+                                <a routerLink="/creer-une-annonce">
+                                    <h6 class="mb-0">Ajouter une annonce</h6>
+                                </a>
 
-              </li>
-              <li>
-                <a class="text-light-black" routerLink="/neuf">
-                  <h6 class="mb-0">Prix de neuf</h6>
-                </a>
-              </li>
-              <li>
-                <a class="text-light-black" routerLink="/ancien-car">
-                  <h6 class="mb-0">Occasions</h6>
-                </a>
-              </li>
-              <li>
-                <a class="text-light-black" routerLink="/vendeur-pro">
-                  <h6 class="mb-0">Vendeur Pro</h6>
-                </a>
-              </li>
-              <li>
-                <a routerLink="/blogs">
-                  <h6 class="mb-0">Blog</h6>
-                </a>
-              </li>
-              <li>
-                <a  routerLink="/favoris">
-                  <h6 class="mb-0">Favoris</h6>
-                </a>
-              </li>
-              
-              <!-- <li>
+                            </li>
+                            <li>
+                                <a class="text-light-black" routerLink="/neuf">
+                                    <h6 class="mb-0">Prix de neuf</h6>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-light-black" routerLink="/ancien-car">
+                                    <h6 class="mb-0">Occasions</h6>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-light-black" routerLink="/vendeur-pro">
+                                    <h6 class="mb-0">Vendeur Pro</h6>
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/blogs">
+                                    <h6 class="mb-0">Blog</h6>
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/favoris">
+                                    <h6 class="mb-0">Favoris</h6>
+                                </a>
+                            </li>
+
+                            <!-- <li>
                     <a routerLink="/media">
                       <h3 class="mb-0">Media</h3>
                     </a>
                   </li> -->
-              <li class="custom-dropdown-nav">
-                <!-- <a href="javascript:void(0)">
+                            <li class="custom-dropdown-nav">
+                                <!-- <a href="javascript:void(0)">
                       <h3 class="mb-0">Pages</h3>
                     </a> -->
-                <ul class="dropdown-menu">
-                  <!-- <li><a routerLink="/listing">Listing</a>
+                                <ul class="dropdown-menu">
+                                    <!-- <li><a routerLink="/listing">Listing</a>
                       </li>
                       <li><a routerLink="/listing1">Listing 1</a>
                       </li>
@@ -225,9 +233,9 @@
                       </li>
                       <li><a routerLink="/listing2-style2">Listing 2 Style 2</a>
                       </li> -->
-                  <!-- <li><a routerLink="/creer-une-annonce">Ajouter une annonce</a>
+                                    <!-- <li><a routerLink="/creer-une-annonce">Ajouter une annonce</a>
                       </li> -->
-                  <!-- <li><a routerLink="/aboutus">About Us</a>
+                                    <!-- <li><a routerLink="/aboutus">About Us</a>
                       </li>
                       <li><a routerLink="/details-annonce">Car Details</a>
                       </li>
@@ -243,10 +251,10 @@
                       </li>
                       <li><a routerLink="/coming-soon">Coming Soon</a>
                       </li> -->
-                </ul>
-              </li>
-              <li class="custom-dropdown-nav">
-                <!-- <a href="javascript:void(0)" class="text-custom-white">
+                                </ul>
+                            </li>
+                            <li class="custom-dropdown-nav">
+                                <!-- <a href="javascript:void(0)" class="text-custom-white">
                       <h3 class="mb-0">Blog</h3>
                     </a>
                    <ul class="dropdown-menu">
@@ -269,8 +277,8 @@
                       <li><a routerLink="/blog-detail-right">Blog Details Right</a>
                       </li>
                     </ul>  -->
-              </li>
-              <!-- <li>
+                            </li>
+                            <!-- <li>
                     <a routerLink="/pricing">
                       <h3 class="mb-0">Pricing</h3>
                     </a>
@@ -280,9 +288,9 @@
                       <h3 class="mb-0">Contact</h3>
                     </a>
                   </li> -->
-            </ul>
-            <div class="mobile-social-icon">
-              <!-- <ul>
+                        </ul>
+                        <div class="mobile-social-icon">
+                            <!-- <ul>
                     <li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a>
                     </li>
                     <li><a href="javascript:void(0)"><i class="fab fa-twitter"></i></a>
@@ -292,11 +300,11 @@
                     <li><a href="javascript:void(0)"><i class="fab fa-instagram"></i></a>
                     </li>
                   </ul> -->
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </header>
 <!-- Desktop Nav -->

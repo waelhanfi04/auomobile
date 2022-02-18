@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-brands-list',
@@ -9,11 +10,10 @@ import { Router } from '@angular/router';
 export class BrandsListComponent implements OnInit {
 
   constructor(private router: Router) { }
-
   ngOnInit(): void {
   }
   getCarByBrand(brand:string){
-    this.router.navigate(['/voitures-neuves',brand])
-
+    this.router.navigate(['/brand',brand])
   }
+
 }

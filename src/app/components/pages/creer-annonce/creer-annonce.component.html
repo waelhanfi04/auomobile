@@ -1,60 +1,38 @@
 <div class="mobile-menu-second">
-    <app-header2></app-header2>	
-    <!-- Sub header -->
-      <div class="sub-header-sec p-relative">
-        <app-banner-header></app-banner-header>
-        <div class="sub-header-overlay"></div>
-        <div class="sub-header-wrapper">
-          <div class="container">
-            <div class="row">
-              <div class="col-xl-12">
-                <div class="sub-header-text-wrapper text-center">
-                  <h1 class="text-custom-white">Créer Une annonce</h1>
-                  <ul class="breadcrumbs">
-                    <li><a routerLink="/" class="text-custom-white">Accueil</a>
-                    </li>
-                    <li><span class="text-custom-white">Créer une annonce</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Sub header -->
-     
-      <section class="section-padding">
+    <app-header2></app-header2>
+
+
+    <section class="section-padding">
         <div class="container">
-          <div class="row">
-            <div class="col-12">
-             
-                      <label>Choisissez la Catégorie de votre annonce</label>
-                      <form> 
+            <div class="row">
+                <div class="col-12">
+
+                    <label>Choisissez la Catégorie de votre annonce</label>
+                    <form>
                         <div class="form-group">
-                          <label class="custom-checkbox">
+                            <label class="custom-checkbox">
                             <input type="checkbox" (change)="onCheckboxChange($event,'car')"> <span class="checkmark"></span>Voiture</label>
                         </div>
-                        
+
                         <div class="form-group">
-                          <label class="custom-checkbox" >
+                            <label class="custom-checkbox">
                             <input type="checkbox" (change)="onCheckboxChange($event,'moto')"> <span class="checkmark"></span>Moto</label>
                         </div>
-                   
+
                         <div class="form-group">
-                          <label class="custom-checkbox" >
+                            <label class="custom-checkbox">
                             <input type="checkbox" (change)="onCheckboxChange($event,'nautisme')"> <span class="checkmark"></span>Nautisme</label>
                         </div>
 
                         <div class="form-group">
-                          <label class="custom-checkbox" >
+                            <label class="custom-checkbox">
                             <input type="checkbox" (change)="onCheckboxChange($event,'pieces-auto')"> <span class="checkmark"></span>Pièces Automobile</label>
                         </div>
-                      </form>
+                    </form>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-        <app-footer2></app-footer2>
-    </div>
+    <app-footer2></app-footer2>
+</div>

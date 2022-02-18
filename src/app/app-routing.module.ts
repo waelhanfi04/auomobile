@@ -53,6 +53,9 @@ import { UpdateMotorcycleComponent } from './components/pages/update-motorcycle/
 import { CreerAnnonceComponent } from './components/pages/creer-annonce/creer-annonce.component';
 import { AddPieceNautismeComponent } from './components/pages/add-piece-nautisme/add-piece-nautisme.component';
 import { UpdatePieceNautismeComponent } from './components/pages/update-piece-nautisme/update-piece-nautisme.component';
+import { CarByModelComponent } from './components/pages/car-by-model/car-by-model.component';
+import { ConcessionnairesComponent } from './components/pages/concessionnaires/concessionnaires.component';
+import { MotoListComponent } from './components/pages/moto-list/moto-list.component';
 
 const routes: Routes = [
 
@@ -180,8 +183,13 @@ const routes: Routes = [
     //  canActivate:[ AuthGuardService]
   },
   {
-    path: 'neuf',
+    path: 'neuf/voiture',
     component: BrandsListComponent,
+    //  canActivate:[ AuthGuardService]
+  },
+  {
+    path: 'neuf/moto',
+    component: MotoListComponent,
     //  canActivate:[ AuthGuardService]
   },
   {
@@ -189,8 +197,16 @@ const routes: Routes = [
     component: AncienCarsComponent
   },
   {
-    path: 'voitures-neuves/:brand',
+    path: 'brand/:brand',
     component: NewCarsComponent
+  },
+  {
+    path: 'concessionnaires',
+    component: ConcessionnairesComponent
+  },
+  {
+    path: 'model/:model',
+    component: CarByModelComponent
   },
   // {path: 'media', component: MediaComponent},
   { path: 'listing', component: ListingComponent },

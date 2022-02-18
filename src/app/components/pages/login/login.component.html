@@ -1,105 +1,77 @@
 <div class="mobile-menu-second">
-<app-header2></app-header2>	
-<!-- Sub header -->
-  <div class="sub-header-sec p-relative">
- <app-banner-header></app-banner-header>
-    <div class="sub-header-overlay"></div>
-    <div class="sub-header-wrapper">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-12">
-            <div class="sub-header-text-wrapper text-center">
-              <h1 class="text-custom-white">Connexion</h1>
-              <ul class="breadcrumbs">
-                <li><a routerLink="/" class="text-custom-white">Accueil</a>
-                </li>
-                <!-- <li><a routerLink="/" class="text-custom-white">Pages</a>
-                </li> -->
-                <li><span class="text-custom-white">Connexion</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Sub header -->
-  <!-- login -->
-  <section class="section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="modal show" id="register-page">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h6 class="modal-title text-left no-margin"><i class="fas fa-unlock-alt mr-2"></i><span>Inscription</span></h6>
-                </div>
-                <!-- Sign in form -->
-                <div class="modal-body">
-                  <form [formGroup]="loginForm" >
-                    <div class="d-flex justify-content-center" *ngIf="this.errorMsg!==''">
-                      <label class="error-msg" >{{errorMsg}}</label>
-                    </div>
-                    <div class="form-group">
-                      <input type="email" name="email" formControlName="email" class="form-control form-control-custom"  placeholder="E-mail">
-                   <label class="error-msg" *ngIf="loginForm.controls.email.errors?.email && !loginForm.controls.email.errors?.required ">Vérifiez l’adresse email, son format n’est pas valide</label>
-                   <label class="error-msg" *ngIf="loginForm.controls.email.errors?.required && this.isSubmitting">Champ obligatoire</label>
+    <app-header2></app-header2>
 
-                  </div>
+    <!-- login -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="modal show" id="register-page">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h6 class="modal-title text-left no-margin"><i class="fas fa-unlock-alt mr-2"></i><span>Inscription</span></h6>
+                                </div>
+                                <!-- Sign in form -->
+                                <div class="modal-body">
+                                    <form [formGroup]="loginForm">
+                                        <div class="d-flex justify-content-center" *ngIf="this.errorMsg!==''">
+                                            <label class="error-msg">{{errorMsg}}</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" name="email" formControlName="email" class="form-control form-control-custom" placeholder="E-mail">
+                                            <label class="error-msg" *ngIf="loginForm.controls.email.errors?.email && !loginForm.controls.email.errors?.required ">Vérifiez l’adresse email, son format n’est pas valide</label>
+                                            <label class="error-msg" *ngIf="loginForm.controls.email.errors?.required && this.isSubmitting">Champ obligatoire</label>
 
-                    <div class="form-group">
-                      <input type="password" #password_field  autocomplete="on" name="password" formControlName="password" class="form-control form-control-custom"  placeholder="Mot de passe">
-                      <span
-                      (click)="
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="password" #password_field autocomplete="on" name="password" formControlName="password" class="form-control form-control-custom" placeholder="Mot de passe">
+                                            <span (click)="
                         password_field.type =
                           password_field.type == 'password' ? 'text' : 'password'
-                      "
-                      class="d-flex field-icon fa fa-fw toggle-password"
-                      [ngClass]="
+                      " class="d-flex field-icon fa fa-fw toggle-password" [ngClass]="
                         password_field.type == 'password'
                           ? ' fa-eye '
                           : ' fa-eye-slash'
-                      "
-                    ></span>
-                      <label class="error-msg" *ngIf="loginForm.controls.password.errors?.required && this.isSubmitting">Champ obligatoire</label>
+                      "></span>
+                                            <label class="error-msg" *ngIf="loginForm.controls.password.errors?.required && this.isSubmitting">Champ obligatoire</label>
 
-                    </div>
-                    <div class="form-group">
-                      <a class="forgot-pwd">Mot de passe oublié</a>
-                    </div>
-                    <!-- <div class="form-group">
+                                        </div>
+                                        <div class="form-group">
+                                            <a class="forgot-pwd">Mot de passe oublié</a>
+                                        </div>
+                                        <!-- <div class="form-group">
                       <label class="custom-checkbox">
                         <input type="checkbox" name="#">Keep me signed in <span class="checkmark"></span>
                       </label>
                     </div> -->
-                    <div class="form-group">
-                      <button class="btn-second orange-btn full-width" (click)="login()">Se Connecter</button>
-                    </div>
-                  </form>
-                  <div class="form-excerpts d-flex justify-content-centerk">
-                    <ul>
-                      <li>Envie de nous rejoindre ? <a routerLink="/account/creation">Créer un compte</a>
-                      </li>
-                      <!-- <li><a >Mot de passe oublié</a>
+                                        <div class="form-group">
+                                            <button class="btn-second orange-btn full-width" (click)="login()">Se Connecter</button>
+                                        </div>
+                                    </form>
+                                    <div class="form-excerpts d-flex justify-content-centerk">
+                                        <ul>
+                                            <li>Envie de nous rejoindre ? <a routerLink="/account/creation">Créer un compte</a>
+                                            </li>
+                                            <!-- <li><a >Mot de passe oublié</a>
                       </li> -->
-                    </ul>
-                  </div>
-                  <!-- <div class="social-login">  <span>Or connect with</span>
+                                        </ul>
+                                    </div>
+                                    <!-- <div class="social-login">  <span>Or connect with</span>
                     <div class="social-btn">  <a routerLink="/login" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
                       <a routerLink="/login" class="google"><i class="fab fa-google-plus-g"></i> Google</a>
                     </div>
                   </div> -->
+                                </div>
+                                <!-- Sign in form -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Sign in form -->
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- login -->
-	<app-footer2></app-footer2>
+    </section>
+    <!-- login -->
+    <app-footer2></app-footer2>
 </div>

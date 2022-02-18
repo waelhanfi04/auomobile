@@ -1,0 +1,16 @@
+.sellers-list a {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: .25rem;
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #f3f3f3;
+    width: 100%;
+    color: #3d3d3d;
+    background-color: #f8f8f8;
+    border-color: #ccc;
+    font-size: 14px;
+}
+
+.sellers-list a div.infos-wrapper {
+    padding: 15px;
+}

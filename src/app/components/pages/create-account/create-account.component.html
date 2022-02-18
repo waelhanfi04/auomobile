@@ -1,57 +1,33 @@
 <div class="mobile-menu-second">
-<app-header2></app-header2>	
-<!-- Sub header -->
-  <div class="sub-header-sec p-relative">
-    <app-banner-header></app-banner-header>
-    <div class="sub-header-overlay"></div>
-    <div class="sub-header-wrapper">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-12">
-            <div class="sub-header-text-wrapper text-center">
-              <h1 class="text-custom-white">Créer un compte</h1>
-              <ul class="breadcrumbs">
-                <li><a routerLink="/" class="text-custom-white">Accueil</a>
-                </li>
-                <!-- <li><a routerLink="/account/creation" class="text-custom-white">Pages</a>
-                </li> -->
-                <li><span class="text-custom-white">Inscription</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Sub header -->
-  <!-- login -->
-  <section class="section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="modal show" id="register-page">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h6 class="modal-title text-left no-margin"><i class="fas fa-unlock-alt mr-2"></i> <span>Créer un compte</span></h6>
-                </div>
-                <!-- Sign up form -->
-                <div class="modal-body">
-                  <label>Créer un compte pour…</label>
-                  <form> 
-                    <div class="form-group">
-                      <label class="custom-checkbox">
+    <app-header2></app-header2>
+
+    <!-- login -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="modal show" id="register-page">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h6 class="modal-title text-left no-margin"><i class="fas fa-unlock-alt mr-2"></i> <span>Créer un compte</span></h6>
+                                </div>
+                                <!-- Sign up form -->
+                                <div class="modal-body">
+                                    <label>Créer un compte pour…</label>
+                                    <form>
+                                        <div class="form-group">
+                                            <label class="custom-checkbox">
                         <input type="checkbox" (change)="onCheckboxChange($event,'normal')"> <span class="checkmark"></span>Moi</label>
-                    </div>
+                                        </div>
 
-                    <div class="form-group">
-                      <label class="custom-checkbox" >
+                                        <div class="form-group">
+                                            <label class="custom-checkbox">
                         <input type="checkbox" (change)="onCheckboxChange($event,'pro')"> <span class="checkmark"></span>Mon entreprise</label>
-                    </div>
+                                        </div>
 
 
-                    <!-- <div class="form-group">
+                                        <!-- <div class="form-group">
                       <input type="radio" id="for-me" routerLink="/register">
                       <label for="for-me">Me</label>
                      
@@ -61,30 +37,30 @@
                       <label for="for-company">My company</label>
           
                     </div> -->
-              
-                  </form>
-                  <div class="form-excerpts  mt-5">
-                    <ul>
-                      <li>Vous avez déjà un compte ? <a routerLink="/login">Se Connecter</a>
-                      </li>
-                      <!-- <li><a >Mot de passe oublié</a>
+
+                                    </form>
+                                    <div class="form-excerpts  mt-5">
+                                        <ul>
+                                            <li>Vous avez déjà un compte ? <a routerLink="/login">Se Connecter</a>
+                                            </li>
+                                            <!-- <li><a >Mot de passe oublié</a>
                       </li> -->
-                    </ul>
-                  </div>
-                  <!-- <div class="social-login">  <span>Or Signup with</span>
+                                        </ul>
+                                    </div>
+                                    <!-- <div class="social-login">  <span>Or Signup with</span>
                     <div class="social-btn">  <a routerLink="/account/creation" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
                       <a routerLink="/account/creation" class="google"><i class="fab fa-google-plus-g"></i> Google</a>
                     </div>
                   </div> -->
+                                </div>
+                                <!-- Sign up form -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Sign up form -->
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- login -->
-	<app-footer2></app-footer2>
+    </section>
+    <!-- login -->
+    <app-footer2></app-footer2>
 </div>

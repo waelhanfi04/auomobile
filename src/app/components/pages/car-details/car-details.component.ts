@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CarService } from 'src/app/services/car/car.service';
-import { arrayInsideEquipment, arrayOutsideEquipment, arraysecurityEquipment } from 'src/app/shared/config';
+import { arrayInsideEquipment, arrayOutsideEquipment, arraysecurityEquipment, concessionnaires } from 'src/app/shared/config';
 
 @Component({
   selector: 'app-car-details',
@@ -40,6 +40,9 @@ export class CarDetailsComponent implements OnInit {
   getCarDetails(id: any) {
     this.carService.getOneCar(id).subscribe((data: any) => {
       this.car = data.voiture;
+      this.car.userName=concessionnaires[this.car.concessionnaire].nom
+      this.car.fax=concessionnaires[this.car.concessionnaire]?.fax || '-'
+
       if (data.voiture.category !== 1 && data.voiture.category !== 20) {
         this.isNautismeOrPiece = true
         if (data.voiture.category === 2) { this.category = 'Nautisme' } else {this.category = 'Pièces automobile' }

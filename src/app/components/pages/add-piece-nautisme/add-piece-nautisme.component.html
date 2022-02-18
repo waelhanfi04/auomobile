@@ -1,31 +1,7 @@
 <div class="mobile-menu-second">
 
     <app-header2></app-header2>
-    <!-- Sub header -->
-    <div class="sub-header-sec p-relative">
-        <app-banner-header></app-banner-header>
-        <div class="sub-header-overlay"></div>
-        <div class="sub-header-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="sub-header-text-wrapper text-center">
-                            <h1 class="text-custom-white">Créer une annonce</h1>
-                            <ul class="breadcrumbs">
-                                <li><a routerLink="/" class="text-custom-white">Accueil</a>
-                                </li>
-                                <li><a routerLink="/creer-une-annonce" class="text-custom-white">Mon espace</a>
-                                </li>
-                                <li><span class="text-custom-white">{{this.nameCategory}}</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Sub header -->
+
     <!-- Adding Listing -->
     <section class="section-padding add-listing-sec">
         <div class="container">
@@ -38,7 +14,7 @@
                                     <span class="step-name">INFORMATIONS GÉNÉRALES</span>
                                 </a>
                             </li>
-            
+
 
                             <li>
                                 <a href="#step3"> <span class="number"></span>
@@ -68,7 +44,7 @@
                                                     <input type="text" name="title" formControlName="title" class="form-control form-control-custom">
                                                 </div>
                                             </div>
-                                        
+
 
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Année</label>
@@ -109,8 +85,8 @@
                                                     </select>
                                                 </div>
                                             </div>
-                    
-                                       
+
+
 
                                             <div class="col-lg-3 col-md-4 col-sm-4" *ngIf="nameCategory=== 'nautisme'">
                                                 <label>Couleur</label>
@@ -198,7 +174,7 @@
                                                     </select>
                                                 </div>
                                             </div> -->
-<!-- 
+                                            <!-- 
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Carrosserie</label>
                                                 <div class="form-group p-relative">
@@ -272,7 +248,7 @@
                                     </form>
                                 </div>
                             </div>
-                    
+
                             <div class="step-tab-panel" id="step3">
                                 <div class="tab-from-content">
                                     <div class="title-icon">

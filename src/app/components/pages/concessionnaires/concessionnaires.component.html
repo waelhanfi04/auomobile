@@ -1,0 +1,30 @@
+<div class="mobile-menu-second">
+    <app-header2></app-header2>
+
+    <section class="section-padding our_articles">
+        <div class="container">
+            <div class="sellers-list row" style="margin: 4% 0%;">
+                <div *ngFor="let concessionnaire of concessionnaires" class="seller-col col-md-4">
+                    <a href="/fr/neuf/concessionnaires/wallys-services">
+                        <div class="infos-wrapper">
+                            <div class="infos" style="text-align: center;">
+                                <h2 style="font-weight: bold; font-size: 15px;text-align: center;">{{concessionnaire.nom}}</h2>
+                                <br>{{concessionnaire.address}} <br><b>Tél. : </b>{{concessionnaire.tel}} </div>
+
+                            <img style="position: relative; top: 6px;left: 93px;" class="cdn-image  lazyloaded" src="{{concessionnaire.image}}" alt="Lada" data-src="https://catalogue.automobile.tn/marques/727.png" data-expand="~110">
+
+                        </div>
+                    </a>
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+    </section>
+    <!-- Blog -->
+    <app-footer2></app-footer2>
+</div>

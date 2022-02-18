@@ -74,6 +74,9 @@ import { UpdateMotorcycleComponent } from './components/pages/update-motorcycle/
 import { CreerAnnonceComponent } from './components/pages/creer-annonce/creer-annonce.component';
 import { AddPieceNautismeComponent } from './components/pages/add-piece-nautisme/add-piece-nautisme.component';
 import { UpdatePieceNautismeComponent } from './components/pages/update-piece-nautisme/update-piece-nautisme.component';
+import { CarByModelComponent } from './components/pages/car-by-model/car-by-model.component';
+import { ConcessionnairesComponent } from './components/pages/concessionnaires/concessionnaires.component';
+import { MotoListComponent } from './components/pages/moto-list/moto-list.component';
 // import { CookieService } from 'ngx-cookie-service';
 // import { ImageCropperModule } from 'ngx-image-cropper';
 
@@ -137,7 +140,10 @@ import { UpdatePieceNautismeComponent } from './components/pages/update-piece-na
     UpdateMotorcycleComponent,
     CreerAnnonceComponent,
     AddPieceNautismeComponent,
-    UpdatePieceNautismeComponent
+    UpdatePieceNautismeComponent,
+    CarByModelComponent,
+    ConcessionnairesComponent,
+    MotoListComponent
   ],
   imports: [
     BrowserModule,

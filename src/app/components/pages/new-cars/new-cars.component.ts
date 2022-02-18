@@ -20,6 +20,8 @@ export class NewCarsComponent implements OnInit {
   show :boolean =false;
   noData:boolean =false;
   brand:string=''
+  min:any;
+  carsPrice:any=[];
   constructor(private carService:CarService,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -39,9 +41,14 @@ export class NewCarsComponent implements OnInit {
       {
        
         this.carsList=  data.voitures.filter((car:any)=> {
-          let obj:any;
-          eval("obj = " + car.brand);
-         return car.status ==='accepted' && car.type ==='Neuve' && obj?.value===brand
+          let objbrand:any;
+          let objOption:any;
+          eval("objbrand = " + car.brand);
+          eval("objOption = " + car.voitureOption);
+          car.model=objOption.model.value;
+          car.serie=objOption.serie.value;
+
+         return car.status ==='accepted' && car.type ==='Neuve' && objbrand?.value===brand
         }
         )
         if(this.carsList.length===0){
@@ -49,6 +56,7 @@ export class NewCarsComponent implements OnInit {
         }else{
           this.noData=false;
         }
+
       }
     })
   }

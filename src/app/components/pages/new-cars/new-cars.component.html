@@ -1,40 +1,13 @@
 <div class="mobile-menu-second">
     <app-header2></app-header2>
-    <!-- Sub header -->
-    <div class="sub-header-sec p-relative">
-        <app-banner-header></app-banner-header>
-        <!-- <img src="assets/images/blog/banner/banner-1.jpg" class="img-fluid" alt="Sub header"> -->
-        <div class="sub-header-overlay"></div>
-        <div class="sub-header-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="sub-header-text-wrapper text-center">
-                            <h1 class="text-custom-white">Les voitures neuves</h1>
-                            <ul class="breadcrumbs">
-                                <li><a routerLink="/" class="text-custom-white">Accueil</a>
-                                </li>
-                                <li><a routerLink="/neuf" class="text-custom-white">Voitures neuves</a>
-                                </li>
-                                <li><span class="text-custom-white">{{brand}}</span>
-                                </li>
-                            </ul>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Sub header -->
     <!-- Blog -->
     <section class="section-padding our_articles">
         <div class="container">
 
 
             <div class="">
-                <div id="facets-pjax" class="div-cars" data-pjax-container="" data-pjax-push-state=""
-                    data-pjax-timeout="5000">
+                <div id="facets-pjax" class="div-cars" data-pjax-container="" data-pjax-push-state="" data-pjax-timeout="5000">
                     <div id="w0" class="occasions-results">
                         <div class="row justify-content-center" *ngIf="this.noData">
                             <span class="error-msg no-data-span">Pas de données</span>
@@ -49,17 +22,17 @@
 
                                             <img (error)="onImgError($event)" [src]="car.pictureVoitures[0]?.picture">
                                         </picture>
-                                        <h2>{{car.title}}</h2>
-
+                                        <h2>{{brand}} {{car.model}} </h2>
+                                        <h3>{{car.serie}}</h3>
                                         <div class="price">
                                             A partir de <span>{{car.price || '0'}} <span class="suffix">DT</span></span>
-                                        </div>
+                        </div>
 
 
-                                    </a>
-                                </div>
-                            </span>
-                            <!-- <span data-key="43357">
+                        </a>
+                    </div>
+                    </span>
+                    <!-- <span data-key="43357">
                                 <div class="versions-item">
                                     <a href="/fr/neuf/alfa-romeo/giulia/2.0-turbo-bva-super">
 
@@ -274,15 +247,15 @@
                                     </a>
                                 </div>
                             </span> -->
-                        </div>
-                        <div class="pages"></div>
-                        <div class="vs"></div>
-                    </div>
                 </div>
+                <div class="pages"></div>
+                <div class="vs"></div>
             </div>
-
         </div>
-    </section>
-    <!-- Blog -->
-    <app-footer2></app-footer2>
+</div>
+
+</div>
+</section>
+<!-- Blog -->
+<app-footer2></app-footer2>
 </div>

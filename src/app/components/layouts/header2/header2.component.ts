@@ -18,6 +18,9 @@ showAddListing:boolean=false
       this.showAddListing=false
     }
   }
+  getVehicule(vehicule:string){
+    this.router.navigate(['/neuf/'+vehicule])
+  }
   logout(){
     localStorage.clear();
     this.router.navigate(['login'])

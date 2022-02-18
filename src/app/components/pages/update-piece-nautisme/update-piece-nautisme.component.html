@@ -1,122 +1,91 @@
 <div class="mobile-menu-second">
 
     <app-header2></app-header2>
-    <!-- Sub header -->
-    <div class="sub-header-sec p-relative">
-      <app-banner-header></app-banner-header>
-      <div class="sub-header-overlay"></div>
-      <div class="sub-header-wrapper">
+
+    <!-- Adding Listing -->
+    <section class="section-padding add-listing-sec">
         <div class="container">
-          <div class="row">
-            <div class="col-xl-12">
-              <div class="sub-header-text-wrapper text-center">
-                <h1 class="text-custom-white">Modifier votre annonce </h1>
-                <ul class="breadcrumbs">
-                  <li><a routerLink="/" class="text-custom-white">Accueil</a>
-                  </li>
-                  <li><a routerLink="/creer-une-annonce" class="text-custom-white">Pages</a>
-                  </li>
-                  <li><span class="text-custom-white">Modifier annonce</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-  <!-- Sub header -->
-  <!-- Adding Listing -->
-  <section class="section-padding add-listing-sec">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div id="add-listing-tab" class="step-app">
-            <ul class="step-steps">
-              <li class="active">
-                <a href="#step1"> <span class="number"></span>
-                  <span class="step-name">INFORMATIONS GÉNÉRALES</span>
-                </a>
-              </li>
-  
-              <li>
-                <a href="#step2"> <span class="number"></span>
-                  <span class="step-name">LOCALISATION</span>
-                </a>
-              </li>
-              <li>
-                <a href="#step3"> <span class="number"></span>
-                  <span class="step-name">GALERIE</span>
-                </a>
-              </li>
-  
-  
-            </ul>
-            <!-- *ngIf="carDetails" -->
-            <div class="step-content">
-  
-              <div class="step-tab-panel" id="step1">
-                <div class="tab-from-content">
-                  <div class="title-icon">
-                    <h5 class="title rubik fw-600"><i class="flaticon-comment"></i>Informations générales</h5>
-                  </div>
-                  <form [formGroup]="updateMotoForm">
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 col-sm-4">
-                        <label>Titre</label>
-                        <div class="form-group">
-                          <input type="text" name="title" formControlName="title" class="form-control form-control-custom"
-                            [(ngModel)]="this.carDetails.title">
-                        </div>
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-4">
-                        <label>Année</label>
-                        <div class="form-group p-relative">
-                          <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.year"
-                            formControlName="year" id="car-years">
+            <div class="row">
+                <div class="col-12">
+                    <div id="add-listing-tab" class="step-app">
+                        <ul class="step-steps">
+                            <li class="active">
+                                <a href="#step1"> <span class="number"></span>
+                                    <span class="step-name">INFORMATIONS GÉNÉRALES</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#step2"> <span class="number"></span>
+                                    <span class="step-name">LOCALISATION</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#step3"> <span class="number"></span>
+                                    <span class="step-name">GALERIE</span>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                        <!-- *ngIf="carDetails" -->
+                        <div class="step-content">
+
+                            <div class="step-tab-panel" id="step1">
+                                <div class="tab-from-content">
+                                    <div class="title-icon">
+                                        <h5 class="title rubik fw-600"><i class="flaticon-comment"></i>Informations générales</h5>
+                                    </div>
+                                    <form [formGroup]="updateMotoForm">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Titre</label>
+                                                <div class="form-group">
+                                                    <input type="text" name="title" formControlName="title" class="form-control form-control-custom" [(ngModel)]="this.carDetails.title">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Année</label>
+                                                <div class="form-group p-relative">
+                                                    <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.year" formControlName="year" id="car-years">
                             <option value="">Choisir..</option>
                             <option *ngFor="let y of years.slice().reverse()" [value]="y">{{ y }}</option>
                           </select>
-                        </div>
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-4">
-                        <label>Prix</label>
-                        <div class="form-group">
-                          <input type="number" name="price" [(ngModel)]="this.carDetails.price" formControlName="price"
-                            class="form-control form-control-custom">
-                        </div>
-                      </div>
-                      
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Prix</label>
+                                                <div class="form-group">
+                                                    <input type="number" name="price" [(ngModel)]="this.carDetails.price" formControlName="price" class="form-control form-control-custom">
+                                                </div>
+                                            </div>
 
-                      <div class="col-lg-3 col-md-4 col-sm-4">
-                        <label>Marque</label>
-                        <div class="form-group p-relative">
-                          <select class="form-control form-control-custom" formControlName="brand"
-                            [(ngModel)]="this.carDetails.brand.id">
+
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Marque</label>
+                                                <div class="form-group p-relative">
+                                                    <select class="form-control form-control-custom" formControlName="brand" [(ngModel)]="this.carDetails.brand.id">
                             <option value="">Choisir..</option>
                             <option *ngFor="let b of arrayBrand" [value]="b.brand">{{b.brand}}</option>
   
                           </select>
-                        </div>
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-4">
-                        <label>Modèle</label>
-                        <div class="form-group p-relative">
-                          <select class="form-control form-control-custom" formControlName="model"
-                            [(ngModel)]="this.carDetails.voitureOption.model.id">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Modèle</label>
+                                                <div class="form-group p-relative">
+                                                    <select class="form-control form-control-custom" formControlName="model" [(ngModel)]="this.carDetails.voitureOption.model.id">
                             <option value="">Choisir..</option>
                             <option *ngFor="let m of arrayModel" [value]="m">{{m}}</option>
                           </select>
-                        </div>
-                      </div>
+                                                </div>
+                                            </div>
 
-                    
-                      <div class="col-lg-3 col-md-4 col-sm-4">
-                        <label>Couleur</label>
-                        <div class="form-group p-relative">
-                          <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.color"
-                            formControlName="color">
+
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Couleur</label>
+                                                <div class="form-group p-relative">
+                                                    <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.color" formControlName="color">
                             <option value="">Choisir..</option>
                             <option value="Noir">Noir</option>
                             <option value="Gris argent">Gris argent</option>
@@ -133,60 +102,55 @@
                             <option value="Marron">Marron</option>
                             <option value="Autre">Autre</option>
                           </select>
-                        </div>
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-4">
-                        <label>Disponibilité</label>
-                        <div class="form-group p-relative">
-                          <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.availablity"
-                            formControlName="availablity">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Disponibilité</label>
+                                                <div class="form-group p-relative">
+                                                    <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.availablity" formControlName="availablity">
                             <option value="">Choisir..</option>
                             <option value="Immediatement">Immediatement</option>
                             <option value="Sur-commande">Sur commande</option>
                           </select>
-                        </div>
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-4">
-                        <label>Guarantie</label>
-                        <div class="form-group">
-                          <input type="text" name="Guarantie" [(ngModel)]="this.carDetails.guarantee"
-                            formControlName="guarantee" class="form-control form-control-custom">
-                        </div>
-                      </div>
-  
-  
-                      <div class="col-lg-12">
-                        <label>Description</label>
-                        <div class="form-group">
-                          <textarea class="form-control form-control-custom" [(ngModel)]="this.carDetails.description"
-                            formControlName="description" rows="5"></textarea>
-                        </div>
-                      </div>
-  
-                    </div>
-                  </form>
-                </div>
-              </div>
-  
-              <div class="step-tab-panel" id="step2">
-                <div class="tab-from-content">
-                  <div class="title-icon">
-                    <h5 class="title rubik fw-600"><i class="flaticon-location-pin"></i> Location</h5>
-                  </div>
-                  <form [formGroup]="updateMotoForm">
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 col-sm-4">
-                        <label>Téléphone</label>
-                        <div class="form-group">
-                          <input type="number" name="phone" formControlName="phone" [(ngModel)]="this.carDetails.phone"
-                            class="form-control form-control-custom">
-                        </div>
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-4">
-                        <label>Gouvernorat</label>
-                        <div class="form-group p-relativ">
-                          <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.city"
-                            formControlName="city">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Guarantie</label>
+                                                <div class="form-group">
+                                                    <input type="text" name="Guarantie" [(ngModel)]="this.carDetails.guarantee" formControlName="guarantee" class="form-control form-control-custom">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-12">
+                                                <label>Description</label>
+                                                <div class="form-group">
+                                                    <textarea class="form-control form-control-custom" [(ngModel)]="this.carDetails.description" formControlName="description" rows="5"></textarea>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="step-tab-panel" id="step2">
+                                <div class="tab-from-content">
+                                    <div class="title-icon">
+                                        <h5 class="title rubik fw-600"><i class="flaticon-location-pin"></i> Location</h5>
+                                    </div>
+                                    <form [formGroup]="updateMotoForm">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Téléphone</label>
+                                                <div class="form-group">
+                                                    <input type="number" name="phone" formControlName="phone" [(ngModel)]="this.carDetails.phone" class="form-control form-control-custom">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Gouvernorat</label>
+                                                <div class="form-group p-relativ">
+                                                    <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.city" formControlName="city">
                             <option value="">Choisir..</option>
                             <option value="Ariana">Ariana</option>
                             <option value="Béja">Béja</option>
@@ -213,71 +177,70 @@
                             <option value="Tunis">Tunis</option>
                             <option value="Zaghouan">Zaghouan</option>
                           </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Adresse</label>
+                                                <div class="form-group">
+                                                    <input type="text" name="address" formControlName="address" [(ngModel)]="this.carDetails.address" class="form-control form-control-custom">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="step-tab-panel" id="step3">
+                                <div class="tab-from-content">
+                                    <div class="title-icon">
+                                        <h5 class="title rubik fw-600"><i class="flaticon-frame"></i>Galerie</h5>
+                                    </div>
+
+                                    <form [formGroup]="updateMotoForm">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div formArrayName="pictures" class="form-group div-input-file">
+                                                    <div class="d-flex justify-content-center text-div-input-file">
+                                                        Cliquez ou faites glisser vos photos ici
+                                                    </div>
+                                                    <input type="file" class="input-pictures" accept="image/*" (change)="onFileChange($event)">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12" *ngIf="kits.length!==0">
+
+                                                <div class="col p-2" *ngFor="let pic of kits;let index = index">
+                                                    <img class="picture-car" [src]="pic">
+                                                    <img src="assets/images/new-icons/deletekit.svg" class="delete-icon" (click)="delete(index)">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-4">
-                        <label>Adresse</label>
-                        <div class="form-group">
-                          <input type="text" name="address" formControlName="address"
-                            [(ngModel)]="this.carDetails.address" class="form-control form-control-custom">
+                        <div class="d-flex justify-content-center" *ngIf="this.successMsg!=='' ">
+                            <span class="success-msg">{{successMsg}}</span>
                         </div>
-                      </div>
+                        <div class="step-footer step-tab-pager">
+                            <button data-direction="prev" class="btn-second orange-btn">Précédent</button>
+                            <button data-direction="next" class="btn-second orange-btn">Suivant</button>
+                            <button data-direction="finish" class="btn-second orange-btn" (click)="updateCar()">Enregistrer</button>
+                        </div>
+
                     </div>
-                  </form>
+
                 </div>
-              </div>
-              <div class="step-tab-panel" id="step3">
-                <div class="tab-from-content">
-                  <div class="title-icon">
-                    <h5 class="title rubik fw-600"><i class="flaticon-frame"></i>Galerie</h5>
-                  </div>
-  
-                  <form [formGroup]="updateMotoForm">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div formArrayName="pictures" class="form-group div-input-file">
-                          <div class="d-flex justify-content-center text-div-input-file">
-                            Cliquez ou faites glisser vos photos ici
-                          </div>
-                          <input type="file" class="input-pictures" accept="image/*" (change)="onFileChange($event)">
-  
-                        </div>
-                      </div>
-                      <div class="col-lg-12" *ngIf="kits.length!==0">
-  
-                        <div class="col p-2" *ngFor="let pic of kits;let index = index">
-                          <img class="picture-car" [src]="pic">
-                          <img src="assets/images/new-icons/deletekit.svg" class="delete-icon" (click)="delete(index)">
-                        </div>
-  
-                      </div>
-                    
-                    </div>
-                  </form>
-  
-                </div>
-              </div>
-              </div>
-              <div class="d-flex justify-content-center" *ngIf="this.successMsg!=='' ">
-                <span class="success-msg">{{successMsg}}</span>
-              </div>
-              <div class="step-footer step-tab-pager">
-                <button data-direction="prev" class="btn-second orange-btn">Précédent</button>
-                <button data-direction="next" class="btn-second orange-btn">Suivant</button>
-                <button data-direction="finish" class="btn-second orange-btn" (click)="updateCar()">Enregistrer</button>
-              </div>
-           
-          </div>
-  
+
+            </div>
         </div>
-  
-      </div>
-    </div>
-  
-  
-  </section>
-  <!-- Adding Listing -->
-  
-  <app-footer2></app-footer2>
-  
-  </div>
+
+
+    </section>
+    <!-- Adding Listing -->
+
+    <app-footer2></app-footer2>
+
+</div>

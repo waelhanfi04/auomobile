@@ -2,13 +2,14 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CarService } from 'src/app/services/car/car.service';
-import { arrayInsideEquipment, arrayOutsideEquipment, arraysecurityEquipment, arrayCategoryCar, arrayCategories, arrayBrand } from 'src/app/shared/config';
+import { arrayInsideEquipment, arrayOutsideEquipment, arraysecurityEquipment, arrayCategoryCar, arrayCategories, arrayBrand, concessionnaires } from 'src/app/shared/config';
 @Component({
   selector: 'app-add-listing',
   templateUrl: './add-listing.component.html',
   styleUrls: ['./add-listing.component.css']
 })
 export class AddListingComponent implements OnInit {
+  concessionnaires:any;
   addCarForm: FormGroup
   step1: boolean = true
   step2: boolean = false
@@ -43,7 +44,7 @@ export class AddListingComponent implements OnInit {
       title: new FormControl(null),
       availablity: new FormControl(null),
       phone: new FormControl(null),
-      city: new FormControl(null),
+      // city: new FormControl(null),
       brand: new FormControl(null),
       model: new FormControl(null),
       color: new FormControl(null),
@@ -53,7 +54,9 @@ export class AddListingComponent implements OnInit {
       type: new FormControl('Occasion'),
       category: new FormControl('1'),
       price: new FormControl(null),
-      description: new FormControl(null),
+      concessionnaire:new FormControl(null),
+      fax:new FormControl(null),
+      // description: new FormControl(null),
       address: new FormControl(null),
       motorization: new FormControl(null),
       mileage: new FormControl(null),
@@ -80,6 +83,7 @@ export class AddListingComponent implements OnInit {
 
   ngOnInit(): void {
     //this.getCategory();
+    this.concessionnaires=concessionnaires
     this.getBrands();
     this.userRole = localStorage.getItem('role')
     /*---add list of years from 1900 to current year-- */
@@ -144,6 +148,14 @@ export class AddListingComponent implements OnInit {
         this.arraySpecification = data.specifications
       })
     });
+
+    this.addCarForm.get('concessionnaire')?.valueChanges.subscribe((value: any) => {
+      console.log(this.concessionnaires[value].tel)
+     this.addCarForm.get('address')?.setValue(this.concessionnaires[value].address)
+     this.addCarForm.get('fax')?.setValue(this.concessionnaires[value]?.fax ? this.concessionnaires[value]?.fax : '-')
+     this.addCarForm.get('phone')?.setValue(this.concessionnaires[value].tel)
+
+    });
   }
   // getCategory() {
   //   this.carService.getCategory().subscribe((data: any) => {
@@ -182,6 +194,7 @@ export class AddListingComponent implements OnInit {
     // this.kits.filter((data:any)=>{data})
   }
   addCar() {
+    console.log(this.addCarForm.get('concessionnaire')?.value)
     let brand = { 'id': this.nameBrand[1], 'value': this.nameBrand[0] }
     let model = { 'id': this.nameModel[1], 'value': this.nameModel[0] }
     let trims = { 'id': this.nameTrim[1], 'value': this.nameTrim[0] }
@@ -192,7 +205,8 @@ export class AddListingComponent implements OnInit {
       title: this.addCarForm.get('title')?.value,
       phone: this.addCarForm.get('phone')?.value,
       country: this.addCarForm.get('country')?.value,
-      city: this.addCarForm.get('city')?.value,
+      concessionnaire:this.addCarForm.get('concessionnaire')?.value,
+      city: '',
       price: this.addCarForm.get('price')?.value,
       color: this.addCarForm.get('color')?.value,
       carrosserie: this.addCarForm.get('carrosserie')?.value,
@@ -207,11 +221,12 @@ export class AddListingComponent implements OnInit {
       transmission: this.addCarForm.get('transmission')?.value,
       powerFiscal: this.addCarForm.get('powerFiscal')?.value,
       gearbox: this.addCarForm.get('gearbox')?.value,
-      description: this.addCarForm.get('description')?.value,
+      description: "",
       insideEquipment: this.addCarForm.get('insideEquipment')?.value,
       outsideEquipment: this.addCarForm.get('outsideEquipment')?.value,
       securityEquipment: this.addCarForm.get('securityEquipment')?.value,
       type: this.userRole === 'admin'? 'Neuve': 'Occasion',
+      status: this.userRole === 'admin'? 'accepted': 'pending',
       numberDoors: this.addCarForm.get('numberDoors')?.value,
       seatingCapacity: this.addCarForm.get('seatingCapacity')?.value,
       puissanceDIN: this.addCarForm.get('puissanceDIN')?.value,

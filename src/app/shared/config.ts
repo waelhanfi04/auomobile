@@ -300,6 +300,35 @@ const arrayTailleRoueVelo = [{ taille: 'XS' },
 { taille: 'M' },
 { taille: 'L' },
 { taille: 'XL' }]
+
+
+const concessionnaires = [
+  { id:0,
+    nom: 'NIMR',
+  address:"5 Rue de l'Artisanat, Charguia II",
+  tel:"31 31 38 38",fax:"31 31 38 39",
+  image:"https://catalogue.automobile.tn/marques/1640.png"
+ },
+  { id:1,
+    nom: 'OIS MOTORS',
+    address:"Rue 8612 impasse n° 5, ZI Charguia 1",
+    tel:"31 34 20 20",
+    fax:"31 34 20 28",
+    image:"https://catalogue.automobile.tn/marques/904.png"
+   },
+  { id:2,
+    nom: 'ATLAS AUTO',
+    address:"Zone industrielle Megrine, 2013, Ben Arous",
+    tel:"31 31 66 66",
+    image:"https://catalogue.automobile.tn/marques/1549.png"
+  },
+  { 
+    id:3,
+    nom: 'WALLYS SERVICES',
+    address:"39, Av. Kheïreddine Pacha - Tunis , Montplaisir",
+    tel:"71 188 700",
+    image:"https://catalogue.automobile.tn/marques/727.png"
+  }]
 /*
 
 Type de vélo : Enfant,VTT ,VTC ,BMX, Vélo de course ,Vélo électrique ,Vélo pliant ,Vélo de ville ,Pignon fixe, Vélo d'appartement , Tandem Pièces & Accessoires Équipement Autres
@@ -316,6 +345,7 @@ const idPiece = 3;
 const idVelo = 4;
 export {
   serverUrl, headers, arrayCategories, arrayInsideEquipment, arrayOutsideEquipment,
+  concessionnaires,
   arraysecurityEquipment, arrayCategoryCar, arrayBrand, arrayPiecesMarque, arrayNautismeMarque, arrayEtatVelo, arrayTypeVelo, idPiece, idNautisme, idVelo
 }
 
