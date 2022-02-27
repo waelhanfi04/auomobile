@@ -48,7 +48,7 @@ export class NewCarsComponent implements OnInit {
           car.model=objOption.model.value;
           car.serie=objOption.serie.value;
 
-         return car.status ==='accepted' && car.type ==='Neuve' && objbrand?.value===brand
+         return car.status ==='accepted' && car.type ==='Neuve' && objbrand?.value.toLowerCase()===brand.toLowerCase()
         }
         )
         if(this.carsList.length===0){

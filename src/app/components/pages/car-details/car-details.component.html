@@ -140,7 +140,7 @@
                         <ul class="nav nav-tabs">
                             <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#informations">Informations</a>
                             </li>
-                            <li class="nav-item" *ngIf="car.category==='1' ||car.category==='20'"> <a class="nav-link " data-toggle="tab" href="#tech-spec">Spécifications Techniques</a>
+                            <li class="nav-item" *ngIf="car.category==='1'"> <a class="nav-link " data-toggle="tab" href="#tech-spec">Spécifications Techniques</a>
                             </li>
                             <li class="nav-item" *ngIf="car.category==='1'"> <a class="nav-link" data-toggle="tab" href="#accessories">Accessoires</a>
                             </li>
@@ -213,7 +213,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="tech-spec" *ngIf="car.category==='1' ||car.category==='20'">
+                            <div class="tab-pane fade" id="tech-spec" *ngIf="car.category==='1'">
                                 <div class="car-details-box">
                                     <div class="table-responsive">
 

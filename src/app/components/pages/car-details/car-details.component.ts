@@ -40,8 +40,16 @@ export class CarDetailsComponent implements OnInit {
   getCarDetails(id: any) {
     this.carService.getOneCar(id).subscribe((data: any) => {
       this.car = data.voiture;
-      this.car.userName=concessionnaires[this.car.concessionnaire].nom
-      this.car.fax=concessionnaires[this.car.concessionnaire]?.fax || '-'
+      this.carService.getConcessionnaire().subscribe((concessionnaires:any)=>{
+        concessionnaires.concessionnaire.filter((data:any)=>{data.id===this.car.concessionaire})
+        this.car.userName=concessionnaires.concessionnaire[0].nom
+        this.car.fax=concessionnaires.concessionnaire[0]?.fax || '-'
+        this.car.phone=concessionnaires.concessionnaire[0].tel
+        this.car.address=concessionnaires.concessionnaire[0].address
+  
+      })
+      // this.car.userName=concessionnaires[this.car.concessionnaire].nom
+      // this.car.fax=concessionnaires[this.car.concessionnaire]?.fax || '-'
 
       if (data.voiture.category !== 1 && data.voiture.category !== 20) {
         this.isNautismeOrPiece = true

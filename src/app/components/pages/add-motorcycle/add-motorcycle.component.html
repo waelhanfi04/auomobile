@@ -320,7 +320,7 @@
                                         <h5 class="title rubik fw-600"><i class="flaticon-location-pin"></i> Location
                                         </h5>
                                     </div>
-                                    <form [formGroup]="addMotoForm">
+                                    <!-- <form [formGroup]="addMotoForm">
                                         <div class="row">
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Téléphone</label>
@@ -364,6 +364,37 @@
                                                 <label>Adresse</label>
                                                 <div class="form-group">
                                                     <input type="text" name="address" formControlName="address" class="form-control form-control-custom">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form> -->
+                                    <form [formGroup]="addMotoForm">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>concessionnaires</label>
+                                                <div class="form-group">
+                                                    <select formControlName="concessionnaire" class="form-control form-control-custom">
+                                                        <option *ngFor="let concessionnaire of concessionnaires" value="{{concessionnaire.id}}">{{concessionnaire.nom}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Téléphone</label>
+                                                <div class="form-group">
+                                                    <input type="text" name="phone" formControlName="phone" class="form-control form-control-custom">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Adresse</label>
+                                                <div class="form-group">
+                                                    <input type="text" name="address" formControlName="address" class="form-control form-control-custom">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                                <label>Fax</label>
+                                                <div class="form-group">
+                                                    <input type="text" name="fax" formControlName="fax" class="form-control form-control-custom">
                                                 </div>
                                             </div>
                                         </div>

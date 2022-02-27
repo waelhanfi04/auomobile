@@ -10,6 +10,7 @@ import { arrayInsideEquipment, arrayOutsideEquipment, arraysecurityEquipment, ar
   styleUrls: ['./add-motorcycle.component.css']
 })
 export class AddMotorcycleComponent implements OnInit {
+  concessionnaires:any;
 
   addMotoForm: FormGroup
   step1: boolean = true
@@ -39,6 +40,7 @@ export class AddMotorcycleComponent implements OnInit {
   userRole: any
   constructor(private router: Router, private fb: FormBuilder, private carService: CarService) {
     this.addMotoForm = new FormGroup({
+      concessionnaire:new FormControl(null),
       title: new FormControl(null),
       availablity: new FormControl(null),
       phone: new FormControl(null),
@@ -48,6 +50,7 @@ export class AddMotorcycleComponent implements OnInit {
       color: new FormControl(null),
       carrosserie: new FormControl(null),
       guarantee: new FormControl(null),
+      fax:new FormControl(null),
       year: new FormControl(null),
       type: new FormControl('Occasion'),
       category: new FormControl('20'),
@@ -79,6 +82,8 @@ export class AddMotorcycleComponent implements OnInit {
 
   ngOnInit(): void {
     //this.getCategory();
+    this.getConsessionnaire();
+
     this.getBrands();
     this.userRole = localStorage.getItem('role')
     /*---add list of years from 1900 to current year-- */
@@ -144,6 +149,16 @@ export class AddMotorcycleComponent implements OnInit {
         this.arraySpecification = data.specifications
       })
     });
+
+    this.addMotoForm.get('concessionnaire')?.valueChanges.subscribe((value: any) => {
+      let concessionaire= this.concessionnaires.filter((concess:any)=>{
+           return concess.id ===value
+       })      
+      this.addMotoForm.get('address')?.setValue(concessionaire[0].address)
+      this.addMotoForm.get('fax')?.setValue(concessionaire[0]?.fax ? concessionaire[0]?.fax : '-')
+      this.addMotoForm.get('phone')?.setValue(concessionaire[0].tel)
+ 
+     });
   }
   // getCategory() {
   //   this.carService.getCategory().subscribe((data: any) => {
@@ -157,7 +172,14 @@ export class AddMotorcycleComponent implements OnInit {
       this.arrayBrand = data.car_make;
     })
   }
-
+  getConsessionnaire(){
+    this.carService.getConcessionnaire().subscribe((response: any) => {
+      //if (response.message === 'voiture was registered successfully!') {
+        this.concessionnaires=response.concessionnaire
+        console.log(this.concessionnaires);
+     // }
+    })
+  }
 
   delete(index: any) {
     const checkArray: FormArray = this.addMotoForm.get('pictures') as FormArray;
@@ -173,6 +195,7 @@ export class AddMotorcycleComponent implements OnInit {
     let generation = { 'id': '', 'value': '' }
 
      let body = {
+      concessionnaire:this.addMotoForm.get('concessionnaire')?.value,
       availablity: this.addMotoForm.get('availablity')?.value,
       title: this.addMotoForm.get('title')?.value,
       phone: this.addMotoForm.get('phone')?.value,
