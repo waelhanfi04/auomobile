@@ -83,7 +83,8 @@ export class AddListingComponent implements OnInit {
 
   ngOnInit(): void {
     //this.getCategory();
-    this.concessionnaires=concessionnaires
+    // this.concessionnaires=concessionnaires
+  this.getConsessionnaire();
     this.getBrands();
     this.userRole = localStorage.getItem('role')
     /*---add list of years from 1900 to current year-- */
@@ -150,10 +151,12 @@ export class AddListingComponent implements OnInit {
     });
 
     this.addCarForm.get('concessionnaire')?.valueChanges.subscribe((value: any) => {
-      console.log(this.concessionnaires[value].tel)
-     this.addCarForm.get('address')?.setValue(this.concessionnaires[value].address)
-     this.addCarForm.get('fax')?.setValue(this.concessionnaires[value]?.fax ? this.concessionnaires[value]?.fax : '-')
-     this.addCarForm.get('phone')?.setValue(this.concessionnaires[value].tel)
+     let concessionaire= this.concessionnaires.filter((concess:any)=>{
+          return concess.id ===value
+      })      
+     this.addCarForm.get('address')?.setValue(concessionaire[0].address)
+     this.addCarForm.get('fax')?.setValue(concessionaire[0]?.fax ? concessionaire[0]?.fax : '-')
+     this.addCarForm.get('phone')?.setValue(concessionaire[0].tel)
 
     });
   }
@@ -167,6 +170,15 @@ export class AddListingComponent implements OnInit {
     this.nameCategory='1'
     this.carService.getMarque(this.nameCategory).subscribe((data: any) => {
       this.arrayBrand = data.car_make;
+    })
+  }
+
+  getConsessionnaire(){
+    this.carService.getConcessionnaire().subscribe((response: any) => {
+      //if (response.message === 'voiture was registered successfully!') {
+        this.concessionnaires=response.concessionnaire
+        console.log(this.concessionnaires);
+     // }
     })
   }
 

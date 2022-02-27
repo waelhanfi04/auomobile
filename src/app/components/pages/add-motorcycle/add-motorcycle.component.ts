@@ -168,8 +168,10 @@ export class AddMotorcycleComponent implements OnInit {
   addCar() {
     let brand = { 'id': this.nameBrand[1], 'value': this.nameBrand[0] }
     let model = { 'id': this.nameModel[1], 'value': this.nameModel[0] }
-    let trims = { 'id': this.nameTrim[1], 'value': this.nameTrim[0] }
+    let trims = { 'id': '', 'value': '' }
     let serie = { 'id': this.nameSerie[1], 'value': this.nameSerie[0] }
+    let generation = { 'id': '', 'value': '' }
+
      let body = {
       availablity: this.addMotoForm.get('availablity')?.value,
       title: this.addMotoForm.get('title')?.value,
@@ -201,10 +203,11 @@ export class AddMotorcycleComponent implements OnInit {
       permis: this.addMotoForm.get('permis')?.value,
       carburant: this.addMotoForm.get('carburant')?.value,
       miseCirculation: this.addMotoForm.get('miseCirculation')?.value,
+      status: this.userRole === 'admin'? 'accepted': 'pending',
       brand: JSON.stringify(brand),
       model: model,
-      trims: null,
-      generation:null,
+      trims: trims,
+      generation:generation,
       serie: serie
     }
 

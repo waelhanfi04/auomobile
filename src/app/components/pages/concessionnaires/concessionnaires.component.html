@@ -1,7 +1,15 @@
 <div class="mobile-menu-second">
     <app-header2></app-header2>
 
-    <section class="section-padding our_articles">
+    <section class="section-padding our_articles" *ngIf="!show">
+        <div class="add-car-btn" style="
+        position: relative;
+        top:'20px';
+        margin: 0 auto;
+        width: 50%;
+    ">
+            <a (click)="show=!show" class="text-custom-white">+ Ajouter un concessionnaire</a>
+        </div>
         <div class="container">
             <div class="sellers-list row" style="margin: 4% 0%;">
                 <div *ngFor="let concessionnaire of concessionnaires" class="seller-col col-md-4">
@@ -10,14 +18,115 @@
                             <div class="infos" style="text-align: center;">
                                 <h2 style="font-weight: bold; font-size: 15px;text-align: center;">{{concessionnaire.nom}}</h2>
                                 <br>{{concessionnaire.address}} <br><b>Tél. : </b>{{concessionnaire.tel}} </div>
+                            <div *ngFor="let photo of concessionnaire.picturecConcessionnaires">
+                                <img style="position: relative; top: 6px;left: 93px;width: 100px;" class="cdn-image  lazyloaded" [src]="photo.picture" alt="Lada" data-src="https://catalogue.automobile.tn/marques/727.png" data-expand="~110">
 
-                            <img style="position: relative; top: 6px;left: 93px;" class="cdn-image  lazyloaded" src="{{concessionnaire.image}}" alt="Lada" data-src="https://catalogue.automobile.tn/marques/727.png" data-expand="~110">
+                            </div>
 
                         </div>
                     </a>
                 </div>
 
 
+
+            </div>
+
+
+
+        </div>
+    </section>
+    <section class="section-padding our_articles" *ngIf="show">
+        <div class="add-car-btn" style="
+        position: relative;
+        top:'20px';
+        margin: 0 auto;
+        width: 50%;
+    ">
+            <a (click)="show=!show" class="text-custom-white">retoure vers liste concessionnaires</a>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center" *ngIf="this.successMsg!==''">
+                <div class="col-md-6 mb-3 d-flex justify-content-center" style="
+                top: 20px;
+                position: relative;
+            ">
+                    <span class="success-msg">{{successMsg}}</span>
+                </div>
+            </div>
+            <div style="margin: 4% 0%;">
+
+                <form [formGroup]="addMotoForm">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            nom
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="nom" formControlName="nom" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            tel
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="tel" formControlName="tel" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            fax
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="fax" formControlName="fax" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            type
+                        </div>
+                        <div class="col-lg-8">
+                            <select class="form-control" name="type" formControlName="type">
+                                <option>car</option>
+                                <option>moto</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            address
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="address" formControlName="address" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div formArrayName="pictures" class="form-group div-input-file">
+                                <div class="d-flex justify-content-center text-div-input-file">
+                                    Cliquez ou faites glisser vos photos ici
+                                </div>
+                                <input type="file" class="input-pictures" accept="image/*" (change)="onFileChange($event)">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-12" *ngIf="kits.length!==0">
+
+
+
+                            <div class="col p-2" *ngFor="let pic of kits;let index = index">
+                                <img class="picture-car" [src]="pic">
+                                <img src="assets/images/new-icons/deletekit.svg" class="delete-icon" (click)="delete(index)">
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                    <button data-direction="finish" class="btn-second orange-btn" (click)="addConcessionnaire()">Enregistrer</button>
+
+                </form>
 
             </div>
 

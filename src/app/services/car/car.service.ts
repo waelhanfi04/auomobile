@@ -16,6 +16,25 @@ export class CarService {
       serverUrl + "voiture",body,{ headers:header }
     );
   }
+  addConcessionnaire(body:any){
+    const header = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
+    });
+    return this.http.post(
+      serverUrl + "concessionnaire",body,{ headers:header }
+    );
+  }
+
+  getConcessionnaire(){
+    const header = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
+    });
+    return this.http.get(
+      serverUrl + "concessionnaire",{ headers:header }
+    );
+  }
   updateCar(body:any){
     const header = new HttpHeaders({
       "Content-Type": "application/json",
