@@ -42,20 +42,18 @@ export class AddMotorcycleComponent implements OnInit {
     this.addMotoForm = new FormGroup({
       concessionnaire:new FormControl(null),
       title: new FormControl(null),
-      availablity: new FormControl(null),
       phone: new FormControl(null),
       city: new FormControl(null),
       brand: new FormControl(null),
       model: new FormControl(null),
       color: new FormControl(null),
       carrosserie: new FormControl(null),
-      guarantee: new FormControl(null),
       fax:new FormControl(null),
       year: new FormControl(null),
       type: new FormControl('Occasion'),
       category: new FormControl('20'),
       price: new FormControl(null),
-      // description: new FormControl(null),
+      description: new FormControl(null),
       address: new FormControl(null),
       motorization: new FormControl(null),
       mileage: new FormControl(null),
@@ -75,7 +73,8 @@ export class AddMotorcycleComponent implements OnInit {
       puissanceDIN: new FormControl(null),
       permis: new FormControl(null),
       carburant: new FormControl(null),
-      miseCirculation: new FormControl(null)
+      miseCirculation: new FormControl(null),
+      cylinder: new FormControl(null)
     });
 
   }
@@ -196,7 +195,7 @@ export class AddMotorcycleComponent implements OnInit {
 
      let body = {
       concessionnaire:this.addMotoForm.get('concessionnaire')?.value,
-      availablity: this.addMotoForm.get('availablity')?.value,
+      availablity: '',
       title: this.addMotoForm.get('title')?.value,
       phone: this.addMotoForm.get('phone')?.value,
       country: this.addMotoForm.get('country')?.value,
@@ -204,7 +203,7 @@ export class AddMotorcycleComponent implements OnInit {
       price: this.addMotoForm.get('price')?.value,
       color: this.addMotoForm.get('color')?.value,
       carrosserie: this.addMotoForm.get('carrosserie')?.value,
-      guarantee: this.addMotoForm.get('guarantee')?.value,
+      guarantee: '',
       year: this.addMotoForm.get('year')?.value,
       category:20,
       pictures: this.addMotoForm.get('pictures')?.value,
@@ -215,7 +214,7 @@ export class AddMotorcycleComponent implements OnInit {
       transmission: this.addMotoForm.get('transmission')?.value,
       powerFiscal: this.addMotoForm.get('powerFiscal')?.value,
       gearbox: this.addMotoForm.get('gearbox')?.value,
-      description: '',
+      description: this.addMotoForm.get('description')?.value,
       insideEquipment: this.addMotoForm.get('insideEquipment')?.value,
       outsideEquipment: this.addMotoForm.get('outsideEquipment')?.value,
       securityEquipment: this.addMotoForm.get('securityEquipment')?.value,
@@ -226,6 +225,7 @@ export class AddMotorcycleComponent implements OnInit {
       permis: this.addMotoForm.get('permis')?.value,
       carburant: this.addMotoForm.get('carburant')?.value,
       miseCirculation: this.addMotoForm.get('miseCirculation')?.value,
+      cylinder: this.addMotoForm.get('cylinder')?.value,
       status: this.userRole === 'admin'? 'accepted': 'pending',
       brand: JSON.stringify(brand),
       model: model,

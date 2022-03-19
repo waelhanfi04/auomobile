@@ -43,14 +43,14 @@ export class UpdateMotorcycleComponent implements OnInit {
     this.updateMotoForm = new FormGroup({
       id: new FormControl(null),
       title: new FormControl(null),
-      availablity: new FormControl(null),
+      // availablity: new FormControl(null),
       phone: new FormControl(null),
       city: new FormControl(null),
       brand: new FormControl(null),
       model: new FormControl(null),
       color: new FormControl(null),
       carrosserie: new FormControl(null),
-      guarantee: new FormControl(null),
+      // guarantee: new FormControl(null),
       year: new FormControl(null),
       category: new FormControl('20'),
       price: new FormControl(null),
@@ -75,7 +75,8 @@ export class UpdateMotorcycleComponent implements OnInit {
       puissanceDIN: new FormControl(null),
       permis: new FormControl(null) ,
       carburant: new FormControl(null),
-      miseCirculation: new FormControl(null)
+      miseCirculation: new FormControl(null),
+      cylinder: new FormControl(null),
     });
 
   }
@@ -216,7 +217,7 @@ export class UpdateMotorcycleComponent implements OnInit {
   
     let body = {
       id: this.carDetails.id,
-      availablity: this.updateMotoForm.get('availablity')?.value,
+      availablity: '',
       title: this.updateMotoForm.get('title')?.value,
       phone: this.updateMotoForm.get('phone')?.value,
       country: this.updateMotoForm.get('country')?.value,
@@ -224,7 +225,8 @@ export class UpdateMotorcycleComponent implements OnInit {
       price: this.updateMotoForm.get('price')?.value,
       color: this.updateMotoForm.get('color')?.value,
       carrosserie: this.updateMotoForm.get('carrosserie')?.value,
-      guarantee: this.updateMotoForm.get('guarantee')?.value,
+      cylinder: this.updateMotoForm.get('cylinder')?.value,
+      guarantee:'',
       year: this.updateMotoForm.get('year')?.value,
       category: this.nameGeneration,
       pictures: this.updateMotoForm.get('pictures')?.value,

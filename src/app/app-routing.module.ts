@@ -56,6 +56,7 @@ import { UpdatePieceNautismeComponent } from './components/pages/update-piece-na
 import { CarByModelComponent } from './components/pages/car-by-model/car-by-model.component';
 import { ConcessionnairesComponent } from './components/pages/concessionnaires/concessionnaires.component';
 import { MotoListComponent } from './components/pages/moto-list/moto-list.component';
+import { AncienMotoComponent } from './components/pages/ancien-moto/ancien-moto.component';
 
 const routes: Routes = [
 
@@ -195,6 +196,10 @@ const routes: Routes = [
   {
     path: 'ancien-car',
     component: AncienCarsComponent
+  },
+  {
+    path: 'ancien-moto',
+    component: AncienMotoComponent
   },
   {
     path: 'brand/:brand',

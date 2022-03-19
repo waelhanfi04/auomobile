@@ -9,8 +9,9 @@
 
                             <div class="col">
                                 <a routerLink="/" class="orange-title">
-                  Sayara.tn                  <!-- <img src="assets/images/140x32logo.png" alt="Logo"> -->
-                </a>
+                                    Sayara.tn
+                                    <!-- <img src="assets/images/140x32logo.png" alt="Logo"> -->
+                                </a>
                             </div>
                             <div class="add-car-btn" *ngIf='showAddListing'>
                                 <a routerLink="/creer-une-annonce" class="text-custom-white">+ Ajouter une annonce</a>
@@ -27,13 +28,13 @@
                     </li> -->
                                 <li>
                                     <a class="text-light-black" routerLink="/blogs">
-                        Blog
-                      </a>
+                                        Blog
+                                    </a>
                                 </li>
                                 <li>
                                     <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                        Prix de neuf <span class="caret"></span>
-                      </a>
+                                        Prix de neuf <span class="caret"></span>
+                                    </a>
                                     <ul class="dropdown-menu">
                                         <li><a (click)="getVehicule('voiture')">Voiture</a></li>
                                         <li><a (click)="getVehicule('moto')">Moto</a></li>
@@ -47,18 +48,27 @@
 
                                 <li>
                                     <a class="text-light-black" routerLink="/vendeur-pro">
-                        Vendeur Pro
-                      </a>
+                                        Vendeur Pro
+                                    </a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a class="text-light-black" routerLink="/ancien-car">
-                        Occasions
-                      </a>
+                                        Occasions
+                                    </a>
+                                </li> -->
+                                <li>
+                                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                        Occasions <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a  routerLink="/ancien-car">Voiture</a></li>
+                                        <li><a  routerLink="/ancien-moto">Moto</a></li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a class="text-light-black" routerLink="/favoris">
-                        Favoris
-                      </a>
+                                        Favoris
+                                    </a>
                                 </li>
                                 <!-- <li class="menu-item dropdownbtn">
                       <a  class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
@@ -73,14 +83,20 @@
                       </ul>
                     </li> -->
                                 <li class="menu-item text-header">
-                                    <a id="navbarDropdownMenuLink3" [routerLink]="['/mon-espace']" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
-                    Mon espace</a>
-                                    <ul class="dropdown-menu dropdown-account" aria-labelledby="navbarDropdownMenuLink3">
-                                        <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/account/creation" class="text-black">S'inscrire</a>
+                                    <a id="navbarDropdownMenuLink3" [routerLink]="['/mon-espace']" role="button"
+                                        aria-haspopup="true" aria-expanded="false" data-toggle="dropdown"
+                                        class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
+                                        Mon espace</a>
+                                    <ul class="dropdown-menu dropdown-account"
+                                        aria-labelledby="navbarDropdownMenuLink3">
+                                        <li class="dropdown-li" *ngIf='!showAddListing'><a
+                                                routerLink="/account/creation" class="text-black">S'inscrire</a>
                                         </li>
-                                        <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/login" class="text-black">Se Connecter</a>
+                                        <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/login"
+                                                class="text-black">Se Connecter</a>
                                         </li>
-                                        <li class="dropdown-li" *ngIf='showAddListing' (click)="logout()"><a class="text-black">Se Déconnecter</a>
+                                        <li class="dropdown-li" *ngIf='showAddListing' (click)="logout()"><a
+                                                class="text-black">Se Déconnecter</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -98,9 +114,9 @@
                 <div class="col-6">
                     <div class="logo align-item-center">
                         <a routerLink="/" class="orange-title">
-              Sayara.tn
-              <!-- <img src="assets/images/140x32logo.png" alt="Logo"> -->
-            </a>
+                            Sayara.tn
+                            <!-- <img src="assets/images/140x32logo.png" alt="Logo"> -->
+                        </a>
                     </div>
                 </div>
                 <div class="col-6">
@@ -120,20 +136,25 @@
               </li> -->
 
                             <li class="menu-item text-header">
-                                <a [routerLink]="['/mon-espace']" id="navbarDropdownMenuLink2" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
-                  </a>
+                                <a [routerLink]="['/mon-espace']" id="navbarDropdownMenuLink2" role="button"
+                                    aria-haspopup="true" aria-expanded="false" data-toggle="dropdown"
+                                    class="text-light-black dropdown-toggle"><i class="fas fa-user"></i>
+                                </a>
                                 <ul class="dropdown-menu dropdown-account" aria-labelledby="navbarDropdownMenuLink2">
-                                    <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/account/creation" class="text-black">S'inscrire</a>
+                                    <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/account/creation"
+                                            class="text-black">S'inscrire</a>
                                     </li>
-                                    <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/login" class="text-black">Se Connecter</a>
+                                    <li class="dropdown-li" *ngIf='!showAddListing'><a routerLink="/login"
+                                            class="text-black">Se Connecter</a>
                                     </li>
-                                    <li class="dropdown-li" *ngIf='showAddListing' (click)="logout()"><a class="text-black">Se Déconnecter</a>
+                                    <li class="dropdown-li" *ngIf='showAddListing' (click)="logout()"><a
+                                            class="text-black">Se Déconnecter</a>
                                     </li>
                                 </ul>
                             </li>
 
-                            <li class="button" id="mobile-open-nav"><a href="javascript:void(0)" class="text-custom-white"><i
-                    class="flaticon-menu"></i></a>
+                            <li class="button" id="mobile-open-nav"><a href="javascript:void(0)"
+                                    class="text-custom-white"><i class="flaticon-menu"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -147,8 +168,8 @@
             </span> -->
                         <div class="logo align-item-center">
                             <span class=" float-right">
-                <a href="javascript:void(0)" class="closebtn close-sidenav" id="mobile-close-nav">X</a>
-              </span>
+                                <a href="javascript:void(0)" class="closebtn close-sidenav" id="mobile-close-nav">X</a>
+                            </span>
                         </div>
                         <ul>
                             <li class="custom-dropdown-nav">
@@ -184,15 +205,40 @@
 
                             </li>
                             <li>
-                                <a class="text-light-black" routerLink="/neuf">
-                                    <h6 class="mb-0">Prix de neuf</h6>
+                                <a class="text-light-black" (click)="getVehicule('voiture')">
+                                    <h6 class="mb-0">Prix de neuf: Voiture</h6>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-light-black" (click)="getVehicule('moto')">
+                                    <h6 class="mb-0">Prix de neuf: Moto</h6>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-light-black" routerLink="/concessionnaires">
+                                    <h6 class="mb-0">Prix de neuf: concessionnaire</h6>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="text-light-black" routerLink="/ancien-car">
+                                    <h6 class="mb-0">Voiture Occasions</h6>
                                 </a>
                             </li>
                             <li>
                                 <a class="text-light-black" routerLink="/ancien-car">
-                                    <h6 class="mb-0">Occasions</h6>
+                                    <h6 class="mb-0">Moto Occasions</h6>
                                 </a>
                             </li>
+                            <!-- <li>
+                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Occasions <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a  routerLink="/ancien-car">Voiture</a></li>
+                                    <li><a  routerLink="/ancien-moto">Moto</a></li>
+                                </ul>
+                            </li> -->
                             <li>
                                 <a class="text-light-black" routerLink="/vendeur-pro">
                                     <h6 class="mb-0">Vendeur Pro</h6>

@@ -77,6 +77,8 @@ import { UpdatePieceNautismeComponent } from './components/pages/update-piece-na
 import { CarByModelComponent } from './components/pages/car-by-model/car-by-model.component';
 import { ConcessionnairesComponent } from './components/pages/concessionnaires/concessionnaires.component';
 import { MotoListComponent } from './components/pages/moto-list/moto-list.component';
+import { AncienMotoComponent } from './components/pages/ancien-moto/ancien-moto.component';
+
 // import { CookieService } from 'ngx-cookie-service';
 // import { ImageCropperModule } from 'ngx-image-cropper';
 
@@ -143,7 +145,8 @@ import { MotoListComponent } from './components/pages/moto-list/moto-list.compon
     UpdatePieceNautismeComponent,
     CarByModelComponent,
     ConcessionnairesComponent,
-    MotoListComponent
+    MotoListComponent,
+    AncienMotoComponent
   ],
   imports: [
     BrowserModule,

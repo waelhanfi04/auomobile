@@ -42,14 +42,14 @@ export class AddListingComponent implements OnInit {
   constructor(private router: Router, private fb: FormBuilder, private carService: CarService) {
     this.addCarForm = new FormGroup({
       title: new FormControl(null),
-      availablity: new FormControl(null),
+     // availablity: new FormControl(null),
       phone: new FormControl(null),
       // city: new FormControl(null),
       brand: new FormControl(null),
       model: new FormControl(null),
       color: new FormControl(null),
       carrosserie: new FormControl(null),
-      guarantee: new FormControl(null),
+      // guarantee: new FormControl(null),
       year: new FormControl(null),
       type: new FormControl('Occasion'),
       category: new FormControl('1'),
@@ -213,7 +213,7 @@ export class AddListingComponent implements OnInit {
     let generation = { 'id': this.nameGeneration[1], 'value': this.nameGeneration[0] }
     let serie = { 'id': this.nameSerie[1], 'value': this.nameSerie[0] }
      let body = {
-      availablity: this.addCarForm.get('availablity')?.value,
+      availablity:'',
       title: this.addCarForm.get('title')?.value,
       phone: this.addCarForm.get('phone')?.value,
       country: this.addCarForm.get('country')?.value,
@@ -222,7 +222,7 @@ export class AddListingComponent implements OnInit {
       price: this.addCarForm.get('price')?.value,
       color: this.addCarForm.get('color')?.value,
       carrosserie: this.addCarForm.get('carrosserie')?.value,
-      guarantee: this.addCarForm.get('guarantee')?.value,
+      guarantee: '',
       year: this.addCarForm.get('year')?.value,
       category: 1,
       pictures: this.addCarForm.get('pictures')?.value,
@@ -233,7 +233,7 @@ export class AddListingComponent implements OnInit {
       transmission: this.addCarForm.get('transmission')?.value,
       powerFiscal: this.addCarForm.get('powerFiscal')?.value,
       gearbox: this.addCarForm.get('gearbox')?.value,
-      description: "",
+      description: this.addCarForm.get('description')?.value,
       insideEquipment: this.addCarForm.get('insideEquipment')?.value,
       outsideEquipment: this.addCarForm.get('outsideEquipment')?.value,
       securityEquipment: this.addCarForm.get('securityEquipment')?.value,
