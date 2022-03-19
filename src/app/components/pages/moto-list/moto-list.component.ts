@@ -15,7 +15,6 @@ export class MotoListComponent implements OnInit {
   logos:any;
   ngOnInit(): void {
 this.logos=this.logo.split(', ');
-console.log(this.logos)
   }
   getMotoByBrand(logo:any){
     let position=logo.indexOf('.');

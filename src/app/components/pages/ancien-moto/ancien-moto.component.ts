@@ -2,28 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { CarService } from 'src/app/services/car/car.service';
 
 @Component({
-  selector: 'app-ancien-cars',
-  templateUrl: './ancien-cars.component.html',
-  styleUrls: ['./ancien-cars.component.css']
+  selector: 'app-ancien-moto',
+  templateUrl: './ancien-moto.component.html',
+  styleUrls: ['./ancien-moto.component.css']
 })
-export class AncienCarsComponent implements OnInit {
-  carsList:any;
+export class AncienMotoComponent implements OnInit {
+  motoList:any;
   constructor(private carService:CarService) { }
 
   ngOnInit(): void {
-    this.getCars();
+    this.getMotos();
   }
-  getCars(){
+  getMotos(){
     this.carService.getAllCars().subscribe((data:any)=>{
-      console.log('cars from home--> ',data)
       if(data!==null || data!==undefined)
       {
         // car?.type !=='occasions'
-        this.carsList=data.voitures;
-        this.carsList=  data.voitures.filter((car:any)=> 
-        car.status ==='accepted' && car.type ==='Occasion' && car.category==='1'
+        this.motoList=data.voitures;
+        this.motoList=  data.voitures.filter((car:any)=> 
+        car.status ==='accepted' && car.type ==='Occasion' && car.category==='20'
         )
-        this.carsList.forEach((element:any) => {
+        this.motoList.forEach((element:any) => {
           element.brand = JSON.parse(element.brand)
           element.voitureOption = JSON.parse(element.voitureOption)
         });

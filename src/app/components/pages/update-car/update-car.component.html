@@ -209,7 +209,7 @@
                         </select>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                            <!-- <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Disponibilité</label>
                                                 <div class="form-group p-relative">
                                                     <select class="form-control form-control-custom" [(ngModel)]="this.carDetails.availablity" formControlName="availablity">
@@ -224,7 +224,7 @@
                                                 <div class="form-group">
                                                     <input type="text" name="Guarantie" [(ngModel)]="this.carDetails.guarantee" formControlName="guarantee" class="form-control form-control-custom">
                                                 </div>
-                                            </div>
+                                            </div> -->
 
 
                                             <div class="col-lg-12">
@@ -330,7 +330,18 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Carburant</label>
                                                 <div class="form-group">
-                                                    <input type="number" [(ngModel)]="this.carDetails.carburant" name="carburant" formControlName="carburant" class="form-control form-control-custom">
+                                                    <div class="form-group p-relative">
+                                                        <select class="form-control form-control-custom"
+                                                            formControlName="Carburant"  [(ngModel)]="this.carDetails.carburant">
+                                                            <option value="">Choisir..</option>
+                                                            <option value="Essence"> Essence</option>
+                                                             <option value="Diesel">Diesel</option>
+                                                             <option value="Hybride">Hybride</option>
+                                                             <option value="Electrique">Electrique</option>
+                                                             <option value="GPL">GPL</option>
+                                                             <option value="Autre">Autre</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-4 col-sm-4">

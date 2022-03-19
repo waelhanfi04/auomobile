@@ -1,0 +1,114 @@
+<div class="mobile-menu-second">
+    <app-header2></app-header2>
+
+    <!-- Blog -->
+    <section class="section-padding our_articles">
+        <div class="container">
+            <!-- <div class="row">
+    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-2" *ngFor="let moto of motoList">
+        <div class="moto-grid-layout-box">
+          <div class="moto-grid-layout-inner text-center">
+            <h5 class="moto-name"><a  [routerLink]="['/details-annonce',moto.id]"  class="text-light-black">{{moto.brand}} {{moto.model}}</a>
+         
+              <span  class=" float-right custom-tooltip span-fas" data-tip="Sauvgarder">
+                <span *ngIf="moto.userId !== this.userId" class="gray-fa-heart float-right custom-tooltip" data-tip="Sauvgarder"><i class="fa fa-heart"></i></span>
+            </span>
+            </h5>
+            <h6 class="text-light-black text-uppercase mb-2">{{moto.title}}</h6>
+            <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p>
+            <span class="text-orange price-text">{{moto.price || '0'}} DT</span>
+            <div class="moto-grid-layout-img">
+                <img src="assets/images/trendingmodels/trending6.jpg" class="img-fluid full-width" alt="Image">
+
+            </div>
+            <div class="moto-grid-layout-details">	<span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i>{{moto.mileage || '0'}} Km</span>
+              <span class="text-dark-white p-relative"><i class="icon-moto"></i> {{moto.year || '0'}}  Model</span>
+            </div>
+            <div class="moto-grid-layout-location">	<span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i>{{moto.city}}</span>
+              <span class="text-dark-white"><i class="fas fa-cog mr-2"></i>{{moto.gearbox}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+</div> -->
+            <!-- <img [src]="moto.pictureVoitures[0]?.picture" (error)="onImgError($event)" class="img-fluid full-width max-height-img" alt="moto img"> -->
+
+
+
+
+            <div class="content-wrapper">
+
+                <div id="facets-pjax" data-pjax-container="" data-pjax-push-state data-pjax-timeout="5000">
+                    <div class="occasions-results layout-list">
+                        <div *ngIf="motoList.length===0">
+                            <h4 class="text-center">Pas de données</h4>
+                        </div>
+                        <div class="articles">
+                            <div *ngFor="let moto of motoList" style="
+                            margin-top: 3%;
+                        ">
+                                <div class="occasion-item" data-pjax="0">
+                                    <div class="anchor" id="occasion-72414"></div>
+                                    <a class="details-container" [routerLink]="['/details-annonce',moto.id]">
+                                        <div class="details-wrapper">
+                                            <picture>
+
+                                                <img class="thumb cdn-image lazyload" [src]="moto.pictureVoitures[0]?.picture" (error)="onImgError($event)"></picture>
+                                            <div class="thumb-caption">
+                                                <h2><span>{{moto.brand.value}} {{moto.voitureOption.model.value}}</span></h2>
+                                                <div class="price">
+                                                    {{moto.price}} <span class="suffix">DT</span> </div>
+                                            </div>
+                                            <p> {{moto.description}} </p>
+                                        </div>
+
+                                        <ul class="specs-preview">
+                                            <li class="year">
+                                                <span class="name">Année</span>
+                                                <span class="value"> {{moto.year}}</span>
+                                            </li>
+                                            <li class="road">
+                                                <span class="name">Kms</span>
+                                                <span class="value"> {{moto.mileage || '0'}}</span>
+                                            </li>
+                                            <li class="map">
+                                                <span class="name">Localité</span>
+                                                <span class="value"> {{moto.city}}</span>
+                                            </li>
+                                            <li class="fuel">
+                                                <span class="name">Energie</span>
+                                                <span class="value">Essence</span>
+                                            </li>
+                                            <li class="boite">
+                                                <span class="name">Boîte vitesses</span>
+                                                <span class="value"> {{moto.gearbox}}</span>
+                                            </li>
+                                        </ul>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- <div class="pages">
+                            <ul class="pagination">
+                                <li class="prev disabled"><span><i class="fa fa-motoet-left"></i></span></li>
+                                <li class="active"><a href="#" data-page="0">1</a></li>
+                                <li><a href="#" data-page="1">2</a></li>
+                                <li><a href="#" data-page="2">3</a></li>
+                                <li><a href="#" data-page="3">4</a></li>
+                                <li><a href="#" data-page="4">5</a></li>
+                                <li class="next"><a href="#" data-page="1"><i class="fa fa-motoet-right"></i></a></li>
+                            </ul>
+                        </div> -->
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </section>
+    <!-- Blog -->
+    <app-footer2></app-footer2>
+</div>
