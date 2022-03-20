@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
              localStorage.setItem('idUser', data.id);
              localStorage.setItem('role', data.role);
             //  localStorage.setItem('phone', data.role);
-          //  this.router.navigate([''])
+            this.router.navigate([''])
          }
           
           }, (error: any) => {
