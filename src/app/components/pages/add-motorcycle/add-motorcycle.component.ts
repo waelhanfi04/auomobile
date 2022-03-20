@@ -2,6 +2,7 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CarService } from 'src/app/services/car/car.service';
+import { ProfileService } from 'src/app/services/profile/profile.service';
 import { arrayInsideEquipment, arrayOutsideEquipment, arraysecurityEquipment, arrayCategoryCar, arrayCategories, arrayBrand } from 'src/app/shared/config';
 
 @Component({
@@ -37,8 +38,9 @@ export class AddMotorcycleComponent implements OnInit {
   nameSerie: string = ''
   kits = []
   isAcceptedImageFileType: boolean = true;
-  userRole: any
-  constructor(private router: Router, private fb: FormBuilder, private carService: CarService) {
+  userRole: any;
+  user :any;
+  constructor(private router: Router, private fb: FormBuilder, private carService: CarService,private ProfileService: ProfileService) {
     this.addMotoForm = new FormGroup({
       concessionnaire:new FormControl(null),
       title: new FormControl(null),
@@ -81,10 +83,15 @@ export class AddMotorcycleComponent implements OnInit {
 
   ngOnInit(): void {
     //this.getCategory();
-    this.getConsessionnaire();
+    this.userRole = localStorage.getItem('role')
+
+    if(this.userRole !== 'admin'){
+      this.getUserDetails();
+    }else{
+      this.getConsessionnaire();
+    }
 
     this.getBrands();
-    this.userRole = localStorage.getItem('role')
     /*---add list of years from 1900 to current year-- */
     var aujd = new Date();
     const currentYear = aujd.getFullYear();
@@ -171,6 +178,16 @@ export class AddMotorcycleComponent implements OnInit {
       this.arrayBrand = data.car_make;
     })
   }
+
+  getUserDetails() {
+    this.ProfileService.userDetails().subscribe((data: any) => {
+      this.user = data.user
+      this.addMotoForm.get('concessionnaire')?.setValue(this.user.companyName)
+      this.addMotoForm.get('phone')?.setValue(this.user.companyPhone)
+      this.addMotoForm.get('address')?.setValue(this.user.companyAddress)
+
+    })
+  }
   getConsessionnaire(){
     this.carService.getConcessionnaire().subscribe((response: any) => {
       //if (response.message === 'voiture was registered successfully!') {
@@ -214,7 +231,7 @@ export class AddMotorcycleComponent implements OnInit {
       transmission: this.addMotoForm.get('transmission')?.value,
       powerFiscal: this.addMotoForm.get('powerFiscal')?.value,
       gearbox: this.addMotoForm.get('gearbox')?.value,
-      description: this.addMotoForm.get('description')?.value,
+      description:  this.userRole === 'admin' ? '' : this.addMotoForm.get('description')?.value,
       insideEquipment: this.addMotoForm.get('insideEquipment')?.value,
       outsideEquipment: this.addMotoForm.get('outsideEquipment')?.value,
       securityEquipment: this.addMotoForm.get('securityEquipment')?.value,

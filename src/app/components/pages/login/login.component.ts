@@ -29,13 +29,16 @@ export class LoginComponent implements OnInit {
             this.isSubmitting= false;
             this.errorMsg= ''
            if(data.accessToken!=='' || data.accessToken !==null){
+             console.log("user",data);
+             
               localStorage.setItem('accessToken', data.accessToken);
               localStorage.setItem('expiredIn', data.expiresIn);
               localStorage.setItem('isAuthenticated', 'true');
               localStorage.setItem('type', data.type);
              localStorage.setItem('idUser', data.id);
              localStorage.setItem('role', data.role);
-           this.router.navigate([''])
+            //  localStorage.setItem('phone', data.role);
+          //  this.router.navigate([''])
          }
           
           }, (error: any) => {

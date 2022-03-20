@@ -2,6 +2,7 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CarService } from 'src/app/services/car/car.service';
+import { ProfileService } from 'src/app/services/profile/profile.service';
 import { arrayInsideEquipment, arrayOutsideEquipment, arraysecurityEquipment, arrayCategoryCar, arrayCategories, arrayBrand, concessionnaires } from 'src/app/shared/config';
 @Component({
   selector: 'app-add-listing',
@@ -38,8 +39,9 @@ export class AddListingComponent implements OnInit {
   nameSerie: string = ''
   kits = []
   isAcceptedImageFileType: boolean = true;
-  userRole: any
-  constructor(private router: Router, private fb: FormBuilder, private carService: CarService) {
+  userRole: any;
+  user:any;
+  constructor(private router: Router, private fb: FormBuilder, private carService: CarService,private ProfileService: ProfileService) {
     this.addCarForm = new FormGroup({
       title: new FormControl(null),
      // availablity: new FormControl(null),
@@ -84,9 +86,14 @@ export class AddListingComponent implements OnInit {
   ngOnInit(): void {
     //this.getCategory();
     // this.concessionnaires=concessionnaires
-  this.getConsessionnaire();
-    this.getBrands();
     this.userRole = localStorage.getItem('role')
+
+    if(this.userRole !== 'admin'){
+      this.getUserDetails();
+    }else{
+      this.getConsessionnaire();
+    }
+    this.getBrands();
     /*---add list of years from 1900 to current year-- */
     var aujd = new Date();
     const currentYear = aujd.getFullYear();
@@ -166,6 +173,16 @@ export class AddListingComponent implements OnInit {
   //   })
 
   // }
+
+  getUserDetails() {
+    this.ProfileService.userDetails().subscribe((data: any) => {
+      this.user = data.user
+      this.addCarForm.get('concessionnaire')?.setValue(this.user.companyName)
+      this.addCarForm.get('phone')?.setValue(this.user.companyPhone)
+      this.addCarForm.get('address')?.setValue(this.user.companyAddress)
+
+    })
+  }
   getBrands() {
     this.nameCategory='1'
     this.carService.getMarque(this.nameCategory).subscribe((data: any) => {
@@ -233,7 +250,7 @@ export class AddListingComponent implements OnInit {
       transmission: this.addCarForm.get('transmission')?.value,
       powerFiscal: this.addCarForm.get('powerFiscal')?.value,
       gearbox: this.addCarForm.get('gearbox')?.value,
-      description: this.addCarForm.get('description')?.value,
+      description: this.userRole === 'admin' ? '' : this.addCarForm.get('description')?.value,
       insideEquipment: this.addCarForm.get('insideEquipment')?.value,
       outsideEquipment: this.addCarForm.get('outsideEquipment')?.value,
       securityEquipment: this.addCarForm.get('securityEquipment')?.value,

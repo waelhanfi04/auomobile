@@ -42,8 +42,7 @@
                             <div class="step-tab-panel" id="step1">
                                 <div class="tab-from-content">
                                     <div class="title-icon">
-                                        <h5 class="title rubik fw-600"><i class="flaticon-comment"></i>Informations
-                                            générales
+                                        <h5 class="title rubik fw-600"><i class="flaticon-comment"></i>Informations générales
                                         </h5>
                                     </div>
                                     <form [formGroup]="addCarForm">
@@ -51,8 +50,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Titre</label>
                                                 <div class="form-group">
-                                                    <input type="text" name="title" formControlName="title"
-                                                        class="form-control form-control-custom">
+                                                    <input type="text" name="title" formControlName="title" class="form-control form-control-custom">
                                                 </div>
                                             </div>
                                             <!-- <div class="col-lg-3 col-md-4 col-sm-4" *ngIf="this.userRole!=='user'">
@@ -70,8 +68,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Année</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="year">
+                                                    <select class="form-control form-control-custom" formControlName="year">
                                                         <option value="">Choisir..</option>
                                                         <option *ngFor="let year of years.slice().reverse()"
                                                             [value]="year">{{year}}</option>
@@ -82,8 +79,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4" *ngIf="this.userRole==='user'">
                                                 <label>Kilométrage</label>
                                                 <div class="form-group">
-                                                    <input type="text" name="mileage" formControlName="mileage"
-                                                        class="form-control form-control-custom">
+                                                    <input type="text" name="mileage" formControlName="mileage" class="form-control form-control-custom">
                                                 </div>
                                             </div>
                                             <!-- <div class="col-lg-3 col-md-4 col-sm-4">
@@ -107,8 +103,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Prix</label>
                                                 <div class="form-group">
-                                                    <input type="number" name="price" formControlName="price"
-                                                        class="form-control form-control-custom">
+                                                    <input type="number" name="price" formControlName="price" class="form-control form-control-custom">
                                                 </div>
                                             </div>
 
@@ -126,8 +121,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Marque</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="brand">
+                                                    <select class="form-control form-control-custom" formControlName="brand">
                                                         <option value="">Choisir..</option>
                                                         <option *ngFor="let b of arrayBrand"
                                                             [value]="[b.name,b.id_car_make]">{{b.name}}</option>
@@ -138,8 +132,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Modèle</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="model">
+                                                    <select class="form-control form-control-custom" formControlName="model">
                                                         <option value="">Choisir..</option>
                                                         <option *ngFor="let m of arrayModel"
                                                             [value]="[m.name,m.id_car_model]">{{m.name}}</option>
@@ -149,8 +142,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Génération</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="generation">
+                                                    <select class="form-control form-control-custom" formControlName="generation">
                                                         <option value="">Choisir..</option>
                                                         <option *ngFor="let g of arrayGeneration"
                                                             [value]="[g.name,g.id_car_generation]">{{g.name}}</option>
@@ -160,8 +152,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Série</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="serie">
+                                                    <select class="form-control form-control-custom" formControlName="serie">
                                                         <option value="">Choisir..</option>
                                                         <option *ngFor="let s of arraySerie"
                                                             [value]="[s.name,s.id_car_serie]">{{s.name}}</option>
@@ -171,8 +162,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4" *ngIf="this.userRole==='admin'">
                                                 <label>Modification</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="trim">
+                                                    <select class="form-control form-control-custom" formControlName="trim">
                                                         <option value="">Choisir..</option>
                                                         <option *ngFor="let t of arrayTrim"
                                                             [value]="[t.name,t.id_car_trim]">{{t.name}}</option>
@@ -183,8 +173,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Couleur</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="color">
+                                                    <select class="form-control form-control-custom" formControlName="color">
                                                         <option value="">Choisir..</option>
                                                         <option value="Noir">Noir</option>
                                                         <option value="Gris argent">Gris argent</option>
@@ -219,11 +208,10 @@
                                                     <input type="text" name="Guarantie" formControlName="guarantee" class="form-control form-control-custom">
                                                 </div>
                                             </div> -->
-                                            <div class="col-lg-12">
+                                            <div class="col-lg-12" *ngIf="this.userRole!=='admin'">
                                                 <label>Description</label>
                                                 <div class="form-group">
-                                                    <textarea class="form-control form-control-custom"
-                                                        formControlName="description" rows="5"></textarea>
+                                                    <textarea class="form-control form-control-custom" formControlName="description" rows="5"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -234,17 +222,14 @@
                             <div class="step-tab-panel" id="step2">
                                 <div class="tab-from-content">
                                     <div class="title-icon">
-                                        <h5 class="title rubik fw-600"><i
-                                                class="flaticon-check-square"></i>Spécifications techniques</h5>
+                                        <h5 class="title rubik fw-600"><i class="flaticon-check-square"></i>Spécifications techniques</h5>
                                     </div>
                                     <form [formGroup]="addCarForm">
                                         <div class="row" *ngIf="this.userRole!=='user' && arraySpecification">
-                                            <div class="col-lg-3 col-md-4 col-sm-4"
-                                                *ngFor="let s of arraySpecification">
+                                            <div class="col-lg-3 col-md-4 col-sm-4" *ngFor="let s of arraySpecification">
                                                 <label>{{s.name}}</label>
                                                 <div class="form-group">
-                                                    <input class="form-control form-control-custom" type="text"
-                                                        value='{{s.value}}' readonly>
+                                                    <input class="form-control form-control-custom" type="text" value='{{s.value}}' readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -252,8 +237,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Boîte</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="gearbox">
+                                                    <select class="form-control form-control-custom" formControlName="gearbox">
                                                         <option value="">Choisir..</option>
                                                         <option value="manuelle">Manuelle</option>
                                                         <option value="automatique">Automatique</option>
@@ -263,8 +247,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Puissance fiscale</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="powerFiscal">
+                                                    <select class="form-control form-control-custom" formControlName="powerFiscal">
                                                         <option value="">Choisir..</option>
                                                         <option *ngFor="let power of powerFiscalArray" [value]="power">
                                                             {{ power }}</option>
@@ -276,8 +259,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Carrosserie</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="carrosserie">
+                                                    <select class="form-control form-control-custom" formControlName="carrosserie">
                                                         <option value="">Choisir..</option>
                                                         <option value="Citadine">Citadine</option>
                                                         <option value="Compacte">Compacte</option>
@@ -295,8 +277,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>transmission</label>
                                                 <div class="form-group p-relative">
-                                                    <select class="form-control form-control-custom"
-                                                        formControlName="transmission">
+                                                    <select class="form-control form-control-custom" formControlName="transmission">
                                                         <option value="">Choisir..</option>
                                                         <option value="traction">Traction</option>
                                                         <option value="propulsion">Propulsion</option>
@@ -308,27 +289,21 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Nombre de places</label>
                                                 <div class="form-group">
-                                                    <input type="number" name="seatingCapacity"
-                                                        formControlName="seatingCapacity"
-                                                        class="form-control form-control-custom">
+                                                    <input type="number" name="seatingCapacity" formControlName="seatingCapacity" class="form-control form-control-custom">
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Nombre de portes</label>
                                                 <div class="form-group">
-                                                    <input type="number" name="numberDoors"
-                                                        formControlName="numberDoors"
-                                                        class="form-control form-control-custom">
+                                                    <input type="number" name="numberDoors" formControlName="numberDoors" class="form-control form-control-custom">
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Puissance DIN</label>
                                                 <div class="form-group">
-                                                    <input type="number" name="puissanceDIN"
-                                                        formControlName="puissanceDIN"
-                                                        class="form-control form-control-custom">
+                                                    <input type="number" name="puissanceDIN" formControlName="puissanceDIN" class="form-control form-control-custom">
                                                 </div>
                                             </div>
 
@@ -336,8 +311,7 @@
                                                 <label>Carburant</label>
                                                 <div class="form-group">
                                                     <div class="form-group p-relative">
-                                                        <select class="form-control form-control-custom"
-                                                            formControlName="Carburant">
+                                                        <select class="form-control form-control-custom" formControlName="Carburant">
                                                             <option value="">Choisir..</option>
                                                             <option value="Essence"> Essence</option>
                                                              <option value="Diesel">Diesel</option>
@@ -352,16 +326,13 @@
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Mise en Circulation</label>
                                                 <div class="form-group">
-                                                    <input type="date" name="miseCirculation"
-                                                        formControlName="miseCirculation"
-                                                        class="form-control form-control-custom">
+                                                    <input type="date" name="miseCirculation" formControlName="miseCirculation" class="form-control form-control-custom">
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Permis</label>
                                                 <div class="form-group">
-                                                    <input type="text" name="permis" formControlName="permis"
-                                                        class="form-control form-control-custom">
+                                                    <input type="text" name="permis" formControlName="permis" class="form-control form-control-custom">
                                                 </div>
                                             </div>
                                         </div>
@@ -381,8 +352,7 @@
                                                 <div formArrayName="outsideEquipment" class="form-group  p-relative">
                                                     <ul class="boxes" id="inside-equip">
                                                         <li *ngFor="let ex of outsideEquipmentList;let index=index">
-                                                            <label class="custom-checkbox black-text "
-                                                                for="ex{{index}}">
+                                                            <label class="custom-checkbox black-text " for="ex{{index}}">
                                                                 <input type="checkbox" id="ex{{index}}"
                                                                     [value]="ex.equipement"
                                                                     (change)="onCheckboxChange($event,'outsideEquipment')">
@@ -398,8 +368,7 @@
                                                 <div formArrayName="insideEquipment" class="form-group">
                                                     <ul class="boxes" id="outside-equip">
                                                         <li *ngFor="let i of insideEquipmentList;let index=index">
-                                                            <label class="custom-checkbox black-text"
-                                                                for="int{{index}}">
+                                                            <label class="custom-checkbox black-text" for="int{{index}}">
                                                                 <input type="checkbox" id="int{{index}}"
                                                                     [value]="i.equipement"
                                                                     (change)="onCheckboxChange($event,'insideEquipment')">
@@ -415,8 +384,7 @@
                                                 <div formArrayName="securityEquipment" class="form-group">
                                                     <ul class="boxes" id="security-equip">
                                                         <li *ngFor="let s of securityEquipmentList;let index=index">
-                                                            <label class="custom-checkbox black-text"
-                                                                for="security{{index}}">
+                                                            <label class="custom-checkbox black-text" for="security{{index}}">
                                                                 <input type="checkbox" id="security{{index}}"
                                                                     [value]="s.equipement"
                                                                     (change)="onCheckboxChange($event,'securityEquipment')">
@@ -441,66 +409,34 @@
                                         <div class="row">
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>concessionnaires</label>
-                                                <div class="form-group">
-                                                    <select formControlName="concessionnaire"
-                                                        class="form-control form-control-custom">
+                                                <div class="form-group" *ngIf="this.userRole!=='user'">
+                                                    <select formControlName="concessionnaire" class="form-control form-control-custom">
                                                         <option *ngFor="let concessionnaire of concessionnaires"
                                                             value="{{concessionnaire.id}}">{{concessionnaire.nom}}
                                                         </option>
                                                     </select>
                                                 </div>
+                                                <div class="form-group" *ngIf="this.userRole!=='admin'">
+                                                    <input type="text" name="concessionnaire" formControlName="concessionnaire" class="form-control form-control-custom">
+                                                </div>
                                             </div>
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Téléphone</label>
                                                 <div class="form-group">
-                                                    <input type="text" name="phone" formControlName="phone"
-                                                        class="form-control form-control-custom">
+                                                    <input type="text" name="phone" formControlName="phone" class="form-control form-control-custom">
                                                 </div>
                                             </div>
-                                            <!-- <div class="col-lg-3 col-md-4 col-sm-4">
-                                                <label>Gouvernorat</label>
-                                                <div class="form-group p-relativ">
-                                                    <select class="form-control form-control-custom" formControlName="city">
-                                                        <option value="">Choisir..</option>
-                                                        <option value="Ariana">Ariana</option>
-                                                        <option value="Béja">Béja</option>
-                                                        <option value="Ben Arous">Ben Arous</option>
-                                                        <option value="Bizerte">Bizerte</option>
-                                                        <option value="Gabès">Gabès</option>
-                                                        <option value="Gafsa">Gafsa</option>
-                                                        <option value="Jendouba">Jendouba</option>
-                                                        <option value="Kairouan">Kairouan</option>
-                                                        <option value="Kasserine">Kasserine</option>
-                                                        <option value="Kébili">Kébili</option>
-                                                        <option value="La Manouba">La Manouba</option>
-                                                        <option value="Le Kef">Le Kef</option>
-                                                        <option value="Mahdia">Mahdia</option>
-                                                        <option value="Médenine">Médenine</option>
-                                                        <option value="Monastir">Monastir</option>
-                                                        <option value="Nabeul">Nabeul</option>
-                                                        <option value="Sfax">Sfax</option>
-                                                        <option value="Sidi Bouzid">Sidi Bouzid</option>
-                                                        <option value="Siliana">Siliana</option>
-                                                        <option value="Sousse">Sousse</option>
-                                                        <option value="Tataouine">Tataouine</option>
-                                                        <option value="Tozeur">Tozeur</option>
-                                                        <option value="Tunis">Tunis</option>
-                                                        <option value="Zaghouan">Zaghouan</option>
-                                                    </select>
-                                                </div>
-                                            </div> -->
+
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Adresse</label>
                                                 <div class="form-group">
-                                                    <input type="text" name="address" formControlName="address"
-                                                        class="form-control form-control-custom">
+                                                    <input type="text" name="address" formControlName="address" class="form-control form-control-custom">
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-4 col-sm-4">
                                                 <label>Fax</label>
                                                 <div class="form-group">
-                                                    <input type="text" name="fax" formControlName="fax"
-                                                        class="form-control form-control-custom">
+                                                    <input type="text" name="fax" formControlName="fax" class="form-control form-control-custom">
                                                 </div>
                                             </div>
                                         </div>
@@ -520,8 +456,7 @@
                                                     <div class="d-flex justify-content-center text-div-input-file">
                                                         Cliquez ou faites glisser vos photos ici
                                                     </div>
-                                                    <input type="file" class="input-pictures" accept="image/*"
-                                                        (change)="onFileChange($event)">
+                                                    <input type="file" class="input-pictures" accept="image/*" (change)="onFileChange($event)">
 
                                                 </div>
                                             </div>
@@ -541,8 +476,7 @@
 
                                                 <div class="col p-2" *ngFor="let pic of kits;let index = index">
                                                     <img class="picture-car" [src]="pic">
-                                                    <img src="assets/images/new-icons/deletekit.svg" class="delete-icon"
-                                                        (click)="delete(index)">
+                                                    <img src="assets/images/new-icons/deletekit.svg" class="delete-icon" (click)="delete(index)">
                                                 </div>
 
 
@@ -563,8 +497,7 @@
                         <div class="step-footer step-tab-pager">
                             <button data-direction="prev" class="btn-second orange-btn">Précédent</button>
                             <button data-direction="next" class="btn-second orange-btn">Suivant</button>
-                            <button data-direction="finish" class="btn-second orange-btn"
-                                (click)="addCar()">Enregistrer</button>
+                            <button data-direction="finish" class="btn-second orange-btn" (click)="addCar()">Enregistrer</button>
                         </div>
                     </div>
                 </div>
